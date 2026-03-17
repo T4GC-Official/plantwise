@@ -1,6 +1,6 @@
-# PlantWise_v0
+# PlantWise
 
-`PlantWise_v0` is the baseline code snapshot of the PlantWise India model and web app before improvements from the newer `PlantWise` tree are ported over.
+`PlantWise` is the baseline code snapshot of the PlantWise India model and web app before improvements from the newer `PlantWise` tree are ported over.
 
 This repository intentionally does not track private or manually seeded datasets. Contributors are expected to populate those files locally before running the web app, training the model, or comparing outputs.
 
