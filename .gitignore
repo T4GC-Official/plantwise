@@ -62,31 +62,31 @@ Thumbs.db
 
 
 ############################
-# Data files (IGNORED)
+# Manual-seeded data and generated model outputs
 ############################
 
-# CSV / tabular
-*.csv
-*.tsv
-
-# Raster
-*.tif
-*.tiff
-*.aux.xml
-
-# ASCII grid
-*.asc
-
-# Vector GIS
-*.prj
-*.shp
-*.dbf
-*.shx
-*.cpg
-
-# GeoJSON, shapefile zips
-*.geojson
-*.zip
+Final_Species.csv
+backend/app/data/
+final_attributes/
+frontend/habitability-tool/public/species_presence.csv
+frontend/habitability-tool/public/wgg.geojsonl.json
+frontend/habitability-tool/public/wgg.geojsonl.qmd
+frontend/habitability-tool/src/wg.geojson
+frontend/habitability-tool/src/wg.qmd
+frontend/habitability-tool/src/wg_new.geojson
+frontend/habitability-tool/src/wg_new.qmd
+frontend/habitability-tool/src/wg_boundary.dbf
+frontend/habitability-tool/src/wg_boundary.prj
+frontend/habitability-tool/src/wg_boundary.shp
+frontend/habitability-tool/src/wg_boundary.shx
+frontend/habitability-tool/build/
+frontend/habitability-tool/build_history/
+sp_data_final/
+pr_sp_data_final/
+res/
+tif_data_final/
+test_res/
+cache/
 
 
 ############################
@@ -103,5 +103,3 @@ logs/
 
 *.cache
 *.bat
-*test_res
-*res/
