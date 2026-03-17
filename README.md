@@ -30,9 +30,69 @@ Baseline policy:
 Create a fresh virtual environment and install the minimum tracked Python dependencies:
 
 ```bash
-python3 -m venv .venv
+uv venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+uv pip install -r requirements.txt
+```
+
+## Quickstart
+
+### Train the model
+
+Assumes you have already seeded `Final_Species.csv`, `maxent.jar`, and `final_attributes/` locally.
+
+```bash
+cd PlantWise_v0
+uv venv .venv
+source .venv/bin/activate
+uv pip install -r requirements.txt
+python3 separateSpecies.py
+python3 InitialImplementation.py
+```
+
+To start training from a clean slate, it is safe to remove generated runtime state and then re-run the splitter:
+
+```bash
+rm -rf sp_data_final pr_sp_data_final res tif_data_final
+python3 separateSpecies.py
+```
+Do not remove these if you want to preserve your seeded inputs:
+
+- `Final_Species.csv`
+- `maxent.jar`
+- `final_attributes/`
+
+To verify the split-input state before training:
+
+```bash
+ls sp_data_final | head
+ls sp_data_final/species_presence_counts.csv
+```
+
+### Run the app
+
+Assumes you have already seeded:
+
+- `backend/app/data/auc_and_contributions.csv`
+- `backend/app/data/final_tif_files_withNWG/`
+- `frontend/habitability-tool/public/wgg.geojsonl.json`
+- `frontend/habitability-tool/public/species_presence.csv`
+
+Backend:
+
+```bash
+cd PlantWise_v0
+source .venv/bin/activate
+cd backend/app
+python3 app.py
+```
+
+Frontend:
+
+```bash
+cd PlantWise_v0/frontend/habitability-tool
+npm install
+npm start
 ```
 
 ## Frontend setup
@@ -47,7 +107,7 @@ npm start
 
 There is also a legacy `frontend/package.json` at the parent level (recorded for baseline accuracy). Treat `frontend/habitability-tool/package.json` as the source of truth for the web app.
 
-## Manual data bootstrap
+## Internals: data, bootstrap, regression etc.. 
 
 ### 1. To run the end-to-end web app
 

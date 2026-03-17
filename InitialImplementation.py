@@ -244,6 +244,7 @@ import rasterio
 from rasterio.transform import from_origin
 import numpy as np
 from bs4 import BeautifulSoup
+import time
 
 
 def generate_file_paths(species_file):
@@ -454,13 +455,25 @@ def check_presence_points(species_file):
     return False
 
 
-def process_species_file(species_file):
+def process_species_file(species_file, index=None, total=None):
     # print(1)
+    if index is not None and total is not None:
+        remaining = total - index
+        print(f'[{index}/{total}] Starting {species_file} ({remaining} remaining including current)')
+    species_start = time.time()
+
     if check_presence_points(species_file):
         run_java_command(species_file)
         move_processed_csv(species_file, 'pr_sp_data_final')
     else:
+        print(f'Skipping {species_file}: insufficient presence points')
         move_processed_csv(species_file, 'pr_sp_data_final')
+
+    elapsed = time.time() - species_start
+    if index is not None and total is not None:
+        print(f'[{index}/{total}] Finished {species_file} in {elapsed:.1f}s')
+    else:
+        print(f'Finished {species_file} in {elapsed:.1f}s')
 
 
 def take_first_n_samples(species_folder, n=600, destination_folder='processed_species_data'):
@@ -473,10 +486,15 @@ def take_first_n_samples(species_folder, n=600, destination_folder='processed_sp
 
     csv_files = [f for f in os.listdir(species_folder) if f.endswith('.csv')]
     csv_files_to_process = csv_files[:n]
-    print(f'Processing the following files: {csv_files_to_process}')
+    total = len(csv_files_to_process)
+    print(f'Preparing to process {total} species files from {species_folder}')
+    run_start = time.time()
 
-    for species_file in csv_files_to_process:
-        process_species_file(species_file)
+    for index, species_file in enumerate(csv_files_to_process, start=1):
+        process_species_file(species_file, index=index, total=total)
+
+    total_elapsed = time.time() - run_start
+    print(f'Completed processing {total} species files in {total_elapsed:.1f}s')
 
 
 if __name__ == '__main__':
