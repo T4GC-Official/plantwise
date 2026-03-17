@@ -349,7 +349,9 @@ def run_java_command(species_file):
     #     save_auc_and_contributions_to_csv(species_file, auc_value, contributions)
 
     # Delete files containing species name
-    delete_species_files(species_file)
+    # TODO(prashanth@): Uncomment this and delete species files, left in for 
+    # regression testing. 
+    # delete_species_files(species_file)
     return True
 
 
