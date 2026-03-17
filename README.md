@@ -180,9 +180,8 @@ Notes:
 Dataset source:
 
 - Data location: https://drive.google.com/drive/folders/1Z0fG6c9xir-KALGFmKkOPUeF1LxHJ-EF?usp=drive_link
-- Access: restricted
 
-### 3. To verify regressions
+### 3. To verify regressions (planned) 
 
 Regression verification should prefer derived, non-sensitive artifacts rather than raw occurrence points or private rasters.
 
