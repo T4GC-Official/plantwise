@@ -332,12 +332,12 @@ def run_java_command(species_file):
         print("Error occurred while running the Java command:", e)
         print("Output:", e.stdout)
         print("Error:", e.stderr)
-        return
+        return False
 
     asc_file, tiff_file, html_file = generate_file_paths(species_file)
     if not os.path.exists(asc_file):
         print(f"Expected ASC output not found: {asc_file}")
-        return
+        return False
     convert_asc_to_tiff(asc_file, tiff_file)
     # auc_value = extract_auc_from_html(html_file)
     # if auc_value is not None:
@@ -350,6 +350,7 @@ def run_java_command(species_file):
 
     # Delete files containing species name
     delete_species_files(species_file)
+    return True
 
 
 # def extract_auc_and_contributions_from_html(html_file):
@@ -463,8 +464,10 @@ def process_species_file(species_file, presence_df, index=None, total=None):
     species_start = time.time()
 
     if check_presence_points(species_file, presence_df):
-        run_java_command(species_file)
-        move_processed_csv(species_file, 'pr_sp_data_final')
+        if run_java_command(species_file):
+            move_processed_csv(species_file, 'pr_sp_data_final')
+        else:
+            print(f'Leaving {species_file} in sp_data_final for retry after failure')
     else:
         print(f'Skipping {species_file}: insufficient presence points')
         move_processed_csv(species_file, 'pr_sp_data_final')
