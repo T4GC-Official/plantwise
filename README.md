@@ -88,6 +88,34 @@ None of the above are tracked in git in this baseline.
 
 Training requires the source occurrence dataset, the environmental layers, and the Maxent binary. The script trains on the species CSVs found in `sp_data_final/`, which are generated from `Final_Species.csv`, and it reads the weather/environmental layers from `final_attributes/`.
 
+Pipeline:
+
+1. Seed `Final_Species.csv`, `maxent.jar`, and `final_attributes/` locally.
+2. Run `python3 separateSpecies.py`.
+3. This creates `sp_data_final/`, which is the pending input queue for model training.
+4. It also creates `sp_data_final/species_presence_counts.csv`, a derived summary used to decide whether a species has enough presence points to train.
+5. Run `python3 InitialImplementation.py`.
+6. `InitialImplementation.py` reads per-species CSVs from `sp_data_final/`, writes temporary Maxent outputs to `res/`, converts the species `.asc` output into `.tif`, and then moves processed species CSVs into `pr_sp_data_final/`.
+
+Directory roles:
+
+- `sp_data_final/`
+  One CSV per species generated from `Final_Species.csv`, this is a kind of "input queue" for training 
+- `sp_data_final/species_presence_counts.csv`
+  Preprocessing summary derived from `Final_Species.csv`; used to skip species with too few presence points.
+- `pr_sp_data_final/`
+  Archive of already-processed species CSVs; used to resume interrupted runs.
+  After a species is handled, its CSV is moved here. This is how the harness tries to support resumable runs.
+- `res/`
+  Temporary Maxent working directory for intermediate `.asc`, `.html`, and plot outputs during training.
+  The script converts the .asc into a .tif and deletes the per-species intermediates from `res/`.
+
+Current expectation:
+
+- `separateSpecies.py` should be run before `InitialImplementation.py`.
+- These runtime directories are not tracked in git.
+- On a clean checkout, the training script should fail clearly if the split-input state has not been created yet, rather than silently regenerating it.
+
 Maxent binary source and version:
 
 - Source location: https://biodiversityinformatics.amnh.org/open_source/maxent/
@@ -152,9 +180,8 @@ Notes:
 Dataset source:
 
 - Data location: https://drive.google.com/drive/folders/1Z0fG6c9xir-KALGFmKkOPUeF1LxHJ-EF?usp=drive_link
-- Access: restricted
 
-### 3. To verify regressions
+### 3. To verify regressions (planned) 
 
 Regression verification should prefer derived, non-sensitive artifacts rather than raw occurrence points or private rasters.
 

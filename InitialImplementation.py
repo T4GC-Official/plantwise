@@ -318,7 +318,7 @@ def convert_asc_to_tiff(asc_file, tif_file):
 def run_java_command(species_file):
     # print(5)
     java_command = [
-        "java", "-Djava.awt.headless=true", "density.MaxEnt",
+        "java", "-Djava.awt.headless=true", "-cp", "maxent.jar", "density.MaxEnt",
         "nowarnings", "noprefixes", "jackknife",
         "outputdirectory=res", f"samplesfile=sp_data_final/{species_file}",
         "environmentallayers=final_attributes", "autoRun", "visible=False"
