@@ -244,7 +244,6 @@ import rasterio
 from rasterio.transform import from_origin
 import numpy as np
 from bs4 import BeautifulSoup
-from concurrent.futures import ProcessPoolExecutor
 
 
 def generate_file_paths(species_file):
@@ -476,8 +475,8 @@ def take_first_n_samples(species_folder, n=600, destination_folder='processed_sp
     csv_files_to_process = csv_files[:n]
     print(f'Processing the following files: {csv_files_to_process}')
 
-    with ProcessPoolExecutor() as executor:
-        executor.map(process_species_file, csv_files_to_process)
+    for species_file in csv_files_to_process:
+        process_species_file(species_file)
 
 
 if __name__ == '__main__':
