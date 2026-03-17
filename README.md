@@ -50,6 +50,15 @@ python3 separateSpecies.py
 python3 InitialImplementation.py
 ```
 
+To monitor Maxent CPU and memory usage in parallel and log only active samples to CSV, run this in another terminal before starting training:
+
+```bash
+cd PlantWise_v0
+python3 monitor_maxent_pidstat.py --output logs/maxent_usage.csv
+```
+
+The monitor watches `java` processes, filters to Maxent invocations, and writes timestamped samples for CPU and RSS memory without filling the file with idle zero rows.
+
 To start training from a clean slate, it is safe to remove generated runtime state and then re-run the splitter:
 
 ```bash
