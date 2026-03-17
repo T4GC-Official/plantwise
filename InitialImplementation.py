@@ -445,9 +445,8 @@ def move_processed_csv(species_file, destination_folder):
     print(f'Moved {src} to {dst}')
 
 
-def check_presence_points(species_file):
+def check_presence_points(species_file, presence_df):
     # print(2)
-    presence_df = pd.read_csv('sp_data_final/species_presence_counts.csv')
     species_name = os.path.splitext(species_file)[0]
     presence_points = presence_df[presence_df['Species'] == species_name]['Presence_Count'].values
 
@@ -456,14 +455,14 @@ def check_presence_points(species_file):
     return False
 
 
-def process_species_file(species_file, index=None, total=None):
+def process_species_file(species_file, presence_df, index=None, total=None):
     # print(1)
     if index is not None and total is not None:
         remaining = total - index
         print(f'[{index}/{total}] Starting {species_file} ({remaining} remaining including current)')
     species_start = time.time()
 
-    if check_presence_points(species_file):
+    if check_presence_points(species_file, presence_df):
         run_java_command(species_file)
         move_processed_csv(species_file, 'pr_sp_data_final')
     else:
@@ -487,15 +486,19 @@ def take_first_n_samples(species_folder, n=600, destination_folder='processed_sp
 
     os.makedirs('res', exist_ok=True)
     os.makedirs('tif_data_final', exist_ok=True)
+    presence_df = pd.read_csv(presence_count_file)
 
-    csv_files = [f for f in os.listdir(species_folder) if f.endswith('.csv')]
+    csv_files = [
+        f for f in os.listdir(species_folder)
+        if f.endswith('.csv') and f != 'species_presence_counts.csv'
+    ]
     csv_files_to_process = csv_files[:n]
     total = len(csv_files_to_process)
     print(f'Preparing to process {total} species files from {species_folder}')
     run_start = time.time()
 
     for index, species_file in enumerate(csv_files_to_process, start=1):
-        process_species_file(species_file, index=index, total=total)
+        process_species_file(species_file, presence_df, index=index, total=total)
 
     total_elapsed = time.time() - run_start
     print(f'Completed processing {total} species files in {total_elapsed:.1f}s')
