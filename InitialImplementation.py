@@ -422,16 +422,18 @@ def run_java_command(species_file):
 def delete_species_files(species_file):
     # print(4)
     base_name = os.path.splitext(species_file)[0]
-    for filename in os.listdir('res'):
-        if base_name in filename:
-            file_to_delete = os.path.join('res', filename)
-            os.remove(file_to_delete)
-            print(f'Deleted {file_to_delete}')
-    for filename in os.listdir('res/plots'):
-        if base_name in filename:
-            file_to_delete = os.path.join('res/plots', filename)
-            os.remove(file_to_delete)
-            print(f'Deleted {file_to_delete}')
+    if os.path.isdir('res'):
+        for filename in os.listdir('res'):
+            if base_name in filename:
+                file_to_delete = os.path.join('res', filename)
+                os.remove(file_to_delete)
+                print(f'Deleted {file_to_delete}')
+    if os.path.isdir('res/plots'):
+        for filename in os.listdir('res/plots'):
+            if base_name in filename:
+                file_to_delete = os.path.join('res/plots', filename)
+                os.remove(file_to_delete)
+                print(f'Deleted {file_to_delete}')
 
 
 def move_processed_csv(species_file, destination_folder):
