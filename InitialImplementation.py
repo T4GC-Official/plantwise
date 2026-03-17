@@ -440,6 +440,7 @@ def move_processed_csv(species_file, destination_folder):
     # print(3)
     src = os.path.join('sp_data_final', species_file)
     dst = os.path.join(destination_folder, species_file)
+    os.makedirs(destination_folder, exist_ok=True)
     shutil.move(src, dst)
     print(f'Moved {src} to {dst}')
 
@@ -483,6 +484,9 @@ def take_first_n_samples(species_folder, n=600, destination_folder='processed_sp
             "Missing split species input state. Run `python3 separateSpecies.py` first "
             "to create `sp_data_final/` and `sp_data_final/species_presence_counts.csv`."
         )
+
+    os.makedirs('res', exist_ok=True)
+    os.makedirs('tif_data_final', exist_ok=True)
 
     csv_files = [f for f in os.listdir(species_folder) if f.endswith('.csv')]
     csv_files_to_process = csv_files[:n]
