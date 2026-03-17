@@ -444,7 +444,7 @@ def move_processed_csv(species_file, destination_folder):
 
 def check_presence_points(species_file):
     # print(2)
-    presence_df = pd.read_csv('pr_sp_data_final/species_presence_counts.csv')  # Update the path as needed
+    presence_df = pd.read_csv('sp_data_final/species_presence_counts.csv')
     species_name = os.path.splitext(species_file)[0]
     presence_points = presence_df[presence_df['Species'] == species_name]['Presence_Count'].values
 
@@ -463,6 +463,13 @@ def process_species_file(species_file):
 
 
 def take_first_n_samples(species_folder, n=600, destination_folder='processed_species_data'):
+    presence_count_file = os.path.join(species_folder, 'species_presence_counts.csv')
+    if not os.path.isdir(species_folder) or not os.path.exists(presence_count_file):
+        raise FileNotFoundError(
+            "Missing split species input state. Run `python3 separateSpecies.py` first "
+            "to create `sp_data_final/` and `sp_data_final/species_presence_counts.csv`."
+        )
+
     csv_files = [f for f in os.listdir(species_folder) if f.endswith('.csv')]
     csv_files_to_process = csv_files[:n]
     print(f'Processing the following files: {csv_files_to_process}')
