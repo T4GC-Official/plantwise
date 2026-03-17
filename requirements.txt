@@ -1,0 +1,6 @@
+beautifulsoup4
+Flask
+flask-cors
+numpy
+pandas
+rasterio
