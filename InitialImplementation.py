@@ -330,8 +330,14 @@ def run_java_command(species_file):
         print("Error:", result.stderr)
     except subprocess.CalledProcessError as e:
         print("Error occurred while running the Java command:", e)
+        print("Output:", e.stdout)
+        print("Error:", e.stderr)
+        return
 
     asc_file, tiff_file, html_file = generate_file_paths(species_file)
+    if not os.path.exists(asc_file):
+        print(f"Expected ASC output not found: {asc_file}")
+        return
     convert_asc_to_tiff(asc_file, tiff_file)
     # auc_value = extract_auc_from_html(html_file)
     # if auc_value is not None:
