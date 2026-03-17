@@ -211,3 +211,10 @@ The intention is that regression artifacts are safe to commit because they conta
 ## Current policy
 
 If a contributor clones this repository, they should expect to seed the runtime and training datasets by hand in the paths above before using the app or model training pipeline.
+
+## Citations
+
+While this repository itself adopts the same MIT license as maxent, we would like to acknowledge the contribution that made this work possible: 
+```
+Steven J. Phillips, Miroslav Dudík, Robert E. Schapire. [Internet] Maxent software for modeling species niches and distributions (Version 3.4.1). Available from url: http://biodiversityinformatics.amnh.org/open_source/maxent/. Accessed on 2026-3-17.
+```
