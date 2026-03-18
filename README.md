@@ -16,6 +16,7 @@ Baseline policy:
 - Backend source in `backend/app/`.
 - Frontend source in `frontend/habitability-tool/`.
 - Dependency manifests such as `requirements.txt` and frontend `package.json` files.
+- Reports that contain aggregate trends.
 
 ## What is not tracked
 
@@ -24,6 +25,7 @@ Baseline policy:
 - Trained model outputs.
 - Local build outputs and dependency directories.
 - Virtual environments and editor noise.
+- logs/ directory. This data is only included in aggregate reports. 
 
 ## Python setup
 
@@ -36,6 +38,20 @@ uv pip install -r requirements.txt
 ```
 
 ## Quickstart
+
+
+### Run one raw maxent iteration 
+
+From the root of this repo run
+```console
+$ uv venv .venv
+$ source .venv/bin/activate 
+# This assumes you have the directory setup described in "To train the model" section 
+$ python3 separateSpecies.py
+$ mkdir -p /tmp/deldata
+$ java -Djava.awt.headless=true -cp maxent.jar density.MaxEnt nowarnings noprefixes jackknife outputdirectory=/tmp/deldata samplesfile=sp_data_final/Morinda_coreia.csv environmentallayers=final_attributes autoRun visible=False
+```
+This runs maxent once, against the species `Morinda_coreia.csv`, using the env layers in `final_attributes` and puts the output in `/tmp/deldata`
 
 ### Train the model
 
