@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PlantWise Regression Viewer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">PlantWise Reports</p>
+      <h1>Regression Viewer</h1>
+    </header>
+
+    <section class="panel controls">
+      <div class="control-row">
+        <label>
+          <span>Baseline report</span>
+          <select id="baseline-select"></select>
+        </label>
+
+        <label>
+          <span>Candidate report</span>
+          <select id="candidate-select"></select>
+        </label>
+
+        <label>
+          <span>Sort deltas</span>
+          <select id="sort-select">
+            <option value="negative">Most negative first</option>
+            <option value="positive">Most positive first</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section id="metric-banner" class="panel banner muted">
+      Load the report manifest to begin.
+    </section>
+
+    <section id="coverage-line" class="panel coverage muted">
+      Waiting for two reports to compare.
+    </section>
+
+    <section class="content-grid">
+      <article class="panel">
+        <div class="panel-header">
+          <h2>AUC Delta by Species</h2>
+          <p>One row per overlapping species. Click a species to inspect its scores and variable contributions.</p>
+        </div>
+        <div class="table-wrap">
+          <table id="diff-table">
+            <thead>
+              <tr>
+                <th>Species</th>
+                <th>Delta</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-header">
+          <h2>Species Detail</h2>
+          <p>Focused view for debugging the selected species.</p>
+        </div>
+        <div id="species-detail-body" class="muted">No species selected.</div>
+      </article>
+    </section>
+  </main>
+
+  <script src="report_manifest.js"></script>
+  <script src="viewer.js"></script>
+</body>
+</html>
