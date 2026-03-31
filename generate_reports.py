@@ -15,6 +15,7 @@ TIMING_PREP_RE = re.compile(r"Preparing to process (\d+) species files")
 TIMING_FINISH_RE = re.compile(r"^\[(\d+)/(\d+)\] Finished (.+?) in ([0-9.]+)s$")
 TIMING_SKIP_RE = re.compile(r"^Skipping (.+?): insufficient presence points$")
 TIMING_RETRY_RE = re.compile(r"^Leaving (.+?) in sp_data_final for retry after failure$")
+TEST_AUC_RE = re.compile(r"Test AUC is ([0-9.]+)", re.IGNORECASE)
 TRAINING_AUC_RE = re.compile(r"training AUC is ([0-9.]+)", re.IGNORECASE)
 VERSION_RE = re.compile(r"using Maxent version ([0-9.]+)", re.IGNORECASE)
 BIO_VAR_RE = re.compile(r"^wc2\.1_30s_bio_(\d+)_fc$")
@@ -113,6 +114,7 @@ def extract_metric_from_html(html_path: Path):
     html = html_path.read_text(errors="ignore")
     soup = BeautifulSoup(html, "html.parser")
     version_match = VERSION_RE.search(html)
+    test_auc_match = TEST_AUC_RE.search(html)
     training_auc_match = TRAINING_AUC_RE.search(html)
 
     contributions = {}
@@ -128,6 +130,7 @@ def extract_metric_from_html(html_path: Path):
 
     return {
         "species": html_path.stem,
+        "test_auc": float(test_auc_match.group(1)) if test_auc_match else None,
         "training_auc": float(training_auc_match.group(1)) if training_auc_match else None,
         "contributions": contributions,
         "maxent_version": version_match.group(1).rstrip(".") if version_match else None,
@@ -146,7 +149,11 @@ def ordered_env_vars(env_vars):
 
 
 def build_auc_from_maxent_results(root: Path):
-    results_path = root / "res" / "maxentResults.csv"
+    return build_auc_from_maxent_results_dir(root / "res", root)
+
+
+def build_auc_from_maxent_results_dir(res_dir: Path, root: Path):
+    results_path = res_dir / "maxentResults.csv"
     if not results_path.exists():
         return None
 
@@ -178,7 +185,11 @@ def build_auc_from_maxent_results(root: Path):
 
 
 def build_auc_from_html(root: Path):
-    html_paths = sorted((root / "res").glob("*.html"))
+    return build_auc_from_html_dir(root / "res", root)
+
+
+def build_auc_from_html_dir(res_dir: Path, root: Path):
+    html_paths = sorted(res_dir.glob("*.html"))
     metrics = [extract_metric_from_html(path) for path in html_paths]
     env_vars = ordered_env_vars(
         {
@@ -190,12 +201,13 @@ def build_auc_from_html(root: Path):
 
     rows = []
     versions = set()
+    has_test_auc = any(item["test_auc"] is not None for item in metrics)
     for item in metrics:
         if item["maxent_version"]:
             versions.add(item["maxent_version"])
         row = {
             "Species": item["species"],
-            "Test AUC": item["training_auc"],
+            "Test AUC": item["test_auc"] if item["test_auc"] is not None else item["training_auc"],
         }
         for env_var in env_vars:
             row[env_var] = item["contributions"].get(env_var, 0.0)
@@ -205,7 +217,11 @@ def build_auc_from_html(root: Path):
     ordered_cols = ["Species", "Test AUC"] + env_vars
     out_df = out_df[ordered_cols].sort_values("Species").reset_index(drop=True)
     return out_df, {
-        "auc_source": "Training AUC parsed from per-species HTML mapped into compatibility column 'Test AUC'",
+        "auc_source": (
+            "Test AUC parsed from per-species HTML"
+            if has_test_auc
+            else "Training AUC parsed from per-species HTML mapped into compatibility column 'Test AUC'"
+        ),
         "html_report_count": len(html_paths),
         "maxent_versions_seen": sorted(versions),
         "species_count": len(out_df),
@@ -300,8 +316,8 @@ def parse_usage_log(path: Path):
     }
 
 
-def copy_model_outputs(root: Path, report_dir: Path):
-    source_dir = root / "res"
+def copy_model_outputs(root: Path, report_dir: Path, source_dir: Path | None = None):
+    source_dir = source_dir or (root / "res")
     output_dir = report_dir / "model_outputs"
     if output_dir.exists():
         shutil.rmtree(output_dir)
@@ -342,6 +358,12 @@ def infer_metric(summary: dict | None):
             "label": "Training AUC",
             "detail": auc_source,
         }
+    if "Test AUC" in auc_source:
+        return {
+            "type": "test",
+            "label": "Test AUC",
+            "detail": auc_source,
+        }
 
     return {
         "type": "test",
@@ -353,8 +375,10 @@ def infer_metric(summary: dict | None):
 def write_report_bundle(report_dir: Path, auc_df: pd.DataFrame, report_summary: dict):
     bundle = {
         "name": report_dir.name,
-        "path": report_dir.name,
-        "model_outputs_path": f"{report_dir.name}/model_outputs",
+        "path": report_summary.get("report_dir", report_dir.name),
+        "id": report_summary.get("report_id", report_dir.name),
+        "display_name": report_summary.get("report_display_name", report_dir.name),
+        "model_outputs_path": report_summary.get("model_outputs", {}).get("path", f"{report_dir.name}/model_outputs"),
         "metric": infer_metric(report_summary),
         "summary": report_summary,
         "rows": auc_df.to_dict(orient="records"),
@@ -362,29 +386,60 @@ def write_report_bundle(report_dir: Path, auc_df: pd.DataFrame, report_summary: 
     (report_dir / "report_bundle.json").write_text(json.dumps(bundle, indent=2) + "\n")
 
 
+def _load_report_entry(root: Path, report_dir: Path):
+    auc_path = report_dir / "auc_and_contributions.csv"
+    if not auc_path.exists():
+        return None
+
+    summary_path = report_dir / "report_summary.json"
+    summary = json.loads(summary_path.read_text()) if summary_path.exists() else None
+    auc_df = pd.read_csv(auc_path).sort_values("Species").reset_index(drop=True)
+    report_id = str(report_dir.relative_to(root))
+    if report_id.startswith("reports/"):
+        display_name = report_dir.name
+    else:
+        display_name = report_id
+
+    model_outputs_path = summary.get("model_outputs", {}).get("path") if summary else None
+    if not model_outputs_path:
+        model_outputs_path = str((report_dir / "model_outputs").relative_to(root))
+
+    return {
+        "name": report_dir.name,
+        "id": report_id,
+        "display_name": display_name,
+        "path": str(report_dir.relative_to(root)),
+        "model_outputs_path": model_outputs_path,
+        "metric": infer_metric(summary),
+        "summary": summary,
+        "rows": auc_df.to_dict(orient="records"),
+    }
+
+
 def build_manifest(root: Path):
+    config_path = root / "src" / "backend" / "config" / "config.json"
     reports_dir = root / "reports"
     manifest_reports = []
 
-    for report_dir in sorted([path for path in reports_dir.iterdir() if path.is_dir()], key=lambda path: path.name):
-        auc_path = report_dir / "auc_and_contributions.csv"
-        if not auc_path.exists():
-            continue
+    if reports_dir.exists():
+        for report_dir in sorted([path for path in reports_dir.iterdir() if path.is_dir()], key=lambda path: path.name):
+            entry = _load_report_entry(root, report_dir)
+            if entry:
+                manifest_reports.append(entry)
 
-        summary_path = report_dir / "report_summary.json"
-        summary = json.loads(summary_path.read_text()) if summary_path.exists() else None
-        auc_df = pd.read_csv(auc_path).sort_values("Species").reset_index(drop=True)
+    configured_run_root = root / "experiments"
+    if config_path.exists():
+        config = json.loads(config_path.read_text())
+        run_root_value = config.get("run_root", "experiments")
+        configured_run_root = Path(run_root_value) if Path(run_root_value).is_absolute() else (root / run_root_value)
 
-        manifest_reports.append(
-            {
-                "name": report_dir.name,
-                "path": report_dir.name,
-                "model_outputs_path": f"{report_dir.name}/model_outputs",
-                "metric": infer_metric(summary),
-                "summary": summary,
-                "rows": auc_df.to_dict(orient="records"),
-            }
-        )
+    if configured_run_root.exists():
+        experiment_report_dirs = sorted(configured_run_root.glob("*/reports/*"))
+        for report_dir in experiment_report_dirs:
+            if report_dir.is_dir():
+                entry = _load_report_entry(root, report_dir)
+                if entry:
+                    manifest_reports.append(entry)
 
     manifest = {
         "generated_at": datetime.now().isoformat(),
@@ -399,31 +454,39 @@ def build_manifest(root: Path):
     return manifest_path, len(manifest_reports)
 
 
-def main():
-    args = parse_args()
-    root = Path(args.root).resolve()
-    run_identity = get_run_identity(root)
-    report_dir = make_report_dir(root, args.name, run_identity)
+def generate_report_bundle(
+    root: Path,
+    report_dir: Path,
+    run_identity: dict,
+    res_dir: Path | None = None,
+    logs_dir: Path | None = None,
+    display_name: str | None = None,
+    report_id: str | None = None,
+):
+    res_dir = res_dir or (root / "res")
+    logs_dir = logs_dir or (root / "logs")
 
-    auc_bundle = build_auc_from_html(root)
+    auc_bundle = build_auc_from_html_dir(res_dir, root)
     if auc_bundle[0].empty:
-        auc_bundle = build_auc_from_maxent_results(root)
+        auc_bundle = build_auc_from_maxent_results_dir(res_dir, root)
         if auc_bundle is None:
             raise FileNotFoundError(
-                "Could not find per-species HTML reports or res/maxentResults.csv to build auc_and_contributions.csv."
+                f"Could not find per-species HTML reports or maxentResults.csv under {res_dir}."
             )
     auc_df, auc_meta = auc_bundle
 
     auc_path = report_dir / "auc_and_contributions.csv"
     auc_df.to_csv(auc_path, index=False)
 
-    timing_summary = parse_timing_log(root / "logs" / "maxent_timing.txt")
-    usage_summary = parse_usage_log(root / "logs" / "maxent_usage.csv")
-    model_outputs_summary = copy_model_outputs(root, report_dir)
+    timing_summary = parse_timing_log(logs_dir / "maxent_timing.txt")
+    usage_summary = parse_usage_log(logs_dir / "maxent_usage.csv")
+    model_outputs_summary = copy_model_outputs(root, report_dir, source_dir=res_dir)
 
     report_summary = {
         "generated_at": datetime.now().isoformat(),
         "report_dir": str(report_dir.relative_to(root)),
+        "report_id": report_id or str(report_dir.relative_to(root)),
+        "report_display_name": display_name or str(report_dir.relative_to(root)),
         "run_signature": run_identity["signature"],
         "run_anchor_timestamp": run_identity["anchor_timestamp"],
         "run_identity": run_identity["metadata"],
@@ -432,7 +495,7 @@ def main():
         "usage": usage_summary,
         "model_outputs": model_outputs_summary,
         "notes": [
-            "This report bundle is derived from the current PlantWise_v0 run artifacts.",
+            "This report bundle is derived from PlantWise_v0 run artifacts.",
             "The generated auc_and_contributions.csv uses the legacy filename for compatibility.",
             "If Maxent test AUC is unavailable in current outputs, Training AUC is mapped into the compatibility column 'Test AUC'.",
         ],
@@ -443,13 +506,32 @@ def main():
     )
     write_report_bundle(report_dir, auc_df, report_summary)
     manifest_path, manifest_count = build_manifest(root)
+    return {
+        "report_dir": report_dir,
+        "auc_path": auc_path,
+        "report_summary": report_summary,
+        "model_outputs_summary": model_outputs_summary,
+        "manifest_path": manifest_path,
+        "manifest_count": manifest_count,
+    }
 
-    print(f"Wrote report bundle to {report_dir}")
-    print(f"  - {auc_path.name}")
+
+def main():
+    args = parse_args()
+    root = Path(args.root).resolve()
+    run_identity = get_run_identity(root)
+    report_dir = make_report_dir(root, args.name, run_identity)
+    result = generate_report_bundle(root=root, report_dir=report_dir, run_identity=run_identity)
+
+    print(f"Wrote report bundle to {result['report_dir']}")
+    print(f"  - {result['auc_path'].name}")
     print(f"  - report_summary.json")
     print(f"  - report_bundle.json")
-    print(f"  - model_outputs/ ({model_outputs_summary['file_count']} files, {model_outputs_summary['html_count']} html files)")
-    print(f"Updated {manifest_path} with {manifest_count} report entries")
+    print(
+        f"  - model_outputs/ ({result['model_outputs_summary']['file_count']} files, "
+        f"{result['model_outputs_summary']['html_count']} html files)"
+    )
+    print(f"Updated {result['manifest_path']} with {result['manifest_count']} report entries")
 
 
 if __name__ == "__main__":

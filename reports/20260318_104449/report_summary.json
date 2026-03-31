@@ -1,0 +1,152 @@
+{
+  "generated_at": "2026-03-25T18:34:06.222951",
+  "report_dir": "reports/20260318_104449",
+  "run_signature": "00c2f42db9f2",
+  "run_anchor_timestamp": "20260318_104449",
+  "run_identity": {
+    "sources": [
+      {
+        "path": "logs/maxent_timing.txt",
+        "size": 255117,
+        "mtime_ns": 1773810889775078188
+      },
+      {
+        "path": "logs/maxent_usage.csv",
+        "size": 965772,
+        "mtime_ns": 1773782512325059097
+      },
+      {
+        "path": "res/*.html",
+        "count": 433,
+        "oldest_mtime_ns": 1773768911556208796,
+        "newest_mtime_ns": 1773782513185059428
+      }
+    ],
+    "anchor": "2026-03-18T10:44:49.775078"
+  },
+  "auc": {
+    "auc_source": "Training AUC parsed from per-species HTML mapped into compatibility column 'Test AUC'",
+    "html_report_count": 433,
+    "maxent_versions_seen": [
+      "3.4.4"
+    ],
+    "species_count": 433
+  },
+  "timing": {
+    "present": true,
+    "path": "/home/desinotorious/src/github.com/bprashanth/plantwise/PlantWise_v0/logs/maxent_timing.txt",
+    "prepared_total": 514,
+    "finished_count": 514,
+    "avg_seconds": 26.564,
+    "max_seconds": 71.9,
+    "min_seconds": 0.0,
+    "skipped_insufficient_presence_count": 79,
+    "skipped_insufficient_presence_species": [
+      "Actinodaphne_lawsonii.csv",
+      "Meliosma_simplicifolia.csv",
+      "Apollonias_arnottii.csv",
+      "Olea_paniculata.csv",
+      "Beilschmiedia_gemmiflora.csv",
+      "Ixora_anamalayana.csv",
+      "Eugenia_floccosa.csv",
+      "Schefflera_capitata.csv",
+      "Syzygium_travancoricum.csv",
+      "Debregeasia_longifolia.csv",
+      "Cynometra_bourdillonii.csv",
+      "Fagraea_ceilanica.csv",
+      "Memecylon_subramanii.csv",
+      "Erythroxylum_obtusifolium.csv",
+      "Olax_scandens.csv",
+      "Schefflera_racemosa.csv",
+      "Glyptopetalum_grandiflorum.csv",
+      "Cocculus_laurifolius.csv",
+      "Alphonsea_lutea.csv",
+      "Hopea_utilis.csv",
+      "Dodonaea_viscosa.csv",
+      "Melastoma_malabathricum.csv",
+      "Lasianthus_capitulatus.csv",
+      "Viburnum_punctatum.csv",
+      "Psychotria_macrocarpa.csv",
+      "Cleidion_spiciflorum.csv",
+      "Eugenia_aloysii.csv",
+      "Capparis_moonii.csv",
+      "Gymnosporia_rothiana.csv",
+      "Spondias_indica.csv",
+      "Pittosporum_dasycaulon.csv",
+      "Dysoxylum_beddomei.csv",
+      "Corypha_umbraculifera.csv",
+      "Monosis_wightiana.csv",
+      "Justicia_adhatoda.csv",
+      "Monosis_travancorica.csv",
+      "Syzygium_makul.csv",
+      "Antidesma_alexiteria.csv",
+      "Psydrax_pergracilis.csv",
+      "Mitrephora_heyneana.csv",
+      "Symplocos_monantha.csv",
+      "Memecylon_angustifolium.csv",
+      "Ehretia_canarensis.csv",
+      "Actinodaphne_campanulata.csv",
+      "Dalbergia_horrida.csv",
+      "Eugenia_rottleriana.csv",
+      "Canthium_travancoricum.csv",
+      "Syzygium_neesianum.csv",
+      "Monoon_fragrans.csv",
+      "Polyalthia_shendurunii.csv",
+      "Lasianthus_blumeanus.csv",
+      "Syzygium_chavaran.csv",
+      "Diospyros_neilgerrensis.csv",
+      "Ixora_UM.csv",
+      "Gomphia_serrata.csv",
+      "Eugenia_mabaeoides.csv",
+      "Symplocos_wynadense.csv",
+      "Goniothalamus_wynaadensis.csv",
+      "Litsea_glutinosa.csv",
+      "Blachia_umbellata.csv",
+      "Boehmeria_depauperata.csv",
+      "Microtropis_stocksii.csv",
+      "Neolamarckia_cadamba.csv",
+      "Nothopegia_heyneana.csv",
+      "Ixora_polyantha.csv",
+      "Magnolia_champaca.csv",
+      "Drypetes_gardneri.csv",
+      "Croton_klotzschianus.csv",
+      "Psychotria_connata.csv",
+      "Pittosporum_neelgherrense.csv",
+      "Litsea_nigrescens.csv",
+      "Symplocos_pulchra.csv",
+      "Syzygium_palghatense.csv",
+      "Diospyros_foliolosa.csv",
+      "Uvaria_narum.csv",
+      "Isonandra_perrottetiana.csv",
+      "Psychotria_tree.csv",
+      "Uvaria_hookeri.csv",
+      "Miliusa_wightiana.csv"
+    ],
+    "retry_after_failure_count": 2,
+    "retry_after_failure_species": [
+      "Morinda_coreia.csv",
+      "Anacardium_occidentale.csv"
+    ]
+  },
+  "usage": {
+    "present": true,
+    "path": "/home/desinotorious/src/github.com/bprashanth/plantwise/PlantWise_v0/logs/maxent_usage.csv",
+    "sample_count": 13616,
+    "avg_total_cpu_percent": 117.235,
+    "max_total_cpu_percent": 410.0,
+    "avg_total_rss_mb": 490.509,
+    "max_total_rss_mb": 814.55,
+    "max_observed_single_pid_rss_mb": 814.55
+  },
+  "model_outputs": {
+    "present": true,
+    "path": "reports/20260318_104449/model_outputs",
+    "file_count": 4744,
+    "html_count": 433
+  },
+  "notes": [
+    "This report bundle is derived from the current PlantWise_v0 run artifacts.",
+    "The generated auc_and_contributions.csv uses the legacy filename for compatibility.",
+    "If Maxent test AUC is unavailable in current outputs, Training AUC is mapped into the compatibility column 'Test AUC'."
+  ]
+}

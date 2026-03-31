@@ -321,7 +321,7 @@ def run_java_command(species_file):
         "java", "-Djava.awt.headless=true", "-cp", "maxent.jar", "density.MaxEnt",
         "nowarnings", "noprefixes", "jackknife",
         "outputdirectory=res", f"samplesfile=sp_data_final/{species_file}",
-        "environmentallayers=final_attributes", "autoRun", "visible=False"
+        "environmentallayers=final_attributes", "autoRun", "visible=False", "randomtestpoints=30"
     ]
 
     try:

@@ -4,6 +4,17 @@
 
 This repository intentionally does not track private or manually seeded datasets. Contributors are expected to populate those files locally before running the web app, training the model, or comparing outputs.
 
+## New Files
+
+The repository root still contains the original baseline scripts and app code. A few files and directories were added later to support regression analysis and single-species experiment runs without changing the baseline training flow.
+
+- `generate_reports.py`
+  New helper that packages run artifacts into report bundles for regression comparison.
+- `reports/`
+  New regression report store and static comparison viewer.
+- `src/`
+  New experiment/debugging implementation with its own backend, frontend, and config, separate from the original baseline runner and backend app.
+
 ## What is tracked
 
 - Model harness and binary in the repo root.
@@ -19,6 +30,13 @@ This repository intentionally does not track private or manually seeded datasets
 - Trained model outputs (tif/asc files).
 - Virtual environments, node packages and editor noise.
 - logs/ directory. This data is only included in aggregate reports. 
+
+## Data format
+
+Presence points 
+```
+Species,Latitude,Longitude
+```
 
 ## Python setup
 
@@ -86,6 +104,21 @@ To verify the split-input state before training:
 ls sp_data_final | head
 ls sp_data_final/species_presence_counts.csv
 ```
+
+### Generate reports 
+
+To generate the auc report from all the independent per-species model outputs, run 
+```bash
+cd PlantWise_v0
+python3 generate_reports.py
+```
+
+That creates a new timestamped directory under `reports/`, for example:
+
+```text
+reports/20260324_131500/
+```
+Which can be opened via the regression viewer - [Jump to section](#3-to-verify-regression)
 
 ### Run the app
 
@@ -335,6 +368,73 @@ How the comparison works:
 - Select `baseline` as the baseline report and the timestamped directory as the candidate report.
 
 This keeps the regression artifacts safe to commit because they are summaries and reports, not the private raw datasets themselves.
+
+### 4. To run single-species experiments
+
+There is also a small experiment service under `src/` for validating uploaded datasets, trying alternate Maxent args, and running one species into an isolated run directory.
+
+Layout:
+
+```text
+PlantWise_v0/
+  src/
+    backend/
+      app.py
+      config/
+        config.json
+    frontend/
+      index.html
+      app.js
+      styles.css
+```
+
+Config is in `src/backend/config/config.json`:
+
+- `run_root`
+  The parent directory where all experiment runs are stored.
+- `seed_data`
+  The seed CSV that every uploaded dataset is added to in memory. By default this points to `Final_Species.csv`.
+- `maxent_args`
+  The default Maxent args used when the form leaves args empty.
+- `maxent_allowed_args`
+  The allowed Maxent arg names used during validation. This list was prepopulated from the current Maxent parameter set and can be edited later if needed.
+
+The upload schema must match `Final_Species.csv` exactly:
+
+```text
+Species,Latitude,Longitude
+```
+
+`seed_data` is resolved relative to the `PlantWise_v0` repository root, so the default value `Final_Species.csv` refers to:
+
+```text
+PlantWise_v0/Final_Species.csv
+```
+
+To start the experiment service:
+
+```bash
+cd PlantWise_v0
+source .venv/bin/activate
+python3 src/backend/app.py
+```
+
+Then open:
+
+```text
+http://127.0.0.1:5050/
+```
+
+Current flow:
+
+1. Enter a run name and validate it against the configured `run_root`.
+2. Upload one or more CSVs and validate that they match the seed schema and contain the target species.
+3. Enter optional Maxent args and validate them against `maxent_allowed_args`.
+4. Submit the run.
+5. The backend creates `<run_root>/<name>/`, stores uploaded data, filters the requested species, runs Maxent into `<run_root>/<name>/model/res/`, writes logs, and generates a report bundle under `<run_root>/<name>/reports/`.
+6. Visit `/runs/<name>` to refresh status and inspect logs.
+
+The root regression viewer manifest is also refreshed after experiment report generation, so experiment report bundles can be compared alongside the checked-in baseline and full-run reports.
 
 ## Current policy
 
