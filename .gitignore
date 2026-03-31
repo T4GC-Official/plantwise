@@ -96,6 +96,12 @@ cache/
 *.log
 logs/
 
+# Experiment and report runtime state
+experiments/
+reports/report_manifest.js
+reports/*/model_outputs/
+reports/*/report_bundle.json
+
 
 ############################
 # Maxent
@@ -103,4 +109,3 @@ logs/
 
 *.cache
 *.bat
-

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PlantWise Experiments</title>
+  <link rel="stylesheet" href="/experiments/static/styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">PlantWise_v0</p>
+      <h1>Run Experiment</h1>
+    </header>
+
+    <section class="panel">
+      <div id="config-summary" class="muted">Loading config...</div>
+    </section>
+
+    <section class="panel form-panel">
+      <form id="run-form">
+        <label>
+          <span>Run name</span>
+          <div class="field-row">
+            <input id="name" name="name" type="text" required>
+            <button type="button" id="validate-name">Validate</button>
+          </div>
+          <div id="name-feedback" class="feedback muted"></div>
+        </label>
+
+        <label>
+          <span>Species</span>
+          <input id="species" name="species" type="text" required>
+        </label>
+
+        <label>
+          <span>Additional datasets</span>
+          <div class="field-row">
+            <input id="files" name="files" type="file" multiple accept=".csv,text/csv">
+            <button type="button" id="validate-dataset">Validate</button>
+          </div>
+          <div id="dataset-feedback" class="feedback muted"></div>
+        </label>
+
+        <label>
+          <span>Maxent args</span>
+          <div class="field-row">
+            <textarea id="maxent-args" name="maxent_args" rows="4" placeholder="randomtestpoints=30"></textarea>
+            <button type="button" id="validate-args">Validate</button>
+          </div>
+          <div id="args-feedback" class="feedback muted"></div>
+        </label>
+
+        <div class="actions">
+          <button type="submit" class="primary">Run experiment</button>
+          <a class="secondary" href="/runs">All runs</a>
+        </div>
+      </form>
+    </section>
+  </main>
+  <script src="/experiments/static/app.js"></script>
+</body>
+</html>

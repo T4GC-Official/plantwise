@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: #f6f2ea;
+  color: #1d211f;
+}
+
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 32px 18px 48px;
+}
+
+.hero {
+  margin-bottom: 18px;
+}
+
+.eyebrow {
+  color: #164b46;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.panel {
+  background: #fffdf8;
+  border: 1px solid #ddd3c1;
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+.form-panel form {
+  display: grid;
+  gap: 18px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d6cebf;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: start;
+}
+
+button,
+.secondary {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid #164b46;
+  background: #fff;
+  color: #164b46;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button.primary {
+  background: #164b46;
+  color: white;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.feedback {
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.feedback.ok {
+  color: #1f6d47;
+}
+
+.feedback.error {
+  color: #9b2d2d;
+}
+
+.muted {
+  color: #6f756f;
+}

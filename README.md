@@ -4,26 +4,39 @@
 
 This repository intentionally does not track private or manually seeded datasets. Contributors are expected to populate those files locally before running the web app, training the model, or comparing outputs.
 
-Baseline policy:
+## New Files
 
-- Only code and dependency metadata are part of this baseline.
-- The Maxent binary is not tracked in this repository.
-- Private/manual datasets are not tracked in this repository.
+The repository root still contains the original baseline scripts and app code. A few files and directories were added later to support regression analysis and single-species experiment runs without changing the baseline training flow.
+
+- `generate_reports.py`
+  New helper that packages run artifacts into report bundles for regression comparison.
+- `reports/`
+  New regression report store and static comparison viewer.
+- `src/`
+  New experiment/debugging implementation with its own backend, frontend, and config, separate from the original baseline runner and backend app.
 
 ## What is tracked
 
-- Model source code in the repo root.
+- Model harness and binary in the repo root.
 - Backend source in `backend/app/`.
 - Frontend source in `frontend/habitability-tool/`.
 - Dependency manifests such as `requirements.txt` and frontend `package.json` files.
+- Reports that contain aggregate trends.
 
 ## What is not tracked
 
-- Private or manually seeded datasets.
-- Environmental raster layers.
-- Trained model outputs.
-- Local build outputs and dependency directories.
-- Virtual environments and editor noise.
+- Datasets.
+- Environmental layers.
+- Trained model outputs (tif/asc files).
+- Virtual environments, node packages and editor noise.
+- logs/ directory. This data is only included in aggregate reports. 
+
+## Data format
+
+Presence points 
+```
+Species,Latitude,Longitude
+```
 
 ## Python setup
 
@@ -36,6 +49,20 @@ uv pip install -r requirements.txt
 ```
 
 ## Quickstart
+
+
+### Run one raw maxent iteration 
+
+From the root of this repo run
+```console
+$ uv venv .venv
+$ source .venv/bin/activate 
+# This assumes you have the directory setup described in "To train the model" section 
+$ python3 separateSpecies.py
+$ mkdir -p /tmp/deldata
+$ java -Djava.awt.headless=true -cp maxent.jar density.MaxEnt nowarnings noprefixes jackknife outputdirectory=/tmp/deldata samplesfile=sp_data_final/Morinda_coreia.csv environmentallayers=final_attributes autoRun visible=False
+```
+This runs maxent once, against the species `Morinda_coreia.csv`, using the env layers in `final_attributes` and puts the output in `/tmp/deldata`
 
 ### Train the model
 
@@ -78,6 +105,21 @@ ls sp_data_final | head
 ls sp_data_final/species_presence_counts.csv
 ```
 
+### Generate reports 
+
+To generate the auc report from all the independent per-species model outputs, run 
+```bash
+cd PlantWise_v0
+python3 generate_reports.py
+```
+
+That creates a new timestamped directory under `reports/`, for example:
+
+```text
+reports/20260324_131500/
+```
+Which can be opened via the regression viewer - [Jump to section](#3-to-verify-regression)
+
 ### Run the app
 
 Assumes you have already seeded:
@@ -117,6 +159,27 @@ npm start
 There is also a legacy `frontend/package.json` at the parent level (recorded for baseline accuracy). Treat `frontend/habitability-tool/package.json` as the source of truth for the web app.
 
 ## Internals: data, bootstrap, regression etc.. 
+
+## 0. End-to-end model training pipeline 
+
+
+Baseline harness: 
+
+1. User seeds `Final_Species.csv`, `maxent.jar`, and `final_attributes/`.
+2. User runs `separateSpecies.py`.
+3. That creates:
+- `sp_data_final/<species>.csv`
+- `sp_data_final/species_presence_counts.csv`
+4. User runs `InitialImplementation.py`.
+5. That runs Maxent per species CSV, writes Maxent outputs into `res/`, converts `.asc` to `tif_data_final/`, and moves successful species CSVs
+into `pr_sp_data_final/`.
+6. User runs `generate_reports.py`.
+7. That copies the run artifacts into `reports/<run-id>/` and refreshes the regression viewer manifest.
+8. User opens `reports/index.html` and compares the new report against `reports/baseline`.
+
+For debugging, there is a separate single species experimentation flow which is net new which doesn't touch the queue directories or disrupt the end to end flow above. It writes to `experiments/`.
+
+
 
 ### 1. To run the end-to-end web app
 
@@ -250,32 +313,128 @@ Dataset source:
 
 - Data location: https://drive.google.com/drive/folders/1Z0fG6c9xir-KALGFmKkOPUeF1LxHJ-EF?usp=drive_link
 
-### 3. To verify regressions (planned) 
+### 3. To verify regressions
 
-Regression verification should prefer derived, non-sensitive artifacts rather than raw occurrence points or private rasters.
+Regression verification in this repository is based on derived report bundles rather than the private raw occurrence or raster inputs.
 
-Recommended local and versioned layout:
+Current layout:
 
 ```text
 PlantWise_v0/
-  regression_data/
-    README.md
-    golden/
+  reports/
+    baseline/
       auc_and_contributions.csv
-      smoke_test_manifest.json
-      expected_summary.json
+    <timestamp>/
+      auc_and_contributions.csv
+      report_summary.json
+      report_bundle.json
+      model_outputs/
+        <species>.html
+    report_manifest.js
+    index.html
 ```
 
-Suggested contents:
+How to generate a new report bundle after a training run:
 
-- `golden/auc_and_contributions.csv`
-  A checked-in golden summary of AUC and variable contributions from a known-good run.
-- `golden/smoke_test_manifest.json`
-  The species subset, run parameters, and input hashes used for regression checks.
-- `golden/expected_summary.json`
-  Derived counts and tolerances such as number of processed species, missing outputs, and acceptable score drift.
+```bash
+cd PlantWise_v0
+python3 generate_reports.py
+```
 
-The intention is that regression artifacts are safe to commit because they contain summaries and expectations, not the private raw datasets themselves.
+That creates a new timestamped directory under `reports/`, for example:
+
+```text
+reports/20260324_131500/
+```
+
+Each generated report bundle contains:
+
+- `auc_and_contributions.csv`
+  The species-level comparison surface used for regression checking.
+- `report_summary.json`
+  Timing, CPU/RAM, metric-source, and report metadata for the run.
+- `report_bundle.json`
+  Serialized data used by the browser dashboard.
+- `model_outputs/`
+  A preserved copy of the Maxent `res/` output tree for that run, including species HTML files, linked plots, and sibling raw outputs. This allows the dashboard to deep-link into the full species report even after `res/` is overwritten by later runs.
+
+`generate_reports.py` also refreshes `reports/report_manifest.js`, which is what powers the dropdown list in `reports/index.html`.
+
+How the comparison works:
+
+- `reports/baseline/auc_and_contributions.csv` is the checked-in reference report.
+- Each timestamped directory is a candidate run.
+- Open `reports/index.html` in a browser.
+- Select `baseline` as the baseline report and the timestamped directory as the candidate report.
+
+This keeps the regression artifacts safe to commit because they are summaries and reports, not the private raw datasets themselves.
+
+### 4. To run single-species experiments
+
+There is also a small experiment service under `src/` for validating uploaded datasets, trying alternate Maxent args, and running one species into an isolated run directory.
+
+Layout:
+
+```text
+PlantWise_v0/
+  src/
+    backend/
+      app.py
+      config/
+        config.json
+    frontend/
+      index.html
+      app.js
+      styles.css
+```
+
+Config is in `src/backend/config/config.json`:
+
+- `run_root`
+  The parent directory where all experiment runs are stored.
+- `seed_data`
+  The seed CSV that every uploaded dataset is added to in memory. By default this points to `Final_Species.csv`.
+- `maxent_args`
+  The default Maxent args used when the form leaves args empty.
+- `maxent_allowed_args`
+  The allowed Maxent arg names used during validation. This list was prepopulated from the current Maxent parameter set and can be edited later if needed.
+
+The upload schema must match `Final_Species.csv` exactly:
+
+```text
+Species,Latitude,Longitude
+```
+
+`seed_data` is resolved relative to the `PlantWise_v0` repository root, so the default value `Final_Species.csv` refers to:
+
+```text
+PlantWise_v0/Final_Species.csv
+```
+
+To start the experiment service:
+
+```bash
+cd PlantWise_v0
+source .venv/bin/activate
+python3 src/backend/app.py
+```
+
+Then open:
+
+```text
+http://127.0.0.1:5050/
+```
+
+Current flow:
+
+1. Enter a run name and validate it against the configured `run_root`.
+2. Upload one or more CSVs and validate that they match the seed schema and contain the target species.
+3. Enter optional Maxent args and validate them against `maxent_allowed_args`.
+4. Submit the run.
+5. The backend creates `<run_root>/<name>/`, stores uploaded data, filters the requested species, runs Maxent into `<run_root>/<name>/model/res/`, writes logs, and generates a report bundle under `<run_root>/<name>/reports/`.
+6. Visit `/runs/<name>` to refresh status and inspect logs.
+
+The root regression viewer manifest is also refreshed after experiment report generation, so experiment report bundles can be compared alongside the checked-in baseline and full-run reports.
 
 ## Current policy
 

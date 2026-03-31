@@ -1,0 +1,56 @@
+{
+  "generated_at": "2026-03-30T14:41:10.364700",
+  "report_dir": "reports/20260330_095938",
+  "report_id": "reports/20260330_095938",
+  "report_display_name": "reports/20260330_095938",
+  "run_signature": "5c6e93c8f766",
+  "run_anchor_timestamp": "20260330_095938",
+  "run_identity": {
+    "sources": [
+      {
+        "path": "logs/maxent_usage.csv",
+        "size": 725320,
+        "mtime_ns": 1774861421489372930
+      },
+      {
+        "path": "res/*.html",
+        "count": 395,
+        "oldest_mtime_ns": 1774844978315382546,
+        "newest_mtime_ns": 1774861422384365706
+      }
+    ],
+    "anchor": "2026-03-30T09:59:38.315382"
+  },
+  "auc": {
+    "auc_source": "Test AUC parsed from per-species HTML",
+    "html_report_count": 395,
+    "maxent_versions_seen": [
+      "3.4.4"
+    ],
+    "species_count": 395
+  },
+  "timing": {
+    "present": false
+  },
+  "usage": {
+    "present": true,
+    "path": "/home/desinotorious/src/github.com/bprashanth/plantwise/PlantWise_v0/logs/maxent_usage.csv",
+    "sample_count": 10379,
+    "avg_total_cpu_percent": 120.181,
+    "max_total_cpu_percent": 410.0,
+    "avg_total_rss_mb": 493.175,
+    "max_total_rss_mb": 814.2,
+    "max_observed_single_pid_rss_mb": 814.2
+  },
+  "model_outputs": {
+    "present": true,
+    "path": "reports/20260330_095938/model_outputs",
+    "file_count": 5133,
+    "html_count": 395
+  },
+  "notes": [
+    "This report bundle is derived from PlantWise_v0 run artifacts.",
+    "The generated auc_and_contributions.csv uses the legacy filename for compatibility.",
+    "If Maxent test AUC is unavailable in current outputs, Training AUC is mapped into the compatibility column 'Test AUC'."
+  ]
+}

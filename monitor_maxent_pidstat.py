@@ -1,3 +1,5 @@
+# The purpose of this script is to monitor the cpu/ram usage via sampling,
+# during the InitialImplementation.py run. See README.md for invocation. 
 import argparse
 import csv
 import os
