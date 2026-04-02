@@ -61,6 +61,16 @@ Then open:
 http://127.0.0.1:5050/
 ```
 
+## Docker 
+
+```
+$ cd ../
+
+# Run from the root dir 
+$ docker build -t plantwise-v0-regression:0.1 .
+$ docker run --rm -p 5050:5050 plantwise-v0-regression:0.1
+```
+
 ## Notes
 
 - Uploaded CSVs must match the seed schema exactly:
