@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-03-30T14:41:10.364700",
+  "generated_at": "2026-04-01T09:49:03.845358",
   "report_dir": "reports/20260330_095938",
   "report_id": "reports/20260330_095938",
-  "report_display_name": "reports/20260330_095938",
+  "report_display_name": "20260330_095938",
   "run_signature": "5c6e93c8f766",
   "run_anchor_timestamp": "20260330_095938",
   "run_identity": {
@@ -43,10 +43,14 @@
     "max_observed_single_pid_rss_mb": 814.2
   },
   "model_outputs": {
-    "present": true,
+    "present": false,
     "path": "reports/20260330_095938/model_outputs",
-    "file_count": 5133,
-    "html_count": 395
+    "file_count": 0,
+    "html_count": 0
+  },
+  "maxent_args": {
+    "present": true,
+    "command_line_used": "nowarnings noprefixes jackknife outputdirectory=res samplesfile=sp_data_final/Acrocarpus_fraxinifolius.csv environmentallayers=final_attributes autoRun visible=False randomtestpoints=30"
   },
   "notes": [
     "This report bundle is derived from PlantWise_v0 run artifacts.",

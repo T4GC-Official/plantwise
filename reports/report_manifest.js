@@ -1,11 +1,11 @@
 window.REPORT_MANIFEST = {
-  "generated_at": "2026-03-31T18:28:57.093757",
+  "generated_at": "2026-04-01T13:25:20.040331",
   "reports": [
     {
       "name": "20260318_104449",
+      "path": "reports/20260318_104449",
       "id": "reports/20260318_104449",
       "display_name": "20260318_104449",
-      "path": "reports/20260318_104449",
       "model_outputs_path": "reports/20260318_104449/model_outputs",
       "metric": {
         "type": "train",
@@ -13,30 +13,27 @@ window.REPORT_MANIFEST = {
         "detail": "Training AUC parsed from per-species HTML mapped into compatibility column 'Test AUC'"
       },
       "summary": {
-        "generated_at": "2026-03-25T18:34:06.222951",
+        "generated_at": "2026-04-01T09:48:59.590927",
         "report_dir": "reports/20260318_104449",
-        "run_signature": "00c2f42db9f2",
-        "run_anchor_timestamp": "20260318_104449",
+        "report_id": "reports/20260318_104449",
+        "report_display_name": "20260318_104449",
+        "run_signature": "5c6e93c8f766",
+        "run_anchor_timestamp": "20260330_095938",
         "run_identity": {
           "sources": [
             {
-              "path": "logs/maxent_timing.txt",
-              "size": 255117,
-              "mtime_ns": 1773810889775078188
-            },
-            {
               "path": "logs/maxent_usage.csv",
-              "size": 965772,
-              "mtime_ns": 1773782512325059097
+              "size": 725320,
+              "mtime_ns": 1774861421489372930
             },
             {
               "path": "res/*.html",
-              "count": 433,
-              "oldest_mtime_ns": 1773768911556208796,
-              "newest_mtime_ns": 1773782513185059428
+              "count": 395,
+              "oldest_mtime_ns": 1774844978315382546,
+              "newest_mtime_ns": 1774861422384365706
             }
           ],
-          "anchor": "2026-03-18T10:44:49.775078"
+          "anchor": "2026-03-30T09:59:38.315382"
         },
         "auc": {
           "auc_source": "Training AUC parsed from per-species HTML mapped into compatibility column 'Test AUC'",
@@ -47,119 +44,30 @@ window.REPORT_MANIFEST = {
           "species_count": 433
         },
         "timing": {
-          "present": true,
-          "path": "/home/desinotorious/src/github.com/bprashanth/plantwise/PlantWise_v0/logs/maxent_timing.txt",
-          "prepared_total": 514,
-          "finished_count": 514,
-          "avg_seconds": 26.564,
-          "max_seconds": 71.9,
-          "min_seconds": 0.0,
-          "skipped_insufficient_presence_count": 79,
-          "skipped_insufficient_presence_species": [
-            "Actinodaphne_lawsonii.csv",
-            "Meliosma_simplicifolia.csv",
-            "Apollonias_arnottii.csv",
-            "Olea_paniculata.csv",
-            "Beilschmiedia_gemmiflora.csv",
-            "Ixora_anamalayana.csv",
-            "Eugenia_floccosa.csv",
-            "Schefflera_capitata.csv",
-            "Syzygium_travancoricum.csv",
-            "Debregeasia_longifolia.csv",
-            "Cynometra_bourdillonii.csv",
-            "Fagraea_ceilanica.csv",
-            "Memecylon_subramanii.csv",
-            "Erythroxylum_obtusifolium.csv",
-            "Olax_scandens.csv",
-            "Schefflera_racemosa.csv",
-            "Glyptopetalum_grandiflorum.csv",
-            "Cocculus_laurifolius.csv",
-            "Alphonsea_lutea.csv",
-            "Hopea_utilis.csv",
-            "Dodonaea_viscosa.csv",
-            "Melastoma_malabathricum.csv",
-            "Lasianthus_capitulatus.csv",
-            "Viburnum_punctatum.csv",
-            "Psychotria_macrocarpa.csv",
-            "Cleidion_spiciflorum.csv",
-            "Eugenia_aloysii.csv",
-            "Capparis_moonii.csv",
-            "Gymnosporia_rothiana.csv",
-            "Spondias_indica.csv",
-            "Pittosporum_dasycaulon.csv",
-            "Dysoxylum_beddomei.csv",
-            "Corypha_umbraculifera.csv",
-            "Monosis_wightiana.csv",
-            "Justicia_adhatoda.csv",
-            "Monosis_travancorica.csv",
-            "Syzygium_makul.csv",
-            "Antidesma_alexiteria.csv",
-            "Psydrax_pergracilis.csv",
-            "Mitrephora_heyneana.csv",
-            "Symplocos_monantha.csv",
-            "Memecylon_angustifolium.csv",
-            "Ehretia_canarensis.csv",
-            "Actinodaphne_campanulata.csv",
-            "Dalbergia_horrida.csv",
-            "Eugenia_rottleriana.csv",
-            "Canthium_travancoricum.csv",
-            "Syzygium_neesianum.csv",
-            "Monoon_fragrans.csv",
-            "Polyalthia_shendurunii.csv",
-            "Lasianthus_blumeanus.csv",
-            "Syzygium_chavaran.csv",
-            "Diospyros_neilgerrensis.csv",
-            "Ixora_UM.csv",
-            "Gomphia_serrata.csv",
-            "Eugenia_mabaeoides.csv",
-            "Symplocos_wynadense.csv",
-            "Goniothalamus_wynaadensis.csv",
-            "Litsea_glutinosa.csv",
-            "Blachia_umbellata.csv",
-            "Boehmeria_depauperata.csv",
-            "Microtropis_stocksii.csv",
-            "Neolamarckia_cadamba.csv",
-            "Nothopegia_heyneana.csv",
-            "Ixora_polyantha.csv",
-            "Magnolia_champaca.csv",
-            "Drypetes_gardneri.csv",
-            "Croton_klotzschianus.csv",
-            "Psychotria_connata.csv",
-            "Pittosporum_neelgherrense.csv",
-            "Litsea_nigrescens.csv",
-            "Symplocos_pulchra.csv",
-            "Syzygium_palghatense.csv",
-            "Diospyros_foliolosa.csv",
-            "Uvaria_narum.csv",
-            "Isonandra_perrottetiana.csv",
-            "Psychotria_tree.csv",
-            "Uvaria_hookeri.csv",
-            "Miliusa_wightiana.csv"
-          ],
-          "retry_after_failure_count": 2,
-          "retry_after_failure_species": [
-            "Morinda_coreia.csv",
-            "Anacardium_occidentale.csv"
-          ]
+          "present": false
         },
         "usage": {
           "present": true,
           "path": "/home/desinotorious/src/github.com/bprashanth/plantwise/PlantWise_v0/logs/maxent_usage.csv",
-          "sample_count": 13616,
-          "avg_total_cpu_percent": 117.235,
+          "sample_count": 10379,
+          "avg_total_cpu_percent": 120.181,
           "max_total_cpu_percent": 410.0,
-          "avg_total_rss_mb": 490.509,
-          "max_total_rss_mb": 814.55,
-          "max_observed_single_pid_rss_mb": 814.55
+          "avg_total_rss_mb": 493.175,
+          "max_total_rss_mb": 814.2,
+          "max_observed_single_pid_rss_mb": 814.2
         },
         "model_outputs": {
-          "present": true,
+          "present": false,
           "path": "reports/20260318_104449/model_outputs",
-          "file_count": 4744,
-          "html_count": 433
+          "file_count": 0,
+          "html_count": 0
+        },
+        "maxent_args": {
+          "present": true,
+          "command_line_used": "nowarnings noprefixes jackknife outputdirectory=res samplesfile=sp_data_final/Acrocarpus_fraxinifolius.csv environmentallayers=final_attributes autoRun visible=False"
         },
         "notes": [
-          "This report bundle is derived from the current PlantWise_v0 run artifacts.",
+          "This report bundle is derived from PlantWise_v0 run artifacts.",
           "The generated auc_and_contributions.csv uses the legacy filename for compatibility.",
           "If Maxent test AUC is unavailable in current outputs, Training AUC is mapped into the compatibility column 'Test AUC'."
         ]
@@ -187,7 +95,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 67.5,
-          "wc2.1_30s_bio_20_fc": 6.3
+          "wc2.1_30s_bio_20_fc": 6.3,
+          "training_presence_count": 10,
+          "test_presence_count": null,
+          "presence_summary": "10 training, no test split reported"
         },
         {
           "Species": "Acronychia_pedunculata",
@@ -211,7 +122,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.3,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 3.1
+          "wc2.1_30s_bio_20_fc": 3.1,
+          "training_presence_count": 22,
+          "test_presence_count": null,
+          "presence_summary": "22 training, no test split reported"
         },
         {
           "Species": "Actephila_excelsa",
@@ -235,7 +149,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 67.4
+          "wc2.1_30s_bio_20_fc": 67.4,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Actinodaphne_bourdillonii",
@@ -259,7 +176,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 24.2,
-          "wc2.1_30s_bio_20_fc": 17.0
+          "wc2.1_30s_bio_20_fc": 17.0,
+          "training_presence_count": 24,
+          "test_presence_count": null,
+          "presence_summary": "24 training, no test split reported"
         },
         {
           "Species": "Actinodaphne_gullavara",
@@ -283,7 +203,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.2,
           "wc2.1_30s_bio_18_fc": 26.0,
           "wc2.1_30s_bio_19_fc": 0.6,
-          "wc2.1_30s_bio_20_fc": 1.6
+          "wc2.1_30s_bio_20_fc": 1.6,
+          "training_presence_count": 25,
+          "test_presence_count": null,
+          "presence_summary": "25 training, no test split reported"
         },
         {
           "Species": "Actinodaphne_lanceolata",
@@ -307,7 +230,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 8.3,
           "wc2.1_30s_bio_18_fc": 15.2,
           "wc2.1_30s_bio_19_fc": 1.2,
-          "wc2.1_30s_bio_20_fc": 3.0
+          "wc2.1_30s_bio_20_fc": 3.0,
+          "training_presence_count": 18,
+          "test_presence_count": null,
+          "presence_summary": "18 training, no test split reported"
         },
         {
           "Species": "Actinodaphne_salicina",
@@ -331,7 +257,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 26.9
+          "wc2.1_30s_bio_20_fc": 26.9,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Actinodaphne_tadulingamii",
@@ -355,7 +284,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.4,
           "wc2.1_30s_bio_18_fc": 5.8,
           "wc2.1_30s_bio_19_fc": 0.8,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 14,
+          "test_presence_count": null,
+          "presence_summary": "14 training, no test split reported"
         },
         {
           "Species": "Actinodaphne_wightiana",
@@ -379,7 +311,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.5,
           "wc2.1_30s_bio_19_fc": 3.0,
-          "wc2.1_30s_bio_20_fc": 28.2
+          "wc2.1_30s_bio_20_fc": 28.2,
+          "training_presence_count": 44,
+          "test_presence_count": null,
+          "presence_summary": "44 training, no test split reported"
         },
         {
           "Species": "Agasthiyamalai_pauciflora",
@@ -403,7 +338,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 6.0,
           "wc2.1_30s_bio_19_fc": 0.1,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Aglaia_bourdillonii",
@@ -427,7 +365,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 0.1,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": null,
+          "presence_summary": "7 training, no test split reported"
         },
         {
           "Species": "Aglaia_canarana",
@@ -451,7 +392,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 25.7,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 11.1,
-          "wc2.1_30s_bio_20_fc": 9.6
+          "wc2.1_30s_bio_20_fc": 9.6,
+          "training_presence_count": 30,
+          "test_presence_count": null,
+          "presence_summary": "30 training, no test split reported"
         },
         {
           "Species": "Aglaia_edulis",
@@ -475,7 +419,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.4,
           "wc2.1_30s_bio_18_fc": 1.6,
           "wc2.1_30s_bio_19_fc": 7.9,
-          "wc2.1_30s_bio_20_fc": 3.0
+          "wc2.1_30s_bio_20_fc": 3.0,
+          "training_presence_count": 58,
+          "test_presence_count": null,
+          "presence_summary": "58 training, no test split reported"
         },
         {
           "Species": "Aglaia_elaeagnoidea",
@@ -499,7 +446,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.4,
           "wc2.1_30s_bio_18_fc": 1.4,
           "wc2.1_30s_bio_19_fc": 6.3,
-          "wc2.1_30s_bio_20_fc": 33.5
+          "wc2.1_30s_bio_20_fc": 33.5,
+          "training_presence_count": 91,
+          "test_presence_count": null,
+          "presence_summary": "91 training, no test split reported"
         },
         {
           "Species": "Aglaia_lawii",
@@ -523,7 +473,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 9.5,
           "wc2.1_30s_bio_18_fc": 2.2,
           "wc2.1_30s_bio_19_fc": 0.1,
-          "wc2.1_30s_bio_20_fc": 1.6
+          "wc2.1_30s_bio_20_fc": 1.6,
+          "training_presence_count": 39,
+          "test_presence_count": null,
+          "presence_summary": "39 training, no test split reported"
         },
         {
           "Species": "Aglaia_perviridis",
@@ -547,7 +500,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.1,
           "wc2.1_30s_bio_18_fc": 1.3,
           "wc2.1_30s_bio_19_fc": 8.5,
-          "wc2.1_30s_bio_20_fc": 10.8
+          "wc2.1_30s_bio_20_fc": 10.8,
+          "training_presence_count": 14,
+          "test_presence_count": null,
+          "presence_summary": "14 training, no test split reported"
         },
         {
           "Species": "Aglaia_simplicifolia",
@@ -571,7 +527,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 56.0,
-          "wc2.1_30s_bio_20_fc": 0.6
+          "wc2.1_30s_bio_20_fc": 0.6,
+          "training_presence_count": 28,
+          "test_presence_count": null,
+          "presence_summary": "28 training, no test split reported"
         },
         {
           "Species": "Aglaia_tomentosa",
@@ -595,7 +554,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.8,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 7.4,
-          "wc2.1_30s_bio_20_fc": 21.8
+          "wc2.1_30s_bio_20_fc": 21.8,
+          "training_presence_count": 2,
+          "test_presence_count": null,
+          "presence_summary": "2 training, no test split reported"
         },
         {
           "Species": "Agrostistachys_borneensis",
@@ -619,7 +581,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.8,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 38.5,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 27,
+          "test_presence_count": null,
+          "presence_summary": "27 training, no test split reported"
         },
         {
           "Species": "Agrostistachys_indica",
@@ -643,7 +608,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.4,
           "wc2.1_30s_bio_18_fc": 1.9,
           "wc2.1_30s_bio_19_fc": 52.4,
-          "wc2.1_30s_bio_20_fc": 1.0
+          "wc2.1_30s_bio_20_fc": 1.0,
+          "training_presence_count": 22,
+          "test_presence_count": null,
+          "presence_summary": "22 training, no test split reported"
         },
         {
           "Species": "Aidia_densiflora",
@@ -667,7 +635,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 13.8,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 4,
+          "test_presence_count": null,
+          "presence_summary": "4 training, no test split reported"
         },
         {
           "Species": "Ailanthus_triphysa",
@@ -691,7 +662,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 16.5,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Allophylus_cobbe",
@@ -715,7 +689,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.7,
           "wc2.1_30s_bio_18_fc": 7.7,
           "wc2.1_30s_bio_19_fc": 13.4,
-          "wc2.1_30s_bio_20_fc": 1.8
+          "wc2.1_30s_bio_20_fc": 1.8,
+          "training_presence_count": 22,
+          "test_presence_count": null,
+          "presence_summary": "22 training, no test split reported"
         },
         {
           "Species": "Alseodaphne_semecarpifolia",
@@ -739,7 +716,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.8,
           "wc2.1_30s_bio_18_fc": 10.1,
           "wc2.1_30s_bio_19_fc": 5.6,
-          "wc2.1_30s_bio_20_fc": 0.1
+          "wc2.1_30s_bio_20_fc": 0.1,
+          "training_presence_count": 26,
+          "test_presence_count": null,
+          "presence_summary": "26 training, no test split reported"
         },
         {
           "Species": "Alstonia_scholaris",
@@ -763,7 +743,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.4,
           "wc2.1_30s_bio_18_fc": 10.4,
           "wc2.1_30s_bio_19_fc": 4.6,
-          "wc2.1_30s_bio_20_fc": 1.3
+          "wc2.1_30s_bio_20_fc": 1.3,
+          "training_presence_count": 33,
+          "test_presence_count": null,
+          "presence_summary": "33 training, no test split reported"
         },
         {
           "Species": "Anacolosa_densiflora",
@@ -787,7 +770,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 32.8,
           "wc2.1_30s_bio_18_fc": 0.9,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 11.9
+          "wc2.1_30s_bio_20_fc": 11.9,
+          "training_presence_count": 14,
+          "test_presence_count": null,
+          "presence_summary": "14 training, no test split reported"
         },
         {
           "Species": "Ancistrocladus_heyneanus",
@@ -811,7 +797,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 2.8,
           "wc2.1_30s_bio_19_fc": 12.1,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 8,
+          "test_presence_count": null,
+          "presence_summary": "8 training, no test split reported"
         },
         {
           "Species": "Antiaris_toxicaria",
@@ -835,7 +824,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.5,
           "wc2.1_30s_bio_19_fc": 31.3,
-          "wc2.1_30s_bio_20_fc": 17.0
+          "wc2.1_30s_bio_20_fc": 17.0,
+          "training_presence_count": 19,
+          "test_presence_count": null,
+          "presence_summary": "19 training, no test split reported"
         },
         {
           "Species": "Antidesma_montanum",
@@ -859,7 +851,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 1.8,
           "wc2.1_30s_bio_19_fc": 24.6,
-          "wc2.1_30s_bio_20_fc": 1.9
+          "wc2.1_30s_bio_20_fc": 1.9,
+          "training_presence_count": 58,
+          "test_presence_count": null,
+          "presence_summary": "58 training, no test split reported"
         },
         {
           "Species": "Aphanamixis_polystachya",
@@ -883,7 +878,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 10.9,
-          "wc2.1_30s_bio_20_fc": 16.7
+          "wc2.1_30s_bio_20_fc": 16.7,
+          "training_presence_count": 33,
+          "test_presence_count": null,
+          "presence_summary": "33 training, no test split reported"
         },
         {
           "Species": "Aphananthe_cuspidata",
@@ -907,7 +905,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 3.0,
           "wc2.1_30s_bio_19_fc": 10.0,
-          "wc2.1_30s_bio_20_fc": 9.5
+          "wc2.1_30s_bio_20_fc": 9.5,
+          "training_presence_count": 10,
+          "test_presence_count": null,
+          "presence_summary": "10 training, no test split reported"
         },
         {
           "Species": "Apodytes_dimidiata",
@@ -931,7 +932,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.5,
           "wc2.1_30s_bio_19_fc": 16.0,
-          "wc2.1_30s_bio_20_fc": 2.0
+          "wc2.1_30s_bio_20_fc": 2.0,
+          "training_presence_count": 11,
+          "test_presence_count": null,
+          "presence_summary": "11 training, no test split reported"
         },
         {
           "Species": "Aporosa_acuminata",
@@ -955,7 +959,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 28.9,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.3,
-          "wc2.1_30s_bio_20_fc": 12.6
+          "wc2.1_30s_bio_20_fc": 12.6,
+          "training_presence_count": 15,
+          "test_presence_count": null,
+          "presence_summary": "15 training, no test split reported"
         },
         {
           "Species": "Aporosa_bourdillonii",
@@ -979,7 +986,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 6.6,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 14.9
+          "wc2.1_30s_bio_20_fc": 14.9,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Aporosa_cardiosperma",
@@ -1003,7 +1013,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.3,
           "wc2.1_30s_bio_18_fc": 19.4,
           "wc2.1_30s_bio_19_fc": 3.2,
-          "wc2.1_30s_bio_20_fc": 4.3
+          "wc2.1_30s_bio_20_fc": 4.3,
+          "training_presence_count": 69,
+          "test_presence_count": null,
+          "presence_summary": "69 training, no test split reported"
         },
         {
           "Species": "Archidendron_bigeminum",
@@ -1027,7 +1040,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.3,
           "wc2.1_30s_bio_18_fc": 0.4,
           "wc2.1_30s_bio_19_fc": 42.1,
-          "wc2.1_30s_bio_20_fc": 22.5
+          "wc2.1_30s_bio_20_fc": 22.5,
+          "training_presence_count": 26,
+          "test_presence_count": null,
+          "presence_summary": "26 training, no test split reported"
         },
         {
           "Species": "Ardisia_missionis",
@@ -1051,7 +1067,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 92.3,
-          "wc2.1_30s_bio_20_fc": 7.2
+          "wc2.1_30s_bio_20_fc": 7.2,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Ardisia_pauciflora",
@@ -1075,7 +1094,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.6,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 49.4,
-          "wc2.1_30s_bio_20_fc": 0.2
+          "wc2.1_30s_bio_20_fc": 0.2,
+          "training_presence_count": 19,
+          "test_presence_count": null,
+          "presence_summary": "19 training, no test split reported"
         },
         {
           "Species": "Ardisia_rhomboidea",
@@ -1099,7 +1121,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 4.2,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.1,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 12,
+          "test_presence_count": null,
+          "presence_summary": "12 training, no test split reported"
         },
         {
           "Species": "Ardisia_solanacea",
@@ -1123,7 +1148,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 31.2,
           "wc2.1_30s_bio_19_fc": 1.4,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 16,
+          "test_presence_count": null,
+          "presence_summary": "16 training, no test split reported"
         },
         {
           "Species": "Ardisia_stonei",
@@ -1147,7 +1175,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 6.0,
-          "wc2.1_30s_bio_20_fc": 20.6
+          "wc2.1_30s_bio_20_fc": 20.6,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Arenga_wightii",
@@ -1171,7 +1202,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.8,
           "wc2.1_30s_bio_19_fc": 13.7,
-          "wc2.1_30s_bio_20_fc": 19.0
+          "wc2.1_30s_bio_20_fc": 19.0,
+          "training_presence_count": 15,
+          "test_presence_count": null,
+          "presence_summary": "15 training, no test split reported"
         },
         {
           "Species": "Artocarpus_gomezianus",
@@ -1195,7 +1229,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 14.5,
           "wc2.1_30s_bio_19_fc": 6.4,
-          "wc2.1_30s_bio_20_fc": 20.4
+          "wc2.1_30s_bio_20_fc": 20.4,
+          "training_presence_count": 22,
+          "test_presence_count": null,
+          "presence_summary": "22 training, no test split reported"
         },
         {
           "Species": "Artocarpus_heterophyllus",
@@ -1219,7 +1256,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 1.0,
           "wc2.1_30s_bio_19_fc": 9.2,
-          "wc2.1_30s_bio_20_fc": 3.3
+          "wc2.1_30s_bio_20_fc": 3.3,
+          "training_presence_count": 64,
+          "test_presence_count": null,
+          "presence_summary": "64 training, no test split reported"
         },
         {
           "Species": "Artocarpus_hirsutus",
@@ -1243,7 +1283,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 5.0,
           "wc2.1_30s_bio_18_fc": 3.6,
           "wc2.1_30s_bio_19_fc": 4.2,
-          "wc2.1_30s_bio_20_fc": 11.0
+          "wc2.1_30s_bio_20_fc": 11.0,
+          "training_presence_count": 60,
+          "test_presence_count": null,
+          "presence_summary": "60 training, no test split reported"
         },
         {
           "Species": "Atalantia_racemosa",
@@ -1267,7 +1310,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.7,
           "wc2.1_30s_bio_18_fc": 3.1,
           "wc2.1_30s_bio_19_fc": 1.2,
-          "wc2.1_30s_bio_20_fc": 22.7
+          "wc2.1_30s_bio_20_fc": 22.7,
+          "training_presence_count": 26,
+          "test_presence_count": null,
+          "presence_summary": "26 training, no test split reported"
         },
         {
           "Species": "Atalantia_wightii",
@@ -1291,7 +1337,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 1.5,
-          "wc2.1_30s_bio_20_fc": 25.5
+          "wc2.1_30s_bio_20_fc": 25.5,
+          "training_presence_count": 31,
+          "test_presence_count": null,
+          "presence_summary": "31 training, no test split reported"
         },
         {
           "Species": "Atuna_indica",
@@ -1315,7 +1364,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.3,
           "wc2.1_30s_bio_18_fc": 1.2,
           "wc2.1_30s_bio_19_fc": 11.8,
-          "wc2.1_30s_bio_20_fc": 29.1
+          "wc2.1_30s_bio_20_fc": 29.1,
+          "training_presence_count": 6,
+          "test_presence_count": null,
+          "presence_summary": "6 training, no test split reported"
         },
         {
           "Species": "Atuna_travancorica",
@@ -1339,7 +1391,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 14.7,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": null,
+          "presence_summary": "7 training, no test split reported"
         },
         {
           "Species": "Baccaurea_courtallensis",
@@ -1363,7 +1418,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 5.8,
           "wc2.1_30s_bio_18_fc": 14.5,
           "wc2.1_30s_bio_19_fc": 44.8,
-          "wc2.1_30s_bio_20_fc": 22.5
+          "wc2.1_30s_bio_20_fc": 22.5,
+          "training_presence_count": 45,
+          "test_presence_count": null,
+          "presence_summary": "45 training, no test split reported"
         },
         {
           "Species": "Beddomea_indica",
@@ -1387,7 +1445,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 4.0,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 11.6,
-          "wc2.1_30s_bio_20_fc": 18.2
+          "wc2.1_30s_bio_20_fc": 18.2,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Beilschmiedia_dalzellii",
@@ -1411,7 +1472,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.7,
           "wc2.1_30s_bio_18_fc": 8.1,
           "wc2.1_30s_bio_19_fc": 2.2,
-          "wc2.1_30s_bio_20_fc": 14.8
+          "wc2.1_30s_bio_20_fc": 14.8,
+          "training_presence_count": 80,
+          "test_presence_count": null,
+          "presence_summary": "80 training, no test split reported"
         },
         {
           "Species": "Beilschmiedia_wightii",
@@ -1435,7 +1499,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 29.6,
-          "wc2.1_30s_bio_20_fc": 5.0
+          "wc2.1_30s_bio_20_fc": 5.0,
+          "training_presence_count": 17,
+          "test_presence_count": null,
+          "presence_summary": "17 training, no test split reported"
         },
         {
           "Species": "Bhesa_indica",
@@ -1459,7 +1526,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.3,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 0.6,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Bischofia_javanica",
@@ -1483,7 +1553,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 1.1,
           "wc2.1_30s_bio_19_fc": 36.0,
-          "wc2.1_30s_bio_20_fc": 3.7
+          "wc2.1_30s_bio_20_fc": 3.7,
+          "training_presence_count": 29,
+          "test_presence_count": null,
+          "presence_summary": "29 training, no test split reported"
         },
         {
           "Species": "Blachia_calycina",
@@ -1507,7 +1580,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 5.5,
           "wc2.1_30s_bio_18_fc": 2.2,
           "wc2.1_30s_bio_19_fc": 29.6,
-          "wc2.1_30s_bio_20_fc": 9.3
+          "wc2.1_30s_bio_20_fc": 9.3,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Blachia_denudata",
@@ -1531,7 +1607,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.8,
           "wc2.1_30s_bio_18_fc": 11.4,
           "wc2.1_30s_bio_19_fc": 6.5,
-          "wc2.1_30s_bio_20_fc": 12.8
+          "wc2.1_30s_bio_20_fc": 12.8,
+          "training_presence_count": 18,
+          "test_presence_count": null,
+          "presence_summary": "18 training, no test split reported"
         },
         {
           "Species": "Blepharistemma_serratum",
@@ -1555,7 +1634,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 3.5,
           "wc2.1_30s_bio_19_fc": 7.1,
-          "wc2.1_30s_bio_20_fc": 35.2
+          "wc2.1_30s_bio_20_fc": 35.2,
+          "training_presence_count": 10,
+          "test_presence_count": null,
+          "presence_summary": "10 training, no test split reported"
         },
         {
           "Species": "Bombax_ceiba",
@@ -1579,7 +1661,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 22.1,
           "wc2.1_30s_bio_19_fc": 6.7,
-          "wc2.1_30s_bio_20_fc": 3.3
+          "wc2.1_30s_bio_20_fc": 3.3,
+          "training_presence_count": 21,
+          "test_presence_count": null,
+          "presence_summary": "21 training, no test split reported"
         },
         {
           "Species": "Bridelia_stipularis",
@@ -1603,7 +1688,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 29.0,
           "wc2.1_30s_bio_19_fc": 4.6,
-          "wc2.1_30s_bio_20_fc": 1.3
+          "wc2.1_30s_bio_20_fc": 1.3,
+          "training_presence_count": 9,
+          "test_presence_count": null,
+          "presence_summary": "9 training, no test split reported"
         },
         {
           "Species": "Callicarpa_tomentosa",
@@ -1627,7 +1715,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 10.2,
           "wc2.1_30s_bio_19_fc": 4.7,
-          "wc2.1_30s_bio_20_fc": 6.1
+          "wc2.1_30s_bio_20_fc": 6.1,
+          "training_presence_count": 57,
+          "test_presence_count": null,
+          "presence_summary": "57 training, no test split reported"
         },
         {
           "Species": "Calophyllum_apetalum",
@@ -1651,7 +1742,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.0,
           "wc2.1_30s_bio_19_fc": 12.0,
-          "wc2.1_30s_bio_20_fc": 10.4
+          "wc2.1_30s_bio_20_fc": 10.4,
+          "training_presence_count": 20,
+          "test_presence_count": null,
+          "presence_summary": "20 training, no test split reported"
         },
         {
           "Species": "Calophyllum_austroindicum",
@@ -1675,7 +1769,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.1,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 9,
+          "test_presence_count": null,
+          "presence_summary": "9 training, no test split reported"
         },
         {
           "Species": "Calophyllum_tomentosum",
@@ -1699,7 +1796,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.4,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 12.4,
-          "wc2.1_30s_bio_20_fc": 36.4
+          "wc2.1_30s_bio_20_fc": 36.4,
+          "training_presence_count": 69,
+          "test_presence_count": null,
+          "presence_summary": "69 training, no test split reported"
         },
         {
           "Species": "Canarium_strictum",
@@ -1723,7 +1823,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.4,
           "wc2.1_30s_bio_18_fc": 2.3,
           "wc2.1_30s_bio_19_fc": 11.8,
-          "wc2.1_30s_bio_20_fc": 14.4
+          "wc2.1_30s_bio_20_fc": 14.4,
+          "training_presence_count": 44,
+          "test_presence_count": null,
+          "presence_summary": "44 training, no test split reported"
         },
         {
           "Species": "Canthium_rheedei",
@@ -1747,7 +1850,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 24.0,
           "wc2.1_30s_bio_19_fc": 5.1,
-          "wc2.1_30s_bio_20_fc": 7.4
+          "wc2.1_30s_bio_20_fc": 7.4,
+          "training_presence_count": 14,
+          "test_presence_count": null,
+          "presence_summary": "14 training, no test split reported"
         },
         {
           "Species": "Capparis_baducca",
@@ -1771,7 +1877,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 11.7,
-          "wc2.1_30s_bio_20_fc": 38.8
+          "wc2.1_30s_bio_20_fc": 38.8,
+          "training_presence_count": 8,
+          "test_presence_count": null,
+          "presence_summary": "8 training, no test split reported"
         },
         {
           "Species": "Capparis_rotundifolia",
@@ -1795,7 +1904,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 10.3,
-          "wc2.1_30s_bio_20_fc": 26.8
+          "wc2.1_30s_bio_20_fc": 26.8,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Carallia_brachiata",
@@ -1819,7 +1931,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.0,
           "wc2.1_30s_bio_18_fc": 3.1,
           "wc2.1_30s_bio_19_fc": 3.3,
-          "wc2.1_30s_bio_20_fc": 8.0
+          "wc2.1_30s_bio_20_fc": 8.0,
+          "training_presence_count": 26,
+          "test_presence_count": null,
+          "presence_summary": "26 training, no test split reported"
         },
         {
           "Species": "Carissa_carandas",
@@ -1843,7 +1958,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 11.9,
           "wc2.1_30s_bio_19_fc": 2.6,
-          "wc2.1_30s_bio_20_fc": 4.3
+          "wc2.1_30s_bio_20_fc": 4.3,
+          "training_presence_count": 26,
+          "test_presence_count": null,
+          "presence_summary": "26 training, no test split reported"
         },
         {
           "Species": "Carissa_spinarum",
@@ -1867,7 +1985,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 1.1,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Caryota_urens",
@@ -1891,7 +2012,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 4.7,
           "wc2.1_30s_bio_19_fc": 0.8,
-          "wc2.1_30s_bio_20_fc": 32.1
+          "wc2.1_30s_bio_20_fc": 32.1,
+          "training_presence_count": 59,
+          "test_presence_count": null,
+          "presence_summary": "59 training, no test split reported"
         },
         {
           "Species": "Casearia_ovata",
@@ -1915,7 +2039,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.6,
           "wc2.1_30s_bio_18_fc": 1.4,
           "wc2.1_30s_bio_19_fc": 1.3,
-          "wc2.1_30s_bio_20_fc": 8.1
+          "wc2.1_30s_bio_20_fc": 8.1,
+          "training_presence_count": 79,
+          "test_presence_count": null,
+          "presence_summary": "79 training, no test split reported"
         },
         {
           "Species": "Casearia_rubescens",
@@ -1939,7 +2066,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.7,
           "wc2.1_30s_bio_19_fc": 9.0,
-          "wc2.1_30s_bio_20_fc": 0.9
+          "wc2.1_30s_bio_20_fc": 0.9,
+          "training_presence_count": 19,
+          "test_presence_count": null,
+          "presence_summary": "19 training, no test split reported"
         },
         {
           "Species": "Casearia_wynadensis",
@@ -1963,7 +2093,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 4.7,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 47.0,
-          "wc2.1_30s_bio_20_fc": 1.4
+          "wc2.1_30s_bio_20_fc": 1.4,
+          "training_presence_count": 26,
+          "test_presence_count": null,
+          "presence_summary": "26 training, no test split reported"
         },
         {
           "Species": "Cassine_paniculata",
@@ -1987,7 +2120,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 11.1,
-          "wc2.1_30s_bio_20_fc": 59.0
+          "wc2.1_30s_bio_20_fc": 59.0,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Celtis_philippensis",
@@ -2011,7 +2147,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.5,
           "wc2.1_30s_bio_18_fc": 14.9,
           "wc2.1_30s_bio_19_fc": 3.9,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 19,
+          "test_presence_count": null,
+          "presence_summary": "19 training, no test split reported"
         },
         {
           "Species": "Celtis_timorensis",
@@ -2035,7 +2174,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 19.0,
-          "wc2.1_30s_bio_20_fc": 81.0
+          "wc2.1_30s_bio_20_fc": 81.0,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Chassalia_curviflora",
@@ -2059,7 +2201,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 41.4
+          "wc2.1_30s_bio_20_fc": 41.4,
+          "training_presence_count": 4,
+          "test_presence_count": null,
+          "presence_summary": "4 training, no test split reported"
         },
         {
           "Species": "Chionanthus_courtallensis",
@@ -2083,7 +2228,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": null,
+          "presence_summary": "7 training, no test split reported"
         },
         {
           "Species": "Chionanthus_mala-elengi",
@@ -2107,7 +2255,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.5,
           "wc2.1_30s_bio_19_fc": 43.2,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 6,
+          "test_presence_count": null,
+          "presence_summary": "6 training, no test split reported"
         },
         {
           "Species": "Chionanthus_ramiflorus",
@@ -2131,7 +2282,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.4,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 61.2,
-          "wc2.1_30s_bio_20_fc": 5.2
+          "wc2.1_30s_bio_20_fc": 5.2,
+          "training_presence_count": 24,
+          "test_presence_count": null,
+          "presence_summary": "24 training, no test split reported"
         },
         {
           "Species": "Chrysophyllum_flexuosum",
@@ -2155,7 +2309,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 7.2,
           "wc2.1_30s_bio_19_fc": 4.4,
-          "wc2.1_30s_bio_20_fc": 9.5
+          "wc2.1_30s_bio_20_fc": 9.5,
+          "training_presence_count": 10,
+          "test_presence_count": null,
+          "presence_summary": "10 training, no test split reported"
         },
         {
           "Species": "Chukrasia_tabularis",
@@ -2179,7 +2336,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 21.7,
-          "wc2.1_30s_bio_20_fc": 6.4
+          "wc2.1_30s_bio_20_fc": 6.4,
+          "training_presence_count": 9,
+          "test_presence_count": null,
+          "presence_summary": "9 training, no test split reported"
         },
         {
           "Species": "Cinnamomum_cassia",
@@ -2203,7 +2363,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 2.9,
-          "wc2.1_30s_bio_20_fc": 93.9
+          "wc2.1_30s_bio_20_fc": 93.9,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Cinnamomum_filipedicellatum",
@@ -2227,7 +2390,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 12.5,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 17.2,
-          "wc2.1_30s_bio_20_fc": 1.9
+          "wc2.1_30s_bio_20_fc": 1.9,
+          "training_presence_count": 15,
+          "test_presence_count": null,
+          "presence_summary": "15 training, no test split reported"
         },
         {
           "Species": "Cinnamomum_keralaense",
@@ -2251,7 +2417,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.1
+          "wc2.1_30s_bio_20_fc": 0.1,
+          "training_presence_count": 6,
+          "test_presence_count": null,
+          "presence_summary": "6 training, no test split reported"
         },
         {
           "Species": "Cinnamomum_macrocarpum",
@@ -2275,7 +2444,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.5
+          "wc2.1_30s_bio_20_fc": 0.5,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Cinnamomum_malabatrum",
@@ -2299,7 +2471,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.6,
           "wc2.1_30s_bio_18_fc": 2.5,
           "wc2.1_30s_bio_19_fc": 9.7,
-          "wc2.1_30s_bio_20_fc": 8.2
+          "wc2.1_30s_bio_20_fc": 8.2,
+          "training_presence_count": 127,
+          "test_presence_count": null,
+          "presence_summary": "127 training, no test split reported"
         },
         {
           "Species": "Cinnamomum_sulphuratum",
@@ -2323,7 +2498,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 52.4,
-          "wc2.1_30s_bio_20_fc": 14.4
+          "wc2.1_30s_bio_20_fc": 14.4,
+          "training_presence_count": 6,
+          "test_presence_count": null,
+          "presence_summary": "6 training, no test split reported"
         },
         {
           "Species": "Cinnamomum_verum",
@@ -2347,7 +2525,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.7,
           "wc2.1_30s_bio_18_fc": 16.7,
           "wc2.1_30s_bio_19_fc": 7.6,
-          "wc2.1_30s_bio_20_fc": 3.0
+          "wc2.1_30s_bio_20_fc": 3.0,
+          "training_presence_count": 32,
+          "test_presence_count": null,
+          "presence_summary": "32 training, no test split reported"
         },
         {
           "Species": "Clausena_anisata",
@@ -2371,7 +2552,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.2
+          "wc2.1_30s_bio_20_fc": 0.2,
+          "training_presence_count": 15,
+          "test_presence_count": null,
+          "presence_summary": "15 training, no test split reported"
         },
         {
           "Species": "Clausena_austroindica",
@@ -2395,7 +2579,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 4,
+          "test_presence_count": null,
+          "presence_summary": "4 training, no test split reported"
         },
         {
           "Species": "Clausena_indica",
@@ -2419,7 +2606,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 18.5,
-          "wc2.1_30s_bio_20_fc": 7.3
+          "wc2.1_30s_bio_20_fc": 7.3,
+          "training_presence_count": 22,
+          "test_presence_count": null,
+          "presence_summary": "22 training, no test split reported"
         },
         {
           "Species": "Cleidion_javanicum",
@@ -2443,7 +2633,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 5.5,
           "wc2.1_30s_bio_18_fc": 0.4,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 45.5
+          "wc2.1_30s_bio_20_fc": 45.5,
+          "training_presence_count": 12,
+          "test_presence_count": null,
+          "presence_summary": "12 training, no test split reported"
         },
         {
           "Species": "Cleistanthus_malabaricus",
@@ -2467,7 +2660,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 44.7
+          "wc2.1_30s_bio_20_fc": 44.7,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Cleistanthus_travancorensis",
@@ -2491,7 +2687,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.7,
           "wc2.1_30s_bio_19_fc": 78.0,
-          "wc2.1_30s_bio_20_fc": 0.4
+          "wc2.1_30s_bio_20_fc": 0.4,
+          "training_presence_count": 8,
+          "test_presence_count": null,
+          "presence_summary": "8 training, no test split reported"
         },
         {
           "Species": "Clerodendrum_infortunatum",
@@ -2515,7 +2714,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.7,
           "wc2.1_30s_bio_18_fc": 6.2,
           "wc2.1_30s_bio_19_fc": 7.1,
-          "wc2.1_30s_bio_20_fc": 11.6
+          "wc2.1_30s_bio_20_fc": 11.6,
+          "training_presence_count": 20,
+          "test_presence_count": null,
+          "presence_summary": "20 training, no test split reported"
         },
         {
           "Species": "Coffea_wightiana",
@@ -2539,7 +2741,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 2.0
+          "wc2.1_30s_bio_20_fc": 2.0,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Connarus_wightii",
@@ -2563,7 +2768,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 36.6,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 2.3
+          "wc2.1_30s_bio_20_fc": 2.3,
+          "training_presence_count": 8,
+          "test_presence_count": null,
+          "presence_summary": "8 training, no test split reported"
         },
         {
           "Species": "Croton_gibsonianus",
@@ -2587,7 +2795,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 54.5,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Croton_laccifer",
@@ -2611,7 +2822,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.3,
-          "wc2.1_30s_bio_20_fc": 52.5
+          "wc2.1_30s_bio_20_fc": 52.5,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Croton_malabaricus",
@@ -2635,7 +2849,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 10.0,
           "wc2.1_30s_bio_18_fc": 4.5,
           "wc2.1_30s_bio_19_fc": 37.7,
-          "wc2.1_30s_bio_20_fc": 15.7
+          "wc2.1_30s_bio_20_fc": 15.7,
+          "training_presence_count": 38,
+          "test_presence_count": null,
+          "presence_summary": "38 training, no test split reported"
         },
         {
           "Species": "Croton_zeylanicus",
@@ -2659,7 +2876,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 1.4,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 10.3
+          "wc2.1_30s_bio_20_fc": 10.3,
+          "training_presence_count": 13,
+          "test_presence_count": null,
+          "presence_summary": "13 training, no test split reported"
         },
         {
           "Species": "Cryptocarya_anamalayana",
@@ -2683,7 +2903,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 8.2,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 46.2,
-          "wc2.1_30s_bio_20_fc": 4.9
+          "wc2.1_30s_bio_20_fc": 4.9,
+          "training_presence_count": 21,
+          "test_presence_count": null,
+          "presence_summary": "21 training, no test split reported"
         },
         {
           "Species": "Cryptocarya_beddomei",
@@ -2707,7 +2930,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 53.1,
-          "wc2.1_30s_bio_20_fc": 4.9
+          "wc2.1_30s_bio_20_fc": 4.9,
+          "training_presence_count": 22,
+          "test_presence_count": null,
+          "presence_summary": "22 training, no test split reported"
         },
         {
           "Species": "Cryptocarya_lawsonii",
@@ -2731,7 +2957,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.6,
           "wc2.1_30s_bio_18_fc": 0.7,
           "wc2.1_30s_bio_19_fc": 22.0,
-          "wc2.1_30s_bio_20_fc": 11.9
+          "wc2.1_30s_bio_20_fc": 11.9,
+          "training_presence_count": 71,
+          "test_presence_count": null,
+          "presence_summary": "71 training, no test split reported"
         },
         {
           "Species": "Cryptocarya_stocksii",
@@ -2755,7 +2984,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 5.8,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 19.6,
-          "wc2.1_30s_bio_20_fc": 5.6
+          "wc2.1_30s_bio_20_fc": 5.6,
+          "training_presence_count": 11,
+          "test_presence_count": null,
+          "presence_summary": "11 training, no test split reported"
         },
         {
           "Species": "Cryptocarya_wightiana",
@@ -2779,7 +3011,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.5,
           "wc2.1_30s_bio_18_fc": 4.7,
           "wc2.1_30s_bio_19_fc": 9.2,
-          "wc2.1_30s_bio_20_fc": 3.8
+          "wc2.1_30s_bio_20_fc": 3.8,
+          "training_presence_count": 30,
+          "test_presence_count": null,
+          "presence_summary": "30 training, no test split reported"
         },
         {
           "Species": "Cyathocalyx_zeylanicus",
@@ -2803,7 +3038,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 7.1,
           "wc2.1_30s_bio_18_fc": 2.5,
           "wc2.1_30s_bio_19_fc": 36.7,
-          "wc2.1_30s_bio_20_fc": 33.9
+          "wc2.1_30s_bio_20_fc": 33.9,
+          "training_presence_count": 15,
+          "test_presence_count": null,
+          "presence_summary": "15 training, no test split reported"
         },
         {
           "Species": "Cynometra_travancorica",
@@ -2827,7 +3065,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 17.8,
-          "wc2.1_30s_bio_20_fc": 26.8
+          "wc2.1_30s_bio_20_fc": 26.8,
+          "training_presence_count": 7,
+          "test_presence_count": null,
+          "presence_summary": "7 training, no test split reported"
         },
         {
           "Species": "Daphniphyllum_neilgherrense",
@@ -2851,7 +3092,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 17.2
+          "wc2.1_30s_bio_20_fc": 17.2,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Dendrocnide_sinuata",
@@ -2875,7 +3119,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 5.1,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 26.9,
-          "wc2.1_30s_bio_20_fc": 14.6
+          "wc2.1_30s_bio_20_fc": 14.6,
+          "training_presence_count": 16,
+          "test_presence_count": null,
+          "presence_summary": "16 training, no test split reported"
         },
         {
           "Species": "Dichapetalum_gelonioides",
@@ -2899,7 +3146,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.2,
           "wc2.1_30s_bio_18_fc": 0.8,
           "wc2.1_30s_bio_19_fc": 13.5,
-          "wc2.1_30s_bio_20_fc": 27.1
+          "wc2.1_30s_bio_20_fc": 27.1,
+          "training_presence_count": 72,
+          "test_presence_count": null,
+          "presence_summary": "72 training, no test split reported"
         },
         {
           "Species": "Dillenia_bracteata",
@@ -2923,7 +3173,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.5,
           "wc2.1_30s_bio_19_fc": 20.4,
-          "wc2.1_30s_bio_20_fc": 15.0
+          "wc2.1_30s_bio_20_fc": 15.0,
+          "training_presence_count": 12,
+          "test_presence_count": null,
+          "presence_summary": "12 training, no test split reported"
         },
         {
           "Species": "Dimocarpus_longan",
@@ -2947,7 +3200,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 5.9,
           "wc2.1_30s_bio_18_fc": 4.5,
           "wc2.1_30s_bio_19_fc": 6.8,
-          "wc2.1_30s_bio_20_fc": 11.9
+          "wc2.1_30s_bio_20_fc": 11.9,
+          "training_presence_count": 138,
+          "test_presence_count": null,
+          "presence_summary": "138 training, no test split reported"
         },
         {
           "Species": "Dimorphocalyx_beddomei",
@@ -2971,7 +3227,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.4,
           "wc2.1_30s_bio_19_fc": 45.7,
-          "wc2.1_30s_bio_20_fc": 22.0
+          "wc2.1_30s_bio_20_fc": 22.0,
+          "training_presence_count": 19,
+          "test_presence_count": null,
+          "presence_summary": "19 training, no test split reported"
         },
         {
           "Species": "Dimorphocalyx_glabellus",
@@ -2995,7 +3254,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.9,
           "wc2.1_30s_bio_18_fc": 4.3,
           "wc2.1_30s_bio_19_fc": 12.4,
-          "wc2.1_30s_bio_20_fc": 7.1
+          "wc2.1_30s_bio_20_fc": 7.1,
+          "training_presence_count": 13,
+          "test_presence_count": null,
+          "presence_summary": "13 training, no test split reported"
         },
         {
           "Species": "Diospyros_barberi",
@@ -3019,7 +3281,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 17.1
+          "wc2.1_30s_bio_20_fc": 17.1,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Diospyros_bourdillonii",
@@ -3043,7 +3308,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 5.4,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 56.9,
-          "wc2.1_30s_bio_20_fc": 9.0
+          "wc2.1_30s_bio_20_fc": 9.0,
+          "training_presence_count": 22,
+          "test_presence_count": null,
+          "presence_summary": "22 training, no test split reported"
         },
         {
           "Species": "Diospyros_buxifolia",
@@ -3067,7 +3335,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.4,
           "wc2.1_30s_bio_18_fc": 3.4,
           "wc2.1_30s_bio_19_fc": 9.8,
-          "wc2.1_30s_bio_20_fc": 32.8
+          "wc2.1_30s_bio_20_fc": 32.8,
+          "training_presence_count": 33,
+          "test_presence_count": null,
+          "presence_summary": "33 training, no test split reported"
         },
         {
           "Species": "Diospyros_candolleana",
@@ -3091,7 +3362,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.5,
           "wc2.1_30s_bio_18_fc": 9.2,
           "wc2.1_30s_bio_19_fc": 4.7,
-          "wc2.1_30s_bio_20_fc": 14.5
+          "wc2.1_30s_bio_20_fc": 14.5,
+          "training_presence_count": 85,
+          "test_presence_count": null,
+          "presence_summary": "85 training, no test split reported"
         },
         {
           "Species": "Diospyros_crumenata",
@@ -3115,7 +3389,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 8.0,
           "wc2.1_30s_bio_18_fc": 9.4,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 5.7
+          "wc2.1_30s_bio_20_fc": 5.7,
+          "training_presence_count": 9,
+          "test_presence_count": null,
+          "presence_summary": "9 training, no test split reported"
         },
         {
           "Species": "Diospyros_ebenum",
@@ -3139,7 +3416,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 2.8,
           "wc2.1_30s_bio_19_fc": 26.3,
-          "wc2.1_30s_bio_20_fc": 46.8
+          "wc2.1_30s_bio_20_fc": 46.8,
+          "training_presence_count": 23,
+          "test_presence_count": null,
+          "presence_summary": "23 training, no test split reported"
         },
         {
           "Species": "Diospyros_ferrea",
@@ -3163,7 +3443,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 8.0,
           "wc2.1_30s_bio_19_fc": 1.4,
-          "wc2.1_30s_bio_20_fc": 2.4
+          "wc2.1_30s_bio_20_fc": 2.4,
+          "training_presence_count": 28,
+          "test_presence_count": null,
+          "presence_summary": "28 training, no test split reported"
         },
         {
           "Species": "Diospyros_ghatensis",
@@ -3187,7 +3470,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 5.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 57.9,
-          "wc2.1_30s_bio_20_fc": 6.2
+          "wc2.1_30s_bio_20_fc": 6.2,
+          "training_presence_count": 24,
+          "test_presence_count": null,
+          "presence_summary": "24 training, no test split reported"
         },
         {
           "Species": "Diospyros_insignis",
@@ -3211,7 +3497,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 54.1,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 2.1,
-          "wc2.1_30s_bio_20_fc": 13.6
+          "wc2.1_30s_bio_20_fc": 13.6,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Diospyros_kedam",
@@ -3235,7 +3524,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 19.4,
-          "wc2.1_30s_bio_20_fc": 10.5
+          "wc2.1_30s_bio_20_fc": 10.5,
+          "training_presence_count": 6,
+          "test_presence_count": null,
+          "presence_summary": "6 training, no test split reported"
         },
         {
           "Species": "Diospyros_malabarica",
@@ -3259,7 +3551,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 4.7,
-          "wc2.1_30s_bio_20_fc": 10.5
+          "wc2.1_30s_bio_20_fc": 10.5,
+          "training_presence_count": 8,
+          "test_presence_count": null,
+          "presence_summary": "8 training, no test split reported"
         },
         {
           "Species": "Diospyros_montana",
@@ -3283,7 +3578,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 34.4,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 3.9
+          "wc2.1_30s_bio_20_fc": 3.9,
+          "training_presence_count": 54,
+          "test_presence_count": null,
+          "presence_summary": "54 training, no test split reported"
         },
         {
           "Species": "Diospyros_nilagirica",
@@ -3307,7 +3605,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.0,
           "wc2.1_30s_bio_19_fc": 11.8,
-          "wc2.1_30s_bio_20_fc": 6.1
+          "wc2.1_30s_bio_20_fc": 6.1,
+          "training_presence_count": 11,
+          "test_presence_count": null,
+          "presence_summary": "11 training, no test split reported"
         },
         {
           "Species": "Diospyros_oocarpa",
@@ -3331,7 +3632,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 5.3,
           "wc2.1_30s_bio_19_fc": 5.8,
-          "wc2.1_30s_bio_20_fc": 20.9
+          "wc2.1_30s_bio_20_fc": 20.9,
+          "training_presence_count": 42,
+          "test_presence_count": null,
+          "presence_summary": "42 training, no test split reported"
         },
         {
           "Species": "Diospyros_paniculata",
@@ -3355,7 +3659,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.3,
           "wc2.1_30s_bio_18_fc": 0.3,
           "wc2.1_30s_bio_19_fc": 7.6,
-          "wc2.1_30s_bio_20_fc": 31.8
+          "wc2.1_30s_bio_20_fc": 31.8,
+          "training_presence_count": 46,
+          "test_presence_count": null,
+          "presence_summary": "46 training, no test split reported"
         },
         {
           "Species": "Diospyros_pruriens",
@@ -3379,7 +3686,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 4.6,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 11.2,
-          "wc2.1_30s_bio_20_fc": 6.0
+          "wc2.1_30s_bio_20_fc": 6.0,
+          "training_presence_count": 17,
+          "test_presence_count": null,
+          "presence_summary": "17 training, no test split reported"
         },
         {
           "Species": "Diospyros_ridleyi",
@@ -3403,7 +3713,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.2,
-          "wc2.1_30s_bio_20_fc": 14.0
+          "wc2.1_30s_bio_20_fc": 14.0,
+          "training_presence_count": 6,
+          "test_presence_count": null,
+          "presence_summary": "6 training, no test split reported"
         },
         {
           "Species": "Diospyros_saldanhae",
@@ -3427,7 +3740,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.0,
           "wc2.1_30s_bio_18_fc": 5.7,
           "wc2.1_30s_bio_19_fc": 6.9,
-          "wc2.1_30s_bio_20_fc": 16.5
+          "wc2.1_30s_bio_20_fc": 16.5,
+          "training_presence_count": 39,
+          "test_presence_count": null,
+          "presence_summary": "39 training, no test split reported"
         },
         {
           "Species": "Diospyros_sylvatica",
@@ -3451,7 +3767,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.8,
           "wc2.1_30s_bio_18_fc": 2.2,
           "wc2.1_30s_bio_19_fc": 13.9,
-          "wc2.1_30s_bio_20_fc": 1.8
+          "wc2.1_30s_bio_20_fc": 1.8,
+          "training_presence_count": 65,
+          "test_presence_count": null,
+          "presence_summary": "65 training, no test split reported"
         },
         {
           "Species": "Diploclisia_glaucescens",
@@ -3475,7 +3794,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 6.5,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 10,
+          "test_presence_count": null,
+          "presence_summary": "10 training, no test split reported"
         },
         {
           "Species": "Dipterocarpus_bourdillonii",
@@ -3499,7 +3821,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 19.4,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 2.3
+          "wc2.1_30s_bio_20_fc": 2.3,
+          "training_presence_count": 8,
+          "test_presence_count": null,
+          "presence_summary": "8 training, no test split reported"
         },
         {
           "Species": "Dipterocarpus_indicus",
@@ -3523,7 +3848,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 6.0,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 20.0,
-          "wc2.1_30s_bio_20_fc": 27.6
+          "wc2.1_30s_bio_20_fc": 27.6,
+          "training_presence_count": 50,
+          "test_presence_count": null,
+          "presence_summary": "50 training, no test split reported"
         },
         {
           "Species": "Discospermum_apiocarpum",
@@ -3547,7 +3875,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 77.9,
-          "wc2.1_30s_bio_20_fc": 2.6
+          "wc2.1_30s_bio_20_fc": 2.6,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Discospermum_sphaerocarpum",
@@ -3571,7 +3902,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 43.9,
-          "wc2.1_30s_bio_20_fc": 3.0
+          "wc2.1_30s_bio_20_fc": 3.0,
+          "training_presence_count": 15,
+          "test_presence_count": null,
+          "presence_summary": "15 training, no test split reported"
         },
         {
           "Species": "Donella_lanceolata",
@@ -3595,7 +3929,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 0.3,
           "wc2.1_30s_bio_19_fc": 49.8,
-          "wc2.1_30s_bio_20_fc": 22.2
+          "wc2.1_30s_bio_20_fc": 22.2,
+          "training_presence_count": 24,
+          "test_presence_count": null,
+          "presence_summary": "24 training, no test split reported"
         },
         {
           "Species": "Dracaena_elliptica",
@@ -3619,7 +3956,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.3,
           "wc2.1_30s_bio_19_fc": 3.3,
-          "wc2.1_30s_bio_20_fc": 17.2
+          "wc2.1_30s_bio_20_fc": 17.2,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Drypetes_confertiflora",
@@ -3643,7 +3983,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.6,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 6.0,
-          "wc2.1_30s_bio_20_fc": 45.0
+          "wc2.1_30s_bio_20_fc": 45.0,
+          "training_presence_count": 23,
+          "test_presence_count": null,
+          "presence_summary": "23 training, no test split reported"
         },
         {
           "Species": "Drypetes_malabarica",
@@ -3667,7 +4010,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 13.9,
           "wc2.1_30s_bio_18_fc": 1.2,
           "wc2.1_30s_bio_19_fc": 7.7,
-          "wc2.1_30s_bio_20_fc": 5.1
+          "wc2.1_30s_bio_20_fc": 5.1,
+          "training_presence_count": 15,
+          "test_presence_count": null,
+          "presence_summary": "15 training, no test split reported"
         },
         {
           "Species": "Drypetes_oblongifolia",
@@ -3691,7 +4037,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 17.7,
           "wc2.1_30s_bio_18_fc": 0.3,
           "wc2.1_30s_bio_19_fc": 36.0,
-          "wc2.1_30s_bio_20_fc": 9.0
+          "wc2.1_30s_bio_20_fc": 9.0,
+          "training_presence_count": 23,
+          "test_presence_count": null,
+          "presence_summary": "23 training, no test split reported"
         },
         {
           "Species": "Drypetes_venusta",
@@ -3715,7 +4064,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.4,
           "wc2.1_30s_bio_18_fc": 3.9,
           "wc2.1_30s_bio_19_fc": 2.9,
-          "wc2.1_30s_bio_20_fc": 23.7
+          "wc2.1_30s_bio_20_fc": 23.7,
+          "training_presence_count": 51,
+          "test_presence_count": null,
+          "presence_summary": "51 training, no test split reported"
         },
         {
           "Species": "Drypetes_wightii",
@@ -3739,7 +4091,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.9,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 1.0
+          "wc2.1_30s_bio_20_fc": 1.0,
+          "training_presence_count": 13,
+          "test_presence_count": null,
+          "presence_summary": "13 training, no test split reported"
         },
         {
           "Species": "Durio_exarillatus",
@@ -3763,7 +4118,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 16.1,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 1.1,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 37,
+          "test_presence_count": null,
+          "presence_summary": "37 training, no test split reported"
         },
         {
           "Species": "Dysoxylum_gotadhora",
@@ -3787,7 +4145,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 7.8,
           "wc2.1_30s_bio_18_fc": 0.8,
           "wc2.1_30s_bio_19_fc": 0.6,
-          "wc2.1_30s_bio_20_fc": 17.9
+          "wc2.1_30s_bio_20_fc": 17.9,
+          "training_presence_count": 28,
+          "test_presence_count": null,
+          "presence_summary": "28 training, no test split reported"
         },
         {
           "Species": "Dysoxylum_malabaricum",
@@ -3811,7 +4172,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.3,
           "wc2.1_30s_bio_18_fc": 2.8,
           "wc2.1_30s_bio_19_fc": 6.5,
-          "wc2.1_30s_bio_20_fc": 19.4
+          "wc2.1_30s_bio_20_fc": 19.4,
+          "training_presence_count": 52,
+          "test_presence_count": null,
+          "presence_summary": "52 training, no test split reported"
         },
         {
           "Species": "Ehretia_aspera",
@@ -3835,7 +4199,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 28.6,
           "wc2.1_30s_bio_19_fc": 9.8,
-          "wc2.1_30s_bio_20_fc": 25.0
+          "wc2.1_30s_bio_20_fc": 25.0,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Elaeagnus_conferta",
@@ -3859,7 +4226,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 7.5,
           "wc2.1_30s_bio_19_fc": 12.7,
-          "wc2.1_30s_bio_20_fc": 0.1
+          "wc2.1_30s_bio_20_fc": 0.1,
+          "training_presence_count": 10,
+          "test_presence_count": null,
+          "presence_summary": "10 training, no test split reported"
         },
         {
           "Species": "Elaeocarpus_munroii",
@@ -3883,7 +4253,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 30.2,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 11,
+          "test_presence_count": null,
+          "presence_summary": "11 training, no test split reported"
         },
         {
           "Species": "Elaeocarpus_serratus",
@@ -3907,7 +4280,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.7,
           "wc2.1_30s_bio_18_fc": 1.7,
           "wc2.1_30s_bio_19_fc": 4.4,
-          "wc2.1_30s_bio_20_fc": 24.4
+          "wc2.1_30s_bio_20_fc": 24.4,
+          "training_presence_count": 33,
+          "test_presence_count": null,
+          "presence_summary": "33 training, no test split reported"
         },
         {
           "Species": "Elaeocarpus_tuberculatus",
@@ -3931,7 +4307,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 39.1,
-          "wc2.1_30s_bio_20_fc": 5.5
+          "wc2.1_30s_bio_20_fc": 5.5,
+          "training_presence_count": 34,
+          "test_presence_count": null,
+          "presence_summary": "34 training, no test split reported"
         },
         {
           "Species": "Elaeocarpus_variabilis",
@@ -3955,7 +4334,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 10.3
+          "wc2.1_30s_bio_20_fc": 10.3,
+          "training_presence_count": 8,
+          "test_presence_count": null,
+          "presence_summary": "8 training, no test split reported"
         },
         {
           "Species": "Elaeocarpus_venustus",
@@ -3979,7 +4361,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.5,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.3,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 4,
+          "test_presence_count": null,
+          "presence_summary": "4 training, no test split reported"
         },
         {
           "Species": "Elaeodendron_paniculatum",
@@ -4003,7 +4388,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 40.5,
           "wc2.1_30s_bio_19_fc": 3.4,
-          "wc2.1_30s_bio_20_fc": 0.1
+          "wc2.1_30s_bio_20_fc": 0.1,
+          "training_presence_count": 4,
+          "test_presence_count": null,
+          "presence_summary": "4 training, no test split reported"
         },
         {
           "Species": "Embelia_drupacea",
@@ -4027,7 +4415,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 9.4,
-          "wc2.1_30s_bio_20_fc": 28.6
+          "wc2.1_30s_bio_20_fc": 28.6,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Entada_rheedei",
@@ -4051,7 +4442,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 35.6,
           "wc2.1_30s_bio_19_fc": 4.5,
-          "wc2.1_30s_bio_20_fc": 25.7
+          "wc2.1_30s_bio_20_fc": 25.7,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Epiprinus_mallotiformis",
@@ -4075,7 +4469,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.3,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 36.1,
-          "wc2.1_30s_bio_20_fc": 0.6
+          "wc2.1_30s_bio_20_fc": 0.6,
+          "training_presence_count": 17,
+          "test_presence_count": null,
+          "presence_summary": "17 training, no test split reported"
         },
         {
           "Species": "Erythroxylum_moonii",
@@ -4099,7 +4496,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.1,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 2.3,
-          "wc2.1_30s_bio_20_fc": 1.2
+          "wc2.1_30s_bio_20_fc": 1.2,
+          "training_presence_count": 7,
+          "test_presence_count": null,
+          "presence_summary": "7 training, no test split reported"
         },
         {
           "Species": "Eugenia_codyensis",
@@ -4123,7 +4523,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 47.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 6,
+          "test_presence_count": null,
+          "presence_summary": "6 training, no test split reported"
         },
         {
           "Species": "Eugenia_kalamii",
@@ -4147,7 +4550,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 12.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 10.5
+          "wc2.1_30s_bio_20_fc": 10.5,
+          "training_presence_count": 12,
+          "test_presence_count": null,
+          "presence_summary": "12 training, no test split reported"
         },
         {
           "Species": "Eugenia_macrocalyx",
@@ -4171,7 +4577,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.6,
           "wc2.1_30s_bio_18_fc": 2.3,
           "wc2.1_30s_bio_19_fc": 3.5,
-          "wc2.1_30s_bio_20_fc": 15.9
+          "wc2.1_30s_bio_20_fc": 15.9,
+          "training_presence_count": 22,
+          "test_presence_count": null,
+          "presence_summary": "22 training, no test split reported"
         },
         {
           "Species": "Eugenia_mooniana",
@@ -4195,7 +4604,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 6.2,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 2.5,
-          "wc2.1_30s_bio_20_fc": 2.5
+          "wc2.1_30s_bio_20_fc": 2.5,
+          "training_presence_count": 23,
+          "test_presence_count": null,
+          "presence_summary": "23 training, no test split reported"
         },
         {
           "Species": "Eugenia_singampattiana",
@@ -4219,7 +4631,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Euonymus_angulatus",
@@ -4243,7 +4658,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 4.9,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 16.1
+          "wc2.1_30s_bio_20_fc": 16.1,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Euonymus_dichotomus",
@@ -4267,7 +4685,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.8,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 6,
+          "test_presence_count": null,
+          "presence_summary": "6 training, no test split reported"
         },
         {
           "Species": "Euonymus_indicus",
@@ -4291,7 +4712,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.6,
           "wc2.1_30s_bio_18_fc": 0.4,
           "wc2.1_30s_bio_19_fc": 19.8,
-          "wc2.1_30s_bio_20_fc": 1.9
+          "wc2.1_30s_bio_20_fc": 1.9,
+          "training_presence_count": 27,
+          "test_presence_count": null,
+          "presence_summary": "27 training, no test split reported"
         },
         {
           "Species": "Eurya_nitida",
@@ -4315,7 +4739,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 9.8,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 6,
+          "test_presence_count": null,
+          "presence_summary": "6 training, no test split reported"
         },
         {
           "Species": "Excoecaria_oppositifolia",
@@ -4339,7 +4766,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": null,
+          "presence_summary": "7 training, no test split reported"
         },
         {
           "Species": "Falconeria_insignis",
@@ -4363,7 +4793,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 15.3,
           "wc2.1_30s_bio_18_fc": 9.7,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 2.2
+          "wc2.1_30s_bio_20_fc": 2.2,
+          "training_presence_count": 10,
+          "test_presence_count": null,
+          "presence_summary": "10 training, no test split reported"
         },
         {
           "Species": "Ficus_beddomei",
@@ -4387,7 +4820,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 4.4,
           "wc2.1_30s_bio_18_fc": 5.0,
           "wc2.1_30s_bio_19_fc": 3.1,
-          "wc2.1_30s_bio_20_fc": 27.5
+          "wc2.1_30s_bio_20_fc": 27.5,
+          "training_presence_count": 13,
+          "test_presence_count": null,
+          "presence_summary": "13 training, no test split reported"
         },
         {
           "Species": "Ficus_callosa",
@@ -4411,7 +4847,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 9.6,
           "wc2.1_30s_bio_19_fc": 7.9,
-          "wc2.1_30s_bio_20_fc": 2.8
+          "wc2.1_30s_bio_20_fc": 2.8,
+          "training_presence_count": 18,
+          "test_presence_count": null,
+          "presence_summary": "18 training, no test split reported"
         },
         {
           "Species": "Ficus_exasperata",
@@ -4435,7 +4874,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 28.7,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.6
+          "wc2.1_30s_bio_20_fc": 0.6,
+          "training_presence_count": 7,
+          "test_presence_count": null,
+          "presence_summary": "7 training, no test split reported"
         },
         {
           "Species": "Ficus_hispida",
@@ -4459,7 +4901,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 10.2,
           "wc2.1_30s_bio_19_fc": 1.7,
-          "wc2.1_30s_bio_20_fc": 19.0
+          "wc2.1_30s_bio_20_fc": 19.0,
+          "training_presence_count": 21,
+          "test_presence_count": null,
+          "presence_summary": "21 training, no test split reported"
         },
         {
           "Species": "Ficus_microcarpa",
@@ -4483,7 +4928,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 5.7,
           "wc2.1_30s_bio_19_fc": 35.9,
-          "wc2.1_30s_bio_20_fc": 1.6
+          "wc2.1_30s_bio_20_fc": 1.6,
+          "training_presence_count": 10,
+          "test_presence_count": null,
+          "presence_summary": "10 training, no test split reported"
         },
         {
           "Species": "Ficus_nervosa",
@@ -4507,7 +4955,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.9,
           "wc2.1_30s_bio_18_fc": 5.3,
           "wc2.1_30s_bio_19_fc": 2.3,
-          "wc2.1_30s_bio_20_fc": 7.8
+          "wc2.1_30s_bio_20_fc": 7.8,
+          "training_presence_count": 57,
+          "test_presence_count": null,
+          "presence_summary": "57 training, no test split reported"
         },
         {
           "Species": "Ficus_racemosa",
@@ -4531,7 +4982,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 5.7,
           "wc2.1_30s_bio_18_fc": 2.0,
           "wc2.1_30s_bio_19_fc": 4.2,
-          "wc2.1_30s_bio_20_fc": 1.6
+          "wc2.1_30s_bio_20_fc": 1.6,
+          "training_presence_count": 17,
+          "test_presence_count": null,
+          "presence_summary": "17 training, no test split reported"
         },
         {
           "Species": "Ficus_talbotii",
@@ -4555,7 +5009,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 23.4,
-          "wc2.1_30s_bio_20_fc": 7.8
+          "wc2.1_30s_bio_20_fc": 7.8,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Ficus_tsjakela",
@@ -4579,7 +5036,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 12.9,
           "wc2.1_30s_bio_19_fc": 10.7,
-          "wc2.1_30s_bio_20_fc": 0.2
+          "wc2.1_30s_bio_20_fc": 0.2,
+          "training_presence_count": 11,
+          "test_presence_count": null,
+          "presence_summary": "11 training, no test split reported"
         },
         {
           "Species": "Ficus_virens",
@@ -4603,7 +5063,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.4,
           "wc2.1_30s_bio_18_fc": 1.1,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 11.3
+          "wc2.1_30s_bio_20_fc": 11.3,
+          "training_presence_count": 16,
+          "test_presence_count": null,
+          "presence_summary": "16 training, no test split reported"
         },
         {
           "Species": "Filicium_decipiens",
@@ -4627,7 +5090,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 6,
+          "test_presence_count": null,
+          "presence_summary": "6 training, no test split reported"
         },
         {
           "Species": "Flacourtia_montana",
@@ -4651,7 +5117,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.4,
           "wc2.1_30s_bio_18_fc": 10.5,
           "wc2.1_30s_bio_19_fc": 2.5,
-          "wc2.1_30s_bio_20_fc": 6.3
+          "wc2.1_30s_bio_20_fc": 6.3,
+          "training_presence_count": 85,
+          "test_presence_count": null,
+          "presence_summary": "85 training, no test split reported"
         },
         {
           "Species": "Garcinia_gummi-gutta",
@@ -4675,7 +5144,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 1.2,
           "wc2.1_30s_bio_19_fc": 12.9,
-          "wc2.1_30s_bio_20_fc": 8.9
+          "wc2.1_30s_bio_20_fc": 8.9,
+          "training_presence_count": 71,
+          "test_presence_count": null,
+          "presence_summary": "71 training, no test split reported"
         },
         {
           "Species": "Garcinia_indica",
@@ -4699,7 +5171,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 6.2,
           "wc2.1_30s_bio_18_fc": 19.7,
           "wc2.1_30s_bio_19_fc": 3.3,
-          "wc2.1_30s_bio_20_fc": 11.6
+          "wc2.1_30s_bio_20_fc": 11.6,
+          "training_presence_count": 37,
+          "test_presence_count": null,
+          "presence_summary": "37 training, no test split reported"
         },
         {
           "Species": "Garcinia_morella",
@@ -4723,7 +5198,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 1.3,
           "wc2.1_30s_bio_19_fc": 6.8,
-          "wc2.1_30s_bio_20_fc": 9.6
+          "wc2.1_30s_bio_20_fc": 9.6,
+          "training_presence_count": 74,
+          "test_presence_count": null,
+          "presence_summary": "74 training, no test split reported"
         },
         {
           "Species": "Garcinia_rubroechinata",
@@ -4747,7 +5225,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 4.3,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.1
+          "wc2.1_30s_bio_20_fc": 0.1,
+          "training_presence_count": 4,
+          "test_presence_count": null,
+          "presence_summary": "4 training, no test split reported"
         },
         {
           "Species": "Garcinia_spicata",
@@ -4771,7 +5252,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 59.0,
-          "wc2.1_30s_bio_20_fc": 3.4
+          "wc2.1_30s_bio_20_fc": 3.4,
+          "training_presence_count": 6,
+          "test_presence_count": null,
+          "presence_summary": "6 training, no test split reported"
         },
         {
           "Species": "Garcinia_talbotii",
@@ -4795,7 +5279,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 18.3,
           "wc2.1_30s_bio_18_fc": 6.8,
           "wc2.1_30s_bio_19_fc": 2.2,
-          "wc2.1_30s_bio_20_fc": 8.1
+          "wc2.1_30s_bio_20_fc": 8.1,
+          "training_presence_count": 52,
+          "test_presence_count": null,
+          "presence_summary": "52 training, no test split reported"
         },
         {
           "Species": "Glochidion_UM",
@@ -4819,7 +5306,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.8,
           "wc2.1_30s_bio_18_fc": 2.6,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 11.6
+          "wc2.1_30s_bio_20_fc": 11.6,
+          "training_presence_count": 2,
+          "test_presence_count": null,
+          "presence_summary": "2 training, no test split reported"
         },
         {
           "Species": "Glochidion_ellipticum",
@@ -4843,7 +5333,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.4,
           "wc2.1_30s_bio_18_fc": 13.8,
           "wc2.1_30s_bio_19_fc": 2.7,
-          "wc2.1_30s_bio_20_fc": 9.7
+          "wc2.1_30s_bio_20_fc": 9.7,
+          "training_presence_count": 73,
+          "test_presence_count": null,
+          "presence_summary": "73 training, no test split reported"
         },
         {
           "Species": "Glochidion_heyneanum",
@@ -4867,7 +5360,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 24.5,
           "wc2.1_30s_bio_19_fc": 0.4,
-          "wc2.1_30s_bio_20_fc": 3.8
+          "wc2.1_30s_bio_20_fc": 3.8,
+          "training_presence_count": 7,
+          "test_presence_count": null,
+          "presence_summary": "7 training, no test split reported"
         },
         {
           "Species": "Glochidion_hohenackeri",
@@ -4891,7 +5387,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 18.4,
           "wc2.1_30s_bio_19_fc": 4.1,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Glochidion_zeylanicum",
@@ -4915,7 +5414,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Gluta_travancorica",
@@ -4939,7 +5441,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.7,
           "wc2.1_30s_bio_18_fc": 1.2,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 10,
+          "test_presence_count": null,
+          "presence_summary": "10 training, no test split reported"
         },
         {
           "Species": "Glycosmis_macrocarpa",
@@ -4963,7 +5468,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.4,
           "wc2.1_30s_bio_18_fc": 1.4,
           "wc2.1_30s_bio_19_fc": 9.4,
-          "wc2.1_30s_bio_20_fc": 3.9
+          "wc2.1_30s_bio_20_fc": 3.9,
+          "training_presence_count": 19,
+          "test_presence_count": null,
+          "presence_summary": "19 training, no test split reported"
         },
         {
           "Species": "Glycosmis_pentaphylla",
@@ -4987,7 +5495,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.9,
           "wc2.1_30s_bio_18_fc": 2.3,
           "wc2.1_30s_bio_19_fc": 4.1,
-          "wc2.1_30s_bio_20_fc": 21.1
+          "wc2.1_30s_bio_20_fc": 21.1,
+          "training_presence_count": 44,
+          "test_presence_count": null,
+          "presence_summary": "44 training, no test split reported"
         },
         {
           "Species": "Gnetum_edule",
@@ -5011,7 +5522,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 31.3,
           "wc2.1_30s_bio_19_fc": 12.0,
-          "wc2.1_30s_bio_20_fc": 10.9
+          "wc2.1_30s_bio_20_fc": 10.9,
+          "training_presence_count": 20,
+          "test_presence_count": null,
+          "presence_summary": "20 training, no test split reported"
         },
         {
           "Species": "Gomphandra_coriacea",
@@ -5035,7 +5549,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 2.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 17,
+          "test_presence_count": null,
+          "presence_summary": "17 training, no test split reported"
         },
         {
           "Species": "Gomphandra_tetrandra",
@@ -5059,7 +5576,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.6,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 37.9,
-          "wc2.1_30s_bio_20_fc": 9.4
+          "wc2.1_30s_bio_20_fc": 9.4,
+          "training_presence_count": 48,
+          "test_presence_count": null,
+          "presence_summary": "48 training, no test split reported"
         },
         {
           "Species": "Goniothalamus_cardiopetalus",
@@ -5083,7 +5603,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 53.1,
-          "wc2.1_30s_bio_20_fc": 7.8
+          "wc2.1_30s_bio_20_fc": 7.8,
+          "training_presence_count": 19,
+          "test_presence_count": null,
+          "presence_summary": "19 training, no test split reported"
         },
         {
           "Species": "Goniothalamus_rhynchantherus",
@@ -5107,7 +5630,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.8,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 4,
+          "test_presence_count": null,
+          "presence_summary": "4 training, no test split reported"
         },
         {
           "Species": "Goniothalamus_thwaitesii",
@@ -5131,7 +5657,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.9,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 4,
+          "test_presence_count": null,
+          "presence_summary": "4 training, no test split reported"
         },
         {
           "Species": "Goniothalamus_wightii",
@@ -5155,7 +5684,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": null,
+          "presence_summary": "7 training, no test split reported"
         },
         {
           "Species": "Gordonia_obtusa",
@@ -5179,7 +5711,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 3.3,
           "wc2.1_30s_bio_19_fc": 57.9,
-          "wc2.1_30s_bio_20_fc": 2.0
+          "wc2.1_30s_bio_20_fc": 2.0,
+          "training_presence_count": 16,
+          "test_presence_count": null,
+          "presence_summary": "16 training, no test split reported"
         },
         {
           "Species": "Grewia_serrulata",
@@ -5203,7 +5738,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.4,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 25.1,
-          "wc2.1_30s_bio_20_fc": 1.9
+          "wc2.1_30s_bio_20_fc": 1.9,
+          "training_presence_count": 4,
+          "test_presence_count": null,
+          "presence_summary": "4 training, no test split reported"
         },
         {
           "Species": "Gymnacranthera_canarica",
@@ -5227,7 +5765,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 8.5
+          "wc2.1_30s_bio_20_fc": 8.5,
+          "training_presence_count": 9,
+          "test_presence_count": null,
+          "presence_summary": "9 training, no test split reported"
         },
         {
           "Species": "Harpullia_arborea",
@@ -5251,7 +5792,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.4,
           "wc2.1_30s_bio_18_fc": 0.3,
           "wc2.1_30s_bio_19_fc": 1.7,
-          "wc2.1_30s_bio_20_fc": 12.3
+          "wc2.1_30s_bio_20_fc": 12.3,
+          "training_presence_count": 17,
+          "test_presence_count": null,
+          "presence_summary": "17 training, no test split reported"
         },
         {
           "Species": "Helicia_nilagirica",
@@ -5275,7 +5819,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 4,
+          "test_presence_count": null,
+          "presence_summary": "4 training, no test split reported"
         },
         {
           "Species": "Heptapleurum_ellipticum",
@@ -5299,7 +5846,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.8,
           "wc2.1_30s_bio_18_fc": 3.5,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 4.4
+          "wc2.1_30s_bio_20_fc": 4.4,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Heritiera_papilio",
@@ -5323,7 +5873,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 46.9,
-          "wc2.1_30s_bio_20_fc": 4.7
+          "wc2.1_30s_bio_20_fc": 4.7,
+          "training_presence_count": 24,
+          "test_presence_count": null,
+          "presence_summary": "24 training, no test split reported"
         },
         {
           "Species": "Heynea_trijuga",
@@ -5347,7 +5900,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 4.1,
           "wc2.1_30s_bio_18_fc": 1.9,
           "wc2.1_30s_bio_19_fc": 0.3,
-          "wc2.1_30s_bio_20_fc": 4.2
+          "wc2.1_30s_bio_20_fc": 4.2,
+          "training_presence_count": 24,
+          "test_presence_count": null,
+          "presence_summary": "24 training, no test split reported"
         },
         {
           "Species": "Holigarna_arnottiana",
@@ -5371,7 +5927,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.1,
           "wc2.1_30s_bio_18_fc": 12.7,
           "wc2.1_30s_bio_19_fc": 2.0,
-          "wc2.1_30s_bio_20_fc": 6.2
+          "wc2.1_30s_bio_20_fc": 6.2,
+          "training_presence_count": 84,
+          "test_presence_count": null,
+          "presence_summary": "84 training, no test split reported"
         },
         {
           "Species": "Holigarna_beddomei",
@@ -5395,7 +5954,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 10.9,
-          "wc2.1_30s_bio_20_fc": 44.3
+          "wc2.1_30s_bio_20_fc": 44.3,
+          "training_presence_count": 4,
+          "test_presence_count": null,
+          "presence_summary": "4 training, no test split reported"
         },
         {
           "Species": "Holigarna_ferruginea",
@@ -5419,7 +5981,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 5.3,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 39.2,
-          "wc2.1_30s_bio_20_fc": 7.5
+          "wc2.1_30s_bio_20_fc": 7.5,
+          "training_presence_count": 25,
+          "test_presence_count": null,
+          "presence_summary": "25 training, no test split reported"
         },
         {
           "Species": "Holigarna_grahamii",
@@ -5443,7 +6008,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.9,
           "wc2.1_30s_bio_18_fc": 1.8,
           "wc2.1_30s_bio_19_fc": 5.1,
-          "wc2.1_30s_bio_20_fc": 10.2
+          "wc2.1_30s_bio_20_fc": 10.2,
+          "training_presence_count": 93,
+          "test_presence_count": null,
+          "presence_summary": "93 training, no test split reported"
         },
         {
           "Species": "Holigarna_nigra",
@@ -5467,7 +6035,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.0,
           "wc2.1_30s_bio_19_fc": 22.0,
-          "wc2.1_30s_bio_20_fc": 0.2
+          "wc2.1_30s_bio_20_fc": 0.2,
+          "training_presence_count": 37,
+          "test_presence_count": null,
+          "presence_summary": "37 training, no test split reported"
         },
         {
           "Species": "Homalium_ceylanicum",
@@ -5491,7 +6062,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 6.9,
           "wc2.1_30s_bio_19_fc": 33.8,
-          "wc2.1_30s_bio_20_fc": 5.4
+          "wc2.1_30s_bio_20_fc": 5.4,
+          "training_presence_count": 21,
+          "test_presence_count": null,
+          "presence_summary": "21 training, no test split reported"
         },
         {
           "Species": "Hopea_canarensis",
@@ -5515,7 +6089,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.4,
           "wc2.1_30s_bio_18_fc": 1.8,
           "wc2.1_30s_bio_19_fc": 76.3,
-          "wc2.1_30s_bio_20_fc": 3.9
+          "wc2.1_30s_bio_20_fc": 3.9,
+          "training_presence_count": 14,
+          "test_presence_count": null,
+          "presence_summary": "14 training, no test split reported"
         },
         {
           "Species": "Hopea_erosa",
@@ -5539,7 +6116,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 30.6,
           "wc2.1_30s_bio_18_fc": 0.6,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Hopea_glabra",
@@ -5563,7 +6143,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 5.3,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 6,
+          "test_presence_count": null,
+          "presence_summary": "6 training, no test split reported"
         },
         {
           "Species": "Hopea_parviflora",
@@ -5587,7 +6170,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.7,
           "wc2.1_30s_bio_18_fc": 0.4,
           "wc2.1_30s_bio_19_fc": 35.6,
-          "wc2.1_30s_bio_20_fc": 25.5
+          "wc2.1_30s_bio_20_fc": 25.5,
+          "training_presence_count": 36,
+          "test_presence_count": null,
+          "presence_summary": "36 training, no test split reported"
         },
         {
           "Species": "Hopea_ponga",
@@ -5611,7 +6197,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 1.7,
           "wc2.1_30s_bio_19_fc": 6.5,
-          "wc2.1_30s_bio_20_fc": 22.4
+          "wc2.1_30s_bio_20_fc": 22.4,
+          "training_presence_count": 40,
+          "test_presence_count": null,
+          "presence_summary": "40 training, no test split reported"
         },
         {
           "Species": "Hopea_racophloea",
@@ -5635,7 +6224,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 31.3
+          "wc2.1_30s_bio_20_fc": 31.3,
+          "training_presence_count": 4,
+          "test_presence_count": null,
+          "presence_summary": "4 training, no test split reported"
         },
         {
           "Species": "Humboldtia_brunonis",
@@ -5659,7 +6251,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.0,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 70.2,
-          "wc2.1_30s_bio_20_fc": 9.8
+          "wc2.1_30s_bio_20_fc": 9.8,
+          "training_presence_count": 19,
+          "test_presence_count": null,
+          "presence_summary": "19 training, no test split reported"
         },
         {
           "Species": "Humboldtia_decurrens",
@@ -5683,7 +6278,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 51.6,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 4,
+          "test_presence_count": null,
+          "presence_summary": "4 training, no test split reported"
         },
         {
           "Species": "Humboldtia_vahliana",
@@ -5707,7 +6305,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 10.9,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 16.3
+          "wc2.1_30s_bio_20_fc": 16.3,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Hunteria_zeylanica",
@@ -5731,7 +6332,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.4,
           "wc2.1_30s_bio_18_fc": 6.4,
           "wc2.1_30s_bio_19_fc": 5.7,
-          "wc2.1_30s_bio_20_fc": 8.7
+          "wc2.1_30s_bio_20_fc": 8.7,
+          "training_presence_count": 10,
+          "test_presence_count": null,
+          "presence_summary": "10 training, no test split reported"
         },
         {
           "Species": "Hydnocarpus_alpina",
@@ -5755,7 +6359,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 2.1,
           "wc2.1_30s_bio_19_fc": 47.0,
-          "wc2.1_30s_bio_20_fc": 8.3
+          "wc2.1_30s_bio_20_fc": 8.3,
+          "training_presence_count": 17,
+          "test_presence_count": null,
+          "presence_summary": "17 training, no test split reported"
         },
         {
           "Species": "Hydnocarpus_macrocarpa",
@@ -5779,7 +6386,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.5,
           "wc2.1_30s_bio_19_fc": 52.0,
-          "wc2.1_30s_bio_20_fc": 45.8
+          "wc2.1_30s_bio_20_fc": 45.8,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Hydnocarpus_pentandrus",
@@ -5803,7 +6413,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 4.0,
           "wc2.1_30s_bio_19_fc": 2.0,
-          "wc2.1_30s_bio_20_fc": 29.3
+          "wc2.1_30s_bio_20_fc": 29.3,
+          "training_presence_count": 77,
+          "test_presence_count": null,
+          "presence_summary": "77 training, no test split reported"
         },
         {
           "Species": "Isonandra_lanceolata",
@@ -5827,7 +6440,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.5,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 52.4,
-          "wc2.1_30s_bio_20_fc": 3.4
+          "wc2.1_30s_bio_20_fc": 3.4,
+          "training_presence_count": 30,
+          "test_presence_count": null,
+          "presence_summary": "30 training, no test split reported"
         },
         {
           "Species": "Ixora_alba",
@@ -5851,7 +6467,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 5.3,
-          "wc2.1_30s_bio_20_fc": 40.8
+          "wc2.1_30s_bio_20_fc": 40.8,
+          "training_presence_count": 6,
+          "test_presence_count": null,
+          "presence_summary": "6 training, no test split reported"
         },
         {
           "Species": "Ixora_brachiata",
@@ -5875,7 +6494,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.3,
           "wc2.1_30s_bio_18_fc": 10.5,
           "wc2.1_30s_bio_19_fc": 5.6,
-          "wc2.1_30s_bio_20_fc": 12.0
+          "wc2.1_30s_bio_20_fc": 12.0,
+          "training_presence_count": 111,
+          "test_presence_count": null,
+          "presence_summary": "111 training, no test split reported"
         },
         {
           "Species": "Ixora_elongata",
@@ -5899,7 +6521,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 19.4,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 45.9,
-          "wc2.1_30s_bio_20_fc": 11.1
+          "wc2.1_30s_bio_20_fc": 11.1,
+          "training_presence_count": 23,
+          "test_presence_count": null,
+          "presence_summary": "23 training, no test split reported"
         },
         {
           "Species": "Ixora_lanceolaria",
@@ -5923,7 +6548,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 46.0
+          "wc2.1_30s_bio_20_fc": 46.0,
+          "training_presence_count": 6,
+          "test_presence_count": null,
+          "presence_summary": "6 training, no test split reported"
         },
         {
           "Species": "Ixora_nigricans",
@@ -5947,7 +6575,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 8.4,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 12.9,
-          "wc2.1_30s_bio_20_fc": 20.6
+          "wc2.1_30s_bio_20_fc": 20.6,
+          "training_presence_count": 52,
+          "test_presence_count": null,
+          "presence_summary": "52 training, no test split reported"
         },
         {
           "Species": "Ixora_pavetta",
@@ -5971,7 +6602,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.0,
           "wc2.1_30s_bio_19_fc": 25.7,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Jasminum_malabaricum",
@@ -5995,7 +6629,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 9.4,
-          "wc2.1_30s_bio_20_fc": 25.1
+          "wc2.1_30s_bio_20_fc": 25.1,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Kingiodendron_pinnatum",
@@ -6019,7 +6656,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 4.2,
           "wc2.1_30s_bio_19_fc": 59.4,
-          "wc2.1_30s_bio_20_fc": 1.4
+          "wc2.1_30s_bio_20_fc": 1.4,
+          "training_presence_count": 18,
+          "test_presence_count": null,
+          "presence_summary": "18 training, no test split reported"
         },
         {
           "Species": "Knema_attenuata",
@@ -6043,7 +6683,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.2,
           "wc2.1_30s_bio_18_fc": 3.1,
           "wc2.1_30s_bio_19_fc": 8.0,
-          "wc2.1_30s_bio_20_fc": 26.5
+          "wc2.1_30s_bio_20_fc": 26.5,
+          "training_presence_count": 127,
+          "test_presence_count": null,
+          "presence_summary": "127 training, no test split reported"
         },
         {
           "Species": "Lagerstroemia_microcarpa",
@@ -6067,7 +6710,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 31.4,
           "wc2.1_30s_bio_19_fc": 0.2,
-          "wc2.1_30s_bio_20_fc": 1.3
+          "wc2.1_30s_bio_20_fc": 1.3,
+          "training_presence_count": 72,
+          "test_presence_count": null,
+          "presence_summary": "72 training, no test split reported"
         },
         {
           "Species": "Lasianthus_acuminatus",
@@ -6091,7 +6737,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 2.0,
           "wc2.1_30s_bio_19_fc": 51.1,
-          "wc2.1_30s_bio_20_fc": 0.5
+          "wc2.1_30s_bio_20_fc": 0.5,
+          "training_presence_count": 17,
+          "test_presence_count": null,
+          "presence_summary": "17 training, no test split reported"
         },
         {
           "Species": "Lasianthus_jackianus",
@@ -6115,7 +6764,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.5,
           "wc2.1_30s_bio_18_fc": 1.8,
           "wc2.1_30s_bio_19_fc": 2.8,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 13,
+          "test_presence_count": null,
+          "presence_summary": "13 training, no test split reported"
         },
         {
           "Species": "Lasianthus_oblongifolius",
@@ -6139,7 +6791,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 0.4,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 2,
+          "test_presence_count": null,
+          "presence_summary": "2 training, no test split reported"
         },
         {
           "Species": "Lasianthus_parvifolius",
@@ -6163,7 +6818,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.8,
           "wc2.1_30s_bio_18_fc": 2.6,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 11.6
+          "wc2.1_30s_bio_20_fc": 11.6,
+          "training_presence_count": 2,
+          "test_presence_count": null,
+          "presence_summary": "2 training, no test split reported"
         },
         {
           "Species": "Lasianthus_rostratus",
@@ -6187,7 +6845,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.2,
           "wc2.1_30s_bio_18_fc": 4.2,
           "wc2.1_30s_bio_19_fc": 0.1,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 4,
+          "test_presence_count": null,
+          "presence_summary": "4 training, no test split reported"
         },
         {
           "Species": "Lasiosiphon_glaucus",
@@ -6211,7 +6872,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 8.5,
           "wc2.1_30s_bio_19_fc": 12.9,
-          "wc2.1_30s_bio_20_fc": 2.4
+          "wc2.1_30s_bio_20_fc": 2.4,
+          "training_presence_count": 16,
+          "test_presence_count": null,
+          "presence_summary": "16 training, no test split reported"
         },
         {
           "Species": "Leea_indica",
@@ -6235,7 +6899,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 8.1,
           "wc2.1_30s_bio_19_fc": 2.9,
-          "wc2.1_30s_bio_20_fc": 16.4
+          "wc2.1_30s_bio_20_fc": 16.4,
+          "training_presence_count": 94,
+          "test_presence_count": null,
+          "presence_summary": "94 training, no test split reported"
         },
         {
           "Species": "Lepisanthes_erecta",
@@ -6259,7 +6926,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.2,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 8,
+          "test_presence_count": null,
+          "presence_summary": "8 training, no test split reported"
         },
         {
           "Species": "Lepisanthes_tetraphylla",
@@ -6283,7 +6953,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.4,
           "wc2.1_30s_bio_18_fc": 1.5,
           "wc2.1_30s_bio_19_fc": 16.0,
-          "wc2.1_30s_bio_20_fc": 28.8
+          "wc2.1_30s_bio_20_fc": 28.8,
+          "training_presence_count": 70,
+          "test_presence_count": null,
+          "presence_summary": "70 training, no test split reported"
         },
         {
           "Species": "Leptonychia_caudata",
@@ -6307,7 +6980,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.3,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 8,
+          "test_presence_count": null,
+          "presence_summary": "8 training, no test split reported"
         },
         {
           "Species": "Ligustrum_robustum",
@@ -6331,7 +7007,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 6.3,
-          "wc2.1_30s_bio_20_fc": 9.2
+          "wc2.1_30s_bio_20_fc": 9.2,
+          "training_presence_count": 13,
+          "test_presence_count": null,
+          "presence_summary": "13 training, no test split reported"
         },
         {
           "Species": "Litsea_UM",
@@ -6355,7 +7034,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.8,
           "wc2.1_30s_bio_18_fc": 2.6,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 11.6
+          "wc2.1_30s_bio_20_fc": 11.6,
+          "training_presence_count": 2,
+          "test_presence_count": null,
+          "presence_summary": "2 training, no test split reported"
         },
         {
           "Species": "Litsea_floribunda",
@@ -6379,7 +7061,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.9,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 9.7,
-          "wc2.1_30s_bio_20_fc": 6.5
+          "wc2.1_30s_bio_20_fc": 6.5,
+          "training_presence_count": 68,
+          "test_presence_count": null,
+          "presence_summary": "68 training, no test split reported"
         },
         {
           "Species": "Litsea_ghatica",
@@ -6403,7 +7088,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 2.6
+          "wc2.1_30s_bio_20_fc": 2.6,
+          "training_presence_count": 10,
+          "test_presence_count": null,
+          "presence_summary": "10 training, no test split reported"
         },
         {
           "Species": "Litsea_glabrata",
@@ -6427,7 +7115,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 36.6,
-          "wc2.1_30s_bio_20_fc": 1.9
+          "wc2.1_30s_bio_20_fc": 1.9,
+          "training_presence_count": 16,
+          "test_presence_count": null,
+          "presence_summary": "16 training, no test split reported"
         },
         {
           "Species": "Litsea_keralana",
@@ -6451,7 +7142,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 54.7,
-          "wc2.1_30s_bio_20_fc": 1.6
+          "wc2.1_30s_bio_20_fc": 1.6,
+          "training_presence_count": 23,
+          "test_presence_count": null,
+          "presence_summary": "23 training, no test split reported"
         },
         {
           "Species": "Litsea_laevigata",
@@ -6475,7 +7169,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 7.6,
           "wc2.1_30s_bio_19_fc": 10.8,
-          "wc2.1_30s_bio_20_fc": 11.4
+          "wc2.1_30s_bio_20_fc": 11.4,
+          "training_presence_count": 61,
+          "test_presence_count": null,
+          "presence_summary": "61 training, no test split reported"
         },
         {
           "Species": "Litsea_mysorensis",
@@ -6499,7 +7196,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.9,
           "wc2.1_30s_bio_19_fc": 40.4,
-          "wc2.1_30s_bio_20_fc": 0.2
+          "wc2.1_30s_bio_20_fc": 0.2,
+          "training_presence_count": 34,
+          "test_presence_count": null,
+          "presence_summary": "34 training, no test split reported"
         },
         {
           "Species": "Litsea_oleoides",
@@ -6523,7 +7223,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.5,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 48.4,
-          "wc2.1_30s_bio_20_fc": 1.2
+          "wc2.1_30s_bio_20_fc": 1.2,
+          "training_presence_count": 39,
+          "test_presence_count": null,
+          "presence_summary": "39 training, no test split reported"
         },
         {
           "Species": "Litsea_stocksii",
@@ -6547,7 +7250,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 14.6,
           "wc2.1_30s_bio_18_fc": 9.1,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 6.6
+          "wc2.1_30s_bio_20_fc": 6.6,
+          "training_presence_count": 23,
+          "test_presence_count": null,
+          "presence_summary": "23 training, no test split reported"
         },
         {
           "Species": "Litsea_travancorica",
@@ -6571,7 +7277,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 50.4,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.1,
-          "wc2.1_30s_bio_20_fc": 11.5
+          "wc2.1_30s_bio_20_fc": 11.5,
+          "training_presence_count": 8,
+          "test_presence_count": null,
+          "presence_summary": "8 training, no test split reported"
         },
         {
           "Species": "Litsea_udayanii",
@@ -6595,7 +7304,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 2.2,
-          "wc2.1_30s_bio_20_fc": 53.6
+          "wc2.1_30s_bio_20_fc": 53.6,
+          "training_presence_count": 2,
+          "test_presence_count": null,
+          "presence_summary": "2 training, no test split reported"
         },
         {
           "Species": "Litsea_venulosa",
@@ -6619,7 +7331,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.7,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Litsea_wightiana",
@@ -6643,7 +7358,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 9,
+          "test_presence_count": null,
+          "presence_summary": "9 training, no test split reported"
         },
         {
           "Species": "Lophopetalum_wightianum",
@@ -6667,7 +7385,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 3.9,
           "wc2.1_30s_bio_19_fc": 7.0,
-          "wc2.1_30s_bio_20_fc": 34.7
+          "wc2.1_30s_bio_20_fc": 34.7,
+          "training_presence_count": 32,
+          "test_presence_count": null,
+          "presence_summary": "32 training, no test split reported"
         },
         {
           "Species": "Luvunga_sarmentosa",
@@ -6691,7 +7412,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 13.2,
           "wc2.1_30s_bio_19_fc": 5.5,
-          "wc2.1_30s_bio_20_fc": 2.7
+          "wc2.1_30s_bio_20_fc": 2.7,
+          "training_presence_count": 6,
+          "test_presence_count": null,
+          "presence_summary": "6 training, no test split reported"
         },
         {
           "Species": "Macaranga_indica",
@@ -6715,7 +7439,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 5.9,
-          "wc2.1_30s_bio_20_fc": 11.2
+          "wc2.1_30s_bio_20_fc": 11.2,
+          "training_presence_count": 10,
+          "test_presence_count": null,
+          "presence_summary": "10 training, no test split reported"
         },
         {
           "Species": "Macaranga_peltata",
@@ -6739,7 +7466,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.9,
           "wc2.1_30s_bio_18_fc": 10.5,
           "wc2.1_30s_bio_19_fc": 4.0,
-          "wc2.1_30s_bio_20_fc": 8.8
+          "wc2.1_30s_bio_20_fc": 8.8,
+          "training_presence_count": 100,
+          "test_presence_count": null,
+          "presence_summary": "100 training, no test split reported"
         },
         {
           "Species": "Machilus_glaucescens",
@@ -6763,7 +7493,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.6,
           "wc2.1_30s_bio_18_fc": 8.2,
           "wc2.1_30s_bio_19_fc": 5.6,
-          "wc2.1_30s_bio_20_fc": 13.4
+          "wc2.1_30s_bio_20_fc": 13.4,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Madhuca_bourdillonii",
@@ -6787,7 +7520,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 4.7
+          "wc2.1_30s_bio_20_fc": 4.7,
+          "training_presence_count": 7,
+          "test_presence_count": null,
+          "presence_summary": "7 training, no test split reported"
         },
         {
           "Species": "Madhuca_neriifolia",
@@ -6811,7 +7547,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.3,
           "wc2.1_30s_bio_18_fc": 4.0,
           "wc2.1_30s_bio_19_fc": 1.2,
-          "wc2.1_30s_bio_20_fc": 4.3
+          "wc2.1_30s_bio_20_fc": 4.3,
+          "training_presence_count": 10,
+          "test_presence_count": null,
+          "presence_summary": "10 training, no test split reported"
         },
         {
           "Species": "Maesa_indica",
@@ -6835,7 +7574,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.3
+          "wc2.1_30s_bio_20_fc": 0.3,
+          "training_presence_count": 9,
+          "test_presence_count": null,
+          "presence_summary": "9 training, no test split reported"
         },
         {
           "Species": "Magnolia_nilagirica",
@@ -6859,7 +7601,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": null,
+          "presence_summary": "7 training, no test split reported"
         },
         {
           "Species": "Mallotus_distans",
@@ -6883,7 +7628,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.9,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Mallotus_nudiflorus",
@@ -6907,7 +7655,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.9,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 12.8
+          "wc2.1_30s_bio_20_fc": 12.8,
+          "training_presence_count": 10,
+          "test_presence_count": null,
+          "presence_summary": "10 training, no test split reported"
         },
         {
           "Species": "Mallotus_philippensis",
@@ -6931,7 +7682,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 7.1,
           "wc2.1_30s_bio_19_fc": 2.6,
-          "wc2.1_30s_bio_20_fc": 13.5
+          "wc2.1_30s_bio_20_fc": 13.5,
+          "training_presence_count": 95,
+          "test_presence_count": null,
+          "presence_summary": "95 training, no test split reported"
         },
         {
           "Species": "Mallotus_resinosus",
@@ -6955,7 +7709,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 10.5,
           "wc2.1_30s_bio_18_fc": 0.9,
           "wc2.1_30s_bio_19_fc": 12.8,
-          "wc2.1_30s_bio_20_fc": 7.1
+          "wc2.1_30s_bio_20_fc": 7.1,
+          "training_presence_count": 40,
+          "test_presence_count": null,
+          "presence_summary": "40 training, no test split reported"
         },
         {
           "Species": "Mallotus_rhamnifolius",
@@ -6979,7 +7736,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 18.1
+          "wc2.1_30s_bio_20_fc": 18.1,
+          "training_presence_count": 6,
+          "test_presence_count": null,
+          "presence_summary": "6 training, no test split reported"
         },
         {
           "Species": "Mallotus_tetracoccus",
@@ -7003,7 +7763,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 7.0,
-          "wc2.1_30s_bio_20_fc": 93.0
+          "wc2.1_30s_bio_20_fc": 93.0,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Mammea_suriga",
@@ -7027,7 +7790,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.2,
           "wc2.1_30s_bio_18_fc": 9.8,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.4
+          "wc2.1_30s_bio_20_fc": 0.4,
+          "training_presence_count": 12,
+          "test_presence_count": null,
+          "presence_summary": "12 training, no test split reported"
         },
         {
           "Species": "Mangifera_indica",
@@ -7051,7 +7817,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.9,
           "wc2.1_30s_bio_18_fc": 7.4,
           "wc2.1_30s_bio_19_fc": 3.2,
-          "wc2.1_30s_bio_20_fc": 6.3
+          "wc2.1_30s_bio_20_fc": 6.3,
+          "training_presence_count": 107,
+          "test_presence_count": null,
+          "presence_summary": "107 training, no test split reported"
         },
         {
           "Species": "Mappia_nimmoniana",
@@ -7075,7 +7844,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.8,
           "wc2.1_30s_bio_18_fc": 10.9,
           "wc2.1_30s_bio_19_fc": 4.7,
-          "wc2.1_30s_bio_20_fc": 4.0
+          "wc2.1_30s_bio_20_fc": 4.0,
+          "training_presence_count": 8,
+          "test_presence_count": null,
+          "presence_summary": "8 training, no test split reported"
         },
         {
           "Species": "Margaritaria_indica",
@@ -7099,7 +7871,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 5.1,
           "wc2.1_30s_bio_19_fc": 7.6,
-          "wc2.1_30s_bio_20_fc": 5.0
+          "wc2.1_30s_bio_20_fc": 5.0,
+          "training_presence_count": 14,
+          "test_presence_count": null,
+          "presence_summary": "14 training, no test split reported"
         },
         {
           "Species": "Mastixia_arborea",
@@ -7123,7 +7898,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.5,
           "wc2.1_30s_bio_19_fc": 25.6,
-          "wc2.1_30s_bio_20_fc": 22.2
+          "wc2.1_30s_bio_20_fc": 22.2,
+          "training_presence_count": 45,
+          "test_presence_count": null,
+          "presence_summary": "45 training, no test split reported"
         },
         {
           "Species": "Maytenus_rothiana",
@@ -7147,7 +7925,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 7.6,
           "wc2.1_30s_bio_18_fc": 6.0,
           "wc2.1_30s_bio_19_fc": 10.9,
-          "wc2.1_30s_bio_20_fc": 21.4
+          "wc2.1_30s_bio_20_fc": 21.4,
+          "training_presence_count": 15,
+          "test_presence_count": null,
+          "presence_summary": "15 training, no test split reported"
         },
         {
           "Species": "Meiogyne_pannosa",
@@ -7171,7 +7952,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.0,
           "wc2.1_30s_bio_18_fc": 1.3,
           "wc2.1_30s_bio_19_fc": 31.2,
-          "wc2.1_30s_bio_20_fc": 7.0
+          "wc2.1_30s_bio_20_fc": 7.0,
+          "training_presence_count": 48,
+          "test_presence_count": null,
+          "presence_summary": "48 training, no test split reported"
         },
         {
           "Species": "Meiogyne_ramarowii",
@@ -7195,7 +7979,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.2,
           "wc2.1_30s_bio_18_fc": 10.0,
           "wc2.1_30s_bio_19_fc": 56.3,
-          "wc2.1_30s_bio_20_fc": 11.8
+          "wc2.1_30s_bio_20_fc": 11.8,
+          "training_presence_count": 39,
+          "test_presence_count": null,
+          "presence_summary": "39 training, no test split reported"
         },
         {
           "Species": "Melicope_lunu-ankenda",
@@ -7219,7 +8006,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 9.3,
           "wc2.1_30s_bio_18_fc": 1.2,
           "wc2.1_30s_bio_19_fc": 2.1,
-          "wc2.1_30s_bio_20_fc": 9.1
+          "wc2.1_30s_bio_20_fc": 9.1,
+          "training_presence_count": 28,
+          "test_presence_count": null,
+          "presence_summary": "28 training, no test split reported"
         },
         {
           "Species": "Meliosma_pinnata",
@@ -7243,7 +8033,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.5
+          "wc2.1_30s_bio_20_fc": 0.5,
+          "training_presence_count": 6,
+          "test_presence_count": null,
+          "presence_summary": "6 training, no test split reported"
         },
         {
           "Species": "Memecylon_gracile",
@@ -7267,7 +8060,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.7,
           "wc2.1_30s_bio_18_fc": 0.3,
           "wc2.1_30s_bio_19_fc": 61.3,
-          "wc2.1_30s_bio_20_fc": 3.9
+          "wc2.1_30s_bio_20_fc": 3.9,
+          "training_presence_count": 15,
+          "test_presence_count": null,
+          "presence_summary": "15 training, no test split reported"
         },
         {
           "Species": "Memecylon_heyneanum",
@@ -7291,7 +8087,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.9,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 23.6,
-          "wc2.1_30s_bio_20_fc": 29.8
+          "wc2.1_30s_bio_20_fc": 29.8,
+          "training_presence_count": 17,
+          "test_presence_count": null,
+          "presence_summary": "17 training, no test split reported"
         },
         {
           "Species": "Memecylon_malabaricum",
@@ -7315,7 +8114,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 1.0
+          "wc2.1_30s_bio_20_fc": 1.0,
+          "training_presence_count": 11,
+          "test_presence_count": null,
+          "presence_summary": "11 training, no test split reported"
         },
         {
           "Species": "Memecylon_pseudogracile",
@@ -7339,7 +8141,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.0,
           "wc2.1_30s_bio_18_fc": 0.6,
           "wc2.1_30s_bio_19_fc": 27.6,
-          "wc2.1_30s_bio_20_fc": 0.8
+          "wc2.1_30s_bio_20_fc": 0.8,
+          "training_presence_count": 11,
+          "test_presence_count": null,
+          "presence_summary": "11 training, no test split reported"
         },
         {
           "Species": "Memecylon_randerianum",
@@ -7363,7 +8168,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.5,
           "wc2.1_30s_bio_19_fc": 20.1,
-          "wc2.1_30s_bio_20_fc": 15.1
+          "wc2.1_30s_bio_20_fc": 15.1,
+          "training_presence_count": 11,
+          "test_presence_count": null,
+          "presence_summary": "11 training, no test split reported"
         },
         {
           "Species": "Memecylon_subsessile",
@@ -7387,7 +8195,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 26.5,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 17.8
+          "wc2.1_30s_bio_20_fc": 17.8,
+          "training_presence_count": 7,
+          "test_presence_count": null,
+          "presence_summary": "7 training, no test split reported"
         },
         {
           "Species": "Memecylon_talbotianum",
@@ -7411,7 +8222,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.5,
           "wc2.1_30s_bio_19_fc": 2.9,
-          "wc2.1_30s_bio_20_fc": 27.3
+          "wc2.1_30s_bio_20_fc": 27.3,
+          "training_presence_count": 36,
+          "test_presence_count": null,
+          "presence_summary": "36 training, no test split reported"
         },
         {
           "Species": "Memecylon_terminale",
@@ -7435,7 +8249,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 2.6,
           "wc2.1_30s_bio_19_fc": 14.7,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": null,
+          "presence_summary": "7 training, no test split reported"
         },
         {
           "Species": "Memecylon_umbellatum",
@@ -7459,7 +8276,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.5,
           "wc2.1_30s_bio_18_fc": 10.7,
           "wc2.1_30s_bio_19_fc": 1.0,
-          "wc2.1_30s_bio_20_fc": 0.7
+          "wc2.1_30s_bio_20_fc": 0.7,
+          "training_presence_count": 75,
+          "test_presence_count": null,
+          "presence_summary": "75 training, no test split reported"
         },
         {
           "Species": "Memecylon_wightii",
@@ -7483,7 +8303,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 33.1,
-          "wc2.1_30s_bio_20_fc": 0.5
+          "wc2.1_30s_bio_20_fc": 0.5,
+          "training_presence_count": 29,
+          "test_presence_count": null,
+          "presence_summary": "29 training, no test split reported"
         },
         {
           "Species": "Mesua_ferrea",
@@ -7507,7 +8330,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.8,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 45.6,
-          "wc2.1_30s_bio_20_fc": 6.6
+          "wc2.1_30s_bio_20_fc": 6.6,
+          "training_presence_count": 58,
+          "test_presence_count": null,
+          "presence_summary": "58 training, no test split reported"
         },
         {
           "Species": "Meteoromyrtus_wynaadensis",
@@ -7531,7 +8357,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 32.4,
-          "wc2.1_30s_bio_20_fc": 7.9
+          "wc2.1_30s_bio_20_fc": 7.9,
+          "training_presence_count": 6,
+          "test_presence_count": null,
+          "presence_summary": "6 training, no test split reported"
         },
         {
           "Species": "Meyna_laxiflora",
@@ -7555,7 +8384,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.4,
           "wc2.1_30s_bio_18_fc": 11.7,
           "wc2.1_30s_bio_19_fc": 10.2,
-          "wc2.1_30s_bio_20_fc": 3.0
+          "wc2.1_30s_bio_20_fc": 3.0,
+          "training_presence_count": 30,
+          "test_presence_count": null,
+          "presence_summary": "30 training, no test split reported"
         },
         {
           "Species": "Microcos_paniculata",
@@ -7579,7 +8411,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.2,
           "wc2.1_30s_bio_18_fc": 38.9,
           "wc2.1_30s_bio_19_fc": 5.4,
-          "wc2.1_30s_bio_20_fc": 4.0
+          "wc2.1_30s_bio_20_fc": 4.0,
+          "training_presence_count": 14,
+          "test_presence_count": null,
+          "presence_summary": "14 training, no test split reported"
         },
         {
           "Species": "Microtropis_latifolia",
@@ -7603,7 +8438,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.8,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 30.0,
-          "wc2.1_30s_bio_20_fc": 1.7
+          "wc2.1_30s_bio_20_fc": 1.7,
+          "training_presence_count": 35,
+          "test_presence_count": null,
+          "presence_summary": "35 training, no test split reported"
         },
         {
           "Species": "Miliusa_gokhalaei",
@@ -7627,7 +8465,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 13.4,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 2.1,
-          "wc2.1_30s_bio_20_fc": 14.9
+          "wc2.1_30s_bio_20_fc": 14.9,
+          "training_presence_count": 6,
+          "test_presence_count": null,
+          "presence_summary": "6 training, no test split reported"
         },
         {
           "Species": "Miliusa_nilagirica",
@@ -7651,7 +8492,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.4,
           "wc2.1_30s_bio_19_fc": 19.9,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 8,
+          "test_presence_count": null,
+          "presence_summary": "8 training, no test split reported"
         },
         {
           "Species": "Mimusops_elengi",
@@ -7675,7 +8519,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 19.2,
           "wc2.1_30s_bio_19_fc": 6.4,
-          "wc2.1_30s_bio_20_fc": 5.6
+          "wc2.1_30s_bio_20_fc": 5.6,
+          "training_presence_count": 60,
+          "test_presence_count": null,
+          "presence_summary": "60 training, no test split reported"
         },
         {
           "Species": "Mitragyna_parvifolia",
@@ -7699,7 +8546,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 6.4
+          "wc2.1_30s_bio_20_fc": 6.4,
+          "training_presence_count": 9,
+          "test_presence_count": null,
+          "presence_summary": "9 training, no test split reported"
         },
         {
           "Species": "Mitragyna_tubulosa",
@@ -7723,7 +8573,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.4,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 44.5
+          "wc2.1_30s_bio_20_fc": 44.5,
+          "training_presence_count": 4,
+          "test_presence_count": null,
+          "presence_summary": "4 training, no test split reported"
         },
         {
           "Species": "Mitrephora_grandiflora",
@@ -7747,7 +8600,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 7.3,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": null,
+          "presence_summary": "7 training, no test split reported"
         },
         {
           "Species": "Moullava_spicata",
@@ -7771,7 +8627,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.8,
           "wc2.1_30s_bio_18_fc": 5.0,
           "wc2.1_30s_bio_19_fc": 1.5,
-          "wc2.1_30s_bio_20_fc": 3.9
+          "wc2.1_30s_bio_20_fc": 3.9,
+          "training_presence_count": 17,
+          "test_presence_count": null,
+          "presence_summary": "17 training, no test split reported"
         },
         {
           "Species": "Murraya_koenigii",
@@ -7795,7 +8654,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 4.7,
           "wc2.1_30s_bio_18_fc": 4.9,
           "wc2.1_30s_bio_19_fc": 20.0,
-          "wc2.1_30s_bio_20_fc": 19.9
+          "wc2.1_30s_bio_20_fc": 19.9,
+          "training_presence_count": 18,
+          "test_presence_count": null,
+          "presence_summary": "18 training, no test split reported"
         },
         {
           "Species": "Murraya_paniculata",
@@ -7819,7 +8681,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 7.0,
-          "wc2.1_30s_bio_20_fc": 5.5
+          "wc2.1_30s_bio_20_fc": 5.5,
+          "training_presence_count": 14,
+          "test_presence_count": null,
+          "presence_summary": "14 training, no test split reported"
         },
         {
           "Species": "Myristica_beddomei",
@@ -7843,7 +8708,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 17.4,
           "wc2.1_30s_bio_19_fc": 2.8,
-          "wc2.1_30s_bio_20_fc": 1.3
+          "wc2.1_30s_bio_20_fc": 1.3,
+          "training_presence_count": 4,
+          "test_presence_count": null,
+          "presence_summary": "4 training, no test split reported"
         },
         {
           "Species": "Myristica_dactyloides",
@@ -7867,7 +8735,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.2,
           "wc2.1_30s_bio_18_fc": 1.1,
           "wc2.1_30s_bio_19_fc": 29.5,
-          "wc2.1_30s_bio_20_fc": 4.2
+          "wc2.1_30s_bio_20_fc": 4.2,
+          "training_presence_count": 108,
+          "test_presence_count": null,
+          "presence_summary": "108 training, no test split reported"
         },
         {
           "Species": "Myristica_malabarica",
@@ -7891,7 +8762,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.5,
           "wc2.1_30s_bio_18_fc": 2.6,
           "wc2.1_30s_bio_19_fc": 3.7,
-          "wc2.1_30s_bio_20_fc": 14.3
+          "wc2.1_30s_bio_20_fc": 14.3,
+          "training_presence_count": 57,
+          "test_presence_count": null,
+          "presence_summary": "57 training, no test split reported"
         },
         {
           "Species": "Neolitsea_fischeri",
@@ -7915,7 +8789,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.4,
           "wc2.1_30s_bio_19_fc": 0.2,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 10,
+          "test_presence_count": null,
+          "presence_summary": "10 training, no test split reported"
         },
         {
           "Species": "Neolitsea_scrobiculata",
@@ -7939,7 +8816,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.1,
           "wc2.1_30s_bio_18_fc": 2.5,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 31.5
+          "wc2.1_30s_bio_20_fc": 31.5,
+          "training_presence_count": 4,
+          "test_presence_count": null,
+          "presence_summary": "4 training, no test split reported"
         },
         {
           "Species": "Neolitsea_zeylanica",
@@ -7963,7 +8843,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.4,
           "wc2.1_30s_bio_18_fc": 6.5,
           "wc2.1_30s_bio_19_fc": 11.7,
-          "wc2.1_30s_bio_20_fc": 9.7
+          "wc2.1_30s_bio_20_fc": 9.7,
+          "training_presence_count": 16,
+          "test_presence_count": null,
+          "presence_summary": "16 training, no test split reported"
         },
         {
           "Species": "Nothapodytes_nimmoniana",
@@ -7987,7 +8870,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 5.2,
           "wc2.1_30s_bio_18_fc": 1.9,
           "wc2.1_30s_bio_19_fc": 4.4,
-          "wc2.1_30s_bio_20_fc": 18.8
+          "wc2.1_30s_bio_20_fc": 18.8,
+          "training_presence_count": 28,
+          "test_presence_count": null,
+          "presence_summary": "28 training, no test split reported"
         },
         {
           "Species": "Nothopegia_aureofulva",
@@ -8011,7 +8897,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 2.6,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 4,
+          "test_presence_count": null,
+          "presence_summary": "4 training, no test split reported"
         },
         {
           "Species": "Nothopegia_beddomei",
@@ -8035,7 +8924,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.8,
           "wc2.1_30s_bio_18_fc": 1.0,
           "wc2.1_30s_bio_19_fc": 27.3,
-          "wc2.1_30s_bio_20_fc": 13.6
+          "wc2.1_30s_bio_20_fc": 13.6,
+          "training_presence_count": 74,
+          "test_presence_count": null,
+          "presence_summary": "74 training, no test split reported"
         },
         {
           "Species": "Nothopegia_castaneifolia",
@@ -8059,7 +8951,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 14.2,
           "wc2.1_30s_bio_19_fc": 5.5,
-          "wc2.1_30s_bio_20_fc": 5.0
+          "wc2.1_30s_bio_20_fc": 5.0,
+          "training_presence_count": 29,
+          "test_presence_count": null,
+          "presence_summary": "29 training, no test split reported"
         },
         {
           "Species": "Nothopegia_racemosa",
@@ -8083,7 +8978,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 7.2,
           "wc2.1_30s_bio_19_fc": 6.2,
-          "wc2.1_30s_bio_20_fc": 10.1
+          "wc2.1_30s_bio_20_fc": 10.1,
+          "training_presence_count": 71,
+          "test_presence_count": null,
+          "presence_summary": "71 training, no test split reported"
         },
         {
           "Species": "Nothopegia_travancorica",
@@ -8107,7 +9005,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.9,
           "wc2.1_30s_bio_18_fc": 2.8,
           "wc2.1_30s_bio_19_fc": 60.2,
-          "wc2.1_30s_bio_20_fc": 7.5
+          "wc2.1_30s_bio_20_fc": 7.5,
+          "training_presence_count": 25,
+          "test_presence_count": null,
+          "presence_summary": "25 training, no test split reported"
         },
         {
           "Species": "Ocotea_lancifolia",
@@ -8131,7 +9032,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 22.1,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 25.4,
-          "wc2.1_30s_bio_20_fc": 0.3
+          "wc2.1_30s_bio_20_fc": 0.3,
+          "training_presence_count": 27,
+          "test_presence_count": null,
+          "presence_summary": "27 training, no test split reported"
         },
         {
           "Species": "Octotropis_travancorica",
@@ -8155,7 +9059,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Olea_dioica",
@@ -8179,7 +9086,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.9,
           "wc2.1_30s_bio_18_fc": 12.2,
           "wc2.1_30s_bio_19_fc": 6.2,
-          "wc2.1_30s_bio_20_fc": 1.7
+          "wc2.1_30s_bio_20_fc": 1.7,
+          "training_presence_count": 98,
+          "test_presence_count": null,
+          "presence_summary": "98 training, no test split reported"
         },
         {
           "Species": "Oreocnide_integrifolia",
@@ -8203,7 +9113,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.3,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 14,
+          "test_presence_count": null,
+          "presence_summary": "14 training, no test split reported"
         },
         {
           "Species": "Ormosia_travancorica",
@@ -8227,7 +9140,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.0,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 6.6,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 14,
+          "test_presence_count": null,
+          "presence_summary": "14 training, no test split reported"
         },
         {
           "Species": "Orophea_erythrocarpa",
@@ -8251,7 +9167,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.5,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 9.3
+          "wc2.1_30s_bio_20_fc": 9.3,
+          "training_presence_count": 9,
+          "test_presence_count": null,
+          "presence_summary": "9 training, no test split reported"
         },
         {
           "Species": "Orophea_sivarajanii",
@@ -8275,7 +9194,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 1.3,
           "wc2.1_30s_bio_19_fc": 34.0,
-          "wc2.1_30s_bio_20_fc": 9.8
+          "wc2.1_30s_bio_20_fc": 9.8,
+          "training_presence_count": 6,
+          "test_presence_count": null,
+          "presence_summary": "6 training, no test split reported"
         },
         {
           "Species": "Orophea_thomsonii",
@@ -8299,7 +9221,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.3,
           "wc2.1_30s_bio_18_fc": 3.1,
           "wc2.1_30s_bio_19_fc": 6.7,
-          "wc2.1_30s_bio_20_fc": 14.4
+          "wc2.1_30s_bio_20_fc": 14.4,
+          "training_presence_count": 12,
+          "test_presence_count": null,
+          "presence_summary": "12 training, no test split reported"
         },
         {
           "Species": "Orophea_zeylanica",
@@ -8323,7 +9248,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 8,
+          "test_presence_count": null,
+          "presence_summary": "8 training, no test split reported"
         },
         {
           "Species": "Otonephelium_stipulaceum",
@@ -8347,7 +9275,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 5.0,
           "wc2.1_30s_bio_18_fc": 7.3,
           "wc2.1_30s_bio_19_fc": 49.5,
-          "wc2.1_30s_bio_20_fc": 14.4
+          "wc2.1_30s_bio_20_fc": 14.4,
+          "training_presence_count": 41,
+          "test_presence_count": null,
+          "presence_summary": "41 training, no test split reported"
         },
         {
           "Species": "Oxyceros_rugulosus",
@@ -8371,7 +9302,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.3,
           "wc2.1_30s_bio_18_fc": 5.6,
           "wc2.1_30s_bio_19_fc": 3.9,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 11,
+          "test_presence_count": null,
+          "presence_summary": "11 training, no test split reported"
         },
         {
           "Species": "Pajanelia_longifolia",
@@ -8395,7 +9329,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 5.6,
-          "wc2.1_30s_bio_20_fc": 35.9
+          "wc2.1_30s_bio_20_fc": 35.9,
+          "training_presence_count": 9,
+          "test_presence_count": null,
+          "presence_summary": "9 training, no test split reported"
         },
         {
           "Species": "Palaquium_bourdillonii",
@@ -8419,7 +9356,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.2,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Palaquium_ellipticum",
@@ -8443,7 +9383,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.8,
           "wc2.1_30s_bio_18_fc": 0.4,
           "wc2.1_30s_bio_19_fc": 41.9,
-          "wc2.1_30s_bio_20_fc": 2.6
+          "wc2.1_30s_bio_20_fc": 2.6,
+          "training_presence_count": 83,
+          "test_presence_count": null,
+          "presence_summary": "83 training, no test split reported"
         },
         {
           "Species": "Pandanus_furcatus",
@@ -8467,7 +9410,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.8,
           "wc2.1_30s_bio_18_fc": 0.7,
           "wc2.1_30s_bio_19_fc": 24.7,
-          "wc2.1_30s_bio_20_fc": 16.9
+          "wc2.1_30s_bio_20_fc": 16.9,
+          "training_presence_count": 23,
+          "test_presence_count": null,
+          "presence_summary": "23 training, no test split reported"
         },
         {
           "Species": "Paracroton_pendulus_subsp._zeylanicus",
@@ -8491,7 +9437,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.1,
           "wc2.1_30s_bio_18_fc": 0.5,
           "wc2.1_30s_bio_19_fc": 48.6,
-          "wc2.1_30s_bio_20_fc": 4.2
+          "wc2.1_30s_bio_20_fc": 4.2,
+          "training_presence_count": 41,
+          "test_presence_count": null,
+          "presence_summary": "41 training, no test split reported"
         },
         {
           "Species": "Paramignya_monophylla",
@@ -8515,7 +9464,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 18.6,
           "wc2.1_30s_bio_19_fc": 17.8,
-          "wc2.1_30s_bio_20_fc": 5.1
+          "wc2.1_30s_bio_20_fc": 5.1,
+          "training_presence_count": 17,
+          "test_presence_count": null,
+          "presence_summary": "17 training, no test split reported"
         },
         {
           "Species": "Pavetta_indica",
@@ -8539,7 +9491,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Pavetta_sp",
@@ -8563,7 +9518,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 8,
+          "test_presence_count": null,
+          "presence_summary": "8 training, no test split reported"
         },
         {
           "Species": "Persea_macrantha",
@@ -8587,7 +9545,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 1.8,
           "wc2.1_30s_bio_19_fc": 7.7,
-          "wc2.1_30s_bio_20_fc": 14.8
+          "wc2.1_30s_bio_20_fc": 14.8,
+          "training_presence_count": 97,
+          "test_presence_count": null,
+          "presence_summary": "97 training, no test split reported"
         },
         {
           "Species": "Pinanga_dicksonii",
@@ -8611,7 +9572,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.5,
           "wc2.1_30s_bio_18_fc": 1.7,
           "wc2.1_30s_bio_19_fc": 19.3,
-          "wc2.1_30s_bio_20_fc": 2.1
+          "wc2.1_30s_bio_20_fc": 2.1,
+          "training_presence_count": 20,
+          "test_presence_count": null,
+          "presence_summary": "20 training, no test split reported"
         },
         {
           "Species": "Poeciloneuron_indicum",
@@ -8635,7 +9599,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.5,
           "wc2.1_30s_bio_19_fc": 24.6,
-          "wc2.1_30s_bio_20_fc": 3.6
+          "wc2.1_30s_bio_20_fc": 3.6,
+          "training_presence_count": 30,
+          "test_presence_count": null,
+          "presence_summary": "30 training, no test split reported"
         },
         {
           "Species": "Polyalthia_coffeoides",
@@ -8659,7 +9626,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 21.7,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 33.3,
-          "wc2.1_30s_bio_20_fc": 7.5
+          "wc2.1_30s_bio_20_fc": 7.5,
+          "training_presence_count": 21,
+          "test_presence_count": null,
+          "presence_summary": "21 training, no test split reported"
         },
         {
           "Species": "Polyalthia_fragrans",
@@ -8683,7 +9653,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 2.9,
-          "wc2.1_30s_bio_20_fc": 51.9
+          "wc2.1_30s_bio_20_fc": 51.9,
+          "training_presence_count": 55,
+          "test_presence_count": null,
+          "presence_summary": "55 training, no test split reported"
         },
         {
           "Species": "Polyalthia_malabarica",
@@ -8707,7 +9680,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 12.8,
           "wc2.1_30s_bio_18_fc": 1.8,
           "wc2.1_30s_bio_19_fc": 0.5,
-          "wc2.1_30s_bio_20_fc": 6.8
+          "wc2.1_30s_bio_20_fc": 6.8,
+          "training_presence_count": 13,
+          "test_presence_count": null,
+          "presence_summary": "13 training, no test split reported"
         },
         {
           "Species": "Prismatomeris_tetrandra",
@@ -8731,7 +9707,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 45.0
+          "wc2.1_30s_bio_20_fc": 45.0,
+          "training_presence_count": 4,
+          "test_presence_count": null,
+          "presence_summary": "4 training, no test split reported"
         },
         {
           "Species": "Prunus_ceylanica",
@@ -8755,7 +9734,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 0.4,
           "wc2.1_30s_bio_19_fc": 4.8,
-          "wc2.1_30s_bio_20_fc": 4.2
+          "wc2.1_30s_bio_20_fc": 4.2,
+          "training_presence_count": 33,
+          "test_presence_count": null,
+          "presence_summary": "33 training, no test split reported"
         },
         {
           "Species": "Psychotria_anamallayana",
@@ -8779,7 +9761,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 2.9,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 8,
+          "test_presence_count": null,
+          "presence_summary": "8 training, no test split reported"
         },
         {
           "Species": "Psychotria_dalzellii",
@@ -8803,7 +9788,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.7,
           "wc2.1_30s_bio_18_fc": 14.1,
           "wc2.1_30s_bio_19_fc": 0.8,
-          "wc2.1_30s_bio_20_fc": 18.5
+          "wc2.1_30s_bio_20_fc": 18.5,
+          "training_presence_count": 22,
+          "test_presence_count": null,
+          "presence_summary": "22 training, no test split reported"
         },
         {
           "Species": "Psychotria_flavida",
@@ -8827,7 +9815,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.4,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 39.2
+          "wc2.1_30s_bio_20_fc": 39.2,
+          "training_presence_count": 7,
+          "test_presence_count": null,
+          "presence_summary": "7 training, no test split reported"
         },
         {
           "Species": "Psychotria_nigra",
@@ -8851,7 +9842,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.9,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 27.5,
-          "wc2.1_30s_bio_20_fc": 11.8
+          "wc2.1_30s_bio_20_fc": 11.8,
+          "training_presence_count": 71,
+          "test_presence_count": null,
+          "presence_summary": "71 training, no test split reported"
         },
         {
           "Species": "Psychotria_truncata",
@@ -8875,7 +9869,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 2.8,
           "wc2.1_30s_bio_19_fc": 5.6,
-          "wc2.1_30s_bio_20_fc": 0.1
+          "wc2.1_30s_bio_20_fc": 0.1,
+          "training_presence_count": 16,
+          "test_presence_count": null,
+          "presence_summary": "16 training, no test split reported"
         },
         {
           "Species": "Psydrax_dicoccos",
@@ -8899,7 +9896,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.6,
           "wc2.1_30s_bio_18_fc": 2.3,
           "wc2.1_30s_bio_19_fc": 2.3,
-          "wc2.1_30s_bio_20_fc": 6.0
+          "wc2.1_30s_bio_20_fc": 6.0,
+          "training_presence_count": 48,
+          "test_presence_count": null,
+          "presence_summary": "48 training, no test split reported"
         },
         {
           "Species": "Pterospermum_diversifolium",
@@ -8923,7 +9923,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.3,
           "wc2.1_30s_bio_18_fc": 1.1,
           "wc2.1_30s_bio_19_fc": 0.4,
-          "wc2.1_30s_bio_20_fc": 24.2
+          "wc2.1_30s_bio_20_fc": 24.2,
+          "training_presence_count": 19,
+          "test_presence_count": null,
+          "presence_summary": "19 training, no test split reported"
         },
         {
           "Species": "Pterospermum_reticulatum",
@@ -8947,7 +9950,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.0,
           "wc2.1_30s_bio_18_fc": 1.6,
           "wc2.1_30s_bio_19_fc": 10.9,
-          "wc2.1_30s_bio_20_fc": 27.4
+          "wc2.1_30s_bio_20_fc": 27.4,
+          "training_presence_count": 21,
+          "test_presence_count": null,
+          "presence_summary": "21 training, no test split reported"
         },
         {
           "Species": "Pterospermum_rubiginosum",
@@ -8971,7 +9977,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.5,
           "wc2.1_30s_bio_19_fc": 30.4,
-          "wc2.1_30s_bio_20_fc": 27.7
+          "wc2.1_30s_bio_20_fc": 27.7,
+          "training_presence_count": 7,
+          "test_presence_count": null,
+          "presence_summary": "7 training, no test split reported"
         },
         {
           "Species": "Pterygota_alata",
@@ -8995,7 +10004,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.3,
           "wc2.1_30s_bio_18_fc": 19.5,
           "wc2.1_30s_bio_19_fc": 37.1,
-          "wc2.1_30s_bio_20_fc": 29.5
+          "wc2.1_30s_bio_20_fc": 29.5,
+          "training_presence_count": 17,
+          "test_presence_count": null,
+          "presence_summary": "17 training, no test split reported"
         },
         {
           "Species": "Putranjiva_roxburghii",
@@ -9019,7 +10031,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 1,
+          "test_presence_count": null,
+          "presence_summary": "1 training, no test split reported"
         },
         {
           "Species": "Rapanea_wightiana",
@@ -9043,7 +10058,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 12.9,
-          "wc2.1_30s_bio_20_fc": 1.0
+          "wc2.1_30s_bio_20_fc": 1.0,
+          "training_presence_count": 8,
+          "test_presence_count": null,
+          "presence_summary": "8 training, no test split reported"
         },
         {
           "Species": "Reinwardtiodendron_anamalaiense",
@@ -9067,7 +10085,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.4,
           "wc2.1_30s_bio_18_fc": 0.4,
           "wc2.1_30s_bio_19_fc": 40.0,
-          "wc2.1_30s_bio_20_fc": 22.4
+          "wc2.1_30s_bio_20_fc": 22.4,
+          "training_presence_count": 69,
+          "test_presence_count": null,
+          "presence_summary": "69 training, no test split reported"
         },
         {
           "Species": "Rinorea_bengalensis",
@@ -9091,7 +10112,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.0,
           "wc2.1_30s_bio_18_fc": 2.0,
           "wc2.1_30s_bio_19_fc": 46.2,
-          "wc2.1_30s_bio_20_fc": 18.1
+          "wc2.1_30s_bio_20_fc": 18.1,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Rourea_minor",
@@ -9115,7 +10139,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 12.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Sageraea_laurina",
@@ -9139,7 +10166,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.9,
           "wc2.1_30s_bio_18_fc": 7.2,
           "wc2.1_30s_bio_19_fc": 1.2,
-          "wc2.1_30s_bio_20_fc": 15.2
+          "wc2.1_30s_bio_20_fc": 15.2,
+          "training_presence_count": 17,
+          "test_presence_count": null,
+          "presence_summary": "17 training, no test split reported"
         },
         {
           "Species": "Sageraea_thwaitesii",
@@ -9163,7 +10193,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 35.9,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.4,
-          "wc2.1_30s_bio_20_fc": 26.1
+          "wc2.1_30s_bio_20_fc": 26.1,
+          "training_presence_count": 16,
+          "test_presence_count": null,
+          "presence_summary": "16 training, no test split reported"
         },
         {
           "Species": "Saprosma_corymbosum",
@@ -9187,7 +10220,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.1,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": null,
+          "presence_summary": "7 training, no test split reported"
         },
         {
           "Species": "Saprosma_glomerata",
@@ -9211,7 +10247,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.8,
           "wc2.1_30s_bio_18_fc": 1.5,
           "wc2.1_30s_bio_19_fc": 19.1,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 14,
+          "test_presence_count": null,
+          "presence_summary": "14 training, no test split reported"
         },
         {
           "Species": "Saraca_asoca",
@@ -9235,7 +10274,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 19.5,
           "wc2.1_30s_bio_19_fc": 13.1,
-          "wc2.1_30s_bio_20_fc": 6.7
+          "wc2.1_30s_bio_20_fc": 6.7,
+          "training_presence_count": 9,
+          "test_presence_count": null,
+          "presence_summary": "9 training, no test split reported"
         },
         {
           "Species": "Sarcococca_pruniformis",
@@ -9259,7 +10301,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.3,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 5.5,
-          "wc2.1_30s_bio_20_fc": 8.1
+          "wc2.1_30s_bio_20_fc": 8.1,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Schefflera_micrantha",
@@ -9283,7 +10328,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 10.2,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": null,
+          "presence_summary": "7 training, no test split reported"
         },
         {
           "Species": "Schefflera_venulosa",
@@ -9307,7 +10355,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.5,
           "wc2.1_30s_bio_18_fc": 14.1,
           "wc2.1_30s_bio_19_fc": 6.6,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Scleropyrum_pentandrum",
@@ -9331,7 +10382,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 14.2,
           "wc2.1_30s_bio_18_fc": 1.9,
           "wc2.1_30s_bio_19_fc": 4.6,
-          "wc2.1_30s_bio_20_fc": 61.9
+          "wc2.1_30s_bio_20_fc": 61.9,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Scolopia_crenata",
@@ -9355,7 +10409,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.6,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 6.3,
-          "wc2.1_30s_bio_20_fc": 9.2
+          "wc2.1_30s_bio_20_fc": 9.2,
+          "training_presence_count": 22,
+          "test_presence_count": null,
+          "presence_summary": "22 training, no test split reported"
         },
         {
           "Species": "Scutia_myrtina",
@@ -9379,7 +10436,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 15.0,
           "wc2.1_30s_bio_18_fc": 5.5,
           "wc2.1_30s_bio_19_fc": 1.9,
-          "wc2.1_30s_bio_20_fc": 0.4
+          "wc2.1_30s_bio_20_fc": 0.4,
+          "training_presence_count": 17,
+          "test_presence_count": null,
+          "presence_summary": "17 training, no test split reported"
         },
         {
           "Species": "Semecarpus_auriculata",
@@ -9403,7 +10463,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 51.3,
           "wc2.1_30s_bio_18_fc": 1.2,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.2
+          "wc2.1_30s_bio_20_fc": 0.2,
+          "training_presence_count": 14,
+          "test_presence_count": null,
+          "presence_summary": "14 training, no test split reported"
         },
         {
           "Species": "Semecarpus_travancorica",
@@ -9427,7 +10490,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 36.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 1.7
+          "wc2.1_30s_bio_20_fc": 1.7,
+          "training_presence_count": 7,
+          "test_presence_count": null,
+          "presence_summary": "7 training, no test split reported"
         },
         {
           "Species": "Smythea_bombaiensis",
@@ -9451,7 +10517,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 34.7,
           "wc2.1_30s_bio_19_fc": 5.4,
-          "wc2.1_30s_bio_20_fc": 8.4
+          "wc2.1_30s_bio_20_fc": 8.4,
+          "training_presence_count": 10,
+          "test_presence_count": null,
+          "presence_summary": "10 training, no test split reported"
         },
         {
           "Species": "Spondias_pinnata",
@@ -9475,7 +10544,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.3
+          "wc2.1_30s_bio_20_fc": 0.3,
+          "training_presence_count": 9,
+          "test_presence_count": null,
+          "presence_summary": "9 training, no test split reported"
         },
         {
           "Species": "Sterculia_guttata",
@@ -9499,7 +10571,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 4.8,
           "wc2.1_30s_bio_18_fc": 8.2,
           "wc2.1_30s_bio_19_fc": 0.6,
-          "wc2.1_30s_bio_20_fc": 14.9
+          "wc2.1_30s_bio_20_fc": 14.9,
+          "training_presence_count": 22,
+          "test_presence_count": null,
+          "presence_summary": "22 training, no test split reported"
         },
         {
           "Species": "Stereospermum_tetragonum",
@@ -9523,7 +10598,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 14.7,
           "wc2.1_30s_bio_19_fc": 1.3,
-          "wc2.1_30s_bio_20_fc": 2.9
+          "wc2.1_30s_bio_20_fc": 2.9,
+          "training_presence_count": 39,
+          "test_presence_count": null,
+          "presence_summary": "39 training, no test split reported"
         },
         {
           "Species": "Strombosia_ceylanica",
@@ -9547,7 +10625,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 2.8,
           "wc2.1_30s_bio_19_fc": 5.5,
-          "wc2.1_30s_bio_20_fc": 9.4
+          "wc2.1_30s_bio_20_fc": 9.4,
+          "training_presence_count": 45,
+          "test_presence_count": null,
+          "presence_summary": "45 training, no test split reported"
         },
         {
           "Species": "Symplocos_cochinchinensis",
@@ -9571,7 +10652,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 8.5
+          "wc2.1_30s_bio_20_fc": 8.5,
+          "training_presence_count": 6,
+          "test_presence_count": null,
+          "presence_summary": "6 training, no test split reported"
         },
         {
           "Species": "Symplocos_macrophylla",
@@ -9595,7 +10679,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 11.6,
           "wc2.1_30s_bio_18_fc": 8.5,
           "wc2.1_30s_bio_19_fc": 0.6,
-          "wc2.1_30s_bio_20_fc": 0.6
+          "wc2.1_30s_bio_20_fc": 0.6,
+          "training_presence_count": 22,
+          "test_presence_count": null,
+          "presence_summary": "22 training, no test split reported"
         },
         {
           "Species": "Symplocos_racemosa",
@@ -9619,7 +10706,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.5,
           "wc2.1_30s_bio_18_fc": 1.9,
           "wc2.1_30s_bio_19_fc": 3.9,
-          "wc2.1_30s_bio_20_fc": 11.7
+          "wc2.1_30s_bio_20_fc": 11.7,
+          "training_presence_count": 57,
+          "test_presence_count": null,
+          "presence_summary": "57 training, no test split reported"
         },
         {
           "Species": "Symplocos_rosea",
@@ -9643,7 +10733,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 49.4,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 13.9
+          "wc2.1_30s_bio_20_fc": 13.9,
+          "training_presence_count": 14,
+          "test_presence_count": null,
+          "presence_summary": "14 training, no test split reported"
         },
         {
           "Species": "Syzygium_benthamianum",
@@ -9667,7 +10760,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": null,
+          "presence_summary": "7 training, no test split reported"
         },
         {
           "Species": "Syzygium_calophyllifolium",
@@ -9691,7 +10787,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 2.5,
-          "wc2.1_30s_bio_20_fc": 12.9
+          "wc2.1_30s_bio_20_fc": 12.9,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Syzygium_caryophyllatum",
@@ -9715,7 +10814,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 8.3,
           "wc2.1_30s_bio_18_fc": 8.1,
           "wc2.1_30s_bio_19_fc": 14.8,
-          "wc2.1_30s_bio_20_fc": 23.9
+          "wc2.1_30s_bio_20_fc": 23.9,
+          "training_presence_count": 15,
+          "test_presence_count": null,
+          "presence_summary": "15 training, no test split reported"
         },
         {
           "Species": "Syzygium_cumini",
@@ -9739,7 +10841,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.6,
           "wc2.1_30s_bio_18_fc": 18.2,
           "wc2.1_30s_bio_19_fc": 4.3,
-          "wc2.1_30s_bio_20_fc": 0.4
+          "wc2.1_30s_bio_20_fc": 0.4,
+          "training_presence_count": 121,
+          "test_presence_count": null,
+          "presence_summary": "121 training, no test split reported"
         },
         {
           "Species": "Syzygium_densiflorum",
@@ -9763,7 +10868,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.8,
           "wc2.1_30s_bio_18_fc": 0.8,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 10.5
+          "wc2.1_30s_bio_20_fc": 10.5,
+          "training_presence_count": 11,
+          "test_presence_count": null,
+          "presence_summary": "11 training, no test split reported"
         },
         {
           "Species": "Syzygium_gardneri",
@@ -9787,7 +10895,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.4,
           "wc2.1_30s_bio_18_fc": 3.6,
           "wc2.1_30s_bio_19_fc": 25.2,
-          "wc2.1_30s_bio_20_fc": 16.3
+          "wc2.1_30s_bio_20_fc": 16.3,
+          "training_presence_count": 100,
+          "test_presence_count": null,
+          "presence_summary": "100 training, no test split reported"
         },
         {
           "Species": "Syzygium_grande",
@@ -9811,7 +10922,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 3.7,
           "wc2.1_30s_bio_19_fc": 16.5,
-          "wc2.1_30s_bio_20_fc": 0.1
+          "wc2.1_30s_bio_20_fc": 0.1,
+          "training_presence_count": 10,
+          "test_presence_count": null,
+          "presence_summary": "10 training, no test split reported"
         },
         {
           "Species": "Syzygium_hemisphericum",
@@ -9835,7 +10949,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.6,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 2.0,
-          "wc2.1_30s_bio_20_fc": 30.5
+          "wc2.1_30s_bio_20_fc": 30.5,
+          "training_presence_count": 58,
+          "test_presence_count": null,
+          "presence_summary": "58 training, no test split reported"
         },
         {
           "Species": "Syzygium_laetum",
@@ -9859,7 +10976,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.7,
           "wc2.1_30s_bio_19_fc": 13.7,
-          "wc2.1_30s_bio_20_fc": 17.4
+          "wc2.1_30s_bio_20_fc": 17.4,
+          "training_presence_count": 76,
+          "test_presence_count": null,
+          "presence_summary": "76 training, no test split reported"
         },
         {
           "Species": "Syzygium_lanceolatum",
@@ -9883,7 +11003,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 17.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 10,
+          "test_presence_count": null,
+          "presence_summary": "10 training, no test split reported"
         },
         {
           "Species": "Syzygium_mundagam",
@@ -9907,7 +11030,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 14.4,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 15.6,
-          "wc2.1_30s_bio_20_fc": 1.4
+          "wc2.1_30s_bio_20_fc": 1.4,
+          "training_presence_count": 24,
+          "test_presence_count": null,
+          "presence_summary": "24 training, no test split reported"
         },
         {
           "Species": "Syzygium_munronii",
@@ -9931,7 +11057,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 22.0,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 26.5,
-          "wc2.1_30s_bio_20_fc": 2.6
+          "wc2.1_30s_bio_20_fc": 2.6,
+          "training_presence_count": 22,
+          "test_presence_count": null,
+          "presence_summary": "22 training, no test split reported"
         },
         {
           "Species": "Syzygium_rubicundum",
@@ -9955,7 +11084,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 34.3,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 9,
+          "test_presence_count": null,
+          "presence_summary": "9 training, no test split reported"
         },
         {
           "Species": "Syzygium_zeylanicum",
@@ -9979,7 +11111,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 21.4,
-          "wc2.1_30s_bio_20_fc": 19.0
+          "wc2.1_30s_bio_20_fc": 19.0,
+          "training_presence_count": 4,
+          "test_presence_count": null,
+          "presence_summary": "4 training, no test split reported"
         },
         {
           "Species": "Tabernaemontana_alternifolia",
@@ -10003,7 +11138,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.6,
           "wc2.1_30s_bio_18_fc": 18.7,
           "wc2.1_30s_bio_19_fc": 1.7,
-          "wc2.1_30s_bio_20_fc": 0.6
+          "wc2.1_30s_bio_20_fc": 0.6,
+          "training_presence_count": 87,
+          "test_presence_count": null,
+          "presence_summary": "87 training, no test split reported"
         },
         {
           "Species": "Tabernaemontana_gamblei",
@@ -10027,7 +11165,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.1,
           "wc2.1_30s_bio_18_fc": 1.1,
           "wc2.1_30s_bio_19_fc": 3.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 10,
+          "test_presence_count": null,
+          "presence_summary": "10 training, no test split reported"
         },
         {
           "Species": "Tarenna_asiatica",
@@ -10051,7 +11192,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Tarenna_nilagirica",
@@ -10075,7 +11219,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 1.6
+          "wc2.1_30s_bio_20_fc": 1.6,
+          "training_presence_count": 9,
+          "test_presence_count": null,
+          "presence_summary": "9 training, no test split reported"
         },
         {
           "Species": "Terminalia_bellirica",
@@ -10099,7 +11246,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.9,
           "wc2.1_30s_bio_18_fc": 27.8,
           "wc2.1_30s_bio_19_fc": 1.1,
-          "wc2.1_30s_bio_20_fc": 2.5
+          "wc2.1_30s_bio_20_fc": 2.5,
+          "training_presence_count": 51,
+          "test_presence_count": null,
+          "presence_summary": "51 training, no test split reported"
         },
         {
           "Species": "Terminalia_chebula",
@@ -10123,7 +11273,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.9,
           "wc2.1_30s_bio_18_fc": 17.3,
           "wc2.1_30s_bio_19_fc": 11.9,
-          "wc2.1_30s_bio_20_fc": 9.3
+          "wc2.1_30s_bio_20_fc": 9.3,
+          "training_presence_count": 18,
+          "test_presence_count": null,
+          "presence_summary": "18 training, no test split reported"
         },
         {
           "Species": "Terminalia_paniculata",
@@ -10147,7 +11300,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.5,
           "wc2.1_30s_bio_18_fc": 32.1,
           "wc2.1_30s_bio_19_fc": 0.3,
-          "wc2.1_30s_bio_20_fc": 0.9
+          "wc2.1_30s_bio_20_fc": 0.9,
+          "training_presence_count": 63,
+          "test_presence_count": null,
+          "presence_summary": "63 training, no test split reported"
         },
         {
           "Species": "Terminalia_travancorensis",
@@ -10171,7 +11327,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 0.7,
-          "wc2.1_30s_bio_20_fc": 26.5
+          "wc2.1_30s_bio_20_fc": 26.5,
+          "training_presence_count": 11,
+          "test_presence_count": null,
+          "presence_summary": "11 training, no test split reported"
         },
         {
           "Species": "Tetrameles_nudiflora",
@@ -10195,7 +11354,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.7,
           "wc2.1_30s_bio_18_fc": 16.7,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 13.5
+          "wc2.1_30s_bio_20_fc": 13.5,
+          "training_presence_count": 11,
+          "test_presence_count": null,
+          "presence_summary": "11 training, no test split reported"
         },
         {
           "Species": "Tetrapilus_dioicus",
@@ -10219,7 +11381,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 32.7,
           "wc2.1_30s_bio_19_fc": 10.5,
-          "wc2.1_30s_bio_20_fc": 0.4
+          "wc2.1_30s_bio_20_fc": 0.4,
+          "training_presence_count": 30,
+          "test_presence_count": null,
+          "presence_summary": "30 training, no test split reported"
         },
         {
           "Species": "Toona_ciliata",
@@ -10243,7 +11408,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.3,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 24.5,
-          "wc2.1_30s_bio_20_fc": 0.1
+          "wc2.1_30s_bio_20_fc": 0.1,
+          "training_presence_count": 18,
+          "test_presence_count": null,
+          "presence_summary": "18 training, no test split reported"
         },
         {
           "Species": "Tritaxis_glabella",
@@ -10267,7 +11435,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 50.4,
           "wc2.1_30s_bio_19_fc": 2.5,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Turpinia_cochinchinensis",
@@ -10291,7 +11462,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 20.8
+          "wc2.1_30s_bio_20_fc": 20.8,
+          "training_presence_count": 2,
+          "test_presence_count": null,
+          "presence_summary": "2 training, no test split reported"
         },
         {
           "Species": "Turpinia_malabarica",
@@ -10315,7 +11489,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 23.8,
-          "wc2.1_30s_bio_20_fc": 30.4
+          "wc2.1_30s_bio_20_fc": 30.4,
+          "training_presence_count": 18,
+          "test_presence_count": null,
+          "presence_summary": "18 training, no test split reported"
         },
         {
           "Species": "Turraea_pubescens",
@@ -10339,7 +11516,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 37.5
+          "wc2.1_30s_bio_20_fc": 37.5,
+          "training_presence_count": 5,
+          "test_presence_count": null,
+          "presence_summary": "5 training, no test split reported"
         },
         {
           "Species": "Vateria_indica",
@@ -10363,7 +11543,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 5.2,
           "wc2.1_30s_bio_18_fc": 1.6,
           "wc2.1_30s_bio_19_fc": 17.3,
-          "wc2.1_30s_bio_20_fc": 27.7
+          "wc2.1_30s_bio_20_fc": 27.7,
+          "training_presence_count": 46,
+          "test_presence_count": null,
+          "presence_summary": "46 training, no test split reported"
         },
         {
           "Species": "Vepris_bilocularis",
@@ -10387,7 +11570,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.2,
           "wc2.1_30s_bio_18_fc": 1.3,
           "wc2.1_30s_bio_19_fc": 1.2,
-          "wc2.1_30s_bio_20_fc": 17.8
+          "wc2.1_30s_bio_20_fc": 17.8,
+          "training_presence_count": 41,
+          "test_presence_count": null,
+          "presence_summary": "41 training, no test split reported"
         },
         {
           "Species": "Vitex_altissima",
@@ -10411,7 +11597,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.8,
           "wc2.1_30s_bio_18_fc": 13.2,
           "wc2.1_30s_bio_19_fc": 0.6,
-          "wc2.1_30s_bio_20_fc": 0.4
+          "wc2.1_30s_bio_20_fc": 0.4,
+          "training_presence_count": 53,
+          "test_presence_count": null,
+          "presence_summary": "53 training, no test split reported"
         },
         {
           "Species": "Walsura_trifoliolata",
@@ -10435,7 +11624,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.6,
           "wc2.1_30s_bio_18_fc": 16.4,
           "wc2.1_30s_bio_19_fc": 5.1,
-          "wc2.1_30s_bio_20_fc": 35.7
+          "wc2.1_30s_bio_20_fc": 35.7,
+          "training_presence_count": 17,
+          "test_presence_count": null,
+          "presence_summary": "17 training, no test split reported"
         },
         {
           "Species": "Wendlandia_thyrsoidea",
@@ -10459,7 +11651,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 7.1,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 19.2
+          "wc2.1_30s_bio_20_fc": 19.2,
+          "training_presence_count": 3,
+          "test_presence_count": null,
+          "presence_summary": "3 training, no test split reported"
         },
         {
           "Species": "Xanthophyllum_arnottianum",
@@ -10483,7 +11678,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 29.9,
           "wc2.1_30s_bio_18_fc": 0.3,
           "wc2.1_30s_bio_19_fc": 28.1,
-          "wc2.1_30s_bio_20_fc": 9.3
+          "wc2.1_30s_bio_20_fc": 9.3,
+          "training_presence_count": 50,
+          "test_presence_count": null,
+          "presence_summary": "50 training, no test split reported"
         },
         {
           "Species": "Xantolis_tomentosa",
@@ -10507,7 +11705,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 20.3,
           "wc2.1_30s_bio_19_fc": 6.3,
-          "wc2.1_30s_bio_20_fc": 1.2
+          "wc2.1_30s_bio_20_fc": 1.2,
+          "training_presence_count": 70,
+          "test_presence_count": null,
+          "presence_summary": "70 training, no test split reported"
         },
         {
           "Species": "Xylopia_patoniae",
@@ -10531,7 +11732,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 13.6,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 8.8
+          "wc2.1_30s_bio_20_fc": 8.8,
+          "training_presence_count": 2,
+          "test_presence_count": null,
+          "presence_summary": "2 training, no test split reported"
         },
         {
           "Species": "Zanthoxylum_rhetsa",
@@ -10555,15 +11759,18 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 12.8
+          "wc2.1_30s_bio_20_fc": 12.8,
+          "training_presence_count": 10,
+          "test_presence_count": null,
+          "presence_summary": "10 training, no test split reported"
         }
       ]
     },
     {
       "name": "20260330_095938",
+      "path": "reports/20260330_095938",
       "id": "reports/20260330_095938",
       "display_name": "20260330_095938",
-      "path": "reports/20260330_095938",
       "model_outputs_path": "reports/20260330_095938/model_outputs",
       "metric": {
         "type": "test",
@@ -10571,10 +11778,10 @@ window.REPORT_MANIFEST = {
         "detail": "Test AUC parsed from per-species HTML"
       },
       "summary": {
-        "generated_at": "2026-03-30T14:41:10.364700",
+        "generated_at": "2026-04-01T09:49:03.845358",
         "report_dir": "reports/20260330_095938",
         "report_id": "reports/20260330_095938",
-        "report_display_name": "reports/20260330_095938",
+        "report_display_name": "20260330_095938",
         "run_signature": "5c6e93c8f766",
         "run_anchor_timestamp": "20260330_095938",
         "run_identity": {
@@ -10615,10 +11822,14 @@ window.REPORT_MANIFEST = {
           "max_observed_single_pid_rss_mb": 814.2
         },
         "model_outputs": {
-          "present": true,
+          "present": false,
           "path": "reports/20260330_095938/model_outputs",
-          "file_count": 5133,
-          "html_count": 395
+          "file_count": 0,
+          "html_count": 0
+        },
+        "maxent_args": {
+          "present": true,
+          "command_line_used": "nowarnings noprefixes jackknife outputdirectory=res samplesfile=sp_data_final/Acrocarpus_fraxinifolius.csv environmentallayers=final_attributes autoRun visible=False randomtestpoints=30"
         },
         "notes": [
           "This report bundle is derived from PlantWise_v0 run artifacts.",
@@ -10649,7 +11860,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 73.8,
-          "wc2.1_30s_bio_20_fc": 3.8
+          "wc2.1_30s_bio_20_fc": 3.8,
+          "training_presence_count": 7,
+          "test_presence_count": 3,
+          "presence_summary": "7 training, 3 testing"
         },
         {
           "Species": "Acronychia_pedunculata",
@@ -10673,7 +11887,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 1.3,
-          "wc2.1_30s_bio_20_fc": 2.3
+          "wc2.1_30s_bio_20_fc": 2.3,
+          "training_presence_count": 16,
+          "test_presence_count": 6,
+          "presence_summary": "16 training, 6 testing"
         },
         {
           "Species": "Actephila_excelsa",
@@ -10697,7 +11914,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 83.0
+          "wc2.1_30s_bio_20_fc": 83.0,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Actinodaphne_bourdillonii",
@@ -10721,7 +11941,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.4,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 48.0,
-          "wc2.1_30s_bio_20_fc": 4.7
+          "wc2.1_30s_bio_20_fc": 4.7,
+          "training_presence_count": 17,
+          "test_presence_count": 7,
+          "presence_summary": "17 training, 7 testing"
         },
         {
           "Species": "Actinodaphne_gullavara",
@@ -10745,7 +11968,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 19.2,
           "wc2.1_30s_bio_19_fc": 0.6,
-          "wc2.1_30s_bio_20_fc": 0.5
+          "wc2.1_30s_bio_20_fc": 0.5,
+          "training_presence_count": 18,
+          "test_presence_count": 7,
+          "presence_summary": "18 training, 7 testing"
         },
         {
           "Species": "Actinodaphne_lanceolata",
@@ -10769,7 +11995,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 29.8,
           "wc2.1_30s_bio_19_fc": 0.1,
-          "wc2.1_30s_bio_20_fc": 0.2
+          "wc2.1_30s_bio_20_fc": 0.2,
+          "training_presence_count": 13,
+          "test_presence_count": 5,
+          "presence_summary": "13 training, 5 testing"
         },
         {
           "Species": "Actinodaphne_salicina",
@@ -10793,7 +12022,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 33.4
+          "wc2.1_30s_bio_20_fc": 33.4,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Actinodaphne_tadulingamii",
@@ -10817,7 +12049,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.3,
           "wc2.1_30s_bio_18_fc": 6.8,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.1
+          "wc2.1_30s_bio_20_fc": 0.1,
+          "training_presence_count": 10,
+          "test_presence_count": 4,
+          "presence_summary": "10 training, 4 testing"
         },
         {
           "Species": "Actinodaphne_wightiana",
@@ -10841,7 +12076,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.7,
           "wc2.1_30s_bio_19_fc": 3.0,
-          "wc2.1_30s_bio_20_fc": 30.2
+          "wc2.1_30s_bio_20_fc": 30.2,
+          "training_presence_count": 31,
+          "test_presence_count": 13,
+          "presence_summary": "31 training, 13 testing"
         },
         {
           "Species": "Aglaia_bourdillonii",
@@ -10865,7 +12103,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.5,
           "wc2.1_30s_bio_19_fc": 0.2,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": 2,
+          "presence_summary": "5 training, 2 testing"
         },
         {
           "Species": "Aglaia_canarana",
@@ -10889,7 +12130,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 17.6,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 2.9,
-          "wc2.1_30s_bio_20_fc": 9.9
+          "wc2.1_30s_bio_20_fc": 9.9,
+          "training_presence_count": 21,
+          "test_presence_count": 9,
+          "presence_summary": "21 training, 9 testing"
         },
         {
           "Species": "Aglaia_edulis",
@@ -10913,7 +12157,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 1.7,
           "wc2.1_30s_bio_19_fc": 3.7,
-          "wc2.1_30s_bio_20_fc": 3.5
+          "wc2.1_30s_bio_20_fc": 3.5,
+          "training_presence_count": 41,
+          "test_presence_count": 17,
+          "presence_summary": "41 training, 17 testing"
         },
         {
           "Species": "Aglaia_elaeagnoidea",
@@ -10937,7 +12184,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.1,
           "wc2.1_30s_bio_18_fc": 1.8,
           "wc2.1_30s_bio_19_fc": 11.1,
-          "wc2.1_30s_bio_20_fc": 32.3
+          "wc2.1_30s_bio_20_fc": 32.3,
+          "training_presence_count": 64,
+          "test_presence_count": 27,
+          "presence_summary": "64 training, 27 testing"
         },
         {
           "Species": "Aglaia_lawii",
@@ -10961,7 +12211,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 8.8,
           "wc2.1_30s_bio_18_fc": 2.6,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.3
+          "wc2.1_30s_bio_20_fc": 0.3,
+          "training_presence_count": 28,
+          "test_presence_count": 11,
+          "presence_summary": "28 training, 11 testing"
         },
         {
           "Species": "Aglaia_perviridis",
@@ -10985,7 +12238,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.7,
           "wc2.1_30s_bio_19_fc": 16.0,
-          "wc2.1_30s_bio_20_fc": 5.6
+          "wc2.1_30s_bio_20_fc": 5.6,
+          "training_presence_count": 10,
+          "test_presence_count": 4,
+          "presence_summary": "10 training, 4 testing"
         },
         {
           "Species": "Aglaia_simplicifolia",
@@ -11009,7 +12265,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.4,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 50.3,
-          "wc2.1_30s_bio_20_fc": 0.2
+          "wc2.1_30s_bio_20_fc": 0.2,
+          "training_presence_count": 20,
+          "test_presence_count": 8,
+          "presence_summary": "20 training, 8 testing"
         },
         {
           "Species": "Agrostistachys_borneensis",
@@ -11033,7 +12292,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.5,
           "wc2.1_30s_bio_18_fc": 0.3,
           "wc2.1_30s_bio_19_fc": 39.5,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 19,
+          "test_presence_count": 8,
+          "presence_summary": "19 training, 8 testing"
         },
         {
           "Species": "Agrostistachys_indica",
@@ -11057,7 +12319,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.7,
           "wc2.1_30s_bio_19_fc": 44.3,
-          "wc2.1_30s_bio_20_fc": 0.2
+          "wc2.1_30s_bio_20_fc": 0.2,
+          "training_presence_count": 16,
+          "test_presence_count": 6,
+          "presence_summary": "16 training, 6 testing"
         },
         {
           "Species": "Aidia_densiflora",
@@ -11081,7 +12346,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 3,
+          "test_presence_count": 1,
+          "presence_summary": "3 training, 1 testing"
         },
         {
           "Species": "Ailanthus_triphysa",
@@ -11105,7 +12373,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.3,
           "wc2.1_30s_bio_18_fc": 10.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Allophylus_cobbe",
@@ -11129,7 +12400,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.9,
           "wc2.1_30s_bio_18_fc": 4.7,
           "wc2.1_30s_bio_19_fc": 21.4,
-          "wc2.1_30s_bio_20_fc": 0.9
+          "wc2.1_30s_bio_20_fc": 0.9,
+          "training_presence_count": 16,
+          "test_presence_count": 6,
+          "presence_summary": "16 training, 6 testing"
         },
         {
           "Species": "Alseodaphne_semecarpifolia",
@@ -11153,7 +12427,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.5,
           "wc2.1_30s_bio_18_fc": 11.3,
           "wc2.1_30s_bio_19_fc": 10.6,
-          "wc2.1_30s_bio_20_fc": 0.5
+          "wc2.1_30s_bio_20_fc": 0.5,
+          "training_presence_count": 19,
+          "test_presence_count": 7,
+          "presence_summary": "19 training, 7 testing"
         },
         {
           "Species": "Alstonia_scholaris",
@@ -11177,7 +12454,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 6.0,
           "wc2.1_30s_bio_18_fc": 15.4,
           "wc2.1_30s_bio_19_fc": 1.6,
-          "wc2.1_30s_bio_20_fc": 4.4
+          "wc2.1_30s_bio_20_fc": 4.4,
+          "training_presence_count": 24,
+          "test_presence_count": 9,
+          "presence_summary": "24 training, 9 testing"
         },
         {
           "Species": "Anacolosa_densiflora",
@@ -11201,7 +12481,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 19.7,
           "wc2.1_30s_bio_18_fc": 0.5,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 7.3
+          "wc2.1_30s_bio_20_fc": 7.3,
+          "training_presence_count": 10,
+          "test_presence_count": 4,
+          "presence_summary": "10 training, 4 testing"
         },
         {
           "Species": "Ancistrocladus_heyneanus",
@@ -11225,7 +12508,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.4,
           "wc2.1_30s_bio_19_fc": 16.9,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 6,
+          "test_presence_count": 2,
+          "presence_summary": "6 training, 2 testing"
         },
         {
           "Species": "Antiaris_toxicaria",
@@ -11249,7 +12535,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 21.8,
           "wc2.1_30s_bio_18_fc": 6.5,
           "wc2.1_30s_bio_19_fc": 58.8,
-          "wc2.1_30s_bio_20_fc": 3.7
+          "wc2.1_30s_bio_20_fc": 3.7,
+          "training_presence_count": 14,
+          "test_presence_count": 5,
+          "presence_summary": "14 training, 5 testing"
         },
         {
           "Species": "Antidesma_montanum",
@@ -11273,7 +12562,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.8,
           "wc2.1_30s_bio_18_fc": 1.1,
           "wc2.1_30s_bio_19_fc": 14.9,
-          "wc2.1_30s_bio_20_fc": 1.4
+          "wc2.1_30s_bio_20_fc": 1.4,
+          "training_presence_count": 41,
+          "test_presence_count": 17,
+          "presence_summary": "41 training, 17 testing"
         },
         {
           "Species": "Aphanamixis_polystachya",
@@ -11297,7 +12589,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.3,
           "wc2.1_30s_bio_19_fc": 1.2,
-          "wc2.1_30s_bio_20_fc": 20.8
+          "wc2.1_30s_bio_20_fc": 20.8,
+          "training_presence_count": 24,
+          "test_presence_count": 9,
+          "presence_summary": "24 training, 9 testing"
         },
         {
           "Species": "Aphananthe_cuspidata",
@@ -11321,7 +12616,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 3.7,
-          "wc2.1_30s_bio_20_fc": 47.1
+          "wc2.1_30s_bio_20_fc": 47.1,
+          "training_presence_count": 7,
+          "test_presence_count": 3,
+          "presence_summary": "7 training, 3 testing"
         },
         {
           "Species": "Apodytes_dimidiata",
@@ -11345,7 +12643,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 34.6,
-          "wc2.1_30s_bio_20_fc": 0.2
+          "wc2.1_30s_bio_20_fc": 0.2,
+          "training_presence_count": 8,
+          "test_presence_count": 3,
+          "presence_summary": "8 training, 3 testing"
         },
         {
           "Species": "Aporosa_acuminata",
@@ -11369,7 +12670,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 44.7,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 9.1
+          "wc2.1_30s_bio_20_fc": 9.1,
+          "training_presence_count": 11,
+          "test_presence_count": 4,
+          "presence_summary": "11 training, 4 testing"
         },
         {
           "Species": "Aporosa_cardiosperma",
@@ -11393,7 +12697,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.1,
           "wc2.1_30s_bio_18_fc": 17.4,
           "wc2.1_30s_bio_19_fc": 3.0,
-          "wc2.1_30s_bio_20_fc": 0.5
+          "wc2.1_30s_bio_20_fc": 0.5,
+          "training_presence_count": 49,
+          "test_presence_count": 20,
+          "presence_summary": "49 training, 20 testing"
         },
         {
           "Species": "Archidendron_bigeminum",
@@ -11417,7 +12724,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.5,
           "wc2.1_30s_bio_18_fc": 1.9,
           "wc2.1_30s_bio_19_fc": 53.1,
-          "wc2.1_30s_bio_20_fc": 23.3
+          "wc2.1_30s_bio_20_fc": 23.3,
+          "training_presence_count": 19,
+          "test_presence_count": 7,
+          "presence_summary": "19 training, 7 testing"
         },
         {
           "Species": "Ardisia_missionis",
@@ -11441,7 +12751,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 89.0,
-          "wc2.1_30s_bio_20_fc": 10.1
+          "wc2.1_30s_bio_20_fc": 10.1,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Ardisia_pauciflora",
@@ -11465,7 +12778,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.3,
           "wc2.1_30s_bio_19_fc": 0.6,
-          "wc2.1_30s_bio_20_fc": 1.3
+          "wc2.1_30s_bio_20_fc": 1.3,
+          "training_presence_count": 14,
+          "test_presence_count": 5,
+          "presence_summary": "14 training, 5 testing"
         },
         {
           "Species": "Ardisia_rhomboidea",
@@ -11489,7 +12805,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.1,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 9,
+          "test_presence_count": 3,
+          "presence_summary": "9 training, 3 testing"
         },
         {
           "Species": "Ardisia_solanacea",
@@ -11513,7 +12832,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 31.8,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 12,
+          "test_presence_count": 4,
+          "presence_summary": "12 training, 4 testing"
         },
         {
           "Species": "Ardisia_stonei",
@@ -11537,7 +12859,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 10.2,
           "wc2.1_30s_bio_18_fc": 2.0,
           "wc2.1_30s_bio_19_fc": 5.9,
-          "wc2.1_30s_bio_20_fc": 12.8
+          "wc2.1_30s_bio_20_fc": 12.8,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Arenga_wightii",
@@ -11561,7 +12886,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 5.9,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 3.0
+          "wc2.1_30s_bio_20_fc": 3.0,
+          "training_presence_count": 11,
+          "test_presence_count": 4,
+          "presence_summary": "11 training, 4 testing"
         },
         {
           "Species": "Artocarpus_gomezianus",
@@ -11585,7 +12913,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 5.0,
           "wc2.1_30s_bio_18_fc": 14.3,
           "wc2.1_30s_bio_19_fc": 1.3,
-          "wc2.1_30s_bio_20_fc": 16.8
+          "wc2.1_30s_bio_20_fc": 16.8,
+          "training_presence_count": 16,
+          "test_presence_count": 6,
+          "presence_summary": "16 training, 6 testing"
         },
         {
           "Species": "Artocarpus_heterophyllus",
@@ -11609,7 +12940,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.4,
           "wc2.1_30s_bio_19_fc": 6.4,
-          "wc2.1_30s_bio_20_fc": 2.0
+          "wc2.1_30s_bio_20_fc": 2.0,
+          "training_presence_count": 45,
+          "test_presence_count": 19,
+          "presence_summary": "45 training, 19 testing"
         },
         {
           "Species": "Artocarpus_hirsutus",
@@ -11633,7 +12967,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.9,
           "wc2.1_30s_bio_18_fc": 4.9,
           "wc2.1_30s_bio_19_fc": 1.2,
-          "wc2.1_30s_bio_20_fc": 8.2
+          "wc2.1_30s_bio_20_fc": 8.2,
+          "training_presence_count": 42,
+          "test_presence_count": 18,
+          "presence_summary": "42 training, 18 testing"
         },
         {
           "Species": "Atalantia_racemosa",
@@ -11657,7 +12994,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.4,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 1.7,
-          "wc2.1_30s_bio_20_fc": 13.6
+          "wc2.1_30s_bio_20_fc": 13.6,
+          "training_presence_count": 19,
+          "test_presence_count": 7,
+          "presence_summary": "19 training, 7 testing"
         },
         {
           "Species": "Atalantia_wightii",
@@ -11681,7 +13021,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 2.4,
-          "wc2.1_30s_bio_20_fc": 31.9
+          "wc2.1_30s_bio_20_fc": 31.9,
+          "training_presence_count": 22,
+          "test_presence_count": 9,
+          "presence_summary": "22 training, 9 testing"
         },
         {
           "Species": "Atuna_indica",
@@ -11705,7 +13048,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.3,
           "wc2.1_30s_bio_18_fc": 0.9,
           "wc2.1_30s_bio_19_fc": 7.2,
-          "wc2.1_30s_bio_20_fc": 28.8
+          "wc2.1_30s_bio_20_fc": 28.8,
+          "training_presence_count": 5,
+          "test_presence_count": 1,
+          "presence_summary": "5 training, 1 testing"
         },
         {
           "Species": "Atuna_travancorica",
@@ -11729,7 +13075,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 64.3,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 2.9,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": 2,
+          "presence_summary": "5 training, 2 testing"
         },
         {
           "Species": "Baccaurea_courtallensis",
@@ -11753,7 +13102,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.8,
           "wc2.1_30s_bio_18_fc": 10.3,
           "wc2.1_30s_bio_19_fc": 48.4,
-          "wc2.1_30s_bio_20_fc": 16.7
+          "wc2.1_30s_bio_20_fc": 16.7,
+          "training_presence_count": 32,
+          "test_presence_count": 13,
+          "presence_summary": "32 training, 13 testing"
         },
         {
           "Species": "Beilschmiedia_dalzellii",
@@ -11777,7 +13129,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.5,
           "wc2.1_30s_bio_18_fc": 7.0,
           "wc2.1_30s_bio_19_fc": 1.3,
-          "wc2.1_30s_bio_20_fc": 15.9
+          "wc2.1_30s_bio_20_fc": 15.9,
+          "training_presence_count": 56,
+          "test_presence_count": 24,
+          "presence_summary": "56 training, 24 testing"
         },
         {
           "Species": "Beilschmiedia_wightii",
@@ -11801,7 +13156,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 65.6,
-          "wc2.1_30s_bio_20_fc": 3.9
+          "wc2.1_30s_bio_20_fc": 3.9,
+          "training_presence_count": 12,
+          "test_presence_count": 5,
+          "presence_summary": "12 training, 5 testing"
         },
         {
           "Species": "Bhesa_indica",
@@ -11825,7 +13183,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 0.9,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Bischofia_javanica",
@@ -11849,7 +13210,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.2,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 37.8,
-          "wc2.1_30s_bio_20_fc": 3.4
+          "wc2.1_30s_bio_20_fc": 3.4,
+          "training_presence_count": 21,
+          "test_presence_count": 8,
+          "presence_summary": "21 training, 8 testing"
         },
         {
           "Species": "Blachia_denudata",
@@ -11873,7 +13237,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 9.4,
           "wc2.1_30s_bio_19_fc": 7.3,
-          "wc2.1_30s_bio_20_fc": 6.9
+          "wc2.1_30s_bio_20_fc": 6.9,
+          "training_presence_count": 13,
+          "test_presence_count": 5,
+          "presence_summary": "13 training, 5 testing"
         },
         {
           "Species": "Blepharistemma_serratum",
@@ -11897,7 +13264,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 3.7,
           "wc2.1_30s_bio_19_fc": 15.1,
-          "wc2.1_30s_bio_20_fc": 29.2
+          "wc2.1_30s_bio_20_fc": 29.2,
+          "training_presence_count": 7,
+          "test_presence_count": 3,
+          "presence_summary": "7 training, 3 testing"
         },
         {
           "Species": "Bombax_ceiba",
@@ -11921,7 +13291,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 5.7,
           "wc2.1_30s_bio_18_fc": 16.4,
           "wc2.1_30s_bio_19_fc": 13.4,
-          "wc2.1_30s_bio_20_fc": 5.3
+          "wc2.1_30s_bio_20_fc": 5.3,
+          "training_presence_count": 15,
+          "test_presence_count": 6,
+          "presence_summary": "15 training, 6 testing"
         },
         {
           "Species": "Bridelia_stipularis",
@@ -11945,7 +13318,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 19.7,
           "wc2.1_30s_bio_19_fc": 3.2,
-          "wc2.1_30s_bio_20_fc": 2.9
+          "wc2.1_30s_bio_20_fc": 2.9,
+          "training_presence_count": 7,
+          "test_presence_count": 2,
+          "presence_summary": "7 training, 2 testing"
         },
         {
           "Species": "Callicarpa_tomentosa",
@@ -11969,7 +13345,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 12.5,
           "wc2.1_30s_bio_19_fc": 3.7,
-          "wc2.1_30s_bio_20_fc": 2.9
+          "wc2.1_30s_bio_20_fc": 2.9,
+          "training_presence_count": 40,
+          "test_presence_count": 17,
+          "presence_summary": "40 training, 17 testing"
         },
         {
           "Species": "Calophyllum_apetalum",
@@ -11993,7 +13372,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 17.5,
           "wc2.1_30s_bio_19_fc": 4.3,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 14,
+          "test_presence_count": 6,
+          "presence_summary": "14 training, 6 testing"
         },
         {
           "Species": "Calophyllum_austroindicum",
@@ -12017,7 +13399,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.9,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": 2,
+          "presence_summary": "7 training, 2 testing"
         },
         {
           "Species": "Calophyllum_tomentosum",
@@ -12041,7 +13426,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.1,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 13.1,
-          "wc2.1_30s_bio_20_fc": 37.6
+          "wc2.1_30s_bio_20_fc": 37.6,
+          "training_presence_count": 49,
+          "test_presence_count": 20,
+          "presence_summary": "49 training, 20 testing"
         },
         {
           "Species": "Canarium_strictum",
@@ -12065,7 +13453,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 26.6,
-          "wc2.1_30s_bio_20_fc": 15.7
+          "wc2.1_30s_bio_20_fc": 15.7,
+          "training_presence_count": 31,
+          "test_presence_count": 13,
+          "presence_summary": "31 training, 13 testing"
         },
         {
           "Species": "Canthium_rheedei",
@@ -12089,7 +13480,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 20.8,
           "wc2.1_30s_bio_19_fc": 5.3,
-          "wc2.1_30s_bio_20_fc": 4.6
+          "wc2.1_30s_bio_20_fc": 4.6,
+          "training_presence_count": 10,
+          "test_presence_count": 4,
+          "presence_summary": "10 training, 4 testing"
         },
         {
           "Species": "Capparis_baducca",
@@ -12113,7 +13507,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.3,
           "wc2.1_30s_bio_19_fc": 14.0,
-          "wc2.1_30s_bio_20_fc": 39.1
+          "wc2.1_30s_bio_20_fc": 39.1,
+          "training_presence_count": 6,
+          "test_presence_count": 2,
+          "presence_summary": "6 training, 2 testing"
         },
         {
           "Species": "Carallia_brachiata",
@@ -12137,7 +13534,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.5,
           "wc2.1_30s_bio_18_fc": 2.9,
           "wc2.1_30s_bio_19_fc": 1.8,
-          "wc2.1_30s_bio_20_fc": 5.5
+          "wc2.1_30s_bio_20_fc": 5.5,
+          "training_presence_count": 19,
+          "test_presence_count": 7,
+          "presence_summary": "19 training, 7 testing"
         },
         {
           "Species": "Carissa_carandas",
@@ -12161,7 +13561,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 14.6,
           "wc2.1_30s_bio_19_fc": 0.3,
-          "wc2.1_30s_bio_20_fc": 4.9
+          "wc2.1_30s_bio_20_fc": 4.9,
+          "training_presence_count": 19,
+          "test_presence_count": 7,
+          "presence_summary": "19 training, 7 testing"
         },
         {
           "Species": "Carissa_spinarum",
@@ -12185,7 +13588,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 1.9
+          "wc2.1_30s_bio_20_fc": 1.9,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Caryota_urens",
@@ -12209,7 +13615,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.0,
           "wc2.1_30s_bio_18_fc": 4.3,
           "wc2.1_30s_bio_19_fc": 1.6,
-          "wc2.1_30s_bio_20_fc": 16.2
+          "wc2.1_30s_bio_20_fc": 16.2,
+          "training_presence_count": 42,
+          "test_presence_count": 17,
+          "presence_summary": "42 training, 17 testing"
         },
         {
           "Species": "Casearia_ovata",
@@ -12233,7 +13642,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.5,
           "wc2.1_30s_bio_18_fc": 0.4,
           "wc2.1_30s_bio_19_fc": 6.3,
-          "wc2.1_30s_bio_20_fc": 3.0
+          "wc2.1_30s_bio_20_fc": 3.0,
+          "training_presence_count": 56,
+          "test_presence_count": 23,
+          "presence_summary": "56 training, 23 testing"
         },
         {
           "Species": "Casearia_rubescens",
@@ -12257,7 +13669,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 5.2,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.7
+          "wc2.1_30s_bio_20_fc": 0.7,
+          "training_presence_count": 14,
+          "test_presence_count": 5,
+          "presence_summary": "14 training, 5 testing"
         },
         {
           "Species": "Casearia_wynadensis",
@@ -12281,7 +13696,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 15.5,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 48.2,
-          "wc2.1_30s_bio_20_fc": 1.4
+          "wc2.1_30s_bio_20_fc": 1.4,
+          "training_presence_count": 19,
+          "test_presence_count": 7,
+          "presence_summary": "19 training, 7 testing"
         },
         {
           "Species": "Celtis_philippensis",
@@ -12305,7 +13723,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.9,
           "wc2.1_30s_bio_18_fc": 19.3,
           "wc2.1_30s_bio_19_fc": 0.3,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 14,
+          "test_presence_count": 5,
+          "presence_summary": "14 training, 5 testing"
         },
         {
           "Species": "Celtis_timorensis",
@@ -12329,7 +13750,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 8.1,
-          "wc2.1_30s_bio_20_fc": 91.9
+          "wc2.1_30s_bio_20_fc": 91.9,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Chassalia_curviflora",
@@ -12353,7 +13777,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 31.4
+          "wc2.1_30s_bio_20_fc": 31.4,
+          "training_presence_count": 3,
+          "test_presence_count": 1,
+          "presence_summary": "3 training, 1 testing"
         },
         {
           "Species": "Chionanthus_courtallensis",
@@ -12377,7 +13804,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": 2,
+          "presence_summary": "5 training, 2 testing"
         },
         {
           "Species": "Chionanthus_mala-elengi",
@@ -12401,7 +13831,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 42.9,
-          "wc2.1_30s_bio_20_fc": 0.1
+          "wc2.1_30s_bio_20_fc": 0.1,
+          "training_presence_count": 5,
+          "test_presence_count": 1,
+          "presence_summary": "5 training, 1 testing"
         },
         {
           "Species": "Chionanthus_ramiflorus",
@@ -12425,7 +13858,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 61.4,
-          "wc2.1_30s_bio_20_fc": 6.5
+          "wc2.1_30s_bio_20_fc": 6.5,
+          "training_presence_count": 17,
+          "test_presence_count": 7,
+          "presence_summary": "17 training, 7 testing"
         },
         {
           "Species": "Chrysophyllum_flexuosum",
@@ -12449,7 +13885,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 14.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 9.4
+          "wc2.1_30s_bio_20_fc": 9.4,
+          "training_presence_count": 7,
+          "test_presence_count": 3,
+          "presence_summary": "7 training, 3 testing"
         },
         {
           "Species": "Chukrasia_tabularis",
@@ -12473,7 +13912,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 40.7,
-          "wc2.1_30s_bio_20_fc": 32.5
+          "wc2.1_30s_bio_20_fc": 32.5,
+          "training_presence_count": 7,
+          "test_presence_count": 2,
+          "presence_summary": "7 training, 2 testing"
         },
         {
           "Species": "Cinnamomum_filipedicellatum",
@@ -12497,7 +13939,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 2.4,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.6
+          "wc2.1_30s_bio_20_fc": 0.6,
+          "training_presence_count": 11,
+          "test_presence_count": 4,
+          "presence_summary": "11 training, 4 testing"
         },
         {
           "Species": "Cinnamomum_keralaense",
@@ -12521,7 +13966,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 8.2,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": 1,
+          "presence_summary": "5 training, 1 testing"
         },
         {
           "Species": "Cinnamomum_macrocarpum",
@@ -12545,7 +13993,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 35.0
+          "wc2.1_30s_bio_20_fc": 35.0,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Cinnamomum_malabatrum",
@@ -12569,7 +14020,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 4.5,
           "wc2.1_30s_bio_18_fc": 3.6,
           "wc2.1_30s_bio_19_fc": 7.2,
-          "wc2.1_30s_bio_20_fc": 13.6
+          "wc2.1_30s_bio_20_fc": 13.6,
+          "training_presence_count": 89,
+          "test_presence_count": 38,
+          "presence_summary": "89 training, 38 testing"
         },
         {
           "Species": "Cinnamomum_sulphuratum",
@@ -12593,7 +14047,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 4.7,
-          "wc2.1_30s_bio_20_fc": 27.8
+          "wc2.1_30s_bio_20_fc": 27.8,
+          "training_presence_count": 5,
+          "test_presence_count": 1,
+          "presence_summary": "5 training, 1 testing"
         },
         {
           "Species": "Cinnamomum_verum",
@@ -12617,7 +14074,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 8.4,
           "wc2.1_30s_bio_19_fc": 7.6,
-          "wc2.1_30s_bio_20_fc": 14.7
+          "wc2.1_30s_bio_20_fc": 14.7,
+          "training_presence_count": 23,
+          "test_presence_count": 9,
+          "presence_summary": "23 training, 9 testing"
         },
         {
           "Species": "Clausena_anisata",
@@ -12641,7 +14101,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.8,
           "wc2.1_30s_bio_18_fc": 2.2,
           "wc2.1_30s_bio_19_fc": 0.1,
-          "wc2.1_30s_bio_20_fc": 7.6
+          "wc2.1_30s_bio_20_fc": 7.6,
+          "training_presence_count": 11,
+          "test_presence_count": 4,
+          "presence_summary": "11 training, 4 testing"
         },
         {
           "Species": "Clausena_austroindica",
@@ -12665,7 +14128,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 43.3
+          "wc2.1_30s_bio_20_fc": 43.3,
+          "training_presence_count": 3,
+          "test_presence_count": 1,
+          "presence_summary": "3 training, 1 testing"
         },
         {
           "Species": "Clausena_indica",
@@ -12689,7 +14155,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 30.7,
-          "wc2.1_30s_bio_20_fc": 7.6
+          "wc2.1_30s_bio_20_fc": 7.6,
+          "training_presence_count": 16,
+          "test_presence_count": 6,
+          "presence_summary": "16 training, 6 testing"
         },
         {
           "Species": "Cleidion_javanicum",
@@ -12713,7 +14182,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 5.5,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 49.9
+          "wc2.1_30s_bio_20_fc": 49.9,
+          "training_presence_count": 9,
+          "test_presence_count": 3,
+          "presence_summary": "9 training, 3 testing"
         },
         {
           "Species": "Cleistanthus_malabaricus",
@@ -12737,7 +14209,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 54.5
+          "wc2.1_30s_bio_20_fc": 54.5,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Cleistanthus_travancorensis",
@@ -12761,7 +14236,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.5,
           "wc2.1_30s_bio_19_fc": 66.8,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 6,
+          "test_presence_count": 2,
+          "presence_summary": "6 training, 2 testing"
         },
         {
           "Species": "Clerodendrum_infortunatum",
@@ -12785,7 +14263,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.4,
           "wc2.1_30s_bio_18_fc": 6.0,
           "wc2.1_30s_bio_19_fc": 15.3,
-          "wc2.1_30s_bio_20_fc": 11.3
+          "wc2.1_30s_bio_20_fc": 11.3,
+          "training_presence_count": 14,
+          "test_presence_count": 6,
+          "presence_summary": "14 training, 6 testing"
         },
         {
           "Species": "Connarus_wightii",
@@ -12809,7 +14290,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 35.3,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.7
+          "wc2.1_30s_bio_20_fc": 0.7,
+          "training_presence_count": 6,
+          "test_presence_count": 2,
+          "presence_summary": "6 training, 2 testing"
         },
         {
           "Species": "Croton_malabaricus",
@@ -12833,7 +14317,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 13.6,
           "wc2.1_30s_bio_18_fc": 1.1,
           "wc2.1_30s_bio_19_fc": 29.2,
-          "wc2.1_30s_bio_20_fc": 23.7
+          "wc2.1_30s_bio_20_fc": 23.7,
+          "training_presence_count": 27,
+          "test_presence_count": 11,
+          "presence_summary": "27 training, 11 testing"
         },
         {
           "Species": "Croton_zeylanicus",
@@ -12857,7 +14344,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 15.2
+          "wc2.1_30s_bio_20_fc": 15.2,
+          "training_presence_count": 10,
+          "test_presence_count": 3,
+          "presence_summary": "10 training, 3 testing"
         },
         {
           "Species": "Cryptocarya_anamalayana",
@@ -12881,7 +14371,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.4,
           "wc2.1_30s_bio_18_fc": 0.4,
           "wc2.1_30s_bio_19_fc": 41.4,
-          "wc2.1_30s_bio_20_fc": 21.1
+          "wc2.1_30s_bio_20_fc": 21.1,
+          "training_presence_count": 15,
+          "test_presence_count": 6,
+          "presence_summary": "15 training, 6 testing"
         },
         {
           "Species": "Cryptocarya_beddomei",
@@ -12905,7 +14398,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.8,
           "wc2.1_30s_bio_18_fc": 2.2,
           "wc2.1_30s_bio_19_fc": 46.8,
-          "wc2.1_30s_bio_20_fc": 10.3
+          "wc2.1_30s_bio_20_fc": 10.3,
+          "training_presence_count": 16,
+          "test_presence_count": 6,
+          "presence_summary": "16 training, 6 testing"
         },
         {
           "Species": "Cryptocarya_lawsonii",
@@ -12929,7 +14425,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.2,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 20.8,
-          "wc2.1_30s_bio_20_fc": 18.3
+          "wc2.1_30s_bio_20_fc": 18.3,
+          "training_presence_count": 50,
+          "test_presence_count": 21,
+          "presence_summary": "50 training, 21 testing"
         },
         {
           "Species": "Cryptocarya_stocksii",
@@ -12953,7 +14452,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.6,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.1,
-          "wc2.1_30s_bio_20_fc": 15.8
+          "wc2.1_30s_bio_20_fc": 15.8,
+          "training_presence_count": 8,
+          "test_presence_count": 3,
+          "presence_summary": "8 training, 3 testing"
         },
         {
           "Species": "Cryptocarya_wightiana",
@@ -12977,7 +14479,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 8.6,
           "wc2.1_30s_bio_19_fc": 8.8,
-          "wc2.1_30s_bio_20_fc": 0.5
+          "wc2.1_30s_bio_20_fc": 0.5,
+          "training_presence_count": 21,
+          "test_presence_count": 9,
+          "presence_summary": "21 training, 9 testing"
         },
         {
           "Species": "Cyathocalyx_zeylanicus",
@@ -13001,7 +14506,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.3,
           "wc2.1_30s_bio_19_fc": 4.9,
-          "wc2.1_30s_bio_20_fc": 35.0
+          "wc2.1_30s_bio_20_fc": 35.0,
+          "training_presence_count": 11,
+          "test_presence_count": 4,
+          "presence_summary": "11 training, 4 testing"
         },
         {
           "Species": "Cynometra_travancorica",
@@ -13025,7 +14533,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 29.6,
-          "wc2.1_30s_bio_20_fc": 25.6
+          "wc2.1_30s_bio_20_fc": 25.6,
+          "training_presence_count": 5,
+          "test_presence_count": 2,
+          "presence_summary": "5 training, 2 testing"
         },
         {
           "Species": "Dendrocnide_sinuata",
@@ -13049,7 +14560,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 7.1,
           "wc2.1_30s_bio_18_fc": 4.3,
           "wc2.1_30s_bio_19_fc": 2.9,
-          "wc2.1_30s_bio_20_fc": 13.4
+          "wc2.1_30s_bio_20_fc": 13.4,
+          "training_presence_count": 12,
+          "test_presence_count": 4,
+          "presence_summary": "12 training, 4 testing"
         },
         {
           "Species": "Dichapetalum_gelonioides",
@@ -13073,7 +14587,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.0,
           "wc2.1_30s_bio_18_fc": 0.3,
           "wc2.1_30s_bio_19_fc": 13.5,
-          "wc2.1_30s_bio_20_fc": 33.8
+          "wc2.1_30s_bio_20_fc": 33.8,
+          "training_presence_count": 51,
+          "test_presence_count": 21,
+          "presence_summary": "51 training, 21 testing"
         },
         {
           "Species": "Dillenia_bracteata",
@@ -13097,7 +14614,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 14.0,
-          "wc2.1_30s_bio_20_fc": 25.5
+          "wc2.1_30s_bio_20_fc": 25.5,
+          "training_presence_count": 9,
+          "test_presence_count": 3,
+          "presence_summary": "9 training, 3 testing"
         },
         {
           "Species": "Dimocarpus_longan",
@@ -13121,7 +14641,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 7.7,
           "wc2.1_30s_bio_18_fc": 5.3,
           "wc2.1_30s_bio_19_fc": 11.3,
-          "wc2.1_30s_bio_20_fc": 5.2
+          "wc2.1_30s_bio_20_fc": 5.2,
+          "training_presence_count": 97,
+          "test_presence_count": 41,
+          "presence_summary": "97 training, 41 testing"
         },
         {
           "Species": "Dimorphocalyx_beddomei",
@@ -13145,7 +14668,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.7,
           "wc2.1_30s_bio_18_fc": 4.3,
           "wc2.1_30s_bio_19_fc": 0.3,
-          "wc2.1_30s_bio_20_fc": 15.0
+          "wc2.1_30s_bio_20_fc": 15.0,
+          "training_presence_count": 14,
+          "test_presence_count": 5,
+          "presence_summary": "14 training, 5 testing"
         },
         {
           "Species": "Dimorphocalyx_glabellus",
@@ -13169,7 +14695,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.8,
           "wc2.1_30s_bio_18_fc": 4.0,
           "wc2.1_30s_bio_19_fc": 14.5,
-          "wc2.1_30s_bio_20_fc": 0.1
+          "wc2.1_30s_bio_20_fc": 0.1,
+          "training_presence_count": 10,
+          "test_presence_count": 3,
+          "presence_summary": "10 training, 3 testing"
         },
         {
           "Species": "Diospyros_bourdillonii",
@@ -13193,7 +14722,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.5,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 54.6,
-          "wc2.1_30s_bio_20_fc": 4.1
+          "wc2.1_30s_bio_20_fc": 4.1,
+          "training_presence_count": 16,
+          "test_presence_count": 6,
+          "presence_summary": "16 training, 6 testing"
         },
         {
           "Species": "Diospyros_buxifolia",
@@ -13217,7 +14749,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 5.8,
           "wc2.1_30s_bio_19_fc": 4.3,
-          "wc2.1_30s_bio_20_fc": 30.5
+          "wc2.1_30s_bio_20_fc": 30.5,
+          "training_presence_count": 24,
+          "test_presence_count": 9,
+          "presence_summary": "24 training, 9 testing"
         },
         {
           "Species": "Diospyros_candolleana",
@@ -13241,7 +14776,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.4,
           "wc2.1_30s_bio_18_fc": 9.0,
           "wc2.1_30s_bio_19_fc": 2.7,
-          "wc2.1_30s_bio_20_fc": 19.6
+          "wc2.1_30s_bio_20_fc": 19.6,
+          "training_presence_count": 60,
+          "test_presence_count": 25,
+          "presence_summary": "60 training, 25 testing"
         },
         {
           "Species": "Diospyros_crumenata",
@@ -13265,7 +14803,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 10.3,
           "wc2.1_30s_bio_18_fc": 10.4,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 3.5
+          "wc2.1_30s_bio_20_fc": 3.5,
+          "training_presence_count": 7,
+          "test_presence_count": 2,
+          "presence_summary": "7 training, 2 testing"
         },
         {
           "Species": "Diospyros_ebenum",
@@ -13289,7 +14830,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 3.5,
           "wc2.1_30s_bio_19_fc": 19.2,
-          "wc2.1_30s_bio_20_fc": 48.9
+          "wc2.1_30s_bio_20_fc": 48.9,
+          "training_presence_count": 17,
+          "test_presence_count": 6,
+          "presence_summary": "17 training, 6 testing"
         },
         {
           "Species": "Diospyros_ferrea",
@@ -13313,7 +14857,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 2.4,
           "wc2.1_30s_bio_19_fc": 0.6,
-          "wc2.1_30s_bio_20_fc": 2.2
+          "wc2.1_30s_bio_20_fc": 2.2,
+          "training_presence_count": 20,
+          "test_presence_count": 8,
+          "presence_summary": "20 training, 8 testing"
         },
         {
           "Species": "Diospyros_ghatensis",
@@ -13337,7 +14884,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 8.6,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 50.8,
-          "wc2.1_30s_bio_20_fc": 13.0
+          "wc2.1_30s_bio_20_fc": 13.0,
+          "training_presence_count": 17,
+          "test_presence_count": 7,
+          "presence_summary": "17 training, 7 testing"
         },
         {
           "Species": "Diospyros_kedam",
@@ -13361,7 +14911,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 19.1,
-          "wc2.1_30s_bio_20_fc": 12.7
+          "wc2.1_30s_bio_20_fc": 12.7,
+          "training_presence_count": 5,
+          "test_presence_count": 1,
+          "presence_summary": "5 training, 1 testing"
         },
         {
           "Species": "Diospyros_malabarica",
@@ -13385,7 +14938,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 10.1,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 10.3
+          "wc2.1_30s_bio_20_fc": 10.3,
+          "training_presence_count": 6,
+          "test_presence_count": 2,
+          "presence_summary": "6 training, 2 testing"
         },
         {
           "Species": "Diospyros_montana",
@@ -13409,7 +14965,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.3,
           "wc2.1_30s_bio_18_fc": 37.6,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 2.6
+          "wc2.1_30s_bio_20_fc": 2.6,
+          "training_presence_count": 38,
+          "test_presence_count": 16,
+          "presence_summary": "38 training, 16 testing"
         },
         {
           "Species": "Diospyros_nilagirica",
@@ -13433,7 +14992,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 4.9,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 1.5
+          "wc2.1_30s_bio_20_fc": 1.5,
+          "training_presence_count": 8,
+          "test_presence_count": 3,
+          "presence_summary": "8 training, 3 testing"
         },
         {
           "Species": "Diospyros_oocarpa",
@@ -13457,7 +15019,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 4.3,
           "wc2.1_30s_bio_19_fc": 1.7,
-          "wc2.1_30s_bio_20_fc": 15.2
+          "wc2.1_30s_bio_20_fc": 15.2,
+          "training_presence_count": 30,
+          "test_presence_count": 12,
+          "presence_summary": "30 training, 12 testing"
         },
         {
           "Species": "Diospyros_paniculata",
@@ -13481,7 +15046,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 5.1,
           "wc2.1_30s_bio_18_fc": 0.3,
           "wc2.1_30s_bio_19_fc": 3.7,
-          "wc2.1_30s_bio_20_fc": 26.2
+          "wc2.1_30s_bio_20_fc": 26.2,
+          "training_presence_count": 33,
+          "test_presence_count": 13,
+          "presence_summary": "33 training, 13 testing"
         },
         {
           "Species": "Diospyros_pruriens",
@@ -13505,7 +15073,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 9.5,
           "wc2.1_30s_bio_18_fc": 2.5,
           "wc2.1_30s_bio_19_fc": 2.3,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 12,
+          "test_presence_count": 5,
+          "presence_summary": "12 training, 5 testing"
         },
         {
           "Species": "Diospyros_ridleyi",
@@ -13529,7 +15100,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 6.7,
-          "wc2.1_30s_bio_20_fc": 12.9
+          "wc2.1_30s_bio_20_fc": 12.9,
+          "training_presence_count": 5,
+          "test_presence_count": 1,
+          "presence_summary": "5 training, 1 testing"
         },
         {
           "Species": "Diospyros_saldanhae",
@@ -13553,7 +15127,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.0,
           "wc2.1_30s_bio_18_fc": 3.7,
           "wc2.1_30s_bio_19_fc": 7.2,
-          "wc2.1_30s_bio_20_fc": 13.6
+          "wc2.1_30s_bio_20_fc": 13.6,
+          "training_presence_count": 28,
+          "test_presence_count": 11,
+          "presence_summary": "28 training, 11 testing"
         },
         {
           "Species": "Diospyros_sylvatica",
@@ -13577,7 +15154,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 6.1,
           "wc2.1_30s_bio_18_fc": 0.8,
           "wc2.1_30s_bio_19_fc": 11.5,
-          "wc2.1_30s_bio_20_fc": 3.3
+          "wc2.1_30s_bio_20_fc": 3.3,
+          "training_presence_count": 46,
+          "test_presence_count": 19,
+          "presence_summary": "46 training, 19 testing"
         },
         {
           "Species": "Diploclisia_glaucescens",
@@ -13601,7 +15181,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.5,
           "wc2.1_30s_bio_19_fc": 0.2,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": 3,
+          "presence_summary": "7 training, 3 testing"
         },
         {
           "Species": "Dipterocarpus_bourdillonii",
@@ -13625,7 +15208,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.5,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.4
+          "wc2.1_30s_bio_20_fc": 0.4,
+          "training_presence_count": 6,
+          "test_presence_count": 2,
+          "presence_summary": "6 training, 2 testing"
         },
         {
           "Species": "Dipterocarpus_indicus",
@@ -13649,7 +15235,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.4,
           "wc2.1_30s_bio_18_fc": 0.4,
           "wc2.1_30s_bio_19_fc": 18.5,
-          "wc2.1_30s_bio_20_fc": 29.0
+          "wc2.1_30s_bio_20_fc": 29.0,
+          "training_presence_count": 35,
+          "test_presence_count": 15,
+          "presence_summary": "35 training, 15 testing"
         },
         {
           "Species": "Discospermum_sphaerocarpum",
@@ -13673,7 +15262,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.3,
           "wc2.1_30s_bio_18_fc": 7.1,
           "wc2.1_30s_bio_19_fc": 0.5,
-          "wc2.1_30s_bio_20_fc": 1.9
+          "wc2.1_30s_bio_20_fc": 1.9,
+          "training_presence_count": 11,
+          "test_presence_count": 4,
+          "presence_summary": "11 training, 4 testing"
         },
         {
           "Species": "Donella_lanceolata",
@@ -13697,7 +15289,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 6.1,
           "wc2.1_30s_bio_18_fc": 0.7,
           "wc2.1_30s_bio_19_fc": 36.8,
-          "wc2.1_30s_bio_20_fc": 14.2
+          "wc2.1_30s_bio_20_fc": 14.2,
+          "training_presence_count": 17,
+          "test_presence_count": 7,
+          "presence_summary": "17 training, 7 testing"
         },
         {
           "Species": "Dracaena_elliptica",
@@ -13721,7 +15316,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 3.4,
-          "wc2.1_30s_bio_20_fc": 14.6
+          "wc2.1_30s_bio_20_fc": 14.6,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Drypetes_confertiflora",
@@ -13745,7 +15343,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 3.6,
-          "wc2.1_30s_bio_20_fc": 48.3
+          "wc2.1_30s_bio_20_fc": 48.3,
+          "training_presence_count": 17,
+          "test_presence_count": 6,
+          "presence_summary": "17 training, 6 testing"
         },
         {
           "Species": "Drypetes_malabarica",
@@ -13769,7 +15370,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 40.8,
           "wc2.1_30s_bio_18_fc": 0.4,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 2.2
+          "wc2.1_30s_bio_20_fc": 2.2,
+          "training_presence_count": 11,
+          "test_presence_count": 4,
+          "presence_summary": "11 training, 4 testing"
         },
         {
           "Species": "Drypetes_oblongifolia",
@@ -13793,7 +15397,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 9.4,
           "wc2.1_30s_bio_18_fc": 0.6,
           "wc2.1_30s_bio_19_fc": 44.6,
-          "wc2.1_30s_bio_20_fc": 8.4
+          "wc2.1_30s_bio_20_fc": 8.4,
+          "training_presence_count": 17,
+          "test_presence_count": 6,
+          "presence_summary": "17 training, 6 testing"
         },
         {
           "Species": "Drypetes_venusta",
@@ -13817,7 +15424,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 9.2,
           "wc2.1_30s_bio_18_fc": 2.7,
           "wc2.1_30s_bio_19_fc": 12.7,
-          "wc2.1_30s_bio_20_fc": 31.0
+          "wc2.1_30s_bio_20_fc": 31.0,
+          "training_presence_count": 36,
+          "test_presence_count": 15,
+          "presence_summary": "36 training, 15 testing"
         },
         {
           "Species": "Drypetes_wightii",
@@ -13841,7 +15451,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.4,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 10.9
+          "wc2.1_30s_bio_20_fc": 10.9,
+          "training_presence_count": 10,
+          "test_presence_count": 3,
+          "presence_summary": "10 training, 3 testing"
         },
         {
           "Species": "Durio_exarillatus",
@@ -13865,7 +15478,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 19.1,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 0.8,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 26,
+          "test_presence_count": 11,
+          "presence_summary": "26 training, 11 testing"
         },
         {
           "Species": "Dysoxylum_gotadhora",
@@ -13889,7 +15505,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 13.4,
           "wc2.1_30s_bio_18_fc": 0.7,
           "wc2.1_30s_bio_19_fc": 0.8,
-          "wc2.1_30s_bio_20_fc": 26.6
+          "wc2.1_30s_bio_20_fc": 26.6,
+          "training_presence_count": 20,
+          "test_presence_count": 8,
+          "presence_summary": "20 training, 8 testing"
         },
         {
           "Species": "Dysoxylum_malabaricum",
@@ -13913,7 +15532,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.4,
           "wc2.1_30s_bio_18_fc": 3.3,
           "wc2.1_30s_bio_19_fc": 2.5,
-          "wc2.1_30s_bio_20_fc": 11.1
+          "wc2.1_30s_bio_20_fc": 11.1,
+          "training_presence_count": 37,
+          "test_presence_count": 15,
+          "presence_summary": "37 training, 15 testing"
         },
         {
           "Species": "Elaeagnus_conferta",
@@ -13937,7 +15559,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.9,
           "wc2.1_30s_bio_19_fc": 12.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": 3,
+          "presence_summary": "7 training, 3 testing"
         },
         {
           "Species": "Elaeocarpus_munroii",
@@ -13961,7 +15586,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 38.5,
-          "wc2.1_30s_bio_20_fc": 0.1
+          "wc2.1_30s_bio_20_fc": 0.1,
+          "training_presence_count": 8,
+          "test_presence_count": 3,
+          "presence_summary": "8 training, 3 testing"
         },
         {
           "Species": "Elaeocarpus_serratus",
@@ -13985,7 +15613,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.5,
           "wc2.1_30s_bio_18_fc": 2.8,
           "wc2.1_30s_bio_19_fc": 1.7,
-          "wc2.1_30s_bio_20_fc": 21.5
+          "wc2.1_30s_bio_20_fc": 21.5,
+          "training_presence_count": 24,
+          "test_presence_count": 9,
+          "presence_summary": "24 training, 9 testing"
         },
         {
           "Species": "Elaeocarpus_tuberculatus",
@@ -14009,7 +15640,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 30.2,
-          "wc2.1_30s_bio_20_fc": 6.4
+          "wc2.1_30s_bio_20_fc": 6.4,
+          "training_presence_count": 24,
+          "test_presence_count": 10,
+          "presence_summary": "24 training, 10 testing"
         },
         {
           "Species": "Elaeocarpus_variabilis",
@@ -14033,7 +15667,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 7.0
+          "wc2.1_30s_bio_20_fc": 7.0,
+          "training_presence_count": 6,
+          "test_presence_count": 2,
+          "presence_summary": "6 training, 2 testing"
         },
         {
           "Species": "Elaeocarpus_venustus",
@@ -14057,7 +15694,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.8,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 3,
+          "test_presence_count": 1,
+          "presence_summary": "3 training, 1 testing"
         },
         {
           "Species": "Elaeodendron_paniculatum",
@@ -14081,7 +15721,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 50.1,
           "wc2.1_30s_bio_19_fc": 1.7,
-          "wc2.1_30s_bio_20_fc": 0.3
+          "wc2.1_30s_bio_20_fc": 0.3,
+          "training_presence_count": 3,
+          "test_presence_count": 1,
+          "presence_summary": "3 training, 1 testing"
         },
         {
           "Species": "Entada_rheedei",
@@ -14105,7 +15748,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 35.2,
           "wc2.1_30s_bio_19_fc": 4.6,
-          "wc2.1_30s_bio_20_fc": 27.4
+          "wc2.1_30s_bio_20_fc": 27.4,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Epiprinus_mallotiformis",
@@ -14129,7 +15775,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.3,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 12,
+          "test_presence_count": 5,
+          "presence_summary": "12 training, 5 testing"
         },
         {
           "Species": "Erythroxylum_moonii",
@@ -14153,7 +15802,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.9,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 4.2,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": 2,
+          "presence_summary": "5 training, 2 testing"
         },
         {
           "Species": "Eugenia_codyensis",
@@ -14177,7 +15829,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.9,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 42.8,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": 1,
+          "presence_summary": "5 training, 1 testing"
         },
         {
           "Species": "Eugenia_kalamii",
@@ -14201,7 +15856,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 5.1,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 10.4
+          "wc2.1_30s_bio_20_fc": 10.4,
+          "training_presence_count": 9,
+          "test_presence_count": 3,
+          "presence_summary": "9 training, 3 testing"
         },
         {
           "Species": "Eugenia_macrocalyx",
@@ -14225,7 +15883,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.0,
           "wc2.1_30s_bio_18_fc": 3.1,
           "wc2.1_30s_bio_19_fc": 5.6,
-          "wc2.1_30s_bio_20_fc": 13.7
+          "wc2.1_30s_bio_20_fc": 13.7,
+          "training_presence_count": 16,
+          "test_presence_count": 6,
+          "presence_summary": "16 training, 6 testing"
         },
         {
           "Species": "Eugenia_mooniana",
@@ -14249,7 +15910,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 6.9,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 1.8,
-          "wc2.1_30s_bio_20_fc": 10.7
+          "wc2.1_30s_bio_20_fc": 10.7,
+          "training_presence_count": 17,
+          "test_presence_count": 6,
+          "presence_summary": "17 training, 6 testing"
         },
         {
           "Species": "Euonymus_angulatus",
@@ -14273,7 +15937,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.8,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 19.8
+          "wc2.1_30s_bio_20_fc": 19.8,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Euonymus_dichotomus",
@@ -14297,7 +15964,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 4.3,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": 1,
+          "presence_summary": "5 training, 1 testing"
         },
         {
           "Species": "Euonymus_indicus",
@@ -14321,7 +15991,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.2,
           "wc2.1_30s_bio_18_fc": 1.6,
           "wc2.1_30s_bio_19_fc": 26.2,
-          "wc2.1_30s_bio_20_fc": 0.9
+          "wc2.1_30s_bio_20_fc": 0.9,
+          "training_presence_count": 19,
+          "test_presence_count": 8,
+          "presence_summary": "19 training, 8 testing"
         },
         {
           "Species": "Eurya_nitida",
@@ -14345,7 +16018,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 24.3,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": 1,
+          "presence_summary": "5 training, 1 testing"
         },
         {
           "Species": "Excoecaria_oppositifolia",
@@ -14369,7 +16045,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 1.2
+          "wc2.1_30s_bio_20_fc": 1.2,
+          "training_presence_count": 5,
+          "test_presence_count": 2,
+          "presence_summary": "5 training, 2 testing"
         },
         {
           "Species": "Falconeria_insignis",
@@ -14393,7 +16072,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 9.9,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 32.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": 3,
+          "presence_summary": "7 training, 3 testing"
         },
         {
           "Species": "Ficus_beddomei",
@@ -14417,7 +16099,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.9,
           "wc2.1_30s_bio_18_fc": 5.6,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 28.7
+          "wc2.1_30s_bio_20_fc": 28.7,
+          "training_presence_count": 10,
+          "test_presence_count": 3,
+          "presence_summary": "10 training, 3 testing"
         },
         {
           "Species": "Ficus_callosa",
@@ -14441,7 +16126,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 5.4,
           "wc2.1_30s_bio_19_fc": 26.6,
-          "wc2.1_30s_bio_20_fc": 2.9
+          "wc2.1_30s_bio_20_fc": 2.9,
+          "training_presence_count": 13,
+          "test_presence_count": 5,
+          "presence_summary": "13 training, 5 testing"
         },
         {
           "Species": "Ficus_exasperata",
@@ -14465,7 +16153,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 26.7,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 58.2
+          "wc2.1_30s_bio_20_fc": 58.2,
+          "training_presence_count": 5,
+          "test_presence_count": 2,
+          "presence_summary": "5 training, 2 testing"
         },
         {
           "Species": "Ficus_hispida",
@@ -14489,7 +16180,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 4.0,
           "wc2.1_30s_bio_19_fc": 14.7,
-          "wc2.1_30s_bio_20_fc": 27.6
+          "wc2.1_30s_bio_20_fc": 27.6,
+          "training_presence_count": 15,
+          "test_presence_count": 6,
+          "presence_summary": "15 training, 6 testing"
         },
         {
           "Species": "Ficus_microcarpa",
@@ -14513,7 +16207,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 39.1,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": 3,
+          "presence_summary": "7 training, 3 testing"
         },
         {
           "Species": "Ficus_nervosa",
@@ -14537,7 +16234,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.6,
           "wc2.1_30s_bio_18_fc": 2.9,
           "wc2.1_30s_bio_19_fc": 1.1,
-          "wc2.1_30s_bio_20_fc": 6.7
+          "wc2.1_30s_bio_20_fc": 6.7,
+          "training_presence_count": 40,
+          "test_presence_count": 17,
+          "presence_summary": "40 training, 17 testing"
         },
         {
           "Species": "Ficus_racemosa",
@@ -14561,7 +16261,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.1,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 12,
+          "test_presence_count": 5,
+          "presence_summary": "12 training, 5 testing"
         },
         {
           "Species": "Ficus_talbotii",
@@ -14585,7 +16288,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 14.3,
-          "wc2.1_30s_bio_20_fc": 7.0
+          "wc2.1_30s_bio_20_fc": 7.0,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Ficus_tsjakela",
@@ -14609,7 +16315,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 7.8,
           "wc2.1_30s_bio_19_fc": 26.0,
-          "wc2.1_30s_bio_20_fc": 3.4
+          "wc2.1_30s_bio_20_fc": 3.4,
+          "training_presence_count": 8,
+          "test_presence_count": 3,
+          "presence_summary": "8 training, 3 testing"
         },
         {
           "Species": "Ficus_virens",
@@ -14633,7 +16342,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 3.2
+          "wc2.1_30s_bio_20_fc": 3.2,
+          "training_presence_count": 12,
+          "test_presence_count": 4,
+          "presence_summary": "12 training, 4 testing"
         },
         {
           "Species": "Filicium_decipiens",
@@ -14657,7 +16369,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 4.8,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": 1,
+          "presence_summary": "5 training, 1 testing"
         },
         {
           "Species": "Flacourtia_montana",
@@ -14681,7 +16396,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 16.4,
           "wc2.1_30s_bio_19_fc": 2.0,
-          "wc2.1_30s_bio_20_fc": 3.4
+          "wc2.1_30s_bio_20_fc": 3.4,
+          "training_presence_count": 60,
+          "test_presence_count": 25,
+          "presence_summary": "60 training, 25 testing"
         },
         {
           "Species": "Garcinia_gummi-gutta",
@@ -14705,7 +16423,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.7,
           "wc2.1_30s_bio_19_fc": 17.2,
-          "wc2.1_30s_bio_20_fc": 14.0
+          "wc2.1_30s_bio_20_fc": 14.0,
+          "training_presence_count": 50,
+          "test_presence_count": 21,
+          "presence_summary": "50 training, 21 testing"
         },
         {
           "Species": "Garcinia_indica",
@@ -14729,7 +16450,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 13.3,
           "wc2.1_30s_bio_18_fc": 16.8,
           "wc2.1_30s_bio_19_fc": 3.2,
-          "wc2.1_30s_bio_20_fc": 12.4
+          "wc2.1_30s_bio_20_fc": 12.4,
+          "training_presence_count": 26,
+          "test_presence_count": 11,
+          "presence_summary": "26 training, 11 testing"
         },
         {
           "Species": "Garcinia_morella",
@@ -14753,7 +16477,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.3,
           "wc2.1_30s_bio_18_fc": 1.0,
           "wc2.1_30s_bio_19_fc": 6.0,
-          "wc2.1_30s_bio_20_fc": 4.6
+          "wc2.1_30s_bio_20_fc": 4.6,
+          "training_presence_count": 52,
+          "test_presence_count": 22,
+          "presence_summary": "52 training, 22 testing"
         },
         {
           "Species": "Garcinia_rubroechinata",
@@ -14777,7 +16504,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 3,
+          "test_presence_count": 1,
+          "presence_summary": "3 training, 1 testing"
         },
         {
           "Species": "Garcinia_spicata",
@@ -14801,7 +16531,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.4,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 40.1,
-          "wc2.1_30s_bio_20_fc": 3.8
+          "wc2.1_30s_bio_20_fc": 3.8,
+          "training_presence_count": 5,
+          "test_presence_count": 1,
+          "presence_summary": "5 training, 1 testing"
         },
         {
           "Species": "Garcinia_talbotii",
@@ -14825,7 +16558,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 15.8,
           "wc2.1_30s_bio_18_fc": 7.3,
           "wc2.1_30s_bio_19_fc": 1.1,
-          "wc2.1_30s_bio_20_fc": 6.3
+          "wc2.1_30s_bio_20_fc": 6.3,
+          "training_presence_count": 37,
+          "test_presence_count": 15,
+          "presence_summary": "37 training, 15 testing"
         },
         {
           "Species": "Glochidion_ellipticum",
@@ -14849,7 +16585,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.7,
           "wc2.1_30s_bio_18_fc": 11.8,
           "wc2.1_30s_bio_19_fc": 3.1,
-          "wc2.1_30s_bio_20_fc": 16.9
+          "wc2.1_30s_bio_20_fc": 16.9,
+          "training_presence_count": 52,
+          "test_presence_count": 21,
+          "presence_summary": "52 training, 21 testing"
         },
         {
           "Species": "Glochidion_heyneanum",
@@ -14873,7 +16612,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.3,
           "wc2.1_30s_bio_18_fc": 20.6,
           "wc2.1_30s_bio_19_fc": 3.7,
-          "wc2.1_30s_bio_20_fc": 0.2
+          "wc2.1_30s_bio_20_fc": 0.2,
+          "training_presence_count": 5,
+          "test_presence_count": 2,
+          "presence_summary": "5 training, 2 testing"
         },
         {
           "Species": "Glochidion_hohenackeri",
@@ -14897,7 +16639,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 24.3,
           "wc2.1_30s_bio_19_fc": 4.6,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Glochidion_zeylanicum",
@@ -14921,7 +16666,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 2.0
+          "wc2.1_30s_bio_20_fc": 2.0,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Gluta_travancorica",
@@ -14945,7 +16693,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.6,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": 3,
+          "presence_summary": "7 training, 3 testing"
         },
         {
           "Species": "Glycosmis_macrocarpa",
@@ -14969,7 +16720,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 6.5,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 2.6
+          "wc2.1_30s_bio_20_fc": 2.6,
+          "training_presence_count": 14,
+          "test_presence_count": 5,
+          "presence_summary": "14 training, 5 testing"
         },
         {
           "Species": "Glycosmis_pentaphylla",
@@ -14993,7 +16747,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.8,
           "wc2.1_30s_bio_18_fc": 0.7,
           "wc2.1_30s_bio_19_fc": 4.1,
-          "wc2.1_30s_bio_20_fc": 31.5
+          "wc2.1_30s_bio_20_fc": 31.5,
+          "training_presence_count": 31,
+          "test_presence_count": 13,
+          "presence_summary": "31 training, 13 testing"
         },
         {
           "Species": "Gnetum_edule",
@@ -15017,7 +16774,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 28.9,
           "wc2.1_30s_bio_19_fc": 5.6,
-          "wc2.1_30s_bio_20_fc": 10.6
+          "wc2.1_30s_bio_20_fc": 10.6,
+          "training_presence_count": 14,
+          "test_presence_count": 6,
+          "presence_summary": "14 training, 6 testing"
         },
         {
           "Species": "Gomphandra_coriacea",
@@ -15041,7 +16801,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.1,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 3.5,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 12,
+          "test_presence_count": 5,
+          "presence_summary": "12 training, 5 testing"
         },
         {
           "Species": "Gomphandra_tetrandra",
@@ -15065,7 +16828,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 8.9,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 31.5,
-          "wc2.1_30s_bio_20_fc": 8.8
+          "wc2.1_30s_bio_20_fc": 8.8,
+          "training_presence_count": 34,
+          "test_presence_count": 14,
+          "presence_summary": "34 training, 14 testing"
         },
         {
           "Species": "Goniothalamus_cardiopetalus",
@@ -15089,7 +16855,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.0,
           "wc2.1_30s_bio_19_fc": 51.3,
-          "wc2.1_30s_bio_20_fc": 5.4
+          "wc2.1_30s_bio_20_fc": 5.4,
+          "training_presence_count": 14,
+          "test_presence_count": 5,
+          "presence_summary": "14 training, 5 testing"
         },
         {
           "Species": "Goniothalamus_rhynchantherus",
@@ -15113,7 +16882,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.3,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 11.8
+          "wc2.1_30s_bio_20_fc": 11.8,
+          "training_presence_count": 3,
+          "test_presence_count": 1,
+          "presence_summary": "3 training, 1 testing"
         },
         {
           "Species": "Goniothalamus_thwaitesii",
@@ -15137,7 +16909,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 16.4,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 3,
+          "test_presence_count": 1,
+          "presence_summary": "3 training, 1 testing"
         },
         {
           "Species": "Goniothalamus_wightii",
@@ -15161,7 +16936,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": 2,
+          "presence_summary": "5 training, 2 testing"
         },
         {
           "Species": "Gordonia_obtusa",
@@ -15185,7 +16963,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 14.1,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 53.2,
-          "wc2.1_30s_bio_20_fc": 0.6
+          "wc2.1_30s_bio_20_fc": 0.6,
+          "training_presence_count": 12,
+          "test_presence_count": 4,
+          "presence_summary": "12 training, 4 testing"
         },
         {
           "Species": "Grewia_serrulata",
@@ -15209,7 +16990,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 33.3,
-          "wc2.1_30s_bio_20_fc": 26.2
+          "wc2.1_30s_bio_20_fc": 26.2,
+          "training_presence_count": 3,
+          "test_presence_count": 1,
+          "presence_summary": "3 training, 1 testing"
         },
         {
           "Species": "Gymnacranthera_canarica",
@@ -15233,7 +17017,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 4.7
+          "wc2.1_30s_bio_20_fc": 4.7,
+          "training_presence_count": 7,
+          "test_presence_count": 2,
+          "presence_summary": "7 training, 2 testing"
         },
         {
           "Species": "Harpullia_arborea",
@@ -15257,7 +17044,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 2.4,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 8.5
+          "wc2.1_30s_bio_20_fc": 8.5,
+          "training_presence_count": 12,
+          "test_presence_count": 5,
+          "presence_summary": "12 training, 5 testing"
         },
         {
           "Species": "Helicia_nilagirica",
@@ -15281,7 +17071,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.2,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 3,
+          "test_presence_count": 1,
+          "presence_summary": "3 training, 1 testing"
         },
         {
           "Species": "Heptapleurum_ellipticum",
@@ -15305,7 +17098,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 2.2,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 4.2
+          "wc2.1_30s_bio_20_fc": 4.2,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Heritiera_papilio",
@@ -15329,7 +17125,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.0,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 38.6,
-          "wc2.1_30s_bio_20_fc": 4.5
+          "wc2.1_30s_bio_20_fc": 4.5,
+          "training_presence_count": 17,
+          "test_presence_count": 7,
+          "presence_summary": "17 training, 7 testing"
         },
         {
           "Species": "Heynea_trijuga",
@@ -15353,7 +17152,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 4.9,
           "wc2.1_30s_bio_18_fc": 1.1,
           "wc2.1_30s_bio_19_fc": 0.3,
-          "wc2.1_30s_bio_20_fc": 5.9
+          "wc2.1_30s_bio_20_fc": 5.9,
+          "training_presence_count": 17,
+          "test_presence_count": 7,
+          "presence_summary": "17 training, 7 testing"
         },
         {
           "Species": "Holigarna_arnottiana",
@@ -15377,7 +17179,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.5,
           "wc2.1_30s_bio_18_fc": 6.9,
           "wc2.1_30s_bio_19_fc": 0.9,
-          "wc2.1_30s_bio_20_fc": 5.4
+          "wc2.1_30s_bio_20_fc": 5.4,
+          "training_presence_count": 59,
+          "test_presence_count": 25,
+          "presence_summary": "59 training, 25 testing"
         },
         {
           "Species": "Holigarna_beddomei",
@@ -15401,7 +17206,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 11.6,
-          "wc2.1_30s_bio_20_fc": 49.6
+          "wc2.1_30s_bio_20_fc": 49.6,
+          "training_presence_count": 3,
+          "test_presence_count": 1,
+          "presence_summary": "3 training, 1 testing"
         },
         {
           "Species": "Holigarna_ferruginea",
@@ -15425,7 +17233,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 7.3,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 39.4,
-          "wc2.1_30s_bio_20_fc": 9.3
+          "wc2.1_30s_bio_20_fc": 9.3,
+          "training_presence_count": 18,
+          "test_presence_count": 7,
+          "presence_summary": "18 training, 7 testing"
         },
         {
           "Species": "Holigarna_grahamii",
@@ -15449,7 +17260,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.2,
           "wc2.1_30s_bio_18_fc": 3.2,
           "wc2.1_30s_bio_19_fc": 2.4,
-          "wc2.1_30s_bio_20_fc": 8.0
+          "wc2.1_30s_bio_20_fc": 8.0,
+          "training_presence_count": 66,
+          "test_presence_count": 27,
+          "presence_summary": "66 training, 27 testing"
         },
         {
           "Species": "Holigarna_nigra",
@@ -15473,7 +17287,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.3,
           "wc2.1_30s_bio_19_fc": 31.2,
-          "wc2.1_30s_bio_20_fc": 0.3
+          "wc2.1_30s_bio_20_fc": 0.3,
+          "training_presence_count": 26,
+          "test_presence_count": 11,
+          "presence_summary": "26 training, 11 testing"
         },
         {
           "Species": "Homalium_ceylanicum",
@@ -15497,7 +17314,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.3,
           "wc2.1_30s_bio_18_fc": 5.4,
           "wc2.1_30s_bio_19_fc": 50.7,
-          "wc2.1_30s_bio_20_fc": 0.7
+          "wc2.1_30s_bio_20_fc": 0.7,
+          "training_presence_count": 15,
+          "test_presence_count": 6,
+          "presence_summary": "15 training, 6 testing"
         },
         {
           "Species": "Hopea_canarensis",
@@ -15521,7 +17341,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.5,
           "wc2.1_30s_bio_18_fc": 1.9,
           "wc2.1_30s_bio_19_fc": 76.0,
-          "wc2.1_30s_bio_20_fc": 7.0
+          "wc2.1_30s_bio_20_fc": 7.0,
+          "training_presence_count": 10,
+          "test_presence_count": 4,
+          "presence_summary": "10 training, 4 testing"
         },
         {
           "Species": "Hopea_erosa",
@@ -15545,7 +17368,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 17.2,
           "wc2.1_30s_bio_18_fc": 1.9,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Hopea_glabra",
@@ -15569,7 +17395,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 3.2,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": 1,
+          "presence_summary": "5 training, 1 testing"
         },
         {
           "Species": "Hopea_parviflora",
@@ -15593,7 +17422,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.8,
           "wc2.1_30s_bio_18_fc": 0.7,
           "wc2.1_30s_bio_19_fc": 33.5,
-          "wc2.1_30s_bio_20_fc": 41.9
+          "wc2.1_30s_bio_20_fc": 41.9,
+          "training_presence_count": 26,
+          "test_presence_count": 10,
+          "presence_summary": "26 training, 10 testing"
         },
         {
           "Species": "Hopea_ponga",
@@ -15617,7 +17449,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 2.2,
           "wc2.1_30s_bio_19_fc": 6.6,
-          "wc2.1_30s_bio_20_fc": 22.0
+          "wc2.1_30s_bio_20_fc": 22.0,
+          "training_presence_count": 28,
+          "test_presence_count": 12,
+          "presence_summary": "28 training, 12 testing"
         },
         {
           "Species": "Hopea_racophloea",
@@ -15641,7 +17476,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 20.7
+          "wc2.1_30s_bio_20_fc": 20.7,
+          "training_presence_count": 3,
+          "test_presence_count": 1,
+          "presence_summary": "3 training, 1 testing"
         },
         {
           "Species": "Humboldtia_brunonis",
@@ -15665,7 +17503,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.7,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 60.4,
-          "wc2.1_30s_bio_20_fc": 13.3
+          "wc2.1_30s_bio_20_fc": 13.3,
+          "training_presence_count": 14,
+          "test_presence_count": 5,
+          "presence_summary": "14 training, 5 testing"
         },
         {
           "Species": "Humboldtia_decurrens",
@@ -15689,7 +17530,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 30.9,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 3,
+          "test_presence_count": 1,
+          "presence_summary": "3 training, 1 testing"
         },
         {
           "Species": "Humboldtia_vahliana",
@@ -15713,7 +17557,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 18.1
+          "wc2.1_30s_bio_20_fc": 18.1,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Hunteria_zeylanica",
@@ -15737,7 +17584,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.7,
           "wc2.1_30s_bio_19_fc": 4.5,
-          "wc2.1_30s_bio_20_fc": 2.1
+          "wc2.1_30s_bio_20_fc": 2.1,
+          "training_presence_count": 7,
+          "test_presence_count": 3,
+          "presence_summary": "7 training, 3 testing"
         },
         {
           "Species": "Hydnocarpus_alpina",
@@ -15761,7 +17611,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.9,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 1.1,
-          "wc2.1_30s_bio_20_fc": 6.1
+          "wc2.1_30s_bio_20_fc": 6.1,
+          "training_presence_count": 12,
+          "test_presence_count": 5,
+          "presence_summary": "12 training, 5 testing"
         },
         {
           "Species": "Hydnocarpus_macrocarpa",
@@ -15785,7 +17638,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.7,
           "wc2.1_30s_bio_19_fc": 23.2,
-          "wc2.1_30s_bio_20_fc": 57.7
+          "wc2.1_30s_bio_20_fc": 57.7,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Hydnocarpus_pentandrus",
@@ -15809,7 +17665,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.7,
           "wc2.1_30s_bio_18_fc": 4.2,
           "wc2.1_30s_bio_19_fc": 0.1,
-          "wc2.1_30s_bio_20_fc": 39.9
+          "wc2.1_30s_bio_20_fc": 39.9,
+          "training_presence_count": 54,
+          "test_presence_count": 23,
+          "presence_summary": "54 training, 23 testing"
         },
         {
           "Species": "Isonandra_lanceolata",
@@ -15833,7 +17692,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.4,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 48.6,
-          "wc2.1_30s_bio_20_fc": 3.6
+          "wc2.1_30s_bio_20_fc": 3.6,
+          "training_presence_count": 21,
+          "test_presence_count": 9,
+          "presence_summary": "21 training, 9 testing"
         },
         {
           "Species": "Ixora_alba",
@@ -15857,7 +17719,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 13.3,
-          "wc2.1_30s_bio_20_fc": 46.0
+          "wc2.1_30s_bio_20_fc": 46.0,
+          "training_presence_count": 5,
+          "test_presence_count": 1,
+          "presence_summary": "5 training, 1 testing"
         },
         {
           "Species": "Ixora_brachiata",
@@ -15881,7 +17746,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.3,
           "wc2.1_30s_bio_18_fc": 13.5,
           "wc2.1_30s_bio_19_fc": 5.4,
-          "wc2.1_30s_bio_20_fc": 12.4
+          "wc2.1_30s_bio_20_fc": 12.4,
+          "training_presence_count": 78,
+          "test_presence_count": 33,
+          "presence_summary": "78 training, 33 testing"
         },
         {
           "Species": "Ixora_elongata",
@@ -15905,7 +17773,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 18.5,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 42.6,
-          "wc2.1_30s_bio_20_fc": 15.0
+          "wc2.1_30s_bio_20_fc": 15.0,
+          "training_presence_count": 17,
+          "test_presence_count": 6,
+          "presence_summary": "17 training, 6 testing"
         },
         {
           "Species": "Ixora_lanceolaria",
@@ -15929,7 +17800,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 48.0
+          "wc2.1_30s_bio_20_fc": 48.0,
+          "training_presence_count": 5,
+          "test_presence_count": 1,
+          "presence_summary": "5 training, 1 testing"
         },
         {
           "Species": "Ixora_nigricans",
@@ -15953,7 +17827,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.7,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 12.1,
-          "wc2.1_30s_bio_20_fc": 23.7
+          "wc2.1_30s_bio_20_fc": 23.7,
+          "training_presence_count": 37,
+          "test_presence_count": 15,
+          "presence_summary": "37 training, 15 testing"
         },
         {
           "Species": "Ixora_pavetta",
@@ -15977,7 +17854,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 31.3,
-          "wc2.1_30s_bio_20_fc": 3.8
+          "wc2.1_30s_bio_20_fc": 3.8,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Kingiodendron_pinnatum",
@@ -16001,7 +17881,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 2.3,
           "wc2.1_30s_bio_19_fc": 7.5,
-          "wc2.1_30s_bio_20_fc": 3.4
+          "wc2.1_30s_bio_20_fc": 3.4,
+          "training_presence_count": 13,
+          "test_presence_count": 5,
+          "presence_summary": "13 training, 5 testing"
         },
         {
           "Species": "Knema_attenuata",
@@ -16025,7 +17908,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.8,
           "wc2.1_30s_bio_18_fc": 1.1,
           "wc2.1_30s_bio_19_fc": 9.8,
-          "wc2.1_30s_bio_20_fc": 30.7
+          "wc2.1_30s_bio_20_fc": 30.7,
+          "training_presence_count": 89,
+          "test_presence_count": 38,
+          "presence_summary": "89 training, 38 testing"
         },
         {
           "Species": "Lagerstroemia_microcarpa",
@@ -16049,7 +17935,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 31.5,
           "wc2.1_30s_bio_19_fc": 0.3,
-          "wc2.1_30s_bio_20_fc": 2.7
+          "wc2.1_30s_bio_20_fc": 2.7,
+          "training_presence_count": 51,
+          "test_presence_count": 21,
+          "presence_summary": "51 training, 21 testing"
         },
         {
           "Species": "Lasianthus_acuminatus",
@@ -16073,7 +17962,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.6,
           "wc2.1_30s_bio_19_fc": 65.4,
-          "wc2.1_30s_bio_20_fc": 5.7
+          "wc2.1_30s_bio_20_fc": 5.7,
+          "training_presence_count": 12,
+          "test_presence_count": 5,
+          "presence_summary": "12 training, 5 testing"
         },
         {
           "Species": "Lasianthus_jackianus",
@@ -16097,7 +17989,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.2,
           "wc2.1_30s_bio_18_fc": 1.9,
           "wc2.1_30s_bio_19_fc": 1.2,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 10,
+          "test_presence_count": 3,
+          "presence_summary": "10 training, 3 testing"
         },
         {
           "Species": "Lasianthus_rostratus",
@@ -16121,7 +18016,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.9,
           "wc2.1_30s_bio_18_fc": 4.4,
           "wc2.1_30s_bio_19_fc": 0.3,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 3,
+          "test_presence_count": 1,
+          "presence_summary": "3 training, 1 testing"
         },
         {
           "Species": "Lasiosiphon_glaucus",
@@ -16145,7 +18043,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.0,
           "wc2.1_30s_bio_18_fc": 23.1,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 2.1
+          "wc2.1_30s_bio_20_fc": 2.1,
+          "training_presence_count": 12,
+          "test_presence_count": 4,
+          "presence_summary": "12 training, 4 testing"
         },
         {
           "Species": "Leea_indica",
@@ -16169,7 +18070,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 7.9,
           "wc2.1_30s_bio_19_fc": 2.9,
-          "wc2.1_30s_bio_20_fc": 17.1
+          "wc2.1_30s_bio_20_fc": 17.1,
+          "training_presence_count": 66,
+          "test_presence_count": 28,
+          "presence_summary": "66 training, 28 testing"
         },
         {
           "Species": "Lepisanthes_erecta",
@@ -16193,7 +18097,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 4.5
+          "wc2.1_30s_bio_20_fc": 4.5,
+          "training_presence_count": 6,
+          "test_presence_count": 2,
+          "presence_summary": "6 training, 2 testing"
         },
         {
           "Species": "Lepisanthes_tetraphylla",
@@ -16217,7 +18124,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.3,
           "wc2.1_30s_bio_18_fc": 3.6,
           "wc2.1_30s_bio_19_fc": 11.5,
-          "wc2.1_30s_bio_20_fc": 35.5
+          "wc2.1_30s_bio_20_fc": 35.5,
+          "training_presence_count": 49,
+          "test_presence_count": 21,
+          "presence_summary": "49 training, 21 testing"
         },
         {
           "Species": "Leptonychia_caudata",
@@ -16241,7 +18151,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 3.2,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 6,
+          "test_presence_count": 2,
+          "presence_summary": "6 training, 2 testing"
         },
         {
           "Species": "Ligustrum_robustum",
@@ -16265,7 +18178,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 4.4,
-          "wc2.1_30s_bio_20_fc": 14.1
+          "wc2.1_30s_bio_20_fc": 14.1,
+          "training_presence_count": 10,
+          "test_presence_count": 3,
+          "presence_summary": "10 training, 3 testing"
         },
         {
           "Species": "Litsea_floribunda",
@@ -16289,7 +18205,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 10.2,
-          "wc2.1_30s_bio_20_fc": 1.5
+          "wc2.1_30s_bio_20_fc": 1.5,
+          "training_presence_count": 48,
+          "test_presence_count": 20,
+          "presence_summary": "48 training, 20 testing"
         },
         {
           "Species": "Litsea_ghatica",
@@ -16313,7 +18232,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 1.6
+          "wc2.1_30s_bio_20_fc": 1.6,
+          "training_presence_count": 7,
+          "test_presence_count": 3,
+          "presence_summary": "7 training, 3 testing"
         },
         {
           "Species": "Litsea_glabrata",
@@ -16337,7 +18259,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 3.8,
-          "wc2.1_30s_bio_20_fc": 0.4
+          "wc2.1_30s_bio_20_fc": 0.4,
+          "training_presence_count": 12,
+          "test_presence_count": 4,
+          "presence_summary": "12 training, 4 testing"
         },
         {
           "Species": "Litsea_keralana",
@@ -16361,7 +18286,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 49.1,
-          "wc2.1_30s_bio_20_fc": 12.7
+          "wc2.1_30s_bio_20_fc": 12.7,
+          "training_presence_count": 17,
+          "test_presence_count": 6,
+          "presence_summary": "17 training, 6 testing"
         },
         {
           "Species": "Litsea_laevigata",
@@ -16385,7 +18313,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 4.8,
           "wc2.1_30s_bio_19_fc": 7.8,
-          "wc2.1_30s_bio_20_fc": 4.6
+          "wc2.1_30s_bio_20_fc": 4.6,
+          "training_presence_count": 43,
+          "test_presence_count": 18,
+          "presence_summary": "43 training, 18 testing"
         },
         {
           "Species": "Litsea_mysorensis",
@@ -16409,7 +18340,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.8,
           "wc2.1_30s_bio_18_fc": 0.7,
           "wc2.1_30s_bio_19_fc": 38.9,
-          "wc2.1_30s_bio_20_fc": 0.3
+          "wc2.1_30s_bio_20_fc": 0.3,
+          "training_presence_count": 24,
+          "test_presence_count": 10,
+          "presence_summary": "24 training, 10 testing"
         },
         {
           "Species": "Litsea_oleoides",
@@ -16433,7 +18367,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.5,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 48.4,
-          "wc2.1_30s_bio_20_fc": 0.2
+          "wc2.1_30s_bio_20_fc": 0.2,
+          "training_presence_count": 28,
+          "test_presence_count": 11,
+          "presence_summary": "28 training, 11 testing"
         },
         {
           "Species": "Litsea_stocksii",
@@ -16457,7 +18394,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 6.0,
           "wc2.1_30s_bio_18_fc": 6.4,
           "wc2.1_30s_bio_19_fc": 0.1,
-          "wc2.1_30s_bio_20_fc": 3.3
+          "wc2.1_30s_bio_20_fc": 3.3,
+          "training_presence_count": 17,
+          "test_presence_count": 6,
+          "presence_summary": "17 training, 6 testing"
         },
         {
           "Species": "Litsea_travancorica",
@@ -16481,7 +18421,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 48.8,
           "wc2.1_30s_bio_18_fc": 0.4,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 9.6
+          "wc2.1_30s_bio_20_fc": 9.6,
+          "training_presence_count": 6,
+          "test_presence_count": 2,
+          "presence_summary": "6 training, 2 testing"
         },
         {
           "Species": "Litsea_wightiana",
@@ -16505,7 +18448,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.3
+          "wc2.1_30s_bio_20_fc": 0.3,
+          "training_presence_count": 7,
+          "test_presence_count": 2,
+          "presence_summary": "7 training, 2 testing"
         },
         {
           "Species": "Lophopetalum_wightianum",
@@ -16529,7 +18475,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 3.1,
           "wc2.1_30s_bio_19_fc": 8.4,
-          "wc2.1_30s_bio_20_fc": 27.2
+          "wc2.1_30s_bio_20_fc": 27.2,
+          "training_presence_count": 23,
+          "test_presence_count": 9,
+          "presence_summary": "23 training, 9 testing"
         },
         {
           "Species": "Luvunga_sarmentosa",
@@ -16553,7 +18502,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.6,
           "wc2.1_30s_bio_18_fc": 13.4,
           "wc2.1_30s_bio_19_fc": 5.4,
-          "wc2.1_30s_bio_20_fc": 2.4
+          "wc2.1_30s_bio_20_fc": 2.4,
+          "training_presence_count": 5,
+          "test_presence_count": 1,
+          "presence_summary": "5 training, 1 testing"
         },
         {
           "Species": "Macaranga_indica",
@@ -16577,7 +18529,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 4.9,
-          "wc2.1_30s_bio_20_fc": 9.7
+          "wc2.1_30s_bio_20_fc": 9.7,
+          "training_presence_count": 7,
+          "test_presence_count": 3,
+          "presence_summary": "7 training, 3 testing"
         },
         {
           "Species": "Macaranga_peltata",
@@ -16601,7 +18556,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 12.6,
           "wc2.1_30s_bio_19_fc": 1.8,
-          "wc2.1_30s_bio_20_fc": 12.0
+          "wc2.1_30s_bio_20_fc": 12.0,
+          "training_presence_count": 70,
+          "test_presence_count": 30,
+          "presence_summary": "70 training, 30 testing"
         },
         {
           "Species": "Machilus_glaucescens",
@@ -16625,7 +18583,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 8.9,
           "wc2.1_30s_bio_19_fc": 5.1,
-          "wc2.1_30s_bio_20_fc": 19.4
+          "wc2.1_30s_bio_20_fc": 19.4,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Madhuca_bourdillonii",
@@ -16649,7 +18610,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 49.4
+          "wc2.1_30s_bio_20_fc": 49.4,
+          "training_presence_count": 5,
+          "test_presence_count": 2,
+          "presence_summary": "5 training, 2 testing"
         },
         {
           "Species": "Madhuca_neriifolia",
@@ -16673,7 +18637,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 5.7
+          "wc2.1_30s_bio_20_fc": 5.7,
+          "training_presence_count": 7,
+          "test_presence_count": 3,
+          "presence_summary": "7 training, 3 testing"
         },
         {
           "Species": "Maesa_indica",
@@ -16697,7 +18664,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 2.3
+          "wc2.1_30s_bio_20_fc": 2.3,
+          "training_presence_count": 7,
+          "test_presence_count": 2,
+          "presence_summary": "7 training, 2 testing"
         },
         {
           "Species": "Magnolia_nilagirica",
@@ -16721,7 +18691,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": 2,
+          "presence_summary": "5 training, 2 testing"
         },
         {
           "Species": "Mallotus_nudiflorus",
@@ -16745,7 +18718,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 15.5
+          "wc2.1_30s_bio_20_fc": 15.5,
+          "training_presence_count": 7,
+          "test_presence_count": 3,
+          "presence_summary": "7 training, 3 testing"
         },
         {
           "Species": "Mallotus_philippensis",
@@ -16769,7 +18745,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 4.4,
           "wc2.1_30s_bio_19_fc": 6.3,
-          "wc2.1_30s_bio_20_fc": 18.2
+          "wc2.1_30s_bio_20_fc": 18.2,
+          "training_presence_count": 67,
+          "test_presence_count": 28,
+          "presence_summary": "67 training, 28 testing"
         },
         {
           "Species": "Mallotus_resinosus",
@@ -16793,7 +18772,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 12.5,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 9.2,
-          "wc2.1_30s_bio_20_fc": 7.2
+          "wc2.1_30s_bio_20_fc": 7.2,
+          "training_presence_count": 28,
+          "test_presence_count": 12,
+          "presence_summary": "28 training, 12 testing"
         },
         {
           "Species": "Mallotus_rhamnifolius",
@@ -16817,7 +18799,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 77.0
+          "wc2.1_30s_bio_20_fc": 77.0,
+          "training_presence_count": 5,
+          "test_presence_count": 1,
+          "presence_summary": "5 training, 1 testing"
         },
         {
           "Species": "Mammea_suriga",
@@ -16841,7 +18826,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 3.4,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 9,
+          "test_presence_count": 3,
+          "presence_summary": "9 training, 3 testing"
         },
         {
           "Species": "Mangifera_indica",
@@ -16865,7 +18853,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 4.7,
           "wc2.1_30s_bio_19_fc": 1.7,
-          "wc2.1_30s_bio_20_fc": 3.6
+          "wc2.1_30s_bio_20_fc": 3.6,
+          "training_presence_count": 75,
+          "test_presence_count": 32,
+          "presence_summary": "75 training, 32 testing"
         },
         {
           "Species": "Mappia_nimmoniana",
@@ -16889,7 +18880,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.5,
           "wc2.1_30s_bio_18_fc": 12.5,
           "wc2.1_30s_bio_19_fc": 4.7,
-          "wc2.1_30s_bio_20_fc": 4.2
+          "wc2.1_30s_bio_20_fc": 4.2,
+          "training_presence_count": 6,
+          "test_presence_count": 2,
+          "presence_summary": "6 training, 2 testing"
         },
         {
           "Species": "Margaritaria_indica",
@@ -16913,7 +18907,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 4.7,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 5.1
+          "wc2.1_30s_bio_20_fc": 5.1,
+          "training_presence_count": 10,
+          "test_presence_count": 4,
+          "presence_summary": "10 training, 4 testing"
         },
         {
           "Species": "Mastixia_arborea",
@@ -16937,7 +18934,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.3,
           "wc2.1_30s_bio_19_fc": 37.1,
-          "wc2.1_30s_bio_20_fc": 21.2
+          "wc2.1_30s_bio_20_fc": 21.2,
+          "training_presence_count": 32,
+          "test_presence_count": 13,
+          "presence_summary": "32 training, 13 testing"
         },
         {
           "Species": "Maytenus_rothiana",
@@ -16961,7 +18961,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 3.4,
           "wc2.1_30s_bio_19_fc": 11.0,
-          "wc2.1_30s_bio_20_fc": 13.5
+          "wc2.1_30s_bio_20_fc": 13.5,
+          "training_presence_count": 11,
+          "test_presence_count": 4,
+          "presence_summary": "11 training, 4 testing"
         },
         {
           "Species": "Meiogyne_pannosa",
@@ -16985,7 +18988,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.9,
           "wc2.1_30s_bio_18_fc": 4.5,
           "wc2.1_30s_bio_19_fc": 23.6,
-          "wc2.1_30s_bio_20_fc": 7.2
+          "wc2.1_30s_bio_20_fc": 7.2,
+          "training_presence_count": 34,
+          "test_presence_count": 14,
+          "presence_summary": "34 training, 14 testing"
         },
         {
           "Species": "Meiogyne_ramarowii",
@@ -17009,7 +19015,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.0,
           "wc2.1_30s_bio_18_fc": 8.1,
           "wc2.1_30s_bio_19_fc": 66.9,
-          "wc2.1_30s_bio_20_fc": 3.3
+          "wc2.1_30s_bio_20_fc": 3.3,
+          "training_presence_count": 28,
+          "test_presence_count": 11,
+          "presence_summary": "28 training, 11 testing"
         },
         {
           "Species": "Melicope_lunu-ankenda",
@@ -17033,7 +19042,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 8.0,
           "wc2.1_30s_bio_18_fc": 1.6,
           "wc2.1_30s_bio_19_fc": 2.1,
-          "wc2.1_30s_bio_20_fc": 1.8
+          "wc2.1_30s_bio_20_fc": 1.8,
+          "training_presence_count": 20,
+          "test_presence_count": 8,
+          "presence_summary": "20 training, 8 testing"
         },
         {
           "Species": "Meliosma_pinnata",
@@ -17057,7 +19069,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.1
+          "wc2.1_30s_bio_20_fc": 0.1,
+          "training_presence_count": 5,
+          "test_presence_count": 1,
+          "presence_summary": "5 training, 1 testing"
         },
         {
           "Species": "Memecylon_gracile",
@@ -17081,7 +19096,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 3.9,
           "wc2.1_30s_bio_19_fc": 12.8,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 11,
+          "test_presence_count": 4,
+          "presence_summary": "11 training, 4 testing"
         },
         {
           "Species": "Memecylon_heyneanum",
@@ -17105,7 +19123,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.3,
           "wc2.1_30s_bio_18_fc": 2.7,
           "wc2.1_30s_bio_19_fc": 0.8,
-          "wc2.1_30s_bio_20_fc": 18.7
+          "wc2.1_30s_bio_20_fc": 18.7,
+          "training_presence_count": 12,
+          "test_presence_count": 5,
+          "presence_summary": "12 training, 5 testing"
         },
         {
           "Species": "Memecylon_malabaricum",
@@ -17129,7 +19150,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 8,
+          "test_presence_count": 3,
+          "presence_summary": "8 training, 3 testing"
         },
         {
           "Species": "Memecylon_pseudogracile",
@@ -17153,7 +19177,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 31.7,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 8,
+          "test_presence_count": 3,
+          "presence_summary": "8 training, 3 testing"
         },
         {
           "Species": "Memecylon_randerianum",
@@ -17177,7 +19204,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.5,
-          "wc2.1_30s_bio_20_fc": 12.4
+          "wc2.1_30s_bio_20_fc": 12.4,
+          "training_presence_count": 8,
+          "test_presence_count": 3,
+          "presence_summary": "8 training, 3 testing"
         },
         {
           "Species": "Memecylon_subsessile",
@@ -17201,7 +19231,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 35.5,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 3.7,
-          "wc2.1_30s_bio_20_fc": 13.6
+          "wc2.1_30s_bio_20_fc": 13.6,
+          "training_presence_count": 5,
+          "test_presence_count": 2,
+          "presence_summary": "5 training, 2 testing"
         },
         {
           "Species": "Memecylon_talbotianum",
@@ -17225,7 +19258,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.7,
           "wc2.1_30s_bio_19_fc": 3.7,
-          "wc2.1_30s_bio_20_fc": 34.7
+          "wc2.1_30s_bio_20_fc": 34.7,
+          "training_presence_count": 26,
+          "test_presence_count": 10,
+          "presence_summary": "26 training, 10 testing"
         },
         {
           "Species": "Memecylon_terminale",
@@ -17249,7 +19285,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 2.9,
           "wc2.1_30s_bio_19_fc": 15.0,
-          "wc2.1_30s_bio_20_fc": 2.9
+          "wc2.1_30s_bio_20_fc": 2.9,
+          "training_presence_count": 5,
+          "test_presence_count": 2,
+          "presence_summary": "5 training, 2 testing"
         },
         {
           "Species": "Memecylon_umbellatum",
@@ -17273,7 +19312,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.1,
           "wc2.1_30s_bio_18_fc": 5.9,
           "wc2.1_30s_bio_19_fc": 1.7,
-          "wc2.1_30s_bio_20_fc": 9.6
+          "wc2.1_30s_bio_20_fc": 9.6,
+          "training_presence_count": 53,
+          "test_presence_count": 22,
+          "presence_summary": "53 training, 22 testing"
         },
         {
           "Species": "Memecylon_wightii",
@@ -17297,7 +19339,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 22.6,
-          "wc2.1_30s_bio_20_fc": 1.7
+          "wc2.1_30s_bio_20_fc": 1.7,
+          "training_presence_count": 21,
+          "test_presence_count": 8,
+          "presence_summary": "21 training, 8 testing"
         },
         {
           "Species": "Mesua_ferrea",
@@ -17321,7 +19366,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.6,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 40.7,
-          "wc2.1_30s_bio_20_fc": 6.3
+          "wc2.1_30s_bio_20_fc": 6.3,
+          "training_presence_count": 41,
+          "test_presence_count": 17,
+          "presence_summary": "41 training, 17 testing"
         },
         {
           "Species": "Meteoromyrtus_wynaadensis",
@@ -17345,7 +19393,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 28.6,
-          "wc2.1_30s_bio_20_fc": 6.9
+          "wc2.1_30s_bio_20_fc": 6.9,
+          "training_presence_count": 5,
+          "test_presence_count": 1,
+          "presence_summary": "5 training, 1 testing"
         },
         {
           "Species": "Meyna_laxiflora",
@@ -17369,7 +19420,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.5,
           "wc2.1_30s_bio_18_fc": 14.1,
           "wc2.1_30s_bio_19_fc": 6.1,
-          "wc2.1_30s_bio_20_fc": 6.0
+          "wc2.1_30s_bio_20_fc": 6.0,
+          "training_presence_count": 21,
+          "test_presence_count": 9,
+          "presence_summary": "21 training, 9 testing"
         },
         {
           "Species": "Microcos_paniculata",
@@ -17393,7 +19447,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.5,
           "wc2.1_30s_bio_18_fc": 41.8,
           "wc2.1_30s_bio_19_fc": 6.1,
-          "wc2.1_30s_bio_20_fc": 0.6
+          "wc2.1_30s_bio_20_fc": 0.6,
+          "training_presence_count": 10,
+          "test_presence_count": 4,
+          "presence_summary": "10 training, 4 testing"
         },
         {
           "Species": "Microtropis_latifolia",
@@ -17417,7 +19474,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.3,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 32.1,
-          "wc2.1_30s_bio_20_fc": 1.4
+          "wc2.1_30s_bio_20_fc": 1.4,
+          "training_presence_count": 25,
+          "test_presence_count": 10,
+          "presence_summary": "25 training, 10 testing"
         },
         {
           "Species": "Miliusa_gokhalaei",
@@ -17441,7 +19501,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 14.8,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.1,
-          "wc2.1_30s_bio_20_fc": 6.0
+          "wc2.1_30s_bio_20_fc": 6.0,
+          "training_presence_count": 5,
+          "test_presence_count": 1,
+          "presence_summary": "5 training, 1 testing"
         },
         {
           "Species": "Miliusa_nilagirica",
@@ -17465,7 +19528,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.3,
           "wc2.1_30s_bio_19_fc": 32.4,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 6,
+          "test_presence_count": 2,
+          "presence_summary": "6 training, 2 testing"
         },
         {
           "Species": "Mimusops_elengi",
@@ -17489,7 +19555,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.1,
           "wc2.1_30s_bio_18_fc": 16.8,
           "wc2.1_30s_bio_19_fc": 1.4,
-          "wc2.1_30s_bio_20_fc": 8.5
+          "wc2.1_30s_bio_20_fc": 8.5,
+          "training_presence_count": 42,
+          "test_presence_count": 18,
+          "presence_summary": "42 training, 18 testing"
         },
         {
           "Species": "Mitragyna_parvifolia",
@@ -17513,7 +19582,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 39.3
+          "wc2.1_30s_bio_20_fc": 39.3,
+          "training_presence_count": 7,
+          "test_presence_count": 2,
+          "presence_summary": "7 training, 2 testing"
         },
         {
           "Species": "Mitragyna_tubulosa",
@@ -17537,7 +19609,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 37.9
+          "wc2.1_30s_bio_20_fc": 37.9,
+          "training_presence_count": 3,
+          "test_presence_count": 1,
+          "presence_summary": "3 training, 1 testing"
         },
         {
           "Species": "Mitrephora_grandiflora",
@@ -17561,7 +19636,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.4,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 10.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": 2,
+          "presence_summary": "5 training, 2 testing"
         },
         {
           "Species": "Moullava_spicata",
@@ -17585,7 +19663,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.7,
           "wc2.1_30s_bio_18_fc": 7.7,
           "wc2.1_30s_bio_19_fc": 5.7,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 12,
+          "test_presence_count": 5,
+          "presence_summary": "12 training, 5 testing"
         },
         {
           "Species": "Murraya_koenigii",
@@ -17609,7 +19690,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.6,
           "wc2.1_30s_bio_19_fc": 18.7,
-          "wc2.1_30s_bio_20_fc": 25.5
+          "wc2.1_30s_bio_20_fc": 25.5,
+          "training_presence_count": 13,
+          "test_presence_count": 5,
+          "presence_summary": "13 training, 5 testing"
         },
         {
           "Species": "Murraya_paniculata",
@@ -17633,7 +19717,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 25.8,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 1.5,
-          "wc2.1_30s_bio_20_fc": 12.0
+          "wc2.1_30s_bio_20_fc": 12.0,
+          "training_presence_count": 10,
+          "test_presence_count": 4,
+          "presence_summary": "10 training, 4 testing"
         },
         {
           "Species": "Myristica_beddomei",
@@ -17657,7 +19744,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 19.0,
           "wc2.1_30s_bio_19_fc": 3.1,
-          "wc2.1_30s_bio_20_fc": 0.7
+          "wc2.1_30s_bio_20_fc": 0.7,
+          "training_presence_count": 3,
+          "test_presence_count": 1,
+          "presence_summary": "3 training, 1 testing"
         },
         {
           "Species": "Myristica_dactyloides",
@@ -17681,7 +19771,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.7,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 36.1,
-          "wc2.1_30s_bio_20_fc": 7.8
+          "wc2.1_30s_bio_20_fc": 7.8,
+          "training_presence_count": 76,
+          "test_presence_count": 32,
+          "presence_summary": "76 training, 32 testing"
         },
         {
           "Species": "Myristica_malabarica",
@@ -17705,7 +19798,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 1.9,
           "wc2.1_30s_bio_19_fc": 5.5,
-          "wc2.1_30s_bio_20_fc": 12.7
+          "wc2.1_30s_bio_20_fc": 12.7,
+          "training_presence_count": 40,
+          "test_presence_count": 17,
+          "presence_summary": "40 training, 17 testing"
         },
         {
           "Species": "Neolitsea_fischeri",
@@ -17729,7 +19825,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": 3,
+          "presence_summary": "7 training, 3 testing"
         },
         {
           "Species": "Neolitsea_scrobiculata",
@@ -17753,7 +19852,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 35.0
+          "wc2.1_30s_bio_20_fc": 35.0,
+          "training_presence_count": 3,
+          "test_presence_count": 1,
+          "presence_summary": "3 training, 1 testing"
         },
         {
           "Species": "Neolitsea_zeylanica",
@@ -17777,7 +19879,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 4.3,
           "wc2.1_30s_bio_19_fc": 0.8,
-          "wc2.1_30s_bio_20_fc": 0.4
+          "wc2.1_30s_bio_20_fc": 0.4,
+          "training_presence_count": 12,
+          "test_presence_count": 4,
+          "presence_summary": "12 training, 4 testing"
         },
         {
           "Species": "Nothapodytes_nimmoniana",
@@ -17801,7 +19906,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.5,
           "wc2.1_30s_bio_18_fc": 1.9,
           "wc2.1_30s_bio_19_fc": 1.3,
-          "wc2.1_30s_bio_20_fc": 22.8
+          "wc2.1_30s_bio_20_fc": 22.8,
+          "training_presence_count": 20,
+          "test_presence_count": 8,
+          "presence_summary": "20 training, 8 testing"
         },
         {
           "Species": "Nothopegia_aureofulva",
@@ -17825,7 +19933,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 4.4,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 11.5
+          "wc2.1_30s_bio_20_fc": 11.5,
+          "training_presence_count": 3,
+          "test_presence_count": 1,
+          "presence_summary": "3 training, 1 testing"
         },
         {
           "Species": "Nothopegia_beddomei",
@@ -17849,7 +19960,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.4,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 21.8,
-          "wc2.1_30s_bio_20_fc": 8.8
+          "wc2.1_30s_bio_20_fc": 8.8,
+          "training_presence_count": 52,
+          "test_presence_count": 22,
+          "presence_summary": "52 training, 22 testing"
         },
         {
           "Species": "Nothopegia_castaneifolia",
@@ -17873,7 +19987,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 7.4,
           "wc2.1_30s_bio_19_fc": 2.5,
-          "wc2.1_30s_bio_20_fc": 7.0
+          "wc2.1_30s_bio_20_fc": 7.0,
+          "training_presence_count": 21,
+          "test_presence_count": 8,
+          "presence_summary": "21 training, 8 testing"
         },
         {
           "Species": "Nothopegia_racemosa",
@@ -17897,7 +20014,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 4.4,
           "wc2.1_30s_bio_19_fc": 3.6,
-          "wc2.1_30s_bio_20_fc": 7.9
+          "wc2.1_30s_bio_20_fc": 7.9,
+          "training_presence_count": 50,
+          "test_presence_count": 21,
+          "presence_summary": "50 training, 21 testing"
         },
         {
           "Species": "Nothopegia_travancorica",
@@ -17921,7 +20041,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.1,
           "wc2.1_30s_bio_18_fc": 12.9,
           "wc2.1_30s_bio_19_fc": 57.9,
-          "wc2.1_30s_bio_20_fc": 3.6
+          "wc2.1_30s_bio_20_fc": 3.6,
+          "training_presence_count": 18,
+          "test_presence_count": 7,
+          "presence_summary": "18 training, 7 testing"
         },
         {
           "Species": "Ocotea_lancifolia",
@@ -17945,7 +20068,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 18.4,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 23.6,
-          "wc2.1_30s_bio_20_fc": 0.1
+          "wc2.1_30s_bio_20_fc": 0.1,
+          "training_presence_count": 19,
+          "test_presence_count": 8,
+          "presence_summary": "19 training, 8 testing"
         },
         {
           "Species": "Octotropis_travancorica",
@@ -17969,7 +20095,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Olea_dioica",
@@ -17993,7 +20122,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 7.9,
           "wc2.1_30s_bio_19_fc": 5.2,
-          "wc2.1_30s_bio_20_fc": 6.0
+          "wc2.1_30s_bio_20_fc": 6.0,
+          "training_presence_count": 69,
+          "test_presence_count": 29,
+          "presence_summary": "69 training, 29 testing"
         },
         {
           "Species": "Oreocnide_integrifolia",
@@ -18017,7 +20149,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.3,
           "wc2.1_30s_bio_18_fc": 3.9,
           "wc2.1_30s_bio_19_fc": 0.2,
-          "wc2.1_30s_bio_20_fc": 0.4
+          "wc2.1_30s_bio_20_fc": 0.4,
+          "training_presence_count": 10,
+          "test_presence_count": 4,
+          "presence_summary": "10 training, 4 testing"
         },
         {
           "Species": "Ormosia_travancorica",
@@ -18041,7 +20176,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.3,
           "wc2.1_30s_bio_19_fc": 2.9,
-          "wc2.1_30s_bio_20_fc": 4.7
+          "wc2.1_30s_bio_20_fc": 4.7,
+          "training_presence_count": 10,
+          "test_presence_count": 4,
+          "presence_summary": "10 training, 4 testing"
         },
         {
           "Species": "Orophea_erythrocarpa",
@@ -18065,7 +20203,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 49.5
+          "wc2.1_30s_bio_20_fc": 49.5,
+          "training_presence_count": 7,
+          "test_presence_count": 2,
+          "presence_summary": "7 training, 2 testing"
         },
         {
           "Species": "Orophea_sivarajanii",
@@ -18089,7 +20230,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 0.6,
           "wc2.1_30s_bio_19_fc": 34.5,
-          "wc2.1_30s_bio_20_fc": 7.2
+          "wc2.1_30s_bio_20_fc": 7.2,
+          "training_presence_count": 5,
+          "test_presence_count": 1,
+          "presence_summary": "5 training, 1 testing"
         },
         {
           "Species": "Orophea_thomsonii",
@@ -18113,7 +20257,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 8.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 8.7,
-          "wc2.1_30s_bio_20_fc": 31.6
+          "wc2.1_30s_bio_20_fc": 31.6,
+          "training_presence_count": 9,
+          "test_presence_count": 3,
+          "presence_summary": "9 training, 3 testing"
         },
         {
           "Species": "Orophea_zeylanica",
@@ -18137,7 +20284,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 6,
+          "test_presence_count": 2,
+          "presence_summary": "6 training, 2 testing"
         },
         {
           "Species": "Otonephelium_stipulaceum",
@@ -18161,7 +20311,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 8.6,
           "wc2.1_30s_bio_18_fc": 8.4,
           "wc2.1_30s_bio_19_fc": 46.2,
-          "wc2.1_30s_bio_20_fc": 10.2
+          "wc2.1_30s_bio_20_fc": 10.2,
+          "training_presence_count": 29,
+          "test_presence_count": 12,
+          "presence_summary": "29 training, 12 testing"
         },
         {
           "Species": "Oxyceros_rugulosus",
@@ -18185,7 +20338,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.8,
           "wc2.1_30s_bio_18_fc": 1.5,
           "wc2.1_30s_bio_19_fc": 6.5,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 8,
+          "test_presence_count": 3,
+          "presence_summary": "8 training, 3 testing"
         },
         {
           "Species": "Pajanelia_longifolia",
@@ -18209,7 +20365,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 16.8,
-          "wc2.1_30s_bio_20_fc": 35.6
+          "wc2.1_30s_bio_20_fc": 35.6,
+          "training_presence_count": 7,
+          "test_presence_count": 2,
+          "presence_summary": "7 training, 2 testing"
         },
         {
           "Species": "Palaquium_bourdillonii",
@@ -18233,7 +20392,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.1,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Palaquium_ellipticum",
@@ -18257,7 +20419,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.9,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 45.2,
-          "wc2.1_30s_bio_20_fc": 1.4
+          "wc2.1_30s_bio_20_fc": 1.4,
+          "training_presence_count": 59,
+          "test_presence_count": 24,
+          "presence_summary": "59 training, 24 testing"
         },
         {
           "Species": "Pandanus_furcatus",
@@ -18281,7 +20446,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.5,
           "wc2.1_30s_bio_18_fc": 0.3,
           "wc2.1_30s_bio_19_fc": 3.3,
-          "wc2.1_30s_bio_20_fc": 20.3
+          "wc2.1_30s_bio_20_fc": 20.3,
+          "training_presence_count": 17,
+          "test_presence_count": 6,
+          "presence_summary": "17 training, 6 testing"
         },
         {
           "Species": "Paracroton_pendulus_subsp._zeylanicus",
@@ -18305,7 +20473,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.1,
           "wc2.1_30s_bio_18_fc": 0.6,
           "wc2.1_30s_bio_19_fc": 48.4,
-          "wc2.1_30s_bio_20_fc": 7.4
+          "wc2.1_30s_bio_20_fc": 7.4,
+          "training_presence_count": 29,
+          "test_presence_count": 12,
+          "presence_summary": "29 training, 12 testing"
         },
         {
           "Species": "Paramignya_monophylla",
@@ -18329,7 +20500,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 3.3,
           "wc2.1_30s_bio_19_fc": 16.5,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 12,
+          "test_presence_count": 5,
+          "presence_summary": "12 training, 5 testing"
         },
         {
           "Species": "Pavetta_sp",
@@ -18353,7 +20527,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 6,
+          "test_presence_count": 2,
+          "presence_summary": "6 training, 2 testing"
         },
         {
           "Species": "Persea_macrantha",
@@ -18377,7 +20554,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.6,
           "wc2.1_30s_bio_19_fc": 3.4,
-          "wc2.1_30s_bio_20_fc": 20.5
+          "wc2.1_30s_bio_20_fc": 20.5,
+          "training_presence_count": 68,
+          "test_presence_count": 29,
+          "presence_summary": "68 training, 29 testing"
         },
         {
           "Species": "Pinanga_dicksonii",
@@ -18401,7 +20581,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.9,
           "wc2.1_30s_bio_19_fc": 25.8,
-          "wc2.1_30s_bio_20_fc": 4.9
+          "wc2.1_30s_bio_20_fc": 4.9,
+          "training_presence_count": 14,
+          "test_presence_count": 6,
+          "presence_summary": "14 training, 6 testing"
         },
         {
           "Species": "Poeciloneuron_indicum",
@@ -18425,7 +20608,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 2.0,
           "wc2.1_30s_bio_19_fc": 50.2,
-          "wc2.1_30s_bio_20_fc": 8.3
+          "wc2.1_30s_bio_20_fc": 8.3,
+          "training_presence_count": 21,
+          "test_presence_count": 9,
+          "presence_summary": "21 training, 9 testing"
         },
         {
           "Species": "Polyalthia_coffeoides",
@@ -18449,7 +20635,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 24.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 38.4,
-          "wc2.1_30s_bio_20_fc": 8.0
+          "wc2.1_30s_bio_20_fc": 8.0,
+          "training_presence_count": 15,
+          "test_presence_count": 6,
+          "presence_summary": "15 training, 6 testing"
         },
         {
           "Species": "Polyalthia_fragrans",
@@ -18473,7 +20662,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 4.9,
-          "wc2.1_30s_bio_20_fc": 53.2
+          "wc2.1_30s_bio_20_fc": 53.2,
+          "training_presence_count": 39,
+          "test_presence_count": 16,
+          "presence_summary": "39 training, 16 testing"
         },
         {
           "Species": "Polyalthia_malabarica",
@@ -18497,7 +20689,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 20.6,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 4.3
+          "wc2.1_30s_bio_20_fc": 4.3,
+          "training_presence_count": 10,
+          "test_presence_count": 3,
+          "presence_summary": "10 training, 3 testing"
         },
         {
           "Species": "Prismatomeris_tetrandra",
@@ -18521,7 +20716,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 41.6
+          "wc2.1_30s_bio_20_fc": 41.6,
+          "training_presence_count": 3,
+          "test_presence_count": 1,
+          "presence_summary": "3 training, 1 testing"
         },
         {
           "Species": "Prunus_ceylanica",
@@ -18545,7 +20743,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.5,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 9.9,
-          "wc2.1_30s_bio_20_fc": 3.6
+          "wc2.1_30s_bio_20_fc": 3.6,
+          "training_presence_count": 24,
+          "test_presence_count": 9,
+          "presence_summary": "24 training, 9 testing"
         },
         {
           "Species": "Psychotria_anamallayana",
@@ -18569,7 +20770,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 2.3,
-          "wc2.1_30s_bio_20_fc": 0.3
+          "wc2.1_30s_bio_20_fc": 0.3,
+          "training_presence_count": 6,
+          "test_presence_count": 2,
+          "presence_summary": "6 training, 2 testing"
         },
         {
           "Species": "Psychotria_dalzellii",
@@ -18593,7 +20797,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 5.0,
           "wc2.1_30s_bio_18_fc": 12.6,
           "wc2.1_30s_bio_19_fc": 0.6,
-          "wc2.1_30s_bio_20_fc": 22.2
+          "wc2.1_30s_bio_20_fc": 22.2,
+          "training_presence_count": 16,
+          "test_presence_count": 6,
+          "presence_summary": "16 training, 6 testing"
         },
         {
           "Species": "Psychotria_flavida",
@@ -18617,7 +20824,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 48.3
+          "wc2.1_30s_bio_20_fc": 48.3,
+          "training_presence_count": 5,
+          "test_presence_count": 2,
+          "presence_summary": "5 training, 2 testing"
         },
         {
           "Species": "Psychotria_nigra",
@@ -18641,7 +20851,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 21.1,
-          "wc2.1_30s_bio_20_fc": 7.6
+          "wc2.1_30s_bio_20_fc": 7.6,
+          "training_presence_count": 50,
+          "test_presence_count": 21,
+          "presence_summary": "50 training, 21 testing"
         },
         {
           "Species": "Psychotria_truncata",
@@ -18665,7 +20878,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.8,
           "wc2.1_30s_bio_19_fc": 84.7,
-          "wc2.1_30s_bio_20_fc": 0.1
+          "wc2.1_30s_bio_20_fc": 0.1,
+          "training_presence_count": 12,
+          "test_presence_count": 4,
+          "presence_summary": "12 training, 4 testing"
         },
         {
           "Species": "Psydrax_dicoccos",
@@ -18689,7 +20905,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 4.5,
           "wc2.1_30s_bio_19_fc": 2.2,
-          "wc2.1_30s_bio_20_fc": 9.5
+          "wc2.1_30s_bio_20_fc": 9.5,
+          "training_presence_count": 34,
+          "test_presence_count": 14,
+          "presence_summary": "34 training, 14 testing"
         },
         {
           "Species": "Pterospermum_diversifolium",
@@ -18713,7 +20932,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.6,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 19.8
+          "wc2.1_30s_bio_20_fc": 19.8,
+          "training_presence_count": 14,
+          "test_presence_count": 5,
+          "presence_summary": "14 training, 5 testing"
         },
         {
           "Species": "Pterospermum_reticulatum",
@@ -18737,7 +20959,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.7,
           "wc2.1_30s_bio_18_fc": 2.8,
           "wc2.1_30s_bio_19_fc": 8.0,
-          "wc2.1_30s_bio_20_fc": 29.0
+          "wc2.1_30s_bio_20_fc": 29.0,
+          "training_presence_count": 15,
+          "test_presence_count": 6,
+          "presence_summary": "15 training, 6 testing"
         },
         {
           "Species": "Pterospermum_rubiginosum",
@@ -18761,7 +20986,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.5,
           "wc2.1_30s_bio_19_fc": 41.0,
-          "wc2.1_30s_bio_20_fc": 29.3
+          "wc2.1_30s_bio_20_fc": 29.3,
+          "training_presence_count": 5,
+          "test_presence_count": 2,
+          "presence_summary": "5 training, 2 testing"
         },
         {
           "Species": "Pterygota_alata",
@@ -18785,7 +21013,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.2,
           "wc2.1_30s_bio_18_fc": 0.8,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 28.1
+          "wc2.1_30s_bio_20_fc": 28.1,
+          "training_presence_count": 12,
+          "test_presence_count": 5,
+          "presence_summary": "12 training, 5 testing"
         },
         {
           "Species": "Rapanea_wightiana",
@@ -18809,7 +21040,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 14.5,
-          "wc2.1_30s_bio_20_fc": 3.6
+          "wc2.1_30s_bio_20_fc": 3.6,
+          "training_presence_count": 6,
+          "test_presence_count": 2,
+          "presence_summary": "6 training, 2 testing"
         },
         {
           "Species": "Reinwardtiodendron_anamalaiense",
@@ -18833,7 +21067,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.8,
           "wc2.1_30s_bio_18_fc": 2.6,
           "wc2.1_30s_bio_19_fc": 33.0,
-          "wc2.1_30s_bio_20_fc": 19.4
+          "wc2.1_30s_bio_20_fc": 19.4,
+          "training_presence_count": 49,
+          "test_presence_count": 20,
+          "presence_summary": "49 training, 20 testing"
         },
         {
           "Species": "Rourea_minor",
@@ -18857,7 +21094,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 11.4,
-          "wc2.1_30s_bio_20_fc": 6.4
+          "wc2.1_30s_bio_20_fc": 6.4,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Sageraea_laurina",
@@ -18881,7 +21121,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 6.9,
           "wc2.1_30s_bio_19_fc": 0.7,
-          "wc2.1_30s_bio_20_fc": 11.9
+          "wc2.1_30s_bio_20_fc": 11.9,
+          "training_presence_count": 12,
+          "test_presence_count": 5,
+          "presence_summary": "12 training, 5 testing"
         },
         {
           "Species": "Sageraea_thwaitesii",
@@ -18905,7 +21148,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 26.5,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 23.4
+          "wc2.1_30s_bio_20_fc": 23.4,
+          "training_presence_count": 12,
+          "test_presence_count": 4,
+          "presence_summary": "12 training, 4 testing"
         },
         {
           "Species": "Saprosma_corymbosum",
@@ -18929,7 +21175,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": 2,
+          "presence_summary": "5 training, 2 testing"
         },
         {
           "Species": "Saprosma_glomerata",
@@ -18953,7 +21202,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.5,
           "wc2.1_30s_bio_18_fc": 0.5,
           "wc2.1_30s_bio_19_fc": 26.6,
-          "wc2.1_30s_bio_20_fc": 0.2
+          "wc2.1_30s_bio_20_fc": 0.2,
+          "training_presence_count": 10,
+          "test_presence_count": 4,
+          "presence_summary": "10 training, 4 testing"
         },
         {
           "Species": "Saraca_asoca",
@@ -18977,7 +21229,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 19.4,
           "wc2.1_30s_bio_19_fc": 8.5,
-          "wc2.1_30s_bio_20_fc": 28.4
+          "wc2.1_30s_bio_20_fc": 28.4,
+          "training_presence_count": 7,
+          "test_presence_count": 2,
+          "presence_summary": "7 training, 2 testing"
         },
         {
           "Species": "Schefflera_micrantha",
@@ -19001,7 +21256,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.9,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 9.6,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": 2,
+          "presence_summary": "5 training, 2 testing"
         },
         {
           "Species": "Scolopia_crenata",
@@ -19025,7 +21283,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.3,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 12.1,
-          "wc2.1_30s_bio_20_fc": 9.7
+          "wc2.1_30s_bio_20_fc": 9.7,
+          "training_presence_count": 16,
+          "test_presence_count": 6,
+          "presence_summary": "16 training, 6 testing"
         },
         {
           "Species": "Scutia_myrtina",
@@ -19049,7 +21310,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.5,
           "wc2.1_30s_bio_18_fc": 6.3,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 12,
+          "test_presence_count": 5,
+          "presence_summary": "12 training, 5 testing"
         },
         {
           "Species": "Semecarpus_auriculata",
@@ -19073,7 +21337,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 22.1,
           "wc2.1_30s_bio_18_fc": 0.3,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 6.1
+          "wc2.1_30s_bio_20_fc": 6.1,
+          "training_presence_count": 10,
+          "test_presence_count": 4,
+          "presence_summary": "10 training, 4 testing"
         },
         {
           "Species": "Semecarpus_travancorica",
@@ -19097,7 +21364,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 23.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.1
+          "wc2.1_30s_bio_20_fc": 0.1,
+          "training_presence_count": 5,
+          "test_presence_count": 2,
+          "presence_summary": "5 training, 2 testing"
         },
         {
           "Species": "Smythea_bombaiensis",
@@ -19121,7 +21391,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 35.6,
           "wc2.1_30s_bio_19_fc": 5.1,
-          "wc2.1_30s_bio_20_fc": 4.1
+          "wc2.1_30s_bio_20_fc": 4.1,
+          "training_presence_count": 7,
+          "test_presence_count": 3,
+          "presence_summary": "7 training, 3 testing"
         },
         {
           "Species": "Spondias_pinnata",
@@ -19145,7 +21418,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 6.5,
           "wc2.1_30s_bio_18_fc": 0.7,
           "wc2.1_30s_bio_19_fc": 22.7,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": 2,
+          "presence_summary": "7 training, 2 testing"
         },
         {
           "Species": "Sterculia_guttata",
@@ -19169,7 +21445,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 7.4,
           "wc2.1_30s_bio_18_fc": 10.4,
           "wc2.1_30s_bio_19_fc": 1.6,
-          "wc2.1_30s_bio_20_fc": 4.4
+          "wc2.1_30s_bio_20_fc": 4.4,
+          "training_presence_count": 16,
+          "test_presence_count": 6,
+          "presence_summary": "16 training, 6 testing"
         },
         {
           "Species": "Stereospermum_tetragonum",
@@ -19193,7 +21472,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.5,
           "wc2.1_30s_bio_18_fc": 14.3,
           "wc2.1_30s_bio_19_fc": 0.6,
-          "wc2.1_30s_bio_20_fc": 0.3
+          "wc2.1_30s_bio_20_fc": 0.3,
+          "training_presence_count": 28,
+          "test_presence_count": 11,
+          "presence_summary": "28 training, 11 testing"
         },
         {
           "Species": "Strombosia_ceylanica",
@@ -19217,7 +21499,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.7,
           "wc2.1_30s_bio_19_fc": 0.5,
-          "wc2.1_30s_bio_20_fc": 12.4
+          "wc2.1_30s_bio_20_fc": 12.4,
+          "training_presence_count": 32,
+          "test_presence_count": 13,
+          "presence_summary": "32 training, 13 testing"
         },
         {
           "Species": "Symplocos_cochinchinensis",
@@ -19241,7 +21526,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 12.0
+          "wc2.1_30s_bio_20_fc": 12.0,
+          "training_presence_count": 5,
+          "test_presence_count": 1,
+          "presence_summary": "5 training, 1 testing"
         },
         {
           "Species": "Symplocos_macrophylla",
@@ -19265,7 +21553,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 9.0,
           "wc2.1_30s_bio_18_fc": 9.4,
           "wc2.1_30s_bio_19_fc": 0.9,
-          "wc2.1_30s_bio_20_fc": 0.7
+          "wc2.1_30s_bio_20_fc": 0.7,
+          "training_presence_count": 16,
+          "test_presence_count": 6,
+          "presence_summary": "16 training, 6 testing"
         },
         {
           "Species": "Symplocos_racemosa",
@@ -19289,7 +21580,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.5,
           "wc2.1_30s_bio_18_fc": 0.2,
           "wc2.1_30s_bio_19_fc": 5.1,
-          "wc2.1_30s_bio_20_fc": 13.5
+          "wc2.1_30s_bio_20_fc": 13.5,
+          "training_presence_count": 40,
+          "test_presence_count": 17,
+          "presence_summary": "40 training, 17 testing"
         },
         {
           "Species": "Symplocos_rosea",
@@ -19313,7 +21607,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 31.3,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 31.7
+          "wc2.1_30s_bio_20_fc": 31.7,
+          "training_presence_count": 10,
+          "test_presence_count": 4,
+          "presence_summary": "10 training, 4 testing"
         },
         {
           "Species": "Syzygium_benthamianum",
@@ -19337,7 +21634,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 35.2,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 5,
+          "test_presence_count": 2,
+          "presence_summary": "5 training, 2 testing"
         },
         {
           "Species": "Syzygium_caryophyllatum",
@@ -19361,7 +21661,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 14.3,
           "wc2.1_30s_bio_19_fc": 11.1,
-          "wc2.1_30s_bio_20_fc": 23.3
+          "wc2.1_30s_bio_20_fc": 23.3,
+          "training_presence_count": 11,
+          "test_presence_count": 4,
+          "presence_summary": "11 training, 4 testing"
         },
         {
           "Species": "Syzygium_cumini",
@@ -19385,7 +21688,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.1,
           "wc2.1_30s_bio_18_fc": 14.5,
           "wc2.1_30s_bio_19_fc": 4.1,
-          "wc2.1_30s_bio_20_fc": 0.8
+          "wc2.1_30s_bio_20_fc": 0.8,
+          "training_presence_count": 85,
+          "test_presence_count": 36,
+          "presence_summary": "85 training, 36 testing"
         },
         {
           "Species": "Syzygium_densiflorum",
@@ -19409,7 +21715,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 41.8
+          "wc2.1_30s_bio_20_fc": 41.8,
+          "training_presence_count": 8,
+          "test_presence_count": 3,
+          "presence_summary": "8 training, 3 testing"
         },
         {
           "Species": "Syzygium_gardneri",
@@ -19433,7 +21742,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.5,
           "wc2.1_30s_bio_18_fc": 2.3,
           "wc2.1_30s_bio_19_fc": 30.3,
-          "wc2.1_30s_bio_20_fc": 10.6
+          "wc2.1_30s_bio_20_fc": 10.6,
+          "training_presence_count": 70,
+          "test_presence_count": 30,
+          "presence_summary": "70 training, 30 testing"
         },
         {
           "Species": "Syzygium_grande",
@@ -19457,7 +21769,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.4,
           "wc2.1_30s_bio_19_fc": 15.2,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": 3,
+          "presence_summary": "7 training, 3 testing"
         },
         {
           "Species": "Syzygium_hemisphericum",
@@ -19481,7 +21796,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 1.1,
           "wc2.1_30s_bio_19_fc": 3.9,
-          "wc2.1_30s_bio_20_fc": 26.0
+          "wc2.1_30s_bio_20_fc": 26.0,
+          "training_presence_count": 41,
+          "test_presence_count": 17,
+          "presence_summary": "41 training, 17 testing"
         },
         {
           "Species": "Syzygium_laetum",
@@ -19505,7 +21823,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.2,
           "wc2.1_30s_bio_19_fc": 15.9,
-          "wc2.1_30s_bio_20_fc": 7.9
+          "wc2.1_30s_bio_20_fc": 7.9,
+          "training_presence_count": 54,
+          "test_presence_count": 22,
+          "presence_summary": "54 training, 22 testing"
         },
         {
           "Species": "Syzygium_lanceolatum",
@@ -19529,7 +21850,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 7.1,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": 3,
+          "presence_summary": "7 training, 3 testing"
         },
         {
           "Species": "Syzygium_mundagam",
@@ -19553,7 +21877,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 9.6,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 22.1,
-          "wc2.1_30s_bio_20_fc": 1.8
+          "wc2.1_30s_bio_20_fc": 1.8,
+          "training_presence_count": 17,
+          "test_presence_count": 7,
+          "presence_summary": "17 training, 7 testing"
         },
         {
           "Species": "Syzygium_munronii",
@@ -19577,7 +21904,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 27.8,
           "wc2.1_30s_bio_18_fc": 0.1,
           "wc2.1_30s_bio_19_fc": 21.7,
-          "wc2.1_30s_bio_20_fc": 1.1
+          "wc2.1_30s_bio_20_fc": 1.1,
+          "training_presence_count": 16,
+          "test_presence_count": 6,
+          "presence_summary": "16 training, 6 testing"
         },
         {
           "Species": "Syzygium_rubicundum",
@@ -19601,7 +21931,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 43.4,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": 2,
+          "presence_summary": "7 training, 2 testing"
         },
         {
           "Species": "Syzygium_zeylanicum",
@@ -19625,7 +21958,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 41.9
+          "wc2.1_30s_bio_20_fc": 41.9,
+          "training_presence_count": 3,
+          "test_presence_count": 1,
+          "presence_summary": "3 training, 1 testing"
         },
         {
           "Species": "Tabernaemontana_alternifolia",
@@ -19649,7 +21985,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 22.7,
           "wc2.1_30s_bio_19_fc": 1.3,
-          "wc2.1_30s_bio_20_fc": 0.1
+          "wc2.1_30s_bio_20_fc": 0.1,
+          "training_presence_count": 61,
+          "test_presence_count": 26,
+          "presence_summary": "61 training, 26 testing"
         },
         {
           "Species": "Tabernaemontana_gamblei",
@@ -19673,7 +22012,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.3,
           "wc2.1_30s_bio_19_fc": 1.5,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": 3,
+          "presence_summary": "7 training, 3 testing"
         },
         {
           "Species": "Tarenna_nilagirica",
@@ -19697,7 +22039,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 1.4
+          "wc2.1_30s_bio_20_fc": 1.4,
+          "training_presence_count": 7,
+          "test_presence_count": 2,
+          "presence_summary": "7 training, 2 testing"
         },
         {
           "Species": "Terminalia_bellirica",
@@ -19721,7 +22066,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.7,
           "wc2.1_30s_bio_18_fc": 27.9,
           "wc2.1_30s_bio_19_fc": 6.8,
-          "wc2.1_30s_bio_20_fc": 4.2
+          "wc2.1_30s_bio_20_fc": 4.2,
+          "training_presence_count": 36,
+          "test_presence_count": 15,
+          "presence_summary": "36 training, 15 testing"
         },
         {
           "Species": "Terminalia_chebula",
@@ -19745,7 +22093,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 5.0,
           "wc2.1_30s_bio_19_fc": 43.6,
-          "wc2.1_30s_bio_20_fc": 4.4
+          "wc2.1_30s_bio_20_fc": 4.4,
+          "training_presence_count": 13,
+          "test_presence_count": 5,
+          "presence_summary": "13 training, 5 testing"
         },
         {
           "Species": "Terminalia_paniculata",
@@ -19769,7 +22120,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 25.2,
           "wc2.1_30s_bio_19_fc": 6.2,
-          "wc2.1_30s_bio_20_fc": 1.0
+          "wc2.1_30s_bio_20_fc": 1.0,
+          "training_presence_count": 45,
+          "test_presence_count": 18,
+          "presence_summary": "45 training, 18 testing"
         },
         {
           "Species": "Terminalia_travancorensis",
@@ -19793,7 +22147,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 1.2,
           "wc2.1_30s_bio_19_fc": 4.7,
-          "wc2.1_30s_bio_20_fc": 29.7
+          "wc2.1_30s_bio_20_fc": 29.7,
+          "training_presence_count": 8,
+          "test_presence_count": 3,
+          "presence_summary": "8 training, 3 testing"
         },
         {
           "Species": "Tetrameles_nudiflora",
@@ -19817,7 +22174,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 6.5,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 10.7
+          "wc2.1_30s_bio_20_fc": 10.7,
+          "training_presence_count": 8,
+          "test_presence_count": 3,
+          "presence_summary": "8 training, 3 testing"
         },
         {
           "Species": "Tetrapilus_dioicus",
@@ -19841,7 +22201,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.3,
           "wc2.1_30s_bio_18_fc": 26.8,
           "wc2.1_30s_bio_19_fc": 7.3,
-          "wc2.1_30s_bio_20_fc": 1.1
+          "wc2.1_30s_bio_20_fc": 1.1,
+          "training_presence_count": 21,
+          "test_presence_count": 9,
+          "presence_summary": "21 training, 9 testing"
         },
         {
           "Species": "Toona_ciliata",
@@ -19865,7 +22228,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 10.2,
           "wc2.1_30s_bio_18_fc": 23.1,
           "wc2.1_30s_bio_19_fc": 10.7,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 13,
+          "test_presence_count": 5,
+          "presence_summary": "13 training, 5 testing"
         },
         {
           "Species": "Tritaxis_glabella",
@@ -19889,7 +22255,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 42.2,
           "wc2.1_30s_bio_19_fc": 2.4,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Turpinia_malabarica",
@@ -19913,7 +22282,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 6.7
+          "wc2.1_30s_bio_20_fc": 6.7,
+          "training_presence_count": 13,
+          "test_presence_count": 5,
+          "presence_summary": "13 training, 5 testing"
         },
         {
           "Species": "Turraea_pubescens",
@@ -19937,7 +22309,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 0.0,
-          "wc2.1_30s_bio_20_fc": 99.0
+          "wc2.1_30s_bio_20_fc": 99.0,
+          "training_presence_count": 4,
+          "test_presence_count": 1,
+          "presence_summary": "4 training, 1 testing"
         },
         {
           "Species": "Vateria_indica",
@@ -19961,7 +22336,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 3.8,
           "wc2.1_30s_bio_18_fc": 1.7,
           "wc2.1_30s_bio_19_fc": 5.3,
-          "wc2.1_30s_bio_20_fc": 29.9
+          "wc2.1_30s_bio_20_fc": 29.9,
+          "training_presence_count": 33,
+          "test_presence_count": 13,
+          "presence_summary": "33 training, 13 testing"
         },
         {
           "Species": "Vepris_bilocularis",
@@ -19985,7 +22363,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 5.5,
           "wc2.1_30s_bio_18_fc": 0.5,
           "wc2.1_30s_bio_19_fc": 0.6,
-          "wc2.1_30s_bio_20_fc": 12.0
+          "wc2.1_30s_bio_20_fc": 12.0,
+          "training_presence_count": 29,
+          "test_presence_count": 12,
+          "presence_summary": "29 training, 12 testing"
         },
         {
           "Species": "Vitex_altissima",
@@ -20009,7 +22390,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 14.6,
           "wc2.1_30s_bio_19_fc": 1.5,
-          "wc2.1_30s_bio_20_fc": 0.5
+          "wc2.1_30s_bio_20_fc": 0.5,
+          "training_presence_count": 38,
+          "test_presence_count": 15,
+          "presence_summary": "38 training, 15 testing"
         },
         {
           "Species": "Walsura_trifoliolata",
@@ -20033,7 +22417,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 2.4,
           "wc2.1_30s_bio_18_fc": 4.1,
           "wc2.1_30s_bio_19_fc": 46.8,
-          "wc2.1_30s_bio_20_fc": 7.9
+          "wc2.1_30s_bio_20_fc": 7.9,
+          "training_presence_count": 12,
+          "test_presence_count": 5,
+          "presence_summary": "12 training, 5 testing"
         },
         {
           "Species": "Xanthophyllum_arnottianum",
@@ -20057,7 +22444,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 25.3,
           "wc2.1_30s_bio_18_fc": 0.4,
           "wc2.1_30s_bio_19_fc": 32.2,
-          "wc2.1_30s_bio_20_fc": 8.8
+          "wc2.1_30s_bio_20_fc": 8.8,
+          "training_presence_count": 35,
+          "test_presence_count": 15,
+          "presence_summary": "35 training, 15 testing"
         },
         {
           "Species": "Xantolis_tomentosa",
@@ -20081,7 +22471,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.2,
           "wc2.1_30s_bio_18_fc": 11.2,
           "wc2.1_30s_bio_19_fc": 9.5,
-          "wc2.1_30s_bio_20_fc": 2.4
+          "wc2.1_30s_bio_20_fc": 2.4,
+          "training_presence_count": 49,
+          "test_presence_count": 21,
+          "presence_summary": "49 training, 21 testing"
         },
         {
           "Species": "Zanthoxylum_rhetsa",
@@ -20105,7 +22498,10 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 1.4,
           "wc2.1_30s_bio_18_fc": 24.8,
           "wc2.1_30s_bio_19_fc": 43.1,
-          "wc2.1_30s_bio_20_fc": 0.0
+          "wc2.1_30s_bio_20_fc": 0.0,
+          "training_presence_count": 7,
+          "test_presence_count": 3,
+          "presence_summary": "7 training, 3 testing"
         }
       ]
     },
@@ -29534,9 +31930,9 @@ window.REPORT_MANIFEST = {
     },
     {
       "name": "20260329_224848",
+      "path": "experiments/acrocarpus/reports/20260329_224848",
       "id": "experiments/acrocarpus/reports/20260329_224848",
       "display_name": "experiments/acrocarpus/reports/20260329_224848",
-      "path": "experiments/acrocarpus/reports/20260329_224848",
       "model_outputs_path": "experiments/acrocarpus/reports/20260329_224848/model_outputs",
       "metric": {
         "type": "test",
@@ -29544,7 +31940,7 @@ window.REPORT_MANIFEST = {
         "detail": "Test AUC parsed from per-species HTML"
       },
       "summary": {
-        "generated_at": "2026-03-29T22:54:38.837718",
+        "generated_at": "2026-04-01T10:29:27.442350",
         "report_dir": "experiments/acrocarpus/reports/20260329_224848",
         "report_id": "experiments/acrocarpus/reports/20260329_224848",
         "report_display_name": "experiments/acrocarpus/reports/20260329_224848",
@@ -29596,6 +31992,10 @@ window.REPORT_MANIFEST = {
           "file_count": 15,
           "html_count": 1
         },
+        "maxent_args": {
+          "present": true,
+          "command_line_used": "autorun jackknife noprefixes nowarnings randomtestpoints=30 visible=False outputdirectory=/home/desinotorious/src/github.com/bprashanth/plantwise/PlantWise_v0/experiments/acrocarpus/model/res samplesfile=/home/desinotorious/src/github.com/bprashanth/plantwise/PlantWise_v0/experiments/acrocarpus/data/filtered_species.csv environmentallayers=/home/desinotorious/src/github.com/bprashanth/plantwise/PlantWise_v0/final_attributes"
+        },
         "notes": [
           "This report bundle is derived from PlantWise_v0 run artifacts.",
           "The generated auc_and_contributions.csv uses the legacy filename for compatibility.",
@@ -29625,7 +32025,114 @@ window.REPORT_MANIFEST = {
           "wc2.1_30s_bio_17_fc": 0.0,
           "wc2.1_30s_bio_18_fc": 0.0,
           "wc2.1_30s_bio_19_fc": 73.8,
-          "wc2.1_30s_bio_20_fc": 3.8
+          "wc2.1_30s_bio_20_fc": 3.8,
+          "training_presence_count": 7,
+          "test_presence_count": 3,
+          "presence_summary": "7 training, 3 testing"
+        }
+      ]
+    },
+    {
+      "name": "20260401_132515",
+      "path": "experiments/experiment-maesa-indica/reports/20260401_132515",
+      "id": "experiments/experiment-maesa-indica/reports/20260401_132515",
+      "display_name": "experiments/experiment-maesa-indica/reports/20260401_132515",
+      "model_outputs_path": "experiments/experiment-maesa-indica/reports/20260401_132515/model_outputs",
+      "metric": {
+        "type": "train",
+        "label": "Training AUC",
+        "detail": "Training AUC parsed from per-species HTML mapped into compatibility column 'Test AUC'"
+      },
+      "summary": {
+        "generated_at": "2026-04-01T13:25:20.030144",
+        "report_dir": "experiments/experiment-maesa-indica/reports/20260401_132515",
+        "report_id": "experiments/experiment-maesa-indica/reports/20260401_132515",
+        "report_display_name": "experiments/experiment-maesa-indica/reports/20260401_132515",
+        "run_signature": "c1298d3110a5",
+        "run_anchor_timestamp": "20260401_132515",
+        "run_identity": {
+          "sources": [
+            {
+              "path": "logs/maxent_timing.txt",
+              "size": 0,
+              "mtime_ns": 1775030115792972244
+            },
+            {
+              "path": "res/*.html",
+              "count": 1,
+              "oldest_mtime_ns": 1775030119956965646,
+              "newest_mtime_ns": 1775030119956965646
+            }
+          ],
+          "anchor": "2026-04-01T13:25:15.792972"
+        },
+        "auc": {
+          "auc_source": "Training AUC parsed from per-species HTML mapped into compatibility column 'Test AUC'",
+          "html_report_count": 1,
+          "maxent_versions_seen": [
+            "3.4.4"
+          ],
+          "species_count": 1
+        },
+        "timing": {
+          "present": true,
+          "path": "/home/desinotorious/src/github.com/bprashanth/plantwise/PlantWise_v0/experiments/experiment-maesa-indica/model/logs/maxent_timing.txt",
+          "prepared_total": null,
+          "finished_count": 0,
+          "avg_seconds": null,
+          "max_seconds": null,
+          "min_seconds": null,
+          "skipped_insufficient_presence_count": 0,
+          "skipped_insufficient_presence_species": [],
+          "retry_after_failure_count": 0,
+          "retry_after_failure_species": []
+        },
+        "usage": {
+          "present": false
+        },
+        "model_outputs": {
+          "present": true,
+          "path": "experiments/experiment-maesa-indica/reports/20260401_132515/model_outputs",
+          "file_count": 13,
+          "html_count": 1
+        },
+        "maxent_args": {
+          "present": true,
+          "command_line_used": "autorun jackknife noprefixes nowarnings visible=False outputdirectory=/home/desinotorious/src/github.com/bprashanth/plantwise/PlantWise_v0/experiments/experiment-maesa-indica/model/res samplesfile=/home/desinotorious/src/github.com/bprashanth/plantwise/PlantWise_v0/experiments/experiment-maesa-indica/data/filtered_species.csv environmentallayers=/home/desinotorious/src/github.com/bprashanth/plantwise/PlantWise_v0/final_attributes"
+        },
+        "notes": [
+          "This report bundle is derived from PlantWise_v0 run artifacts.",
+          "The generated auc_and_contributions.csv uses the legacy filename for compatibility.",
+          "If Maxent test AUC is unavailable in current outputs, Training AUC is mapped into the compatibility column 'Test AUC'."
+        ]
+      },
+      "rows": [
+        {
+          "Species": "Maesa_indica",
+          "Test AUC": 0.794,
+          "wc2.1_30s_bio_1_fc": 0.0,
+          "wc2.1_30s_bio_2_fc": 0.0,
+          "wc2.1_30s_bio_3_fc": 0.0,
+          "wc2.1_30s_bio_4_fc": 0.0,
+          "wc2.1_30s_bio_5_fc": 1.0,
+          "wc2.1_30s_bio_6_fc": 5.0,
+          "wc2.1_30s_bio_7_fc": 0.0,
+          "wc2.1_30s_bio_8_fc": 0.0,
+          "wc2.1_30s_bio_9_fc": 20.3,
+          "wc2.1_30s_bio_10_fc": 0.0,
+          "wc2.1_30s_bio_11_fc": 0.0,
+          "wc2.1_30s_bio_12_fc": 73.5,
+          "wc2.1_30s_bio_13_fc": 0.0,
+          "wc2.1_30s_bio_14_fc": 0.0,
+          "wc2.1_30s_bio_15_fc": 0.0,
+          "wc2.1_30s_bio_16_fc": 0.0,
+          "wc2.1_30s_bio_17_fc": 0.0,
+          "wc2.1_30s_bio_18_fc": 0.0,
+          "wc2.1_30s_bio_19_fc": 0.0,
+          "wc2.1_30s_bio_20_fc": 0.3,
+          "training_presence_count": 9,
+          "test_presence_count": null,
+          "presence_summary": "9 training, no test split reported"
         }
       ]
     }

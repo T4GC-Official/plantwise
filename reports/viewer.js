@@ -21,6 +21,14 @@ const BIO_LABELS = {
   "wc2.1_30s_bio_20_fc": "Annual Mean UV Index",
 };
 
+const METADATA_COLUMNS = new Set([
+  "Species",
+  "Test AUC",
+  "training_presence_count",
+  "test_presence_count",
+  "presence_summary",
+]);
+
 const state = {
   manifest: window.REPORT_MANIFEST || { reports: [] },
   baselineId: null,
@@ -79,6 +87,19 @@ function topVariable(row, envVars) {
   return { variable: bestVar, value: bestValue };
 }
 
+function presenceSummary(row) {
+  return row?.presence_summary || "No data";
+}
+
+function reportArgsSummary(report) {
+  const commandLine = report?.summary?.maxent_args?.command_line_used;
+  return commandLine || "Maxent args unavailable";
+}
+
+function presenceLabel(summary) {
+  return summary || "No data";
+}
+
 function buildDiffRows(baseline, candidate) {
   const left = new Map(baseline.rows.map((row) => [row.Species, row]));
   const right = new Map(candidate.rows.map((row) => [row.Species, row]));
@@ -89,7 +110,7 @@ function buildDiffRows(baseline, candidate) {
   const overlap = leftSpecies.filter((species) => rightSet.has(species));
   const baselineOnly = leftSpecies.filter((species) => !rightSet.has(species));
   const candidateOnly = rightSpecies.filter((species) => !leftSet.has(species));
-  const envVars = Object.keys(baseline.rows[0] || {}).filter((key) => key !== "Species" && key !== "Test AUC");
+  const envVars = Object.keys(baseline.rows[0] || {}).filter((key) => !METADATA_COLUMNS.has(key));
 
   const overlapRows = overlap.map((species) => {
     const baselineRow = left.get(species);
@@ -113,6 +134,8 @@ function buildDiffRows(baseline, candidate) {
       delta,
       topBaseline: topVariable(baselineRow, envVars),
       topCandidate: topVariable(candidateRow, envVars),
+      baselinePresenceSummary: presenceSummary(baselineRow),
+      candidatePresenceSummary: presenceSummary(candidateRow),
       contributions,
     };
   });
@@ -127,6 +150,8 @@ function buildDiffRows(baseline, candidate) {
       delta: null,
       topBaseline: topVariable(baselineRow, envVars),
       topCandidate: { variable: null, value: null },
+      baselinePresenceSummary: presenceSummary(baselineRow),
+      candidatePresenceSummary: "No data",
       contributions: envVars.map((envVar) => ({
         variable: envVar,
         label: BIO_LABELS[envVar] || envVar,
@@ -147,6 +172,8 @@ function buildDiffRows(baseline, candidate) {
       delta: null,
       topBaseline: { variable: null, value: null },
       topCandidate: topVariable(candidateRow, envVars),
+      baselinePresenceSummary: "No data",
+      candidatePresenceSummary: presenceSummary(candidateRow),
       contributions: envVars.map((envVar) => ({
         variable: envVar,
         label: BIO_LABELS[envVar] || envVar,
@@ -222,7 +249,9 @@ function renderCoverageLine(baseline, candidate, diff) {
       ${escapeHtml(reportLabel(candidate))} is better in ${candidateBetter} species${unchanged ? `, with ${unchanged} unchanged` : ""}.<br>
       <strong>Species overlap:</strong> ${diff.overlap.length}/${union} species (${fmt(overlapPct, 1)}%) |
       <strong>Baseline only:</strong> ${diff.baselineOnly.length} (${fmt(baselineOnlyPct, 1)}%) |
-      <strong>Candidate only:</strong> ${diff.candidateOnly.length} (${fmt(candidateOnlyPct, 1)}%)
+      <strong>Candidate only:</strong> ${diff.candidateOnly.length} (${fmt(candidateOnlyPct, 1)}%)<br>
+      <strong>${escapeHtml(reportLabel(baseline))} args:</strong> ${escapeHtml(reportArgsSummary(baseline))}<br>
+      <strong>${escapeHtml(reportLabel(candidate))} args:</strong> ${escapeHtml(reportArgsSummary(candidate))}
     </div>
   `;
 }
@@ -280,6 +309,7 @@ function renderSpeciesDetail(diffRows, baseline, candidate) {
     </tr>
   `).join("");
   const reportSource = selected.presence === "baseline_only" ? baseline : candidate;
+  const argsSource = selected.presence === "baseline_only" ? baseline : candidate;
 
   DOM.speciesDetailBody.className = "";
   const presenceNote = selected.presence === "baseline_only"
@@ -292,6 +322,11 @@ function renderSpeciesDetail(diffRows, baseline, candidate) {
       <h3>${escapeHtml(selected.species)}</h3>
     </div>
     ${presenceNote}
+    <div class="detail-block score-line">
+      <strong>Presence points</strong>:
+      ${escapeHtml(reportLabel(baseline))} ${escapeHtml(presenceLabel(selected.baselinePresenceSummary))} |
+      ${escapeHtml(reportLabel(candidate))} ${escapeHtml(presenceLabel(selected.candidatePresenceSummary))}
+    </div>
     <div class="detail-block score-line">
       <strong>Top variable</strong>:
       ${escapeHtml(reportLabel(baseline))} ${escapeHtml(BIO_LABELS[selected.topBaseline.variable] || selected.topBaseline.variable || "-")} |

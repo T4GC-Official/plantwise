@@ -18,6 +18,9 @@ TIMING_RETRY_RE = re.compile(r"^Leaving (.+?) in sp_data_final for retry after f
 TEST_AUC_RE = re.compile(r"Test AUC is ([0-9.]+)", re.IGNORECASE)
 TRAINING_AUC_RE = re.compile(r"training AUC is ([0-9.]+)", re.IGNORECASE)
 VERSION_RE = re.compile(r"using Maxent version ([0-9.]+)", re.IGNORECASE)
+COMMAND_LINE_RE = re.compile(r"Command line used:\s+(.*?)<br>", re.IGNORECASE | re.DOTALL)
+TRAIN_TEST_COUNTS_RE = re.compile(r"(\d+)\s+presence records used for training,\s+(\d+)\s+for testing\.", re.IGNORECASE)
+TRAIN_ONLY_COUNTS_RE = re.compile(r"(\d+)\s+presence records used for training\.", re.IGNORECASE)
 BIO_VAR_RE = re.compile(r"^wc2\.1_30s_bio_(\d+)_fc$")
 
 
@@ -116,6 +119,9 @@ def extract_metric_from_html(html_path: Path):
     version_match = VERSION_RE.search(html)
     test_auc_match = TEST_AUC_RE.search(html)
     training_auc_match = TRAINING_AUC_RE.search(html)
+    command_line_match = COMMAND_LINE_RE.search(html)
+    train_test_counts_match = TRAIN_TEST_COUNTS_RE.search(html)
+    train_only_counts_match = TRAIN_ONLY_COUNTS_RE.search(html)
 
     contributions = {}
     tables = soup.find_all("table")
@@ -128,14 +134,38 @@ def extract_metric_from_html(html_path: Path):
                 except ValueError:
                     continue
 
+    training_presence_count = None
+    test_presence_count = None
+    presence_summary = None
+    if train_test_counts_match:
+        training_presence_count = int(train_test_counts_match.group(1))
+        test_presence_count = int(train_test_counts_match.group(2))
+        presence_summary = f"{training_presence_count} training, {test_presence_count} testing"
+    elif train_only_counts_match:
+        training_presence_count = int(train_only_counts_match.group(1))
+        test_presence_count = None
+        presence_summary = f"{training_presence_count} training, no test split reported"
+
     return {
         "species": html_path.stem,
         "test_auc": float(test_auc_match.group(1)) if test_auc_match else None,
         "training_auc": float(training_auc_match.group(1)) if training_auc_match else None,
         "contributions": contributions,
         "maxent_version": version_match.group(1).rstrip(".") if version_match else None,
+        "command_line_used": command_line_match.group(1).strip() if command_line_match else None,
+        "training_presence_count": training_presence_count,
+        "test_presence_count": test_presence_count,
+        "presence_summary": presence_summary,
         "source": str(html_path.relative_to(html_path.parent.parent)),
     }
+
+
+def extract_species_details_from_html_dir(res_dir: Path):
+    details = {}
+    for path in sorted(res_dir.glob("*.html")):
+        metric = extract_metric_from_html(path)
+        details[metric["species"]] = metric
+    return details
 
 
 def ordered_env_vars(env_vars):
@@ -319,21 +349,25 @@ def parse_usage_log(path: Path):
 def copy_model_outputs(root: Path, report_dir: Path, source_dir: Path | None = None):
     source_dir = source_dir or (root / "res")
     output_dir = report_dir / "model_outputs"
-    if output_dir.exists():
-        shutil.rmtree(output_dir)
-    output_dir.mkdir(exist_ok=True)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    source_resolved = source_dir.resolve() if source_dir.exists() else source_dir
+    output_resolved = output_dir.resolve()
 
     copied = 0
     if source_dir.exists():
-        for path in source_dir.rglob("*"):
-            relative = path.relative_to(source_dir)
-            dest = output_dir / relative
-            if path.is_dir():
-                dest.mkdir(parents=True, exist_ok=True)
-                continue
-            dest.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(path, dest)
-            copied += 1
+        if source_resolved == output_resolved:
+            copied = sum(1 for path in output_dir.rglob("*") if path.is_file())
+        else:
+            for path in source_dir.rglob("*"):
+                relative = path.relative_to(source_dir)
+                dest = output_dir / relative
+                if path.is_dir():
+                    dest.mkdir(parents=True, exist_ok=True)
+                    continue
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(path, dest)
+                copied += 1
 
     return {
         "present": copied > 0,
@@ -390,6 +424,11 @@ def _load_report_entry(root: Path, report_dir: Path):
     auc_path = report_dir / "auc_and_contributions.csv"
     if not auc_path.exists():
         return None
+
+    report_bundle_path = report_dir / "report_bundle.json"
+    if report_bundle_path.exists():
+        bundle = json.loads(report_bundle_path.read_text())
+        return bundle
 
     summary_path = report_dir / "report_summary.json"
     summary = json.loads(summary_path.read_text()) if summary_path.exists() else None
@@ -474,6 +513,11 @@ def generate_report_bundle(
                 f"Could not find per-species HTML reports or maxentResults.csv under {res_dir}."
             )
     auc_df, auc_meta = auc_bundle
+    species_details = extract_species_details_from_html_dir(res_dir)
+    run_command_line = next(
+        (item["command_line_used"] for item in species_details.values() if item.get("command_line_used")),
+        None,
+    )
 
     auc_path = report_dir / "auc_and_contributions.csv"
     auc_df.to_csv(auc_path, index=False)
@@ -494,6 +538,10 @@ def generate_report_bundle(
         "timing": timing_summary,
         "usage": usage_summary,
         "model_outputs": model_outputs_summary,
+        "maxent_args": {
+            "present": run_command_line is not None,
+            "command_line_used": run_command_line,
+        },
         "notes": [
             "This report bundle is derived from PlantWise_v0 run artifacts.",
             "The generated auc_and_contributions.csv uses the legacy filename for compatibility.",
@@ -504,7 +552,17 @@ def generate_report_bundle(
     (report_dir / "report_summary.json").write_text(
         json.dumps(report_summary, indent=2) + "\n"
     )
-    write_report_bundle(report_dir, auc_df, report_summary)
+    bundle_df = auc_df.copy()
+    bundle_df["training_presence_count"] = bundle_df["Species"].map(
+        lambda species: species_details.get(species, {}).get("training_presence_count")
+    )
+    bundle_df["test_presence_count"] = bundle_df["Species"].map(
+        lambda species: species_details.get(species, {}).get("test_presence_count")
+    )
+    bundle_df["presence_summary"] = bundle_df["Species"].map(
+        lambda species: species_details.get(species, {}).get("presence_summary")
+    )
+    write_report_bundle(report_dir, bundle_df, report_summary)
     manifest_path, manifest_count = build_manifest(root)
     return {
         "report_dir": report_dir,
