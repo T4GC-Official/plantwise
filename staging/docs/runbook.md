@@ -109,3 +109,15 @@ docker run --name plantwise-model-reload-UNIQUE --network none --cpus 2 --memory
 The script checks n_final against release metadata and direct reloaded-model
 scores against raster samples for each released species. Neither Java's old
 temporary training directory nor the training process is needed for prediction.
+
+Terminal inventory audit after all jobs finish:
+
+```bash
+staging/.venv/bin/python staging/scripts/report.py staging/runs/full_20261111T1252Z
+```
+
+The audit writes private all-success-metrics.csv, final-audit.json and full
+accounting.json under the ignored run. It checks every species has exactly one
+terminal state, required outputs are nonempty and n_final equals n_usable.
+Publication additionally checks PNG decoding, finite GeoTIFF range/CRS/NoData,
+metrics and checksums before renaming a staged release directory into place.

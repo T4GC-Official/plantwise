@@ -9,6 +9,7 @@ import shutil
 import sys
 
 import pandas as pd
+from PIL import Image
 import rasterio
 from rasterio.features import shapes
 from rasterio.warp import transform_geom
@@ -50,6 +51,7 @@ def build(run, release_id, expected):
         metrics=pd.read_csv(job/'metrics.csv').iloc[0]
         assert math.isfinite(metrics['auc.val.avg']) and math.isfinite(metrics['AICc'])
         assert metrics.n_final==metrics.n_occ
+        with Image.open(job/f'{sp}_Plot.png') as preview: preview.verify()
         geo=job/f'{sp}_SDM.tif'
         with rasterio.open(geo) as src:
             assert src.crs and src.nodata is not None

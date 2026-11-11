@@ -4,7 +4,7 @@ import MapComponent from './MapComponent';
 import './ToolPage.css';
 import { Button, Popover, PopoverHeader, PopoverBody, Modal, ModalHeader, ModalBody, ModalFooter, Spinner } from 'reactstrap';
 
-// Backend base URL. Local: REACT_APP_API_URL=http://localhost:8080 npm start
+// The API is served alongside this frontend at the same loopback origin.
 const API_BASE = ''; // Requests always use this site's active release.
 
 // Add this hook to your component

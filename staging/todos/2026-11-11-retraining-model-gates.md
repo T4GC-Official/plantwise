@@ -14,3 +14,20 @@ background provenance and sensitivity, spatial sampling/partition diagnostics,
 minimum-data/AICc eligibility, leakage checks, independent validation where
 available, scientific review of score suitability, reproducible environment,
 release integrity and API/browser regression evidence before promotion.
+
+## Scientific follow-up before automatic promotion on new data
+
+- [ ] Agree domain-reviewed minimum unique-cell and spatial-fold sample sizes.
+- [ ] Decide performance/uncertainty review gates (including low/near-random
+  block AUC), sensitivity to effort-background construction and correlated BIOs.
+- [ ] Establish independent validation where available; current pooled-effort
+  spatial CV does not validate the bias-building process independently.
+- [ ] Define data drift and geographic envelope changes needing human review.
+- [ ] Version new inputs and package sources; rerun model, map, API, browser,
+  restart and rollback gates before changing the active release.
+- [ ] Add long-session Leaflet lifecycle/memory testing and migrate obsolete CRA
+  separately from model changes.
+
+A finite AICc/AUC and valid GeoTIFF is an operational gate, not an ecological
+quality guarantee. The current run reports all eligible fits honestly without
+inventing a new retrospective AUC cutoff or silently hiding low-score models.
