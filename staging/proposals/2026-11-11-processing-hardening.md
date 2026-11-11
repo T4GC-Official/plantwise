@@ -19,3 +19,18 @@ separate from artifacts. Remaining improvements worth evaluating:
   with model validation. Pin builds and inspect dependency security findings.
 - Add independent ecological evaluation and data-drift checks before allowing
   automatic retraining/promotion on newly collected data.
+
+Environment build: capture package tarballs or an archived CRAN repository for
+all packages in R-packages.csv and simplify the currently cached two-attempt
+installation Dockerfile. Final image is verified and pinned locally by content
+ID, but a future CRAN/apt rebuild is not bit-reproducible without source snapshots.
+
+Serving build: always snapshot finished frontend output before switching its
+runtime symlink. CRA regenerates build/ in place, so serving that directory
+causes transient missing assets during rebuilds; the implemented snapshot fixes
+this operational issue while keeping an eventual framework migration separate.
+
+Frontend lifecycle follow-up: remove remaining commented blocks in a separate
+cleanup and release Leaflet maps on component unmount, including aborting an
+in-flight boundary fetch. Current functional navigation/browser gate passes,
+but repeated long-session route changes deserve a memory/lifecycle regression.

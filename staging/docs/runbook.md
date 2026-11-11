@@ -86,3 +86,16 @@ Actual full run planned: full_20261111T1252Z, --workers 3, max six CPU/24 GiB
 container caps; serial warmup and two-job ramp before the three-job ceiling.
 Per-job resources.json records sampled Docker CPU/RAM. Total working usage is
 expected below caps; monitor the shared host while jobs progress.
+
+Progress without exposing occurrence records:
+
+```bash
+staging/.venv/bin/python staging/scripts/progress.py staging/runs/full_20261111T1252Z
+tail -n 30 staging/runtime/full-20261111T1252Z.log
+systemctl --user status plantwise-staging.service --no-pager
+journalctl --user -u plantwise-staging.service -n 30 --no-pager
+```
+
+Measured serial/two-job warmup uses ~2.3–2.4 GiB per training container and about
+one CPU each, with >40 GiB host memory available. Ceiling3 therefore leaves
+substantial room within the shared host; per-container 8GiB/two-CPU limits stay.

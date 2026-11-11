@@ -57,3 +57,11 @@ Playwright run passes manual/map queries, preview, navigation and mobile view,
 with no missing local assets, JS exceptions or production API requests.
 Seventeen API fixtures pass. Runtime pass1-gate.json and pass1-evidence snapshot
 saved before starting the full inventory. Smoke remains served during full work.
+
+## Full inventory started after acceptance
+
+Run full_20261111T1252Z started at 12:49:33 UTC with immutable config and exact
+448-name inventory. Serial warmup, two-job ramp, ceiling3. Early training jobs
+use ~2.3–2.4 GiB each, ~one CPU each; >40 GiB host memory available. Sparse
+species receive explicit exclusions; all terminal states are resumable. The
+one-species release remains active on the website throughout training.
