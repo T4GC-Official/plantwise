@@ -33,8 +33,7 @@ const ToolPage = () => {
   const requestRef = useRef(null);
   const imageRequestRef = useRef(null);
   const [error, setError] = useState('');
-  const [health, setHealth] = useState(null);
-  useEffect(() => { fetch('/api/health').then(r => r.json()).then(setHealth).catch(() => setError('Service unavailable')); return () => { requestRef.current?.abort(); imageRequestRef.current?.abort(); }; }, []);
+  useEffect(() => () => { requestRef.current?.abort(); imageRequestRef.current?.abort(); }, []);
   const [threshold, setThreshold] = useState(50); // Threshold for probability
   const [latitude, setLatitude] = useState(null); // Latitude from the map click
   const [longitude, setLongitude] = useState(null); // Longitude from the map click
@@ -86,23 +85,15 @@ const ToolPage = () => {
     requestRef.current?.abort();
     const controller = new AbortController(); requestRef.current = controller;
     setError(''); setResults([]);
-    fetch(`${API_BASE}/api/get-results`, {
-      signal: controller.signal,
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        latitude: Number(lat),
-        longitude: Number(lng),
-        minProbability: Number(minProbability),
-      }),
-    })
-      .then(async (response) => {
-        if (!response.ok) {
-          const body = await response.json(); throw new Error(typeof body.detail === 'string' ? body.detail : 'Invalid coordinates or threshold');
-        }
-        return response.json();
+    const params = new URLSearchParams({ latitude: Number(lat), longitude: Number(lng), minProbability: Number(minProbability) });
+    fetch(`${API_BASE}/api/get-results?${params}`, { signal: controller.signal, cache: 'no-store' })
+      .then(async response => {
+        const text = await response.text();
+        let data;
+        try { data = text.trim() ? JSON.parse(text) : null; } catch { data = null; }
+        if (!response.ok) throw new Error(typeof data?.detail === 'string' ? data.detail : `Unable to load results. Please try again. (HTTP ${response.status})`);
+        if (!Array.isArray(data)) throw new Error('Unable to load results. Please try again.');
+        return data;
       })
       .then((data) => {
         if (controller.signal.aborted) return;
@@ -149,9 +140,9 @@ const ToolPage = () => {
     setSelectedSpecies(speciesName);
     setLoadingImage(true);
     try {
-      const release = results.find(result => result.species === speciesName)?.release || health?.release;
-      const response = await fetch(`${API_BASE}/api/species/${encodeURIComponent(speciesName)}/map?release_id=${encodeURIComponent(release)}`, {signal: imageController.signal});
-      if (!response.ok) { const body = await response.json(); throw new Error(body.detail || 'Failed to load map'); }
+      const release = results.find(result => result.species === speciesName)?.release;
+      const response = await fetch(`${API_BASE}/api/species/${encodeURIComponent(speciesName)}/map${release ? `?release_id=${encodeURIComponent(release)}` : ''}`, {signal: imageController.signal});
+      if (!response.ok) { const body = await response.text(); let detail; try { detail = JSON.parse(body).detail; } catch {} throw new Error(typeof detail === 'string' ? detail : 'Unable to load map. Please try again.'); }
       const imageBlob = await response.blob();
       if (!imageController.signal.aborted) setSpeciesImage(URL.createObjectURL(imageBlob));
     } catch (error) {
@@ -259,7 +250,7 @@ const ToolPage = () => {
             </Popover>
           </div>
 
-          <p>{health ? `Release: ${health.release} · ${health.species_count} species` : 'Loading release…'}</p><p>ENMeval Java Maxent · four spatial blocks · effort-weighted background · cloglog suitability.</p><p>Suitability is a model score, not planting success probability.</p>{error && <div role="alert" className="alert alert-danger">{error}</div>}
+          {error && <div role="alert" className="alert alert-danger">{error}</div>}
           {/* Coordinates Input */}
           <div ref={resultsSectionRef} className="mt-4">
             <h5>Coordinates:</h5>
@@ -321,13 +312,13 @@ const ToolPage = () => {
 
           {/* Display Results */}
 
-          {hasSearched && results.length === 0 && threshold === 0 && (
+          {hasSearched && !error && results.length === 0 && threshold === 0 && (
             <div className="mt-4 text-center">
               <p>No results found for this location.</p>
             </div>
           )}
 
-          {hasSearched && results.length === 0 && (
+          {hasSearched && !error && results.length === 0 && (
             <div className="mt-4 text-center">
               <p>No results found. Please lower the threshold.</p>
             </div>
@@ -352,7 +343,7 @@ const ToolPage = () => {
                   <tr>
                     <th>#</th>
                     <th>Species Name</th>
-                    <th>Suitability (%)</th><th>Block-CV AUC</th>
+                    <th>Suitability (%)</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -368,7 +359,7 @@ const ToolPage = () => {
                           <strong>{result.species}</strong>
                         </Button>
                       </td>
-                      <td>{result.probability.toFixed(2)}%</td><td>{result.auc == null ? 'Unavailable' : result.auc.toFixed(3)}</td>
+                      <td>{Math.trunc(result.probability)}%</td>
                     </tr>
                   ))}
                 </tbody>

@@ -2,6 +2,8 @@
 
 - [Full release and validation](full-release-report.md): active coverage, metrics,
   exclusions, evidence, serving state and limitations.
+- [Visual parity and preview correction](visual-parity-and-preview.md): original
+  appearance, screenshot comparison and GET-compatible queries.
 - [Runbook](runbook.md): reproducible environment, training, publication,
   restart, rollback and verification commands.
 - [Training environment](training-environment.md): versions, jar identity,

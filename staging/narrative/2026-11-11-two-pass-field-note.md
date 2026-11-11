@@ -68,3 +68,19 @@ Domain-reviewed sample/performance criteria, effort-background sensitivity,
 independent validation and new-data drift gates remain in todos/. Processing
 improvements, including a stricter source package lock and canonical raster
 grid, are in proposals/. Superseded scaffold code is preserved in archive/.
+
+The user's subsequent mobile screenshot exposed a gap in the first acceptance:
+we had preserved the overall design but added release/protocol paragraphs and
+an AUC column. Comparing rendered screenshots with the deployed original made
+the resulting mobile displacement clear. Those additions are now removed;
+metadata belongs in the API/docs, while the tool keeps the original layout.
+A screenshot inspection and matching control bounds now complement functional
+checks. The desktop controls and footer match production pixel-for-pixel.
+
+The reported JSON exception is reproduced when a preview forwarder rejects POST
+with an empty response. Read-only GET recommendations preserve the same backend
+safeguards and work under that constraint; POST remains available. The client
+also handles empty responses and distinguishes failed requests from empty
+recommendations. The exact screenshot coordinates return20 results in both
+viewport tests. The external URL itself remains unverified until the truncated
+address is supplied in full; neither the domain nor tunnel was changed.

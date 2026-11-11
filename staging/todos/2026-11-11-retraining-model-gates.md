@@ -42,3 +42,8 @@ inventing a new retrospective AUC cutoff or silently hiding low-score models.
 - [ ] Review the nine released models with block-CV AUC below 0.5; private
   review queue: runs/full_20261111T1252Z/low-auc-review.csv. No ecological quality
   guarantee follows from the completed operational gates.
+
+## External preview follow-up
+
+- [ ] Verify the user's exact external preview URL once provided (screenshot
+  truncates its address). Loopback and simulated GET-only forwarding now pass.

@@ -72,3 +72,16 @@ def test_preview_and_no_api_fallback(site):
 def test_literal_nonfinite_json(site,number):
     response=site[0].post('/api/get-results',content='{"latitude":'+number+',"longitude":75,"minProbability":0}',headers={'Content-Type':'application/json'})
     assert response.status_code==422
+
+@pytest.mark.parametrize('latitude,longitude,threshold',[(11.5,75.5,25),(10.5,75.5,0),(11,77.5,0),(0,0,0)])
+def test_get_matches_post(site,latitude,longitude,threshold):
+    client,_=site
+    params={'latitude':latitude,'longitude':longitude,'minProbability':threshold}
+    get=client.get('/api/get-results',params=params)
+    post=client.post('/api/get-results',json=params)
+    assert get.status_code==post.status_code
+    assert get.json()==post.json()
+
+@pytest.mark.parametrize('value',['NaN','Infinity','bad','true','91'])
+def test_get_rejects_bad_coordinates(site,value):
+    assert site[0].get('/api/get-results',params={'latitude':value,'longitude':75,'minProbability':0}).status_code==422

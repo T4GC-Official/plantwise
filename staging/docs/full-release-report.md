@@ -48,7 +48,7 @@ Actual environment versions and jar identity are in training-environment.md.
 
 Mean held-out block AUC: 0.7492; median 0.7589; interquartile range
 0.6797–0.8330; range 0.3094–0.9927. **Nine models have block AUC below 0.5** and
-are flagged in the private run's low-auc-review.csv. These scores remain visible;
+are flagged in the private run's low-auc-review.csv. These scores remain available in API/report metadata;
 no retrospective quality cutoff was silently introduced. Scientific review,
 background sensitivity and independent validation remain future model gates.
 CBI is unavailable because ecospat is not installed. No exact reproduction of
@@ -96,3 +96,10 @@ suitability, not planting-success probabilities.
 The enabled user service has restart behavior and user lingering was already
 enabled. It loads immutable frontend/model snapshots at startup and never trains.
 Detailed restart, rollback, rebuild and verification commands are in runbook.md.
+
+## Subsequent frontend correction
+
+See visual-parity-and-preview.md: extra diagnostic UI and the AUC column were
+removed to match the original website. The frontend uses validated GET queries
+for read-only preview compatibility, retaining POST. Twenty-six API cases and
+desktop/mobile visual/interaction checks now pass. Model artifacts are unchanged.

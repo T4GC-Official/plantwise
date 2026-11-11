@@ -7,7 +7,7 @@ from threading import BoundedSemaphore
 
 import rasterio
 from rasterio.warp import transform
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query as QueryParam
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.exceptions import RequestValidationError
 from fastapi.staticfiles import StaticFiles
@@ -68,8 +68,7 @@ def create_app(release_path=None, static_path=None):
         return {'status': 'ok', 'release': catalog['release'], 'species_count': len(entries),
                 'coverage': catalog['accounting'], 'evaluation': catalog['evaluation'], 'score': 'cloglog suitability'}
 
-    @app.post('/api/get-results')
-    def results(query: Query):
+    def recommend(query: Query):
         if not wg.covers(Point(query.longitude, query.latitude)):
             raise HTTPException(422, 'Coordinates are outside the Western Ghats boundary')
         if not capacity.acquire(blocking=False):
@@ -88,6 +87,20 @@ def create_app(release_path=None, static_path=None):
             return sorted(result, key=lambda x: (-x['probability'], x['species']))
         finally:
             capacity.release()
+
+    @app.post('/api/get-results')
+    def results(query: Query):
+        return recommend(query)
+
+    @app.get('/api/get-results')
+    def get_results(
+        latitude: float = QueryParam(..., ge=-90, le=90, allow_inf_nan=False),
+        longitude: float = QueryParam(..., ge=-180, le=180, allow_inf_nan=False),
+        minProbability: float = QueryParam(..., ge=0, le=100, allow_inf_nan=False),
+    ):
+        # Read-only queries also work through preview forwarders that accept GET.
+        values = Query(latitude=latitude, longitude=longitude, minProbability=minProbability)
+        return JSONResponse(recommend(values), headers={'Cache-Control': 'no-store'})
 
     @app.get('/api/species/{species}/map')
     def preview(species: str, release_id: str | None = None):

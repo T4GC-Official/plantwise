@@ -41,3 +41,10 @@ cells between raw and cropped grids. Independent validation now compares exact
 output pixel centers, which all 268 models pass. For future processing, persist
 one canonical grid/transform/cell-ID mapping and explicitly define tie behavior
 for edge coordinates, so masking, deduplication and verification all share it.
+
+Visual/entrypoint acceptance: compare settled screenshots against the original
+at desktop and phone sizes, including a scrolled results view. Keep operator
+metadata out of the product layout. Test the actual user-facing forwarding URL,
+not only loopback, and include empty/non-JSON gateway responses. The GET endpoint
+is suitable for read-only recommendations; transport parity tests must retain
+all spatial and numeric validation.

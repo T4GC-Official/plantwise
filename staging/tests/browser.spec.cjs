@@ -39,7 +39,7 @@ const fs = require('fs');
  const selectedLat=Number(await page.getByLabel('Latitude:',{exact:true}).inputValue());
  const selectedLon=Number(await page.getByLabel('Longitude:',{exact:true}).inputValue());
  if(Math.abs(selectedLat-query.latitude)>.15||Math.abs(selectedLon-query.longitude)>.15)throw new Error('Map click did not update real coordinates');
- await Promise.all([page.waitForResponse(r=>r.url().endsWith('/api/get-results')&&r.request().method()==='POST'), page.getByRole('button',{name:'Enter',exact:true}).click()]);
+ await Promise.all([page.waitForResponse(r=>r.url().includes('/api/get-results')&&r.request().method()==='GET'), page.getByRole('button',{name:'Enter',exact:true}).click()]);
  await page.screenshot({path:'/work/runtime/map-query.png',fullPage:true});
  // Manual outside-WG input must expose the local API error.
  await page.getByLabel('Latitude:',{exact:true}).fill('0');await page.getByLabel('Longitude:',{exact:true}).fill('0');
@@ -54,7 +54,7 @@ const fs = require('fs');
  await page.goto('http://127.0.0.1:8175/#/tool',{waitUntil:'networkidle'});
  await page.screenshot({path:'/work/runtime/mobile-tool.png',fullPage:true});
  const production=requests.filter(x=>/run\.app|plantwise-india\.org|localhost:8080/.test(x));
- const localFailures=failures.filter(x=>x.url.startsWith('http://127.0.0.1:8175')&&!(x.url.endsWith('/api/get-results')&&x.status===422));
+ const localFailures=failures.filter(x=>x.url.startsWith('http://127.0.0.1:8175')&&!(x.url.includes('/api/get-results')&&x.status===422));
  if(production.length||localFailures.length||pageErrors.length)throw new Error(JSON.stringify({production,localFailures,pageErrors}));
  const result={release:evidence.release,browser_passed:true,manual_query:true,map_query:true,preview:true,outside_wg:true,requests,failures,pageErrors,consoleErrors,production};
  fs.writeFileSync('/work/runtime/browser-evidence.json',JSON.stringify(result,null,2));

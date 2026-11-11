@@ -13,7 +13,7 @@ const OurModelPage = () => {
       {/* Section: Broad Methodology */}
       <h2 className="mt-4">How It Works</h2>
       <p>
-        Our model is built using the <strong>MaxEnt</strong> algorithm, a popular tool for species distribution modeling<sup>[1]</sup>. MaxEnt works by analyzing presence-only data of species along with environmental variables such as the 19 WorldClim bioclimatic variables to predict model suitability in a given location.
+        Our model is built using the <strong>MaxEnt</strong> algorithm, a popular tool for species distribution modeling<sup>[1]</sup>. MaxEnt works by analyzing presence-only data of species along with environmental variables such as rainfall and temperature to predict the suitability of a species in a given location.
       </p>
 
       {/* Section: Data Sources */}
@@ -33,14 +33,12 @@ const OurModelPage = () => {
         </li>
         <li><strong>French Institute of Pondicherry</strong></li>
       </ul>
-      <p>This staging release uses 14,180 supplied observations across 448 input species,
-        WorldClim BIO1–19 and the Western Ghats polygon. Species without enough usable
-        data or eligible models are recorded as unavailable. Active coverage appears
-        in the tool.</p>
-      <p>ENMeval tunes Java Maxent 3.4.4 over linear and linear/quadratic features,
-        regularization multipliers 1 and 2, with four spatial blocks and the supplied
-        collector-effort-weighted background. AICc selects the eligible full-data model.
-        Reported AUC is the mean held-out block AUC; suitability uses cloglog output.</p>
+      <p>
+        The supplied dataset contains
+        <span><strong> 14,180 observations</strong> of <strong>448 species </strong></span>
+        for modeling species distributions. Further details on the modeling approach will be available in our upcoming publication
+        (<em>Suri et al., in preparation</em>).
+      </p>
 
       {/* Section: Disclaimer */}
       <h2 className="mt-4">Disclaimer</h2>
