@@ -34,3 +34,10 @@ Frontend lifecycle follow-up: remove remaining commented blocks in a separate
 cleanup and release Leaflet maps on component unmount, including aborting an
 in-flight boundary fetch. Current functional navigation/browser gate passes,
 but repeated long-session route changes deserve a memory/lifecycle regression.
+
+Raster grid policy: terra's crop/write path changed the x pixel spacing by
+~1.5e-17 degrees. Original observations exactly on cell edges can select adjacent
+cells between raw and cropped grids. Independent validation now compares exact
+output pixel centers, which all 268 models pass. For future processing, persist
+one canonical grid/transform/cell-ID mapping and explicitly define tie behavior
+for edge coordinates, so masking, deduplication and verification all share it.

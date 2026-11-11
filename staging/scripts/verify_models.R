@@ -10,11 +10,15 @@ checks<-list()
 for(sp in names(catalog$species)) {
  entry<-catalog$species[[sp]]; model<-readRDS(file.path(release,entry$model))
  stopifnot(nrow(model@presence)==entry$n_final)
- xy<-as.matrix(occ[occ$Species==sp,c('Longitude','Latitude')]); values<-as.data.frame(terra::extract(pred,xy)); map<-rast(file.path(release,entry$raster)); scores<-terra::extract(map,xy)[,1]
+ xy<-as.matrix(occ[occ$Species==sp,c('Longitude','Latitude')]); map<-rast(file.path(release,entry$raster))
+ # Compare identical pixel centers: original occurrences can lie exactly on cell
+ # edges, where crop-origin floating point differences select adjacent cells.
+ cells<-cellFromXY(map,xy); xy<-xyFromCell(map,cells)
+ values<-as.data.frame(terra::extract(pred,xy)); scores<-terra::extract(map,xy)[,1]
  keep<-which(complete.cases(values)&is.finite(scores));stopifnot(length(keep)>0)
  direct<-as.numeric(predicts::predict(model,values[keep,,drop=FALSE],args='outputformat=cloglog'))
- error<-max(abs(direct-scores[keep]));stopifnot(is.finite(error),error<1e-6)
- checks[[sp]]<-list(n_final=nrow(model@presence),checked=length(keep),max_error=error)
+ error<-max(abs(direct-scores[keep]));if(!is.finite(error)||error>=1e-6) stop(sp,': pixel-center prediction mismatch ',error)
+ checks[[sp]]<-list(n_final=nrow(model@presence),checked=length(keep),max_error=error,pixel_centers=TRUE)
 }
 write_json(list(release=catalog$release,passed=TRUE,models=checks),args[2],auto_unbox=TRUE,pretty=TRUE,digits=NA)
 cat('Fresh-JVM model reload passed:',length(checks),'models\n')

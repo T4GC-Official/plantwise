@@ -5,9 +5,9 @@
 - [x] Train Aglaia with spatial block CV; finite AICc, held-out AUC, full-data fit.
 - [x] Validate real map, score, preview, latitude, WG, NoData and local browser calls.
 - [x] Record pass-1 evidence BEFORE starting full training.
-- [ ] Account for all 448 species with resumable isolated jobs (full_20261111T1252Z running).
-- [ ] Validate full release and atomic promotion; retain smoke rollback.
-- [ ] Test restart and rollback on 127.0.0.1:8175.
+- [x] Account for all 448 species: 268 successes, 180 exclusions, zero failures.
+- [x] Validate full release and atomic promotion; retain smoke rollback.
+- [x] Test restart and rollback on 127.0.0.1:8175.
 
 Future new-data gate: immutable input inventory, coordinate/CRS validation,
 background provenance and sensitivity, spatial sampling/partition diagnostics,
@@ -31,3 +31,14 @@ release integrity and API/browser regression evidence before promotion.
 A finite AICc/AUC and valid GeoTIFF is an operational gate, not an ecological
 quality guarantee. The current run reports all eligible fits honestly without
 inventing a new retrospective AUC cutoff or silently hiding low-score models.
+- [ ] Replace this task's fixed CSV SHA/14,180-row/448-species guards with an
+  explicitly approved, versioned new-data manifest; preserve strict inventory
+  checks so additional species never enter a release accidentally.
+- [ ] Define when new observations require rebuilding the collector-effort
+  background and how that rebuild is validated independently of model CV.
+- [ ] Agree retention policy for immutable runs, failed attempts, images and
+  stopped containers; nothing is deleted by the current pipeline.
+
+- [ ] Review the nine released models with block-CV AUC below 0.5; private
+  review queue: runs/full_20261111T1252Z/low-auc-review.csv. No ecological quality
+  guarantee follows from the completed operational gates.

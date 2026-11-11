@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Terminal inventory audit; writes private detailed evidence under the run only."""
+from accounting import classify_status
 import collections
 import json
 from pathlib import Path
@@ -7,7 +8,7 @@ import sys
 import pandas as pd
 run=Path(sys.argv[1])
 config=json.loads((run/'config.json').read_text());species=config['species']
-states=[json.loads((run/sp/'status.json').read_text()) for sp in species]
+states=[classify_status(json.loads((run/sp/'status.json').read_text())) for sp in species]
 assert len(states)==len(species)==len(set(s['species'] for s in states))
 assert all(s['status'] in ('success','excluded','failed') for s in states)
 rows=[]
@@ -21,7 +22,11 @@ for state in states:
         rows.append(row)
 metrics=pd.DataFrame(rows)
 metrics.to_csv(run/'all-success-metrics.csv',index=False)
-summary={'requested':len(species),'counts':dict(collections.Counter(s['status'] for s in states)),
+cleaned=[s['occurrence_counts'] for s in states if 'occurrence_counts' in s]
+cleaning={key:sum(c[key] for c in cleaned) for key in ('raw','finite','in_boundary','complete_case','unique_cell')}
+if len(cleaned)==len(species): assert cleaning['raw']==14180
+summary={'cleaning':cleaning,'species_with_cleaning_counts':len(cleaned),'requested':len(species),'counts':dict(collections.Counter(s['status'] for s in states)),
+         'classifications':dict(collections.Counter(s['classification'] for s in states)),
          'reasons':dict(collections.Counter(s.get('reason') for s in states if s['status']!='success')),
          'auc_block_cv':{k:float(v) for k,v in metrics['auc.val.avg'].describe().items()},
          'auc_below_half':int((metrics['auc.val.avg']<.5).sum()),

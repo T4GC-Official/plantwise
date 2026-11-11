@@ -65,3 +65,45 @@ Run full_20261111T1252Z started at 12:49:33 UTC with immutable config and exact
 use ~2.3–2.4 GiB each, ~one CPU each; >40 GiB host memory available. Sparse
 species receive explicit exclusions; all terminal states are resumable. The
 one-species release remains active on the website throughout training.
+
+## Full run midpoint
+
+At >230 accounted species: 139 successes, 91 sparse-data exclusions, no failures.
+The exact 448-name inventory remains fixed. Successful jobs take ~32 seconds;
+sparse exclusions ~8 seconds. Three-job ceiling remains appropriate, with
+~40–41 GiB host memory available and ~204 GiB disk free. Smoke endpoint stays
+healthy. No cloudflared, domain, existing-service or GitHub changes made.
+
+## Full training and independent model reload
+
+Full training completed at 13:54:18 UTC: 268 successes, 180 exclusions, zero
+failures, all 448 accounted. Exclusions split into 174 insufficient unique cells
+and six zero-usable-point species in normalized accounting; original statuses
+remain intact. All 14,180 observations finite; 13,790 in WG, 13,789 complete,
+9,595 unique per-species cells across the inventory. Nine fitted models have
+held-out block AUC <0.5 and are explicitly flagged for scientific review.
+
+Full release packaged and all input checksums still match. First fresh-JVM
+validator compared original point coordinates against the uncropped grid and
+found a mismatch at grid edges. Inspection found source x resolution
+0.008333333333333333 vs cropped/output 0.008333333333333318: floating-point
+geometry shifts at exact cell boundaries select adjacent cells. Corrected the
+validator to use exact output pixel centers, consistent with API acceptance.
+All 268 saved RDS models then independently reloaded and matched their TIFFs.
+No trained model/map was altered to pass the check. Failed validation evidence
+retained in runtime/full-model-reload.log; passing evidence in
+runtime/full-model-reload-centers.log and full-model-reload.json.
+
+## Full site accepted; restart and rollback exercised
+
+Promoted full_20261111T1252Z to the same loopback service. Full API/raster,
+latitude, WG, NoData and preview checks passed. Seventeen regressions pass.
+Playwright full release passes manual/map/preview/navigation/mobile checks,
+with zero production API calls, JS exceptions or missing local assets. The
+expected outside-WG 422 remains the only deliberate resource error.
+
+Full restart passed; promoted smoke and verified one-species API behavior;
+re-promoted full and verified 268-species behavior. A stale smoke preview query
+under full correctly returns409. Full is left active. Service binds only
+127.0.0.1:8175. No existing service or cloudflared changes, deletions or pushes.
+Final operational docs, thematic narrative, future gates and proposals updated.

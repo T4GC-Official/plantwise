@@ -1,5 +1,9 @@
 # ENMeval-only PlantWise staging handoff
 
+> Implemented 2026-11-11: 268 models served on 127.0.0.1:8175; all 448 species
+> accounted for. Current results and operations: [docs/README.md](docs/README.md).
+> Initial-state statements below describe the original handoff.
+
 This plan supersedes the three-model site proposal for the current prototype.
 The two-pass flow below also supersedes the earlier synthetic-website-first
 instructions: train ONE species, verify its complete website, THEN train all.

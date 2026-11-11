@@ -2,6 +2,7 @@
 """Real release/API evidence; writes a valid query for the browser gate."""
 import json
 import math
+import time
 from pathlib import Path
 import sys
 import httpx
@@ -16,7 +17,13 @@ cat=json.loads((release/'catalog.json').read_text())
 boundary=json.loads((release/'boundary.geojson').read_text())
 wg=unary_union([shape(f['geometry']) for f in boundary['features']])
 c=httpx.Client(base_url='http://127.0.0.1:8175',timeout=30)
-health=c.get('/api/health');health.raise_for_status();assert health.json()['release']==cat['release']
+for attempt in range(40):
+    try:
+        health=c.get('/api/health')
+        if health.status_code==200 and health.json()['release']==cat['release']: break
+    except httpx.HTTPError: pass
+    time.sleep(.25)
+else: raise AssertionError('Expected release was not ready after restart')
 assert c.get('/').status_code==200
 assert c.get('/wgg.geojsonl.json').status_code==200
 sp='Aglaia_lawii';e=cat['species'][sp]

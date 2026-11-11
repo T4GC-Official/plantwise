@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Validate every successful job and create a fresh immutable normalized release."""
+from accounting import classify_status
 import argparse
 import hashlib
 import json
@@ -32,7 +33,7 @@ def build(run, release_id, expected):
     manifest=Path(run)/'config.json'
     states = ([Path(run)/sp/'status.json' for sp in json.loads(manifest.read_text())['species']] if manifest.exists() else sorted(Path(run).glob('*/status.json')))
     if (Path(run)/'status.json').exists(): states=[Path(run)/'status.json']
-    statuses = [json.loads(p.read_text()) for p in states]
+    statuses = [classify_status(json.loads(p.read_text())) for p in states]
     if len(statuses)!=expected or len({s['species'] for s in statuses})!=expected:
         raise ValueError('Every requested species must have exactly one terminal status')
     if any(s['status'] not in ('success','excluded','failed') for s in statuses): raise ValueError('Unfinished jobs')

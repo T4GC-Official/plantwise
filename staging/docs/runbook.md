@@ -121,3 +121,35 @@ accounting.json under the ignored run. It checks every species has exactly one
 terminal state, required outputs are nonempty and n_final equals n_usable.
 Publication additionally checks PNG decoding, finite GeoTIFF range/CRS/NoData,
 metrics and checksums before renaming a staged release directory into place.
+
+## Final active service and rollback (verified)
+
+```bash
+# Full release, 268 models
+staging/.venv/bin/python staging/scripts/promote.py full_20261111T1252Z
+systemctl --user restart plantwise-staging.service
+staging/.venv/bin/python staging/tests/verify_live.py
+
+# Retained one-species rollback
+staging/.venv/bin/python staging/scripts/promote.py smoke_20261111T1246Z
+systemctl --user restart plantwise-staging.service
+staging/.venv/bin/python staging/tests/verify_live.py
+
+# Restore full after rollback
+staging/.venv/bin/python staging/scripts/promote.py full_20261111T1252Z
+systemctl --user restart plantwise-staging.service
+staging/.venv/bin/python staging/tests/verify_live.py
+```
+
+All three sequences were exercised; full is left active. verify_live.py waits
+for the expected release health after a restart, then checks real raster/API
+agreement and safety cases. Startup has a brief readiness interval; no retraining
+occurs. Full browser/model evidence is preserved in runtime/full-evidence/;
+initial pass-1 evidence remains under runtime/pass1-evidence/. Always choose a
+fresh Docker container name for subsequent checks/builds: stopped containers
+and earlier outputs are retained, with no automatic deletion.
+
+Review low held-out AUC models in runs/full_20261111T1252Z/low-auc-review.csv.
+Nine fits fall below 0.5; scientific review criteria are intentionally listed as
+remaining work rather than invented after fitting. No historical AUC matching
+or ten-species diagnostic was required; the optional ten-species run was not run.

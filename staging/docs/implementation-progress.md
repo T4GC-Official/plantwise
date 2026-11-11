@@ -51,3 +51,11 @@ as exact numerical reproduction. Java Maxent loaded 3.4.4 from the supplied jar.
 
 First model success smoke_20261111T1240Z; release serialization rejected rounded
 latitude bounds. Precision fixed and fresh smoke_20261111T1246Z started.
+
+## Completed state
+
+See full-release-report.md for the final results: all 448 species accounted,
+268 successful full-data models, 180 exclusions, zero failures. The full release
+is active on 127.0.0.1:8175 after API/browser, independent RDS reload, restart,
+actual smoke rollback and full re-promotion checks. Input checksums still match.
+The detailed earlier entries above are the chronological bootstrap record.
