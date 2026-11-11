@@ -47,3 +47,7 @@ Frontend serves an immutable runtime snapshot so rebuilds do not disrupt it.
 Acceptance marker: ignored runtime/pass1-gate.json. Detailed evidence/screenshots
 copied to runtime/pass1-evidence/ before full training. These contain real queries
 and stay out of Git. Full training is now authorized by the completed gate.
+
+Fresh-JVM RDS reload additionally passed in a separate network-isolated training
+container. The saved model reloaded independently and matched map predictions
+at all usable original-coordinate samples; evidence runtime/smoke-model-reload.json.
