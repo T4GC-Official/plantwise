@@ -13,7 +13,7 @@ const OurModelPage = () => {
       {/* Section: Broad Methodology */}
       <h2 className="mt-4">How It Works</h2>
       <p>
-        Our model is built using the <strong>MaxEnt</strong> algorithm, a popular tool for species distribution modeling<sup>[1]</sup>. MaxEnt works by analyzing presence-only data of species along with environmental variables such as rainfall, temperature, and soil type to predict the likelihood of a species thriving in a given location.
+        Our model is built using the <strong>MaxEnt</strong> algorithm, a popular tool for species distribution modeling<sup>[1]</sup>. MaxEnt works by analyzing presence-only data of species along with environmental variables such as the 19 WorldClim bioclimatic variables to predict model suitability in a given location.
       </p>
 
       {/* Section: Data Sources */}
@@ -33,14 +33,14 @@ const OurModelPage = () => {
         </li>
         <li><strong>French Institute of Pondicherry</strong></li>
       </ul>
-      <p>
-        We used
-        <a href="/species_presence.csv" download>
-          <strong> 14,067 locations</strong> of <strong>368 species </strong>
-        </a>
-        to train the SDMs. Further details on the modeling approach will be available in our upcoming publication
-        (<em>Suri et al., in preparation</em>).
-      </p>
+      <p>This staging release uses 14,180 supplied observations across 448 input species,
+        WorldClim BIO1–19 and the Western Ghats polygon. Species without enough usable
+        data or eligible models are recorded as unavailable. Active coverage appears
+        in the tool.</p>
+      <p>ENMeval tunes Java Maxent 3.4.4 over linear and linear/quadratic features,
+        regularization multipliers 1 and 2, with four spatial blocks and the supplied
+        collector-effort-weighted background. AICc selects the eligible full-data model.
+        Reported AUC is the mean held-out block AUC; suitability uses cloglog output.</p>
 
       {/* Section: Disclaimer */}
       <h2 className="mt-4">Disclaimer</h2>
@@ -51,7 +51,7 @@ const OurModelPage = () => {
       <h2 className="mt-4">References</h2>
       <ol>
         <li>
-          Steven J. Phillips, Miroslav Dudík, Robert E. Schapire. [Internet] Maxent software for modeling species niches and distributions (Version 3.4.1). Available from: <a href="http://biodiversityinformatics.amnh.org/open_source/maxent/" target="_blank" rel="noopener noreferrer">http://biodiversityinformatics.amnh.org/open_source/maxent/</a>. Accessed on 2025-4-7.
+          Steven J. Phillips, Miroslav Dudík, Robert E. Schapire. [Internet] Maxent software for modeling species niches and distributions (Version 3.4.4). Available from: <a href="http://biodiversityinformatics.amnh.org/open_source/maxent/" target="_blank" rel="noopener noreferrer">http://biodiversityinformatics.amnh.org/open_source/maxent/</a>. Accessed on 2025-4-7.
         </li>
         <li>
           Biswas, N., Sadekar, V., Biniwale, S., Taneja, Y., Osuri, A. M., Page, N., ... & Naniwadekar, R. (2024). Chronic disturbance of moist tropical forests favours deciduous over evergreen tree communities across a climate gradient in the Western Ghats. bioRxiv, 2024-01.

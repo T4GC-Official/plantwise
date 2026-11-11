@@ -104,6 +104,7 @@ const ToolPage = () => {
         return response.json();
       })
       .then((data) => {
+        if (controller.signal.aborted) return;
         console.log('Received data:', data);
         if (Array.isArray(data)) {
           setResults(data);
@@ -152,10 +153,11 @@ const ToolPage = () => {
       const imageBlob = await response.blob();
       if (!imageController.signal.aborted) setSpeciesImage(URL.createObjectURL(imageBlob));
     } catch (error) {
+      if (imageController.signal.aborted) return;
       console.error('Error loading species map:', error);
       setSpeciesImage(null);
     } finally {
-      setLoadingImage(false);
+      if (!imageController.signal.aborted) setLoadingImage(false);
     }
   };
 
@@ -187,6 +189,7 @@ const ToolPage = () => {
   // Function to close the modal
   const closeModal = () => {
     imageRequestRef.current?.abort();
+    setLoadingImage(false);
     setSelectedSpecies(null);
     setSpeciesImage(null);
   };

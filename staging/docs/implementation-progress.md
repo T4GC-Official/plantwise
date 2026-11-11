@@ -31,3 +31,15 @@ not begin until real API AND browser evidence is saved. No success claimed yet.
 Commands and final operational state will be maintained in runbook.md; event
 history in ../chronology/, thematic account in ../narrative/, remaining gates
 in ../todos/, processing improvements in ../proposals/.
+
+## Checkpoint validation
+
+`staging/.venv/bin/python -m pytest staging/tests -q`: 12 passed. These fixtures
+exercise rare NoData/out-of-raster/latitude boundary cases and absent AUC, and
+supplement rather than replace the pending real Aglaia gate. Production frontend
+build succeeds. Obsolete Learn React test and commented alternative components
+are preserved in archive/, with active methodology updated to this run.
+
+R installation diagnostics: units requires Rcpp >=1.1.0, fs needs libuv headers,
+and current dbplyr needs the current dplyr filter_out export. Image repair installs
+libuv1-dev, Rcpp and dplyr then retries exact ENMeval 2.0.5.2 with load assertions.

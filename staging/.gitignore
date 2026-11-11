@@ -21,3 +21,7 @@ runtime/
 data/boundary/
 frontend/public/wgg.geojsonl.json
 frontend/src/wg_boundary.*
+*.before-*
+models/maxent/*.jar
+docs/history/
+docs/SYNC_RECEIPT.md

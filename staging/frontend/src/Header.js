@@ -1,54 +1,3 @@
-//import React from 'react';
-//import { Link } from 'react-router-dom';
-//import logo from './logo.png'; // Make sure this path is correct
-//
-//const Header = () => {
-//  return (
-//    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-//      <div className="container-fluid">
-//        {/* Logo and Brand Name */}
-//        <Link className="navbar-brand d-flex align-items-center" to="/">
-//          <img
-//            src={logo}
-//            alt="PlantWise Logo"
-//            style={{
-//              height: '40px', // Adjust the height of the logo
-//              marginRight: '10px', // Add some spacing between the logo and the text
-//            }}
-//          />
-//          PlantWise
-//        </Link>
-//        <button
-//          className="navbar-toggler"
-//          type="button"
-//          data-bs-toggle="collapse"
-//          data-bs-target="#navbarNav"
-//          aria-controls="navbarNav"
-//          aria-expanded="false"
-//          aria-label="Toggle navigation"
-//        >
-//          <span className="navbar-toggler-icon"></span>
-//        </button>
-//        <div className="collapse navbar-collapse" id="navbarNav">
-//          <ul className="navbar-nav ms-auto">
-//            <li className="nav-item">
-//              <Link className="nav-link" to="/">Home</Link>
-//            </li>
-//            <li className="nav-item">
-//              <Link className="nav-link" to="/tool">Tool</Link>
-//            </li>
-//            <li className="nav-item">
-//              <Link className="nav-link" to="/about">About Us</Link>
-//            </li>
-//          </ul>
-//        </div>
-//      </div>
-//    </nav>
-//  );
-//};
-//
-//export default Header;
-
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { NavbarToggler, Collapse } from 'reactstrap';
@@ -63,7 +12,7 @@ const Header = () => {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
         {/* Logo and Brand Name */}
-        <NavLink className="navbar-brand d-flex align-items-center" to="/" exact>
+        <NavLink className="navbar-brand d-flex align-items-center" to="/" end>
 
           <img
             src={logo}
@@ -84,7 +33,7 @@ const Header = () => {
           <ul className="navbar-nav">
             <li className="nav-item">
               <NavLink
-                exact
+                end
                 className="nav-link"
                 to="/"
                 style={({ isActive }) => ({

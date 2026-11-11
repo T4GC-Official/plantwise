@@ -25,15 +25,15 @@ tryCatch({
  files <- file.path(g('tif_folder',file.path(root,'data/attributes')),sprintf('wc2.1_30s_bio_%d_fc.tif',1:19))
  stopifnot(all(file.exists(c(unlist(paths),files))))
  # ENMeval 2.0.5.2 dispatches through predicts; use its isolated Java library.
- loaded_jar <- file.path(system.file('java',package='predicts'),'maxent.jar')
- if (!file.exists(loaded_jar)) stopifnot(file.copy(paths$jar,loaded_jar))
  hash <- function(p) digest(file=p,algo='sha256')
+ loaded_jar <- file.path(system.file('java',package='predicts'),'maxent.jar')
+ if (!file.exists(loaded_jar) || !identical(hash(paths$jar),hash(loaded_jar))) stopifnot(file.copy(paths$jar,loaded_jar,overwrite=TRUE))
  stopifnot(identical(hash(paths$jar),hash(loaded_jar)))
  stopifnot(predicts::MaxEnt(silent=TRUE))
  actual_jar <- rJava::.jcall(rJava::.jcall(rJava::.jcall(rJava::.jnew('density.MaxEnt'),'Ljava/lang/Class;','getClass'),'Ljava/security/ProtectionDomain;','getProtectionDomain'),'Ljava/security/CodeSource;','getCodeSource')
  jar_url <- rJava::.jcall(rJava::.jcall(actual_jar,'Ljava/net/URL;','getLocation'),'S','toString')
- stopifnot(grepl('maxent.jar',jar_url,fixed=TRUE))
- pred <- rast(files); boundary <- project(vect(paths$boundary),crs(pred)); pred <- crop(pred,boundary,mask=TRUE); names(pred)<-paste0('BIO',1:19)
+ stopifnot(identical(normalizePath(URLdecode(sub('^file:', '', jar_url))),normalizePath(loaded_jar))))
+ pred <- rast(files); boundary <- project(vect(paths$boundary),crs(pred)); pred <- crop(pred,boundary,mask=TRUE); names(pred)<-paste0('BIO',1:19); stopifnot(terra::is.lonlat(pred))
  filter_points <- function(df) {
   xy <- data.frame(Longitude=suppressWarnings(as.numeric(df$Longitude)),Latitude=suppressWarnings(as.numeric(df$Latitude)))
   counts <- list(raw=nrow(xy))
@@ -85,7 +85,7 @@ tryCatch({
   write.csv(metrics,file.path(out,'metrics.csv'),row.names=FALSE)
   status$status<-'success'; status$selected<-as.list(metrics[1,]); status$latitude_bounds<-list(min=min(o$original_valid$Latitude),max=max(o$original_valid$Latitude)); status$map_range<-as.list(bounds[1,]); status$prediction_check_max_error<-max(abs(check-sampled))
  }
- provenance <- list(seed=seed,partition='block',output_scale='cloglog',wg_mask=TRUE,jar=list(configured=paths$jar,loaded=loaded_jar,class_source=jar_url,sha256=hash(loaded_jar),version=rJava::.jfield('density/Utils','S','version')),inputs=lapply(c(paths,as.list(setNames(files,paste0('BIO',1:19)))),function(p)list(path=p,sha256=hash(p))),packages=as.list(sapply(c('ENMeval','rJava','terra','raster','dismo','dplyr'),function(p)as.character(packageVersion(p)))))
+ provenance <- list(seed=seed,partition='block',output_scale='cloglog',wg_mask=TRUE,jar=list(configured=paths$jar,loaded=loaded_jar,class_source=jar_url,sha256=hash(loaded_jar),version=getOption('predicts_maxent')),inputs=lapply(c(paths,as.list(setNames(files,paste0('BIO',1:19)))),function(p)list(path=p,sha256=hash(p))),packages=as.list(sapply(c('ENMeval','rJava','terra','raster','dismo','dplyr'),function(p)as.character(packageVersion(p)))))
  atomic_json(provenance,file.path(out,'provenance.json'))
  capture.output(sessionInfo(),file=file.path(out,'sessionInfo.txt'))
  write.csv(as.data.frame(installed.packages()[,c('Package','Version')]),file.path(out,'R-packages.csv'),row.names=FALSE)

@@ -7,3 +7,4 @@ pyproj
 httpx
 pytest
 pillow
+pyshp
