@@ -48,6 +48,7 @@ const ToolPage = () => {
   const resultsSectionRef = useRef(null); // Reference to the results section
   const { width } = useWindowSize();
   const popoverRef = useRef(null);
+  useEffect(() => { requestRef.current?.abort(); setLoading(false); setResults([]); setHasSearched(false); }, [latitude, longitude, threshold]);
 
   // Function to scroll to the results section
   const scrollToResults = useCallback(() => {
@@ -148,13 +149,14 @@ const ToolPage = () => {
     setSelectedSpecies(speciesName);
     setLoadingImage(true);
     try {
-      const response = await fetch(`${API_BASE}/api/species/${encodeURIComponent(speciesName)}/map`, {signal: imageController.signal});
-      if (!response.ok) throw new Error('Failed to load map');
+      const release = results.find(result => result.species === speciesName)?.release || health?.release;
+      const response = await fetch(`${API_BASE}/api/species/${encodeURIComponent(speciesName)}/map?release_id=${encodeURIComponent(release)}`, {signal: imageController.signal});
+      if (!response.ok) { const body = await response.json(); throw new Error(body.detail || 'Failed to load map'); }
       const imageBlob = await response.blob();
       if (!imageController.signal.aborted) setSpeciesImage(URL.createObjectURL(imageBlob));
     } catch (error) {
       if (imageController.signal.aborted) return;
-      console.error('Error loading species map:', error);
+      setError(error.message); console.error('Error loading species map:', error);
       setSpeciesImage(null);
     } finally {
       if (!imageController.signal.aborted) setLoadingImage(false);

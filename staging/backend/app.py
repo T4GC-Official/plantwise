@@ -8,7 +8,8 @@ from threading import BoundedSemaphore
 import rasterio
 from rasterio.warp import transform
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse
+from fastapi.exceptions import RequestValidationError
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ConfigDict, Field
 from shapely.geometry import Point, shape
@@ -19,9 +20,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class Query(BaseModel):
     model_config = ConfigDict(allow_inf_nan=False, extra='forbid')
-    latitude: float = Field(ge=-90, le=90)
-    longitude: float = Field(ge=-180, le=180)
-    minProbability: float = Field(ge=0, le=100)
+    latitude: float = Field(strict=True, ge=-90, le=90)
+    longitude: float = Field(strict=True, ge=-180, le=180)
+    minProbability: float = Field(strict=True, ge=0, le=100)
 
 
 def sample(path, longitude, latitude):
@@ -55,6 +56,13 @@ def create_app(release_path=None, static_path=None):
     app = FastAPI(title='PlantWise ENMeval')
     capacity = BoundedSemaphore(4)
 
+    @app.exception_handler(RequestValidationError)
+    async def invalid_request(request, exc):
+        # Do not echo NaN/Infinity input into a JSONResponse (invalid JSON).
+        return JSONResponse(status_code=422, content={'detail': [
+            {'loc': e['loc'], 'msg': e['msg'], 'type': e['type']} for e in exc.errors()
+        ]})
+
     @app.get('/api/health')
     def health():
         return {'status': 'ok', 'release': catalog['release'], 'species_count': len(entries),
@@ -82,7 +90,9 @@ def create_app(release_path=None, static_path=None):
             capacity.release()
 
     @app.get('/api/species/{species}/map')
-    def preview(species: str):
+    def preview(species: str, release_id: str | None = None):
+        if release_id is not None and release_id != catalog['release']:
+            raise HTTPException(409, 'Release changed; refresh the page before opening this map')
         if species not in entries:
             raise HTTPException(404, 'Species is unavailable in this release')
         return FileResponse(release / entries[species]['preview'], media_type='image/png')
@@ -91,6 +101,6 @@ def create_app(release_path=None, static_path=None):
     def api_missing(path: str):
         raise HTTPException(404, 'API endpoint not found')
 
-    static = Path(static_path or ROOT / 'frontend/build')
+    static = Path(static_path or os.environ.get('PLANTWISE_STATIC', ROOT / 'runtime/frontend-active')).resolve(strict=True)
     app.mount('/', StaticFiles(directory=static, html=True), name='frontend')
     return app

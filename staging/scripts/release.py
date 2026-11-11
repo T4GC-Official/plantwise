@@ -28,7 +28,8 @@ def sha(p):
 def build(run, release_id, expected):
     target = ROOT / 'releases' / release_id
     if target.exists(): raise ValueError('Release already exists; choose a new identity')
-    states = sorted(Path(run).glob('*/status.json'))
+    manifest=Path(run)/'config.json'
+    states = ([Path(run)/sp/'status.json' for sp in json.loads(manifest.read_text())['species']] if manifest.exists() else sorted(Path(run).glob('*/status.json')))
     if (Path(run)/'status.json').exists(): states=[Path(run)/'status.json']
     statuses = [json.loads(p.read_text()) for p in states]
     if len(statuses)!=expected or len({s['species'] for s in statuses})!=expected:
@@ -37,7 +38,10 @@ def build(run, release_id, expected):
     if not any(s['status']=='success' for s in statuses): raise ValueError('No successes')
     occ=pd.read_csv(ROOT/'data/occurrences/filtered_species_output.csv')
     if expected==448 and set(occ.Species)!=set(s['species'] for s in statuses): raise ValueError('Species inventory mismatch')
-    target.mkdir(parents=True)
+    pending=ROOT/'releases'/('.building-'+release_id)
+    pending.mkdir(parents=True)
+    destination=target
+    target=pending
     catalog={'release':release_id,'evaluation':'four-block spatial CV; ENMeval 2.0.5.2 Java Maxent; effort-weighted background; BIO1–19',
              'species':{},'accounting':{k:sum(s['status']==k for s in statuses) for k in ('success','excluded','failed')}}
     for status, file in zip(statuses,states):
@@ -76,7 +80,8 @@ def build(run, release_id, expected):
     (target/'catalog.json').write_text(json.dumps(catalog,indent=2))
     hashes={str(p.relative_to(target)):sha(p) for p in sorted(target.rglob('*')) if p.is_file()}
     (target/'checksums.json').write_text(json.dumps(hashes,indent=2))
-    print(target)
+    target.rename(destination)
+    print(destination)
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('run');p.add_argument('release');p.add_argument('--expected',type=int,required=True);a=p.parse_args();build(a.run,a.release,a.expected)

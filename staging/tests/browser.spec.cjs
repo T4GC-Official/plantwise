@@ -45,6 +45,14 @@ const fs = require('fs');
  await page.getByLabel('Latitude:',{exact:true}).fill('0');await page.getByLabel('Longitude:',{exact:true}).fill('0');
  await page.getByRole('button',{name:'Enter',exact:true}).click();
  await page.getByRole('alert').filter({hasText:'outside the Western Ghats'}).waitFor();
+ // Inspect every original navigation page and its visible image assets.
+ for (const route of ['about','model']) {
+   await page.goto(`http://127.0.0.1:8175/#/${route}`,{waitUntil:'networkidle'});
+   if (!(await page.locator('h1,h2').first().textContent())) throw new Error(`Empty ${route} page`);
+ }
+ await page.setViewportSize({width:390,height:844});
+ await page.goto('http://127.0.0.1:8175/#/tool',{waitUntil:'networkidle'});
+ await page.screenshot({path:'/work/runtime/mobile-tool.png',fullPage:true});
  const production=requests.filter(x=>/run\.app|plantwise-india\.org|localhost:8080/.test(x));
  const localFailures=failures.filter(x=>x.url.startsWith('http://127.0.0.1:8175')&&!(x.url.endsWith('/api/get-results')&&x.status===422));
  if(production.length||localFailures.length||pageErrors.length)throw new Error(JSON.stringify({production,localFailures,pageErrors}));

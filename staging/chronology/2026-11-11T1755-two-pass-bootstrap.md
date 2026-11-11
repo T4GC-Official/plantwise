@@ -30,3 +30,30 @@ inside the container; ENMeval remains pinned. No scientific-policy fallback.
 No connected browser was available (browser discovery returned empty); user
 explicitly authorized Playwright. Dedicated ARM64 headless Chromium container
 prepared. Real browser/API pass remains pending Aglaia training.
+
+## First Aglaia model and packaging precision gate
+
+Run smoke_20261111T1240Z trained successfully in about 33 seconds: 48 raw,
+46 in-WG/complete cases, 39 unique cells; 10,000/10,000 background retained.
+Selected LQ/RM1, held-out AUC ~0.706, AICc ~899.35, nine coefficients, final n=39.
+Map values checked against direct Java cloglog predictions. CBI unavailable
+because ecospat is not installed; not fabricated or used for selection.
+
+Release packaging rejected exact latitude-bound equality because jsonlite's
+default serialization rounded coordinates. Fixed digits=NA and started fresh
+smoke_20261111T1246Z. Failed package directory and first run retained. Stopped
+our own new service pending valid publication; no pre-existing service changed.
+Release builder now stages into a .building directory and renames only after
+validation/checksums complete. Found four input IDs with legitimate hyphens or
+subspecies periods; preserve them exactly instead of lossy canonicalization.
+
+## Pass-1 website accepted
+
+smoke_20261111T1246Z published on loopback8175. Real API/raster checks pass,
+including exact inclusive latitude endpoints, actual NoData and threshold
+precision. Restart reloaded the same release without training. First browser
+run caught missing Leaflet marker assets; bundled imports fixed them. Final
+Playwright run passes manual/map queries, preview, navigation and mobile view,
+with no missing local assets, JS exceptions or production API requests.
+Seventeen API fixtures pass. Runtime pass1-gate.json and pass1-evidence snapshot
+saved before starting the full inventory. Smoke remains served during full work.

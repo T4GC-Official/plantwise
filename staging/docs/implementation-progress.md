@@ -43,3 +43,11 @@ are preserved in archive/, with active methodology updated to this run.
 R installation diagnostics: units requires Rcpp >=1.1.0, fs needs libuv headers,
 and current dbplyr needs the current dplyr filter_out export. Image repair installs
 libuv1-dev, Rcpp and dplyr then retries exact ENMeval 2.0.5.2 with load assertions.
+
+Actual installed environment: R 4.3.3 ARM64, ENMeval 2.0.5.2, predicts 0.2.2,
+rJava 1.0.11, terra 1.7.65, raster 3.6.26, dismo 1.3.16, dplyr 1.2.1.
+These differ from laptop versions and are recorded explicitly, not described
+as exact numerical reproduction. Java Maxent loaded 3.4.4 from the supplied jar.
+
+First model success smoke_20261111T1240Z; release serialization rejected rounded
+latitude bounds. Precision fixed and fresh smoke_20261111T1246Z started.

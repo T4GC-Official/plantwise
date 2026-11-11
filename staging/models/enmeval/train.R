@@ -8,14 +8,15 @@ root <- normalizePath(g('root','/work'))
 out <- g('output_dir', stop('output_dir required'))
 # The orchestrator supplies a fresh directory per attempt, never overwriting results.
 dir.create(out, recursive=TRUE, showWarnings=FALSE)
-atomic_json <- function(x, path) { tmp <- paste0(path,'.tmp'); write_json(x,tmp,auto_unbox=TRUE,pretty=TRUE,na='null'); stopifnot(file.rename(tmp,path)) }
+atomic_json <- function(x, path) { tmp <- paste0(path,'.tmp'); write_json(x,tmp,auto_unbox=TRUE,pretty=TRUE,na='null',digits=NA); stopifnot(file.rename(tmp,path)) }
 sp <- g('species','Aglaia_lawii')
-stopifnot(grepl('^[A-Za-z][A-Za-z0-9_]+$',sp), !file.exists(file.path(out,'status.json')))
+stopifnot(grepl('^[A-Za-z][A-Za-z0-9_.-]+$',sp), !file.exists(file.path(out,'status.json')))
 status <- list(species=sp,status='running',started=format(Sys.time(),tz='UTC',usetz=TRUE))
 atomic_json(status,file.path(out,'status.json'))
 t0 <- Sys.time()
 exit_code <- 0L
 tryCatch({
+ stopifnot(as.character(packageVersion('ENMeval'))=='2.0.5.2')
  seed <- as.integer(g('seed','123')); set.seed(seed)
  terraOptions(memfrac=0.15, progress=0, tempdir=out)
  paths <- list(occ=g('species_csv',file.path(root,'data/occurrences/filtered_species_output.csv')),
@@ -28,11 +29,12 @@ tryCatch({
  hash <- function(p) digest(file=p,algo='sha256')
  loaded_jar <- file.path(system.file('java',package='predicts'),'maxent.jar')
  if (!file.exists(loaded_jar) || !identical(hash(paths$jar),hash(loaded_jar))) stopifnot(file.copy(paths$jar,loaded_jar,overwrite=TRUE))
+ stopifnot(hash(paths$occ)=='4521b609bb04ec781e33455c57b34768c3ca46559ac6fe6e8c465918930cac6c')
  stopifnot(identical(hash(paths$jar),hash(loaded_jar)))
- stopifnot(predicts::MaxEnt(silent=TRUE))
+ stopifnot(predicts::MaxEnt(silent=TRUE),getOption('predicts_maxent')=='3.4.4')
  actual_jar <- rJava::.jcall(rJava::.jcall(rJava::.jcall(rJava::.jnew('density.MaxEnt'),'Ljava/lang/Class;','getClass'),'Ljava/security/ProtectionDomain;','getProtectionDomain'),'Ljava/security/CodeSource;','getCodeSource')
  jar_url <- rJava::.jcall(rJava::.jcall(actual_jar,'Ljava/net/URL;','getLocation'),'S','toString')
- stopifnot(identical(normalizePath(URLdecode(sub('^file:', '', jar_url))),normalizePath(loaded_jar))))
+ stopifnot(identical(normalizePath(URLdecode(sub('^file:', '', jar_url))),normalizePath(loaded_jar)))
  pred <- rast(files); boundary <- project(vect(paths$boundary),crs(pred)); pred <- crop(pred,boundary,mask=TRUE); names(pred)<-paste0('BIO',1:19); stopifnot(terra::is.lonlat(pred))
  filter_points <- function(df) {
   xy <- data.frame(Longitude=suppressWarnings(as.numeric(df$Longitude)),Latitude=suppressWarnings(as.numeric(df$Latitude)))

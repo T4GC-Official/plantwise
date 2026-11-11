@@ -53,6 +53,8 @@ def test_wg_nodata_raster_extent_and_invalid_scale(site):
     {'latitude':'NaN','longitude':75,'minProbability':0},
     {'latitude':'Infinity','longitude':75,'minProbability':0},
     {'latitude':'bad','longitude':75,'minProbability':0},
+    {'latitude':True,'longitude':75,'minProbability':0},
+    {'latitude':11,'longitude':75,'minProbability':False},
     {'latitude':None,'longitude':75,'minProbability':0},
     {'longitude':75,'minProbability':0},
 ])
@@ -62,5 +64,11 @@ def test_preview_and_no_api_fallback(site):
     c,_=site
     assert c.get('/api/species/Test_species/map').content==b'preview'
     assert c.get('/api/species/Unknown/map').status_code==404
+    assert c.get('/api/species/Test_species/map?release_id=old-release').status_code==409
     assert c.get('/api/unknown').status_code==404
     assert c.get('/api/health').json()['release']=='fixture'
+
+@pytest.mark.parametrize('number',['NaN','Infinity','-Infinity'])
+def test_literal_nonfinite_json(site,number):
+    response=site[0].post('/api/get-results',content='{"latitude":'+number+',"longitude":75,"minProbability":0}',headers={'Content-Type':'application/json'})
+    assert response.status_code==422

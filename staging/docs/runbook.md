@@ -56,3 +56,33 @@ No deletion commands, global package changes, git push or tunnel changes are
 part of operations. Runtime, training data, models, maps and private geometry
 are ignored. Cloudflare origin, once tested, is http://127.0.0.1:8175; public
 domain setup is the user's responsibility and has not been tested.
+
+## Actual smoke release and browser commands
+
+The active smoke release is `smoke_20261111T1246Z`; code/data runtime artifacts
+remain ignored. Training image ID:
+`sha256:0db7efd59d9c7a9b312f21366f7b0f1853129560e3c1ec42f796968b4bb252b8`.
+
+```bash
+staging/.venv/bin/python staging/tests/verify_live.py
+staging/.venv/bin/python -m pytest staging/tests -q
+docker run --name plantwise-browser-UNIQUE --network host --cpus 2 --memory 2g -v "$PWD/staging:/work" -v "$PWD/staging/runtime/browser:/browser" -w /work mcr.microsoft.com/playwright:v1.61.0-noble node tests/browser.spec.cjs
+```
+
+Install the browser package into ignored runtime/browser using the committed
+browser-package.json and browser-package-lock.json (copy as package.json and
+package-lock.json then npm ci). Runtime screenshots and detailed network logs
+stay out of Git. Browser images and OS packages remain project-isolated.
+
+The frontend is served from runtime/frontend-active, a symlink to an immutable
+copy of a successful build (current frontend-20261111T1250Z). After npm build,
+copy build/ into a NEW runtime/frontend-<timestamp> directory, update the symlink
+atomically and restart only plantwise-staging.service. Do not serve CRA's build/
+directly while rebuilding. The API release and frontend snapshot resolve once
+at process start. Preview requests carry the result's release identity and get
+a clear 409 if a promotion occurred since that prediction.
+
+Actual full run planned: full_20261111T1252Z, --workers 3, max six CPU/24 GiB
+container caps; serial warmup and two-job ramp before the three-job ceiling.
+Per-job resources.json records sampled Docker CPU/RAM. Total working usage is
+expected below caps; monitor the shared host while jobs progress.
