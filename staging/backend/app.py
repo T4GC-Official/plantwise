@@ -1,0 +1,96 @@
+"""One immutable release per process; same-origin frontend and bounded raster reads."""
+import json
+import math
+import os
+from pathlib import Path
+from threading import BoundedSemaphore
+
+import rasterio
+from rasterio.warp import transform
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel, ConfigDict, Field
+from shapely.geometry import Point, shape
+from shapely.ops import unary_union
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+class Query(BaseModel):
+    model_config = ConfigDict(allow_inf_nan=False, extra='forbid')
+    latitude: float = Field(ge=-90, le=90)
+    longitude: float = Field(ge=-180, le=180)
+    minProbability: float = Field(ge=0, le=100)
+
+
+def sample(path, longitude, latitude):
+    with rasterio.open(path) as src:
+        x, y = transform('EPSG:4326', src.crs, [longitude], [latitude])
+        row, col = src.index(x[0], y[0])
+        if not (0 <= row < src.height and 0 <= col < src.width):
+            return None
+        value = src.read(1, window=((row, row + 1), (col, col + 1)), masked=True)[0, 0]
+        if getattr(value, 'mask', False):
+            return None
+        value = float(value)
+        return value if math.isfinite(value) and 0 <= value <= 1 else None
+
+
+def create_app(release_path=None, static_path=None):
+    release = Path(release_path or os.environ.get('PLANTWISE_RELEASE', ROOT / 'runtime/active')).resolve(strict=True)
+    catalog = json.loads((release / 'catalog.json').read_text())
+    entries = catalog['species']
+    features = json.loads((release / 'boundary.geojson').read_text())
+    wg = unary_union([shape(f['geometry']) for f in features['features']])
+    for species, entry in entries.items():
+        if not entry.get('latitude_bounds') or not all(math.isfinite(v) for v in entry['latitude_bounds'].values()):
+            raise ValueError(f'Unavailable latitude bounds: {species}')
+        if entry['latitude_bounds']['min'] > entry['latitude_bounds']['max']:
+            raise ValueError(f'Invalid latitude bounds: {species}')
+        for key in ('raster', 'preview', 'model'):
+            p = (release / entry[key]).resolve(strict=True)
+            if not p.is_relative_to(release):
+                raise ValueError('Release paths must stay within the release')
+    app = FastAPI(title='PlantWise ENMeval')
+    capacity = BoundedSemaphore(4)
+
+    @app.get('/api/health')
+    def health():
+        return {'status': 'ok', 'release': catalog['release'], 'species_count': len(entries),
+                'coverage': catalog['accounting'], 'evaluation': catalog['evaluation'], 'score': 'cloglog suitability'}
+
+    @app.post('/api/get-results')
+    def results(query: Query):
+        if not wg.covers(Point(query.longitude, query.latitude)):
+            raise HTTPException(422, 'Coordinates are outside the Western Ghats boundary')
+        if not capacity.acquire(blocking=False):
+            raise HTTPException(503, 'Service busy; retry shortly')
+        try:
+            result = []
+            for species, entry in entries.items():
+                bounds = entry['latitude_bounds']
+                if not bounds['min'] <= query.latitude <= bounds['max']:
+                    continue
+                value = sample(release / entry['raster'], query.longitude, query.latitude)
+                if value is not None and value >= query.minProbability / 100:
+                    result.append({'species': species, 'probability': value * 100,
+                                   'auc': entry.get('auc'), 'evaluation': catalog['evaluation'],
+                                   'release': catalog['release']})
+            return sorted(result, key=lambda x: (-x['probability'], x['species']))
+        finally:
+            capacity.release()
+
+    @app.get('/api/species/{species}/map')
+    def preview(species: str):
+        if species not in entries:
+            raise HTTPException(404, 'Species is unavailable in this release')
+        return FileResponse(release / entries[species]['preview'], media_type='image/png')
+
+    @app.get('/api/{path:path}')
+    def api_missing(path: str):
+        raise HTTPException(404, 'API endpoint not found')
+
+    static = Path(static_path or ROOT / 'frontend/build')
+    app.mount('/', StaticFiles(directory=static, html=True), name='frontend')
+    return app

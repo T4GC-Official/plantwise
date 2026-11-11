@@ -1,0 +1,7 @@
+FROM ubuntu:24.04
+ENV DEBIAN_FRONTEND=noninteractive OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 JAVA_TOOL_OPTIONS=-Djava.awt.headless=true
+RUN apt-get update && apt-get install -y --no-install-recommends r-base r-base-dev default-jdk build-essential gfortran libgdal-dev libgeos-dev libproj-dev libudunits2-dev libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libfreetype6-dev libpng-dev libjpeg-dev libtiff-dev libharfbuzz-dev libfribidi-dev libglpk-dev cmake pkg-config ca-certificates curl r-cran-rjava r-cran-terra r-cran-raster r-cran-dplyr r-cran-remotes r-cran-jsonlite r-cran-digest
+RUN R CMD javareconf
+RUN Rscript -e 'remotes::install_version("ENMeval", version="2.0.5.2", repos="https://cloud.r-project.org", upgrade="never", Ncpus=2)'
+WORKDIR /work
+RUN Rscript -e 'install.packages("dismo", repos="https://cloud.r-project.org", Ncpus=2); stopifnot(requireNamespace("dismo"), requireNamespace("ENMeval"))'

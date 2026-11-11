@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+rasterio
+pandas
+shapely
+pyproj
+httpx
+pytest
+pillow

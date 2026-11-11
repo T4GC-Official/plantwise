@@ -1,0 +1,23 @@
+data/attributes/
+data/occurrences/
+data/derived/
+data/reference/
+runs/
+releases/
+.venv/
+.Rlib/
+node_modules/
+build/
+**/node_modules/
+**/build/
+**/__pycache__/
+*.log
+.Rhistory
+.RData
+# Local environment and runtime state
+runtime/
+.environment/
+# Imported private geometry and historical input snapshots
+data/boundary/
+frontend/public/wgg.geojsonl.json
+frontend/src/wg_boundary.*
