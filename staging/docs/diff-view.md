@@ -86,7 +86,34 @@ The isolated frontend build uses `npm run build` in the same ARM64 container
 with staging/frontend mounted at /work. Copy build/ to a new immutable
 runtime/frontend-TIMESTAMP directory, atomically update frontend-active and
 restart only plantwise-staging.service. Never rebuild the directory being
-served. Current frontend: frontend-20261112T131604Z. Previous:
-frontend-20261111T154907Z. Deployment pointers are recorded in the private JSON.
+served. Current frontend: frontend-20261112T141223Z. Previous:
+frontend-20261112T131604Z; original frontend-20261111T154907Z is also retained. Deployment pointers are recorded in the private JSON.
 Rolling frontend-active back restores the old UI; model rollback is independent
 and documented in runbook.md. No cloudflared/other services or Git remotes changed.
+
+
+## Expert review copy revision (2026-11-12)
+
+Simplified /model to the summary, training comparison and a short definition
+of usable cells/missing scores. Replaced vague map inventory language with
+original source coverage (514 species, including 66 omitted from staging).
+Removed the requested provenance/scale cautions, precision commentary, live
+missing-score, model-quality and synced-TIFF sections from the product page.
+Earlier investigation evidence/provenance remains in operational docs.
+
+/diff now uses the requested map instruction as its title and has three result
+columns. Per-species explanations remain in Why / details. That dropdown shows
+both staging block-CV AUC and live-reported AUC, without the comparability
+sentence. Species without a fitted staging model explicitly show AUC unavailable.
+A usable cell is a distinct occurrence cell inside WG with valid values in all
+19 layers; missing any layer removes that occurrence from training. Query-time
+latitude limits and NoData are separate reasons for a missing score.
+
+Final frontend build passed with only existing AboutPage/ToolPage warnings.
+Desktop/mobile Playwright checks over Tailscale passed, including three-column
+layout, revised titles, exclusion details, Clausena staging AUC0.624 alongside
+live AUC, real map queries, cutoff behavior, /model reload and simulated live
+outage. Visually inspected desktop/mobile screenshots. Evidence and deployment
+pointers: runtime/diff-copy-edit-20261112/. Preserve earlier diff-page evidence.
+To write a fresh browser evidence directory, set PLANTWISE_DIFF_EVIDENCE to an
+absolute container path under /work/runtime when running the harness.

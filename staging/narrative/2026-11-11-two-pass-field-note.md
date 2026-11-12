@@ -113,3 +113,12 @@ claiming the archived trainer proves historical map provenance. The newly synced
 why live scores are fetched directly. Responsive browser checks and screenshot
 inspection passed; original landing pixels and tool behavior were preserved.
 See docs/diff-view.md for source contracts, evidence and operations.
+
+
+For expert review, simplified the model comparison copy and moved all row
+explanations into the existing dropdown, leaving three aligned result columns.
+Both validation AUCs are visible there; excluded fits explicitly lack a staging
+AUC. Clarified distinct occurrence cells and missing BIO values, and retained
+operational provenance in repository docs while shortening the product pages.
+Updated desktop/mobile checks and visually reviewed screenshots before closing
+this revision. The model inventory, scores and filters remain unchanged.

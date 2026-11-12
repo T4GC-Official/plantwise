@@ -1,5 +1,5 @@
 const {chromium}=require('/browser/node_modules/playwright');const fs=require('fs');
-const ORIGIN=process.env.PLANTWISE_DIFF_ORIGIN||'http://127.0.0.1:8184';const OUT='/work/runtime/diff-page-20261112';
+const ORIGIN=process.env.PLANTWISE_DIFF_ORIGIN||'http://127.0.0.1:8184';const OUT=process.env.PLANTWISE_DIFF_EVIDENCE||'/work/runtime/diff-page-20261112';fs.mkdirSync(OUT,{recursive:true});
 const assert=(v,m)=>{if(!v)throw new Error(m)};
 (async()=>{const browser=await chromium.launch({headless:true,args:['--no-sandbox']});const evidence=[];let original;
 for(const [device,viewport] of [['desktop',{width:1440,height:1100}],['mobile',{width:390,height:844}]]){
@@ -9,11 +9,15 @@ for(const [device,viewport] of [['desktop',{width:1440,height:1100}],['mobile',{
  await page.getByTestId('staging-count').waitFor({timeout:60000});
  assert(await page.getByTestId('staging-count').textContent()==='23','Staging count');assert(await page.getByTestId('live-count').textContent()==='9','Live count');assert(await page.getByTestId('shared-count').textContent()==='5','Shared count');assert(await page.getByTestId('different-count').textContent()==='22','Difference count');
  assert(await page.locator('tbody tr').count()===265,'Full zero-cutoff union retained');
+ assert(await page.locator('.diff-table thead th').count()===3,'Three result columns');
+ await page.getByRole('heading',{name:'Click the map to compare staging with PlantWise India.',exact:true}).waitFor();
  const excluded=page.locator('[data-species="Ficus_talbotii"]');assert((await excluded.textContent()).includes('5 usable'),'Exclusion explanation');
  const below=page.locator('[data-species="Clausena_anisata"]');assert(await below.locator('.is-below').count()===1,'Below threshold shading');
  await page.screenshot({path:`${OUT}/${device}-overview.png`,animations:'disabled'});
  await page.getByRole('button',{name:'Only differences (22)',exact:true}).click();assert(await page.locator('tbody tr').count()===22,'Only differences filter');
- if(device==='mobile'){await excluded.locator('summary').click();assert((await excluded.textContent()).includes('No staging model'),'Mobile explanation');}
+ await excluded.locator('summary').click();assert((await excluded.textContent()).includes('No staging model'),'Dropdown explanation');
+ assert((await excluded.textContent()).includes('Staging block-CV AUC: unavailable'),'Excluded AUC status');
+ await below.locator('summary').click();assert((await below.textContent()).includes('Staging block-CV AUC: 0.624'),'Staging AUC');assert((await below.textContent()).includes('Live reported AUC:'),'Live AUC');
  await page.locator('.diff-toolbar').scrollIntoViewIfNeeded();await page.screenshot({path:`${OUT}/${device}-differences.png`,animations:'disabled'});
  await page.getByLabel('Search species').fill('Clausena');assert(await page.locator('tbody tr').count()===1,'Search');
  await page.getByLabel('Search species').fill('');await page.getByRole('button',{name:'All scores (265)',exact:true}).click();
@@ -24,7 +28,9 @@ for(const [device,viewport] of [['desktop',{width:1440,height:1100}],['mobile',{
  assert(clicked.status()===200,'Map click API');const clickedData=await clicked.json();assert(clickedData.live.status==='available','Map click live result');assert(Math.abs(clickedData.query.longitude-75.94048174979808)>.01,'Map click did not update location');
  await page.getByTestId('staging-count').waitFor();await page.screenshot({path:`${OUT}/${device}-map-click.png`,animations:'disabled'});
  await page.getByRole('navigation').getByRole('link',{name:'What changed?',exact:true}).click();await page.getByRole('heading',{name:'Why can the predictions differ?',exact:true}).waitFor();await page.screenshot({path:`${OUT}/${device}-model.png`,animations:'disabled'});
- assert(new URL(page.url()).pathname==='/model','Clean model route');await page.reload({waitUntil:'networkidle'});await page.getByRole('heading',{name:'Why can the predictions differ?',exact:true}).waitFor();
+ assert(new URL(page.url()).pathname==='/model','Clean model route');
+ await page.getByRole('heading',{name:'Summary of model differences',exact:true}).waitFor();
+ assert(await page.getByRole('heading',{name:'About the synced TIFF files',exact:true}).count()===0,'Removed TIFF section');await page.reload({waitUntil:'networkidle'});await page.getByRole('heading',{name:'Why can the predictions differ?',exact:true}).waitFor();
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth),'Horizontal page overflow');
  assert(errors.length===0,JSON.stringify(errors));evidence.push({device,counts:{staging:23,live:9,shared:5,different:22,zeroUnion:265},errors,requests});
  await page.close();

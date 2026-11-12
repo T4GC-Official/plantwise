@@ -78,7 +78,7 @@ export default function DiffPage() {
   return <div className="pw-diff">
     <header className="diff-header"><a href="/" className="diff-brand"><img src={logo} alt="" />PlantWise</a><nav><a href="/">Original site</a><Link to="/model">What changed?</Link></nav></header>
     <main className="diff-main">
-      <div className="diff-title"><span className="diff-eyebrow">MODEL COMPARISON</span><h1>One location. Two sets of predictions.</h1><p>Click the map to compare staging with PlantWise India. Scores below your cutoff stay visible.</p></div>
+      <div className="diff-title"><span className="diff-eyebrow">MODEL COMPARISON</span><h1>Click the map to compare staging with PlantWise India.</h1></div>
       <section className="diff-location"><DiffMap point={point} onSelect={onMapSelect} /><form className="diff-form" onSubmit={submit}>
         <h2>Choose a location</h2><p>Click inside the highlighted Western Ghats area, or enter exact coordinates.</p>
         <label htmlFor="diff-latitude">Latitude</label><input id="diff-latitude" type="number" step="any" value={latitude} onChange={e => setLatitude(e.target.value)} required />
@@ -103,14 +103,14 @@ export default function DiffPage() {
           <button className={filter === 'species' ? 'selected' : ''} onClick={() => setFilter('species')}>Include unavailable species</button>
         </div><input aria-label="Search species" placeholder="Search species…" value={search} onChange={e => setSearch(e.target.value)} /></div>
         <p className="diff-legend"><span className="diff-dot" /> Below-cutoff scores are shaded. “No score” means unavailable, not zero. <Link to="/model">Read how the models differ.</Link></p>
-        <div className="diff-table-wrap"><table className="diff-table"><thead><tr><th>Species</th><th>Staging</th><th>PlantWise India <small>Live API</small></th><th>Why the difference?</th></tr></thead><tbody>
+        <div className="diff-table-wrap"><table className="diff-table"><thead><tr><th>Species</th><th>Staging</th><th>PlantWise India <small>Live API</small></th></tr></thead><tbody>
           {rows.map(row => { const kind = comparisonKind(row, threshold, liveAvailable); return <tr key={row.species} data-species={row.species} className={`kind-${kind}`}>
             <th scope="row"><span className="diff-species">{displayName(row.species)}</span>{(kind === 'staging' || kind === 'live') && <span className={`diff-badge badge-${kind}`}>{kind === 'staging' ? 'Staging only' : 'Live only'}</span>}
-              <details><summary>Why / details</summary><div className="diff-facts"><p><Explanation row={row} threshold={threshold} liveAvailable={liveAvailable} /></p>{row.staging.usable_cells != null && <p>Staging: {row.staging.usable_cells} usable climate cells.</p>}{row.staging.latitude_bounds && <p>Observed latitude: {row.staging.latitude_bounds.min} to {row.staging.latitude_bounds.max}.</p>}{row.staging.constant_model && <p>This staging model has no active climate coefficients and gives a constant score.</p>}{row.staging.auc != null && <p>Staging block-CV AUC: {row.staging.auc.toFixed(3)}.</p>}{row.live.auc != null && <p>Live reported AUC: {row.live.auc}. Evaluation differs; these AUCs are not directly comparable.</p>}</div></details>
-            </th><td><Score side={row.staging} threshold={threshold} /></td><td><Score side={row.live} threshold={threshold} whole={data.live.score_precision === 'whole_percent'} /></td><td className="diff-explanation"><Explanation row={row} threshold={threshold} liveAvailable={liveAvailable} /></td>
+              <details><summary>Why / details</summary><div className="diff-facts"><p><Explanation row={row} threshold={threshold} liveAvailable={liveAvailable} /></p>{row.staging.usable_cells != null && <p>Staging: {row.staging.usable_cells} distinct occurrence cells with valid BIO1–19 values.</p>}{row.staging.latitude_bounds && <p>Observed latitude: {row.staging.latitude_bounds.min} to {row.staging.latitude_bounds.max}.</p>}{row.staging.constant_model && <p>This staging model has no active climate coefficients and gives a constant score.</p>}<p>Staging block-CV AUC: {row.staging.auc != null ? row.staging.auc.toFixed(3) : 'unavailable'}.</p>{row.live.auc != null && <p>Live reported AUC: {row.live.auc}.</p>}</div></details>
+            </th><td><Score side={row.staging} threshold={threshold} /></td><td><Score side={row.live} threshold={threshold} whole={data.live.score_precision === 'whole_percent'} /></td>
           </tr>; })}
         </tbody></table>{rows.length === 0 && <p className="diff-empty">No species match this view.</p>}</div>
-        <p className="diff-footnote">Staging: {data.staging.release}. Live results come from plantwise-india.org’s API, not the synced legacy TIFF folder. <Link to="/model">Sources and limitations</Link></p>
+        <p className="diff-footnote">Staging: {data.staging.release}. Live results come from plantwise-india.org’s API. <Link to="/model">Model differences</Link></p>
       </>}
     </main>
   </div>;
