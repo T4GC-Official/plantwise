@@ -47,3 +47,11 @@ inventing a new retrospective AUC cutoff or silently hiding low-score models.
 
 - [ ] Verify the user's exact external preview URL once provided (screenshot
   truncates its address). Loopback and simulated GET-only forwarding now pass.
+
+## Read-only live comparison follow-up
+
+- [ ] If deeper attribution is needed, obtain exact original production TIFFs
+  and matching training provenance from the selective-transfer manifest in
+  runtime/comparison-20261112-kodagu/. Do not substitute March reruns.
+- [ ] Agree quality handling for zero-coefficient/constant fitted maps and
+  weak block-CV performance. Existing release/filters were not changed.

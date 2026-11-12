@@ -48,3 +48,12 @@ metadata out of the product layout. Test the actual user-facing forwarding URL,
 not only loopback, and include empty/non-JSON gateway responses. The GET endpoint
 is suitable for read-only recommendations; transport parity tests must retain
 all spatial and numeric validation.
+
+Model acceptance follow-up from the read-only live comparison: inspect
+AICc-selected zero-coefficient/constant full-data models explicitly. A constant
+cloglog map can exceed the default50 threshold while having poor held-out
+performance. Define/report this quality gate with domain review before any
+future filter or retraining-policy change; the comparison changed neither.
+Record original-map provenance (scale, background, features, fitted sample set,
+software and geometry) alongside TIFFs so old/new score differences can be
+attributed rather than guessed from a later edited trainer.

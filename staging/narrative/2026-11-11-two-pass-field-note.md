@@ -84,3 +84,19 @@ also handles empty responses and distinguishes failed requests from empty
 recommendations. The exact screenshot coordinates return20 results in both
 viewport tests. The external URL itself remains unverified until the truncated
 address is supplied in full; neither the domain nor tunnel was changed.
+
+A subsequent read-only comparison with the live site separated coverage from
+scores at the user's exact point. Both frontends at50 returned9 and23 species,
+with five shared. Three live recommendations were excluded from the new model
+inventory, one fell below the new cutoff, and eighteen crossed above it. Live's
+threshold0 response exposed the latter scores, so missing metadata or maps could
+be ruled out for those differences. Both serving implementations include the
+latitude envelope. The current live zero-threshold set exactly matches the
+archived TIFF/AUC/latitude candidate set, although that is not proof of an
+identical current deployment or historical model-training provenance.
+
+Saved-model inference matches the new rasters. One selected model is constant,
+and several returned models have weak block-CV scores, reinforcing why a larger
+recommendation list is not a quality verdict. Full evidence and a selective
+original-map transfer list remain private; the investigation did not change
+services, models or filters. See docs/live-staging-comparison-2026-11-12.md.

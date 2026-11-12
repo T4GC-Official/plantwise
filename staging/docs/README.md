@@ -16,3 +16,6 @@ Event history is in ../chronology/, the end-to-end account in ../narrative/,
 remaining scientific/retraining work in ../todos/, improvements in ../proposals/,
 and superseded staging scaffold code in ../archive/. Private evidence and
 artifacts are ignored under ../runtime/, ../runs/ and ../releases/.
+
+- [Live/staging comparison](live-staging-comparison-2026-11-12.md): observed
+  overlap, coverage/filter attribution and private evidence paths.
