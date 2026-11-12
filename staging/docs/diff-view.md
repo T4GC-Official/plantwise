@@ -86,7 +86,7 @@ The isolated frontend build uses `npm run build` in the same ARM64 container
 with staging/frontend mounted at /work. Copy build/ to a new immutable
 runtime/frontend-TIMESTAMP directory, atomically update frontend-active and
 restart only plantwise-staging.service. Never rebuild the directory being
-served. Current frontend: frontend-20261112T144117Z. Previous:
+served. Current frontend: frontend-20261112T144233Z. Previous: frontend-20261112T144117Z;
 frontend-20261112T141223Z; frontend-20261112T131604Z and original frontend-20261111T154907Z is also retained. Deployment pointers are recorded in the private JSON.
 Rolling frontend-active back restores the old UI; model rollback is independent
 and documented in runbook.md. No cloudflared/other services or Git remotes changed.
@@ -138,3 +138,13 @@ Tailscale address verified all three Old/New pairs, exact count explanations,
 direct route reload and no horizontal overflow at1440 and390 pixel widths.
 Desktop/mobile section screenshots were visually inspected. Private evidence:
 runtime/score-explanation-20261112/ (verify.cjs, JSON, screenshots, deployment).
+
+
+Cell-size clarification: verified source BIO1 GeoTIFF EPSG:4326 resolution is
+1/120 degree in each direction (30 arc-seconds). /model explicitly contrasts
+>2 observation rows against >=8 distinct usable cells, repeats the rule in the
+comparison table, and adds “1 cell = 30″ × 30″, approximately0.9 km ×0.9 km in
+the Western Ghats.” Ground dimensions are approximate and vary with latitude.
+New immutable frontend frontend-20261112T144233Z; rollback retained. Desktop/mobile
+browser checks and mobile screenshot inspection passed; evidence under
+runtime/cell-size-20261112/. No model, data or filter changes.

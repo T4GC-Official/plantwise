@@ -12,3 +12,10 @@ in5 cells example. Published a new immutable frontend, retained rollback and
 restarted only our service. Build/browser checks and screenshot inspection
 passed on desktop/mobile. No training, models, backend or filter changes.
 See docs/diff-view.md and ignored runtime/score-explanation-20261112/.
+
+
+At20:12, emphasized the observation-row versus unique-cell gate and added it to
+the table. Verified raster resolution directly, then added a bracketed cell-size
+line (30 arc-seconds square, approximately0.9km on each side in WG). Rebuilt,
+published and checked desktop/mobile; screenshot inspected. Evidence in
+runtime/cell-size-20261112/. Previous frontend retained.

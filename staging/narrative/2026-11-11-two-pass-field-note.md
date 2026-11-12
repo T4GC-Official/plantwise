@@ -130,3 +130,7 @@ gate counted more than two rows, while staging requires at least eight distinct
 complete climate cells for four-block evaluation. Added a concrete example to
 separate occurrence counts from cell counts. Published and visually checked the
 updated explanation on desktop/mobile without changing any training behavior.
+
+The eligibility distinction is now explicit in both explanatory text and the
+comparison table, with verified30-arc-second cell dimensions and approximate
+0.9km ground dimensions alongside it.
