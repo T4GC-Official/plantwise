@@ -14,6 +14,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ConfigDict, Field
 from shapely.geometry import Point, shape
 from shapely.ops import unary_union
+from .comparison import ComparisonService
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -55,6 +56,7 @@ def create_app(release_path=None, static_path=None):
                 raise ValueError('Release paths must stay within the release')
     app = FastAPI(title='PlantWise ENMeval')
     capacity = BoundedSemaphore(4)
+    comparison = ComparisonService(ROOT, release, catalog, wg, sample)
 
     @app.exception_handler(RequestValidationError)
     async def invalid_request(request, exc):
@@ -110,10 +112,29 @@ def create_app(release_path=None, static_path=None):
             raise HTTPException(404, 'Species is unavailable in this release')
         return FileResponse(release / entries[species]['preview'], media_type='image/png')
 
+    @app.get('/api/diff')
+    def diff_results(
+        latitude: float = QueryParam(..., ge=-90, le=90, allow_inf_nan=False),
+        longitude: float = QueryParam(..., ge=-180, le=180, allow_inf_nan=False),
+    ):
+        if not capacity.acquire(blocking=False):
+            raise HTTPException(503, 'Service busy; retry shortly')
+        try:
+            return JSONResponse(comparison.compare(latitude, longitude), headers={'Cache-Control': 'no-store'})
+        finally:
+            capacity.release()
+
     @app.get('/api/{path:path}')
     def api_missing(path: str):
         raise HTTPException(404, 'API endpoint not found')
 
     static = Path(static_path or os.environ.get('PLANTWISE_STATIC', ROOT / 'runtime/frontend-active')).resolve(strict=True)
+    @app.get('/diff', include_in_schema=False)
+    @app.get('/diff/', include_in_schema=False)
+    @app.get('/model', include_in_schema=False)
+    @app.get('/model/', include_in_schema=False)
+    def comparison_page():
+        return FileResponse(static / 'index.html', headers={'Cache-Control': 'no-cache'})
+
     app.mount('/', StaticFiles(directory=static, html=True), name='frontend')
     return app

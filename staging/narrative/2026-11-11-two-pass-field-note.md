@@ -100,3 +100,16 @@ and several returned models have weak block-CV scores, reinforcing why a larger
 recommendation list is not a quality verdict. Full evidence and a selective
 original-map transfer list remain private; the investigation did not change
 services, models or filters. See docs/live-staging-comparison-2026-11-12.md.
+
+
+The next serving change made the investigation accessible through /diff. One
+map click now requests the same point from the active staging rasters and the
+real live API, retaining scores at zero so a cutoff no longer hides the reason
+for a list difference. Exclusions have explicit cell counts, unavailable pixels
+remain distinct from zero, and uncertain live omissions are labelled as such.
+A separate /model page explains training/background/coverage differences without
+claiming the archived trainer proves historical map provenance. The newly synced
+395-map snapshot returns18 rather than9 at the verification point, reinforcing
+why live scores are fetched directly. Responsive browser checks and screenshot
+inspection passed; original landing pixels and tool behavior were preserved.
+See docs/diff-view.md for source contracts, evidence and operations.

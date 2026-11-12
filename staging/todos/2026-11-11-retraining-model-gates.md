@@ -55,3 +55,14 @@ inventing a new retrospective AUC cutoff or silently hiding low-score models.
   runtime/comparison-20261112-kodagu/. Do not substitute March reruns.
 - [ ] Agree quality handling for zero-coefficient/constant fitted maps and
   weak block-CV performance. Existing release/filters were not changed.
+
+
+## Comparison follow-up
+
+- Establish why the synced395-map snapshot and current live deployment differ;
+  obtain the deployed raster manifest/checksums and matching model commands.
+- Do not change scientific acceptance gates based on list length. Review constant
+  fits and weak spatial CV before a new release; /diff deliberately preserves
+  the current filters and reports their limitations.
+- If live schema, AUC fields or precision change, revalidate the zero-cutoff and
+  integer-threshold equivalence before treating new responses as comparable.

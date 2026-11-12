@@ -1,11 +1,13 @@
 import React from 'react';
-import { HashRouter as Router, Route, Routes, useLocation, Outlet } from 'react-router-dom';
+import { BrowserRouter, HashRouter as Router, Route, Routes, useLocation, Outlet } from 'react-router-dom';
 import HomePage from './HomePage';
 import Header from './Header';
 import AboutPage from './AboutPage';
 import PredictionsPage from './PredictionsPage';
 import ToolPage from './ToolPage'; // Import your new ToolPage component
 import OurModelPage from './OurModelPage';
+import DiffPage from './DiffPage';
+import ModelChangesPage from './ModelChangesPage';
 
 // A component to conditionally render Header
 const Layout = () => {
@@ -24,6 +26,9 @@ const Layout = () => {
 };
 
 function App() {
+  if (/^\/(diff|model)\/?$/.test(window.location.pathname)) {
+    return <BrowserRouter><Routes><Route path="/diff" element={<DiffPage />} /><Route path="/model" element={<ModelChangesPage />} /></Routes></BrowserRouter>;
+  }
   return (
     <Router>
       <div className="App">

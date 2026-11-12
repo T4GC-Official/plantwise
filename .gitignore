@@ -116,3 +116,6 @@ container/*.log
 
 *.cache
 *.bat
+
+# Private imported legacy prediction rasters
+archive/plantwise_v0/tif_data_final/

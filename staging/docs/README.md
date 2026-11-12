@@ -19,3 +19,5 @@ artifacts are ignored under ../runtime/, ../runs/ and ../releases/.
 
 - [Live/staging comparison](live-staging-comparison-2026-11-12.md): observed
   overlap, coverage/filter attribution and private evidence paths.
+
+- [Diff view](diff-view.md): live comparison sources, controls, validation and operations.

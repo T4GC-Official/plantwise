@@ -57,3 +57,13 @@ future filter or retraining-policy change; the comparison changed neither.
 Record original-map provenance (scale, background, features, fitted sample set,
 software and geometry) alongside TIFFs so old/new score differences can be
 attributed rather than guessed from a later edited trainer.
+
+
+## Serving comparison provenance
+
+Publish versioned model/serving manifests with raster hashes and training
+commands to distinguish a local snapshot from actual deployment. Expose explicit
+per-species omission reasons from both APIs; archived metadata can currently
+provide only hypotheses for live missing rows. Consider a bounded TTL cache or
+batch point sampling if /diff traffic grows; the current slider reuses one
+zero-cutoff response, with two concurrent comparisons and no silent fallback.
