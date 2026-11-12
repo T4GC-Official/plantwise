@@ -1,5 +1,11 @@
 # Local operations
 
+> Current serving address: **http://100.82.28.38:8175/#/tool** from a device on
+> the same Tailscale network. At the user's request, the service now binds
+> **0.0.0.0:8175**. Loopback URLs below still work on the host; earlier
+> loopback-only notes describe the original deployment.
+
+
 All commands start at /home/beeps/src/github.com/bprashanth/plantwise.
 This file records reproducible implementation commands; successful runtime
 identities and test evidence are added after their gates pass.
