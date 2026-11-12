@@ -122,3 +122,11 @@ AUC. Clarified distinct occurrence cells and missing BIO values, and retained
 operational provenance in repository docs while shortening the product pages.
 Updated desktop/mobile checks and visually reviewed screenshots before closing
 this revision. The model inventory, scores and filters remain unchanged.
+
+
+The model notes now explain score changes through Old/New background sampling,
+model settings and observation handling. Verified that the archived eligibility
+gate counted more than two rows, while staging requires at least eight distinct
+complete climate cells for four-block evaluation. Added a concrete example to
+separate occurrence counts from cell counts. Published and visually checked the
+updated explanation on desktop/mobile without changing any training behavior.
