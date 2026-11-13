@@ -16,7 +16,7 @@ identities and test evidence are added after their gates pass.
 docker build --cpuset-cpus=0-1 -t plantwise-training:20261111 -f staging/model/environment/Dockerfile.training staging/model/environment
 uv venv staging/.venv
 uv pip install --python staging/.venv/bin/python -r staging/serving/environment/requirements.lock.txt
-docker run --name plantwise-frontend-rebuild --cpus 2 --memory 4g -v "$PWD/staging/frontend:/app" -w /app node:22-bookworm bash -c 'npm ci && npm run build'
+docker run --name plantwise-frontend-rebuild --cpus 2 --memory 4g -v "$PWD/staging/serving/frontend:/app" -w /app node:22-bookworm bash -c 'npm ci && npm run build'
 ```
 
 The initial imported frontend lockfile required npm install --package-lock-only;
@@ -65,7 +65,7 @@ domain setup is the user's responsibility and has not been tested.
 
 ## Actual smoke release and browser commands
 
-The active smoke release is `smoke_20261111T1246Z`; code/data runtime artifacts
+The retained smoke release is `smoke_20261111T1246Z`; code/data runtime artifacts
 remain ignored. Training image ID:
 `sha256:0db7efd59d9c7a9b312f21366f7b0f1853129560e3c1ec42f796968b4bb252b8`.
 
@@ -81,14 +81,14 @@ package-lock.json then npm ci). Runtime screenshots and detailed network logs
 stay out of Git. Browser images and OS packages remain project-isolated.
 
 The frontend is served from runtime/frontend-active, a symlink to an immutable
-copy of a successful build (current frontend-20261111T1250Z). After npm build,
+copy of a successful build (inspect runtime/frontend-active for the current snapshot). After npm build,
 copy build/ into a NEW runtime/frontend-<timestamp> directory, update the symlink
 atomically and restart only plantwise-staging.service. Do not serve CRA's build/
 directly while rebuilding. The API release and frontend snapshot resolve once
 at process start. Preview requests carry the result's release identity and get
 a clear 409 if a promotion occurred since that prediction.
 
-Actual full run planned: full_20261111T1252Z, --workers 3, max six CPU/24 GiB
+Completed full run: full_20261111T1252Z, --workers 3, max six CPU/24 GiB
 container caps; serial warmup and two-job ramp before the three-job ceiling.
 Per-job resources.json records sampled Docker CPU/RAM. Total working usage is
 expected below caps; monitor the shared host while jobs progress.

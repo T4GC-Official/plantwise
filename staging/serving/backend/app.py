@@ -124,6 +124,16 @@ def create_app(release_path=None, static_path=None):
         finally:
             capacity.release()
 
+    @app.get('/source/old/InitialImplementation.py', include_in_schema=False)
+    def old_model_source():
+        return FileResponse(ROOT / 'archive/legacy/InitialImplementation.py', media_type='text/plain',
+                            headers={'X-Content-Type-Options': 'nosniff', 'Cache-Control': 'no-cache'})
+
+    @app.get('/source/new/train.R', include_in_schema=False)
+    def new_model_source():
+        return FileResponse(ROOT / 'model/enmeval/train.R', media_type='text/plain',
+                            headers={'X-Content-Type-Options': 'nosniff', 'Cache-Control': 'no-cache'})
+
     @app.get('/api/{path:path}')
     def api_missing(path: str):
         raise HTTPException(404, 'API endpoint not found')

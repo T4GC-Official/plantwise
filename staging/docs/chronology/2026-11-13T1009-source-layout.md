@@ -21,3 +21,13 @@ is ignored under runtime/layout-verification/. Only our service was restarted.
 
 Committed the layout checkpoint before the requested declaude alias. The next
 checkpoint adds source references; no pushes are part of this work.
+
+
+The first declaude alias completed after the layout commit, inspecting16 local
+commits against origin/main; no commit IDs changed. Added a byte-identical
+archived runner reference and fixed-file plain-text source routes, then linked
+all Old/New labels. The source references work locally before pushing.
+Verified32 backend tests, desktop/mobile actual link clicks, raw source content,
+original UI regression and screenshots. Published frontend-20261113T044141Z with
+rollback retained. A second local checkpoint and final requested declaude run
+complete the review preparation; no pushes are performed.

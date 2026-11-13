@@ -83,11 +83,10 @@ The browser harness reuses a real response only for its mocked outage test.
 Real queries go to /api/diff; the browser itself never requests the external
 live API.
 The isolated frontend build uses `npm run build` in the same ARM64 container
-with staging/frontend mounted at /work. Copy build/ to a new immutable
+with staging/serving/frontend mounted at /work. Copy build/ to a new immutable
 runtime/frontend-TIMESTAMP directory, atomically update frontend-active and
 restart only plantwise-staging.service. Never rebuild the directory being
-served. Current frontend: frontend-20261113T042955Z. Previous frontend-20261112T144233Z is retained. Previous: frontend-20261112T144117Z;
-frontend-20261112T141223Z; frontend-20261112T131604Z and original frontend-20261111T154907Z is also retained. Deployment pointers are recorded in the private JSON.
+served. Current frontend: frontend-20261113T044141Z. Previous frontend snapshots are retained. Deployment pointers are recorded in the private JSON.
 Rolling frontend-active back restores the old UI; model rollback is independent
 and documented in runbook.md. No cloudflared/other services or Git remotes changed.
 
@@ -170,3 +169,30 @@ tests/diff-browser.cjs. No training, scientific filters or backend changes.
 
 Source restructuring is discussion only: no source/data directories moved and
 no root README changes made in this revision.
+
+
+## Source references and layout (2026-11-13)
+
+The active source tree is now model/ and serving/; see ../README.md. Training
+inputs/artifacts moved under model/, while runtime pointers and frontend
+snapshots stay at runtime/. The backend cwd is serving/ and its staging root is
+resolved independently. Historical run configs and source provenance are not
+rewritten; the new code/layout needs a fresh run ID for any future training.
+
+Each Old label on /model links to /source/old/InitialImplementation.py, served
+from archive/legacy/InitialImplementation.py. This is byte-identical to the
+supplied archived runner (SHA256 is in archive/legacy/README.md). Each New label
+links to /source/new/train.R and serves model/enmeval/train.R directly. Both are
+whole-file text/plain views in a new tab, with no dependence on GitHub pushes.
+Only these two fixed source files are exposed; there is no directory browsing
+or arbitrary source/data path endpoint.
+
+Validation:32 tests including exact source content and headers, live original
+API checks, full release checksums, saved smoke model inference with zero error,
+real desktop/mobile comparison and source-link popup clicks, original frontend
+manual/map/preview/WG regression, successful build with only pre-existing lint
+warnings. Desktop/mobile and raw-source screenshots were visually inspected.
+Evidence is ignored under runtime/layout-verification/, with source-links/
+containing the latest comparison/source screenshots and JSON. The expected
+outside-WG browser test returns422. No models were retrained, private data
+committed, files deleted or cloudflared/other services changed.

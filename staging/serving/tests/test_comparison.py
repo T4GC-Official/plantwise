@@ -74,3 +74,15 @@ def test_clean_routes_do_not_replace_original_home(site):
     assert client.get('/diff').text == 'frontend'
     assert client.get('/model').text == 'frontend'
     assert client.get('/api/not-an-endpoint').status_code == 404
+
+
+def test_model_source_links_serve_only_the_two_public_runner_files(site):
+    client, _ = site
+    old = client.get('/source/old/InitialImplementation.py')
+    new = client.get('/source/new/train.R')
+    assert old.status_code == new.status_code == 200
+    assert old.headers['content-type'].startswith('text/plain')
+    assert new.headers['x-content-type-options'] == 'nosniff'
+    assert old.text == (Path(__file__).resolve().parents[2] / 'archive/legacy/InitialImplementation.py').read_text()
+    assert new.text == (Path(__file__).resolve().parents[2] / 'model/enmeval/train.R').read_text()
+    assert client.get('/source/new/private.csv').status_code == 404

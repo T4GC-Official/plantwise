@@ -151,3 +151,10 @@ implementation rather than baseline commands. Historical source/prompts were
 retained in the archive, and provenance/config files in existing runs remain
 unchanged. Updated paths were checked through API/browser requests, checksums
 and independent saved-model inference without training anything.
+
+The model explanation's Old/New labels now open whole source files served
+locally: the archived Python runner and current R runner. This gives reviewers
+a direct reference before publication to GitHub. Only those source files are
+exposed, and browser checks follow the links into real tabs. The user's
+message-cleanup alias was run after the layout checkpoint and is run again
+following the source-reference checkpoint.

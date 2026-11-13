@@ -40,3 +40,9 @@ comparison/ holds optional read-only investigations of archived/live behavior.
 The source snapshot at root archive/plantwise_v0 supplies historical metadata
 for /diff. It is not a training input and must never be executed as a service.
 See [the runbook](../docs/runbook.md) and [comparison operations](../docs/diff-view.md).
+
+
+/model links each Old/New label to the complete legacy/current runner. The
+fixed /source/old/InitialImplementation.py and /source/new/train.R routes serve
+text/plain directly from the repository, so reviewers can use them before a
+GitHub push. No training data or arbitrary files are exposed by these routes.

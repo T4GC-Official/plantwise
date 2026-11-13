@@ -13,3 +13,5 @@ Layout cleanup: handoff/ preserves original prompts, source map and READMEs;
 reference/ contains local imported source references. The ten-species experiment
 is archived as imported-ten-species-experiment.R. Active code is in ../model/
 and ../serving/. Do not execute archived training/cleanup scripts.
+
+legacy/ contains the exact archived Python runner linked from /model.
