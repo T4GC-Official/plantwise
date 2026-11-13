@@ -16,7 +16,7 @@ from shapely.geometry import Point, shape
 from shapely.ops import unary_union
 from .comparison import ComparisonService
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 
 
 class Query(BaseModel):

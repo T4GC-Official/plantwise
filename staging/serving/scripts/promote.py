@@ -4,9 +4,9 @@ import hashlib
 import json
 from pathlib import Path
 import sys
-ROOT=Path(__file__).resolve().parents[1]
-release=(ROOT/'releases'/sys.argv[1]).resolve(strict=True)
-assert release.parent==ROOT/'releases'
+ROOT=Path(__file__).resolve().parents[2]
+release=(ROOT/'model/releases'/sys.argv[1]).resolve(strict=True)
+assert release.parent==ROOT/'model/releases'
 for name,want in json.loads((release/'checksums.json').read_text()).items():
     p=release/name
     assert p.resolve().is_relative_to(release)

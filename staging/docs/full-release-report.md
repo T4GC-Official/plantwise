@@ -82,9 +82,9 @@ suitability, not planting-success probabilities.
 
 ## Paths and service
 
-- Run: staging/runs/full_20261111T1252Z/
-- Release: staging/releases/full_20261111T1252Z/
-- Rollback: staging/releases/smoke_20261111T1246Z/
+- Run: staging/model/runs/full_20261111T1252Z/
+- Release: staging/model/releases/full_20261111T1252Z/
+- Rollback: staging/model/releases/smoke_20261111T1246Z/
 - Active model link: staging/runtime/active
 - Frontend snapshot: staging/runtime/frontend-20261111T1250Z/
 - Service: systemctl --user status plantwise-staging.service

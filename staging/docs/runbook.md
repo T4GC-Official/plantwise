@@ -13,9 +13,9 @@ identities and test evidence are added after their gates pass.
 ## Build isolated environments
 
 ```bash
-docker build --cpuset-cpus=0-1 -t plantwise-training:20261111 -f staging/environment/Dockerfile.training staging/environment
+docker build --cpuset-cpus=0-1 -t plantwise-training:20261111 -f staging/model/environment/Dockerfile.training staging/model/environment
 uv venv staging/.venv
-uv pip install --python staging/.venv/bin/python -r staging/environment/requirements.lock.txt
+uv pip install --python staging/.venv/bin/python -r staging/serving/environment/requirements.lock.txt
 docker run --name plantwise-frontend-rebuild --cpus 2 --memory 4g -v "$PWD/staging/frontend:/app" -w /app node:22-bookworm bash -c 'npm ci && npm run build'
 ```
 
@@ -25,16 +25,16 @@ the committed repaired lockfile supports npm ci. No global Node/R install.
 ## Pass 1
 
 ```bash
-staging/.venv/bin/python staging/scripts/train_jobs.py smoke_YYYYMMDDTHHMMSSZ --species Aglaia_lawii
-staging/.venv/bin/python staging/scripts/release.py staging/runs/smoke_YYYYMMDDTHHMMSSZ smoke_YYYYMMDDTHHMMSSZ --expected 1
-staging/.venv/bin/python staging/scripts/promote.py smoke_YYYYMMDDTHHMMSSZ
+staging/.venv/bin/python staging/model/scripts/train_jobs.py smoke_YYYYMMDDTHHMMSSZ --species Aglaia_lawii
+staging/.venv/bin/python staging/model/scripts/release.py staging/model/runs/smoke_YYYYMMDDTHHMMSSZ smoke_YYYYMMDDTHHMMSSZ --expected 1
+staging/.venv/bin/python staging/serving/scripts/promote.py smoke_YYYYMMDDTHHMMSSZ
 ```
 
 ## Website
 
 ```bash
 mkdir -p ~/.config/systemd/user
-cp staging/environment/plantwise.service ~/.config/systemd/user/plantwise-staging.service
+cp staging/serving/environment/plantwise.service ~/.config/systemd/user/plantwise-staging.service
 systemctl --user daemon-reload
 systemctl --user enable --now plantwise-staging.service
 curl -fsS http://127.0.0.1:8175/api/health
@@ -48,9 +48,9 @@ Rollback uses promote.py with the retained smoke release then a service restart.
 ## Pass 2 (only after saved real pass-1 evidence)
 
 ```bash
-staging/.venv/bin/python staging/scripts/train_jobs.py full_YYYYMMDDTHHMMSSZ --gate staging/runtime/pass1-gate.json
-staging/.venv/bin/python staging/scripts/release.py staging/runs/full_YYYYMMDDTHHMMSSZ full_YYYYMMDDTHHMMSSZ --expected 448
-staging/.venv/bin/python staging/scripts/promote.py full_YYYYMMDDTHHMMSSZ
+staging/.venv/bin/python staging/model/scripts/train_jobs.py full_YYYYMMDDTHHMMSSZ --gate staging/runtime/pass1-gate.json
+staging/.venv/bin/python staging/model/scripts/release.py staging/model/runs/full_YYYYMMDDTHHMMSSZ full_YYYYMMDDTHHMMSSZ --expected 448
+staging/.venv/bin/python staging/serving/scripts/promote.py full_YYYYMMDDTHHMMSSZ
 systemctl --user restart plantwise-staging.service
 ```
 
@@ -70,9 +70,9 @@ remain ignored. Training image ID:
 `sha256:0db7efd59d9c7a9b312f21366f7b0f1853129560e3c1ec42f796968b4bb252b8`.
 
 ```bash
-staging/.venv/bin/python staging/tests/verify_live.py
-staging/.venv/bin/python -m pytest staging/tests -q
-docker run --name plantwise-browser-UNIQUE --network host --cpus 2 --memory 2g -v "$PWD/staging:/work" -v "$PWD/staging/runtime/browser:/browser" -w /work mcr.microsoft.com/playwright:v1.61.0-noble node tests/browser.spec.cjs
+staging/.venv/bin/python staging/serving/tests/verify_live.py
+staging/.venv/bin/python -m pytest staging/serving/tests -q
+docker run --name plantwise-browser-UNIQUE --network host --cpus 2 --memory 2g -v "$PWD/staging:/work" -v "$PWD/staging/runtime/browser:/browser" -w /work mcr.microsoft.com/playwright:v1.61.0-noble node serving/tests/browser.spec.cjs
 ```
 
 Install the browser package into ignored runtime/browser using the committed
@@ -96,7 +96,7 @@ expected below caps; monitor the shared host while jobs progress.
 Progress without exposing occurrence records:
 
 ```bash
-staging/.venv/bin/python staging/scripts/progress.py staging/runs/full_20261111T1252Z
+staging/.venv/bin/python staging/model/scripts/progress.py staging/model/runs/full_20261111T1252Z
 tail -n 30 staging/runtime/full-20261111T1252Z.log
 systemctl --user status plantwise-staging.service --no-pager
 journalctl --user -u plantwise-staging.service -n 30 --no-pager
@@ -109,7 +109,7 @@ substantial room within the shared host; per-container 8GiB/two-CPU limits stay.
 Verify saved models independently of their training JVM:
 
 ```bash
-docker run --name plantwise-model-reload-UNIQUE --network none --cpus 2 --memory 8g -v "$PWD/staging:/work" -w /work plantwise-training:20261111 Rscript scripts/verify_models.R /work/releases/RELEASE /work/runtime/model-reload-RELEASE.json
+docker run --name plantwise-model-reload-UNIQUE --network none --cpus 2 --memory 8g -v "$PWD/staging/model:/work" -v "$PWD/staging/runtime:/evidence" -w /work plantwise-training:20261111 Rscript scripts/verify_models.R /work/releases/RELEASE /evidence/model-reload-RELEASE.json
 ```
 
 The script checks n_final against release metadata and direct reloaded-model
@@ -119,7 +119,7 @@ temporary training directory nor the training process is needed for prediction.
 Terminal inventory audit after all jobs finish:
 
 ```bash
-staging/.venv/bin/python staging/scripts/report.py staging/runs/full_20261111T1252Z
+staging/.venv/bin/python staging/model/scripts/report.py staging/model/runs/full_20261111T1252Z
 ```
 
 The audit writes private all-success-metrics.csv, final-audit.json and full
@@ -132,19 +132,19 @@ metrics and checksums before renaming a staged release directory into place.
 
 ```bash
 # Full release, 268 models
-staging/.venv/bin/python staging/scripts/promote.py full_20261111T1252Z
+staging/.venv/bin/python staging/serving/scripts/promote.py full_20261111T1252Z
 systemctl --user restart plantwise-staging.service
-staging/.venv/bin/python staging/tests/verify_live.py
+staging/.venv/bin/python staging/serving/tests/verify_live.py
 
 # Retained one-species rollback
-staging/.venv/bin/python staging/scripts/promote.py smoke_20261111T1246Z
+staging/.venv/bin/python staging/serving/scripts/promote.py smoke_20261111T1246Z
 systemctl --user restart plantwise-staging.service
-staging/.venv/bin/python staging/tests/verify_live.py
+staging/.venv/bin/python staging/serving/tests/verify_live.py
 
 # Restore full after rollback
-staging/.venv/bin/python staging/scripts/promote.py full_20261111T1252Z
+staging/.venv/bin/python staging/serving/scripts/promote.py full_20261111T1252Z
 systemctl --user restart plantwise-staging.service
-staging/.venv/bin/python staging/tests/verify_live.py
+staging/.venv/bin/python staging/serving/tests/verify_live.py
 ```
 
 All three sequences were exercised; full is left active. verify_live.py waits

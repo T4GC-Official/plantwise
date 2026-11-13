@@ -1,7 +1,7 @@
 # Reload saved models in a fresh JVM; prove no ephemeral Maxent path is required.
 suppressPackageStartupMessages({library(rJava);library(terra);library(predicts);library(jsonlite);library(digest)})
 args <- commandArgs(TRUE); release <- normalizePath(args[1]); root <- '/work'
-jar <- file.path(system.file('java',package='predicts'),'maxent.jar'); supplied<-file.path(root,'models/maxent/maxent.jar')
+jar <- file.path(system.file('java',package='predicts'),'maxent.jar'); supplied<-file.path(root,'maxent/maxent.jar')
 stopifnot(file.copy(supplied,jar,overwrite=TRUE)); stopifnot(predicts::MaxEnt(silent=TRUE))
 catalog<-read_json(file.path(release,'catalog.json'),simplifyVector=FALSE)
 pred<-rast(file.path(root,'data/attributes',sprintf('wc2.1_30s_bio_%d_fc.tif',1:19)));names(pred)<-paste0('BIO',1:19)

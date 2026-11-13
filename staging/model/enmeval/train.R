@@ -22,7 +22,7 @@ tryCatch({
  paths <- list(occ=g('species_csv',file.path(root,'data/occurrences/filtered_species_output.csv')),
   boundary=g('boundary_shp',file.path(root,'data/boundary/wg_boundary.shp')),
   bg=g('bg_csv',file.path(root,'data/derived/bias_layer/biasBg.csv')),
-  jar=g('maxent_jar',file.path(root,'models/maxent/maxent.jar')))
+  jar=g('maxent_jar',file.path(root,'maxent/maxent.jar')))
  files <- file.path(g('tif_folder',file.path(root,'data/attributes')),sprintf('wc2.1_30s_bio_%d_fc.tif',1:19))
  stopifnot(all(file.exists(c(unlist(paths),files))))
  # ENMeval 2.0.5.2 dispatches through predicts; use its isolated Java library.

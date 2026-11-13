@@ -69,14 +69,14 @@ landing-comparison, snapshot-verification, deployment pointers and logs).
 From repository root:
 
 ```bash
-staging/.venv/bin/pytest -q staging/tests
-staging/.venv/bin/python staging/tests/verify_live.py
-PYTHONPATH=staging staging/.venv/bin/python staging/scripts/check_legacy_snapshot.py
+staging/.venv/bin/pytest -q staging/serving/tests
+staging/.venv/bin/python staging/serving/tests/verify_live.py
+PYTHONPATH=staging/serving staging/.venv/bin/python staging/serving/comparison/check_legacy_snapshot.py
 
 docker run --rm --name plantwise-diff-check --network host \
   -e PLANTWISE_DIFF_ORIGIN=http://100.82.28.38:8175 \
   -v "$PWD/staging:/work" -v "$PWD/staging/runtime/browser:/browser" \
-  mcr.microsoft.com/playwright:v1.61.0-noble node /work/tests/diff-browser.cjs
+  mcr.microsoft.com/playwright:v1.61.0-noble node /work/serving/tests/diff-browser.cjs
 ```
 
 The browser harness reuses a real response only for its mocked outage test.

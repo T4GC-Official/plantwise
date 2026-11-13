@@ -34,14 +34,14 @@ log_info <- function(...) message(sprintf("[%s] %s", format(Sys.time(), "%H:%M:%
 
 script_arg <- grep("^--file=", commandArgs(), value = TRUE)
 script_dir <- if (length(script_arg)) dirname(normalizePath(sub("^--file=", "", script_arg[1]))) else getwd()
-repo_root  <- normalizePath(file.path(script_dir, "..", ".."))   # models/enmeval -> repo
+repo_root  <- normalizePath(file.path(script_dir, ".."))   # enmeval -> model
 a <- parse_args(commandArgs(trailingOnly = TRUE))
 g <- function(k, d) if (!is.null(a[[k]])) a[[k]] else d
 
 species_csv <- g("species_csv", file.path(repo_root, "data", "occurrences", "filtered_species_output.csv"))
 tif_folder  <- g("tif_folder",  file.path(repo_root, "data", "attributes"))
 elev_path   <- g("elevation",   "")
-maxent_jar  <- g("maxent_jar",  file.path(repo_root, "models", "maxent", "maxent.jar"))
+maxent_jar  <- g("maxent_jar",  file.path(repo_root, "maxent", "maxent.jar"))
 out_dir     <- g("out",         file.path(repo_root, "data", "derived", "bias_layer"))
 n_bg        <- as.integer(g("n_bg", "10000"))
 min_occ     <- as.integer(g("min_occ", "4"))

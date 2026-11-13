@@ -34,7 +34,7 @@ in ../todos/, processing improvements in ../proposals/.
 
 ## Checkpoint validation
 
-`staging/.venv/bin/python -m pytest staging/tests -q`: 12 passed. These fixtures
+`staging/.venv/bin/python -m pytest staging/serving/tests -q`: 12 passed. These fixtures
 exercise rare NoData/out-of-raster/latitude boundary cases and absent AUC, and
 supplement rather than replace the pending real Aglaia gate. Production frontend
 build succeeds. Obsolete Learn React test and commented alternative components

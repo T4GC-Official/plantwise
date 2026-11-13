@@ -1,10 +1,10 @@
 # Read-only inference on saved staging models. No fitting or service changes.
 options(java.parameters='-Xmx1g')
 suppressPackageStartupMessages({library(rJava);library(terra);library(predicts);library(jsonlite);library(digest)})
-root <- '/work'; out <- '/evidence'; lat<-12.189703804004086;lon<-75.94048174979808
+root <- '/work/model'; out <- '/evidence'; lat<-12.189703804004086;lon<-75.94048174979808
 release<-read_json(file.path(out,'summary.json'))$release
 catalog<-read_json(file.path(root,'releases',release,'catalog.json'),simplifyVector=FALSE)
-jar<-file.path(system.file('java',package='predicts'),'maxent.jar');sourcejar<-file.path(root,'models/maxent/maxent.jar')
+jar<-file.path(system.file('java',package='predicts'),'maxent.jar');sourcejar<-file.path(root,'maxent/maxent.jar')
 if(digest(file=jar,algo='sha256')!=digest(file=sourcejar,algo='sha256')) stopifnot(file.copy(sourcejar,jar,overwrite=TRUE))
 stopifnot(predicts::MaxEnt(silent=TRUE),getOption('predicts_maxent')=='3.4.4')
 pred<-rast(file.path(root,'data/attributes',sprintf('wc2.1_30s_bio_%d_fc.tif',1:19)));names(pred)<-paste0('BIO',1:19)

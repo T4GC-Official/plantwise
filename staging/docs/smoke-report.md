@@ -1,6 +1,6 @@
 # Aglaia pass-1 report
 
-Run: `smoke_20261111T1246Z`. Release: `staging/releases/smoke_20261111T1246Z`.
+Run: `smoke_20261111T1246Z`. Release: `staging/model/releases/smoke_20261111T1246Z`.
 The earlier run and failed package directory are retained for audit.
 
 - 48 raw finite observations; 46 inside the exact supplied WG polygon and with

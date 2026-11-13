@@ -142,3 +142,12 @@ labelled when the draft location changes. Simplified labels and punctuation,
 and verified both layouts and actual request behavior through Playwright.
 Reviewed the source layout for a discussion of clearer model/serving boundaries,
 without moving directories or changing root documentation yet.
+
+
+The active staging tree now separates model ownership from serving ownership.
+Training inputs are explicitly inventoried beside model code, even though data
+and outputs are ignored. The root README directs new readers to this active
+implementation rather than baseline commands. Historical source/prompts were
+retained in the archive, and provenance/config files in existing runs remain
+unchanged. Updated paths were checked through API/browser requests, checksums
+and independent saved-model inference without training anything.

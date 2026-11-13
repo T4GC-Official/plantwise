@@ -9,16 +9,18 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import rasterio
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from backend.comparison import ComparisonService
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 ARCHIVE = ROOT.parent / 'archive/plantwise_v0'
 LAT, LON = 12.189703804004086, 75.94048174979808
 
 
 def main():
     bounds = {}
-    with (ROOT / 'data/occurrences/filtered_species_output.csv').open() as f:
+    with (ROOT / 'model/data/occurrences/filtered_species_output.csv').open() as f:
         for row in csv.DictReader(f):
             lat = float(row['Latitude'])
             b = bounds.setdefault(row['Species'], [lat, lat])

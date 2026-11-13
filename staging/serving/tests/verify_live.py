@@ -11,7 +11,7 @@ import rasterio
 from shapely.geometry import Point, shape
 from shapely.ops import unary_union
 
-ROOT=Path(__file__).resolve().parents[1]
+ROOT=Path(__file__).resolve().parents[2]
 release=(ROOT/'runtime/active').resolve(strict=True)
 cat=json.loads((release/'catalog.json').read_text())
 boundary=json.loads((release/'boundary.geojson').read_text())
@@ -69,6 +69,6 @@ with rasterio.open(release/e['raster']) as src:
         x,y=src.xy(int(row),int(col))
         if e['latitude_bounds']['min']<=y<=e['latitude_bounds']['max'] and wg.covers(Point(x,y)):
             response=query(y,x,0);response.raise_for_status();assert sp not in {x['species'] for x in response.json()};nodata_checked=True;break
-result={'release':cat['release'],'api_passed':True,'real_query':{'latitude':lat,'longitude':lon,'score':value,'species':sp},'latitude_checks':latitude_checks,'real_nodata_exercised':nodata_checked,'fixture_nodata_and_outside_raster':'pytest staging/tests/test_api.py','health':health.json()}
+result={'release':cat['release'],'api_passed':True,'real_query':{'latitude':lat,'longitude':lon,'score':value,'species':sp},'latitude_checks':latitude_checks,'real_nodata_exercised':nodata_checked,'fixture_nodata_and_outside_raster':'pytest staging/serving/tests/test_api.py','health':health.json()}
 (ROOT/'runtime/live-api-evidence.json').write_text(json.dumps(result,indent=2))
 print(json.dumps(result,indent=2))

@@ -60,10 +60,10 @@ PLANTWISE_COMPARISON_DIR="$PWD/staging/runtime/comparison-$(date -u +%Y%m%dT%H%M
 export PLANTWISE_COMPARISON_DIR
 mkdir -p "$PLANTWISE_COMPARISON_DIR"
 docker run --name plantwise-query-comparison-UNIQUE --network host --cpus 2 --memory 2g -e PLANTWISE_COMPARISON_DIR=/evidence -v "$PWD/staging:/work:ro" -v "$PLANTWISE_COMPARISON_DIR:/evidence" -v "$PWD/staging/runtime/browser:/browser:ro" -w /work mcr.microsoft.com/playwright:v1.61.0-noble node scripts/compare_sites_browser.cjs
-staging/.venv/bin/python staging/scripts/compare_sites_capture.py
-staging/.venv/bin/python staging/scripts/compare_sites_analyze.py
+staging/.venv/bin/python staging/serving/comparison/compare_sites_capture.py
+staging/.venv/bin/python staging/serving/comparison/compare_sites_analyze.py
 docker run --name plantwise-inference-comparison-UNIQUE --network none --cpus 2 --memory 4g -v "$PWD/staging:/work:ro" -v "$PLANTWISE_COMPARISON_DIR:/evidence" -w /work plantwise-training:20261111 Rscript scripts/compare_sites_model_predictions.R
-staging/.venv/bin/python staging/scripts/compare_sites_report.py
+staging/.venv/bin/python staging/serving/comparison/compare_sites_report.py
 ```
 
 Results reflect the capture time; a future live deployment may differ. The

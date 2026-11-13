@@ -31,7 +31,7 @@ def main():
         gate=json.loads(Path(a.gate).read_text())
         assert gate['passed'] and gate['browser_passed'] and gate['api_passed']
     run=ROOT/'runs'/a.run;run.mkdir(parents=True,exist_ok=True)
-    files=[ROOT/'models/enmeval/train.R',ROOT/'scripts/train_jobs.py',ROOT/'data/occurrences/filtered_species_output.csv',ROOT/'data/derived/bias_layer/biasBg.csv',ROOT/'models/maxent/maxent.jar']
+    files=[ROOT/'enmeval/train.R',ROOT/'scripts/train_jobs.py',ROOT/'data/occurrences/filtered_species_output.csv',ROOT/'data/derived/bias_layer/biasBg.csv',ROOT/'maxent/maxent.jar']
     files+=sorted((ROOT/'data/attributes').glob('*.tif'))+sorted((ROOT/'data/boundary').glob('*'))
     image_id=subprocess.check_output(['docker','image','inspect','--format','{{.Id}}',IMAGE],text=True).strip()
     config={'species':species,'image':image_id,'inputs_and_code':{str(x.relative_to(ROOT)):digest(x) for x in files if x.is_file()},'seed':123,'fc':['L','LQ'],'rm':[1,2],'partitions':'block','threads':1,'job_cpus':2,'job_memory':'8g','workers':a.workers}
@@ -49,7 +49,7 @@ def main():
         container=f'plantwise-{a.run}-{sp}-{datetime.now(timezone.utc).strftime("%H%M%S%f")}'.lower().replace('_','-')
         cmd=['docker','run','--name',container,'--cpus','2','--memory','8g','--network','none',
              '-e','OMP_NUM_THREADS=1','-e','OPENBLAS_NUM_THREADS=1','-e','MKL_NUM_THREADS=1',
-             '-v',f'{ROOT}:/work',IMAGE,'Rscript','models/enmeval/train.R',f'--species={sp}',f'--output_dir=/work/runs/{a.run}/{sp}']
+             '-v',f'{ROOT}:/work',IMAGE,'Rscript','enmeval/train.R',f'--species={sp}',f'--output_dir=/work/runs/{a.run}/{sp}']
         print(f'{i}/{len(species)} {sp}: starting',flush=True)
         samples=[]
         with (job/'training.log').open('w') as log:

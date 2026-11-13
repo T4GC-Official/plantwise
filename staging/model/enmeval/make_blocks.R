@@ -13,7 +13,7 @@ parse_args <- function(args) { p <- list(); for (a in args) { if (!startsWith(a,
 a <- parse_args(commandArgs(trailingOnly = TRUE))
 script_arg <- grep("^--file=", commandArgs(), value = TRUE)
 script_dir <- if (length(script_arg)) dirname(normalizePath(sub("^--file=", "", script_arg[1]))) else getwd()
-repo_root  <- normalizePath(file.path(script_dir, "..", ".."))   # models/enmeval -> repo
+repo_root  <- normalizePath(file.path(script_dir, ".."))   # enmeval -> model
 g <- function(k, d) if (!is.null(a[[k]])) a[[k]] else d
 species_csv <- g("species_csv", file.path(repo_root, "data", "occurrences", "filtered_species_output.csv"))
 tif_folder  <- g("tif_folder", file.path(repo_root, "data", "attributes"))

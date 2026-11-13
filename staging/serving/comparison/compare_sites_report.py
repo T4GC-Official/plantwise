@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 import pandas as pd
 
-ROOT=Path(__file__).resolve().parents[1]
+ROOT=Path(__file__).resolve().parents[2]
 OUT=Path(os.environ.get('PLANTWISE_COMPARISON_DIR',ROOT/'runtime/comparison-20261112-kodagu'))
 s=json.loads((OUT/'summary.json').read_text());rows=pd.read_csv(OUT/'response-union-comparison.csv').set_index('species')
 live=json.loads((OUT/'live-threshold-50.json').read_text());stage=json.loads((OUT/'staging-threshold-50.json').read_text())

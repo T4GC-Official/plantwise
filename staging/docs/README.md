@@ -12,12 +12,15 @@
   full training.
 - [Implementation progress](implementation-progress.md): bootstrap findings.
 
-Event history is in ../chronology/, the end-to-end account in ../narrative/,
-remaining scientific/retraining work in ../todos/, improvements in ../proposals/,
+Event history is in chronology/, the end-to-end account in narrative/,
+remaining scientific/retraining work in todos/, improvements in proposals/,
 and superseded staging scaffold code in ../archive/. Private evidence and
-artifacts are ignored under ../runtime/, ../runs/ and ../releases/.
+artifacts are ignored under ../runtime/, ../model/runs/ and ../model/releases/.
 
 - [Live/staging comparison](live-staging-comparison-2026-11-12.md): observed
   overlap, coverage/filter attribution and private evidence paths.
 
 - [Diff view](diff-view.md): live comparison sources, controls, validation and operations.
+
+The current directory map and executable entry points are in [../README.md](../README.md).
+Historical timeline entries retain the paths in use when recorded.

@@ -5,7 +5,7 @@ import json
 import os
 import httpx
 
-OUT=Path(os.environ.get('PLANTWISE_COMPARISON_DIR',Path(__file__).resolve().parents[1]/'runtime/comparison-20261112-kodagu'))
+OUT=Path(os.environ.get('PLANTWISE_COMPARISON_DIR',Path(__file__).resolve().parents[2]/'runtime/comparison-20261112-kodagu'))
 OUT.mkdir(parents=True,exist_ok=True)
 COORD={'latitude':12.189703804004086,'longitude':75.94048174979808}
 ENDPOINTS={'live':'https://species-api-452165326340.asia-south1.run.app/api/get-results','staging':'http://100.82.28.38:8175/api/get-results'}

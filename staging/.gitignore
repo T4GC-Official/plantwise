@@ -1,9 +1,9 @@
-data/attributes/
-data/occurrences/
-data/derived/
-data/reference/
-runs/
-releases/
+model/data/attributes/
+model/data/occurrences/
+model/data/derived/
+model/data/reference/
+model/runs/
+model/releases/
 .venv/
 .Rlib/
 node_modules/
@@ -18,10 +18,15 @@ build/
 runtime/
 .environment/
 # Imported private geometry and historical input snapshots
-data/boundary/
-frontend/public/wgg.geojsonl.json
-frontend/src/wg_boundary.*
+model/data/boundary/
+serving/frontend/public/wgg.geojsonl.json
+serving/frontend/src/wg_boundary.*
 *.before-*
-models/maxent/*.jar
+model/maxent/*.jar
 docs/history/
 docs/SYNC_RECEIPT.md
+
+archive/reference/
+archive/handoff/*.before-*
+archive/layout-compat/
+archive/script-cache/

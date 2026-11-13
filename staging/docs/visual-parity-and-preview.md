@@ -24,7 +24,7 @@ needed to verify that exact route; only its truncated address was supplied.
 No cloudflared or DNS configuration was changed.
 
 ```bash
-staging/.venv/bin/python -m pytest staging/tests -q
+staging/.venv/bin/python -m pytest staging/serving/tests -q
 curl -fsS 'http://127.0.0.1:8175/api/get-results?latitude=17.519216206515345&longitude=73.60814321375223&minProbability=50'
 docker run --name plantwise-parity-UNIQUE --network host --cpus 2 --memory 2g -v "$PWD/staging:/work" -v "$PWD/staging/runtime/browser:/browser" -w /work mcr.microsoft.com/playwright:v1.61.0-noble node tests/visual-parity.cjs
 ```

@@ -26,7 +26,7 @@ class ComparisonService:
         import json
         states = {s['species']: s for s in json.loads((self.release / 'accounting.json').read_text())}
         bounds = {}
-        with (self.root / 'data/occurrences/filtered_species_output.csv').open() as f:
+        with (self.root / 'model/data/occurrences/filtered_species_output.csv').open() as f:
             for r in csv.DictReader(f):
                 lat, lon = float(r['Latitude']), float(r['Longitude'])
                 if not (math.isfinite(lat) and math.isfinite(lon) and -90 <= lat <= 90 and -180 <= lon <= 180):
