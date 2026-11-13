@@ -10,9 +10,8 @@ From repository root:
 ```bash
 uv venv staging/.venv
 uv pip install --python staging/.venv/bin/python -r staging/serving/environment/requirements.lock.txt
-cp staging/serving/environment/plantwise.service ~/.config/systemd/user/plantwise-staging.service
-systemctl --user daemon-reload
-systemctl --user restart plantwise-staging.service
+python3 staging/serving/services/manage.py install
+python3 staging/serving/services/manage.py start
 staging/.venv/bin/python -m pytest staging/serving/tests -q
 staging/.venv/bin/python staging/serving/tests/verify_live.py
 ```
@@ -46,3 +45,6 @@ See [the runbook](../docs/runbook.md) and [comparison operations](../docs/diff-v
 fixed /source/old/InitialImplementation.py and /source/new/train.R routes serve
 text/plain directly from the repository, so reviewers can use them before a
 GitHub push. No training data or arbitrary files are exposed by these routes.
+
+Persistent startup, frontend publication and Cloudflare checks: [services/README.md](services/README.md).
+The installed unit is symlinked to that repository services directory.

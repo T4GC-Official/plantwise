@@ -24,3 +24,6 @@ artifacts are ignored under ../runtime/, ../model/runs/ and ../model/releases/.
 
 The current directory map and executable entry points are in [../README.md](../README.md).
 Historical timeline entries retain the paths in use when recorded.
+
+- [Git asset audit](git-asset-audit-2026-11-13.md): private-file coverage and existing large public assets.
+- [Managed service](../serving/services/README.md): unit installation, startup, port8175 and replication.

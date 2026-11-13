@@ -22,7 +22,8 @@ staging/
     scripts/          release promotion
     comparison/       read-only legacy/live diagnostics
     tests/            API, real-release and browser checks
-    environment/      Python/browser dependencies and user service
+    environment/      Python/browser dependencies
+    services/         repository-owned systemd unit and lifecycle manager
   docs/               operations, chronology, narrative, todos, proposals
   archive/            superseded code, source handoff, imported references
   runtime/            private active pointers, frontend snapshots, evidence
@@ -44,7 +45,12 @@ from a fresh clone. [Model operations](model/README.md) cover training and outpu
 
 ## Serving
 
-The active site is http://100.82.28.38:8175/ on Tailscale (bound to0.0.0.0:8175).
+Public URL: https://plantwise.idli.cc/ behind Cloudflare Access. The persistent
+[service manager](serving/services/README.md) keeps the origin on port 8175 and
+starts at boot. Training and serving asset placement is documented in
+[model/data/README.md](model/data/README.md), including frontend map/comparison assets.
+
+The active site is http://100.82.28.38:8175/ on Tailscale (bound to 0.0.0.0:8175).
 /diff compares the active model release against the live PlantWise India API;
 /model explains training differences. Map selection does not submit a query.
 The original appearance remains available at / and /#/tool.

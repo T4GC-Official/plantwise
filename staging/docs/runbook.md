@@ -33,10 +33,8 @@ staging/.venv/bin/python staging/serving/scripts/promote.py smoke_YYYYMMDDTHHMMS
 ## Website
 
 ```bash
-mkdir -p ~/.config/systemd/user
-cp staging/serving/environment/plantwise.service ~/.config/systemd/user/plantwise-staging.service
-systemctl --user daemon-reload
-systemctl --user enable --now plantwise-staging.service
+python3 staging/serving/services/manage.py install
+python3 staging/serving/services/manage.py start
 curl -fsS http://127.0.0.1:8175/api/health
 ```
 
@@ -60,8 +58,9 @@ fixing code/config requires a new run, never overwriting earlier results.
 
 No deletion commands, global package changes, git push or tunnel changes are
 part of operations. Runtime, training data, models, maps and private geometry
-are ignored. Cloudflare origin, once tested, is http://127.0.0.1:8175; public
-domain setup is the user's responsibility and has not been tested.
+are ignored. The user-configured Cloudflare origin remains http://localhost:8175.
+https://plantwise.idli.cc redirects unauthenticated users to Cloudflare Access;
+Email-code login itself requires an authorized user. Tunnel configuration is unchanged.
 
 ## Actual smoke release and browser commands
 
@@ -159,3 +158,6 @@ Review low held-out AUC models in runs/full_20261111T1252Z/low-auc-review.csv.
 Nine fits fall below 0.5; scientific review criteria are intentionally listed as
 remaining work rather than invented after fitting. No historical AUC matching
 or ten-species diagnostic was required; the optional ten-species run was not run.
+
+Repository unit management and current replication instructions are in
+[../serving/services/README.md](../serving/services/README.md).

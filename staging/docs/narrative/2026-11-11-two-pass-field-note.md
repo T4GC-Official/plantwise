@@ -158,3 +158,12 @@ a direct reference before publication to GitHub. Only those source files are
 exposed, and browser checks follow the links into real tabs. The user's
 message-cleanup alias was run after the layout checkpoint and is run again
 following the source-reference checkpoint.
+
+
+The website now uses a repository-linked systemd unit and a small lifecycle
+manager, matching the adjacent Pyrocene service pattern. The existing listener
+stays on8175 for Cloudflare, with automatic restart and boot startup. Training
+and pretrained-serving asset requirements are documented separately for fresh
+clones. Git audit confirmed private assets are ignored and recorded the existing
+large public assets explicitly. Browser inspection reached the Cloudflare email
+login gate without using credentials or changing tunnel configuration.
