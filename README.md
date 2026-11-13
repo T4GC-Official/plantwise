@@ -52,8 +52,3 @@ python3 staging/serving/services/manage.py install
 python3 staging/serving/services/manage.py start
 python3 staging/serving/services/manage.py status
 ```
-
-Public site: https://plantwise.idli.cc/ (Cloudflare Access login required).
-Direct local checks: http://127.0.0.1:8175/api/health and
-http://100.82.28.38:8175/ on Tailscale. Cloudflare configuration is managed
-separately; these commands manage only PlantWise.
