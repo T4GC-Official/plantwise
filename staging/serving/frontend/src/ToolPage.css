@@ -1,0 +1,24 @@
+/* In ToolPage.css */
+.map-container {
+  height: 100vh; /* Full height on desktop */
+  overflow: hidden; /* Prevent map overflow */
+}
+
+@media (max-width: 767.98px) { /* Target mobile screens <768px */
+  .map-container {
+    height: 50vh !important; /* Force 50% viewport height on mobile */
+    position: relative; /* Ensure proper containment */
+  }
+
+  /* Allow vertical scrolling for the tool page */
+  .tool-page {
+    overflow-y: auto;
+    height: 100vh;
+  }
+
+  /* Fix Bootstrap column alignment */
+  .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}

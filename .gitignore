@@ -116,3 +116,18 @@ container/*.log
 
 *.cache
 *.bat
+
+# Private imported legacy prediction rasters
+archive/plantwise_v0/tif_data_final/
+
+# Local source/data transfer snapshot and manifests
+/archive/plantwise_v0/
+/SYNC_SHA256SUMS*
+
+# Local credentials (example templates may be tracked)
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key

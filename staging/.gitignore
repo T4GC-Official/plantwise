@@ -1,0 +1,32 @@
+model/data/attributes/
+model/data/occurrences/
+model/data/derived/
+model/data/reference/
+model/runs/
+model/releases/
+.venv/
+.Rlib/
+node_modules/
+build/
+**/node_modules/
+**/build/
+**/__pycache__/
+*.log
+.Rhistory
+.RData
+# Local environment and runtime state
+runtime/
+.environment/
+# Imported private geometry and historical input snapshots
+model/data/boundary/
+serving/frontend/public/wgg.geojsonl.json
+serving/frontend/src/wg_boundary.*
+*.before-*
+model/maxent/*.jar
+docs/history/
+docs/SYNC_RECEIPT.md
+
+archive/reference/
+archive/handoff/*.before-*
+archive/layout-compat/
+archive/script-cache/

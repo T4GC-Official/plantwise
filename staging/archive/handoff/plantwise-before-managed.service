@@ -1,0 +1,14 @@
+[Unit]
+Description=PlantWise staging website
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/beeps/src/github.com/bprashanth/plantwise/staging/serving
+ExecStart=/home/beeps/src/github.com/bprashanth/plantwise/staging/.venv/bin/uvicorn backend.app:create_app --factory --host 0.0.0.0 --port 8175 --workers 1 --limit-concurrency 16
+Restart=on-failure
+RestartSec=5
+Environment=GDAL_CACHEMAX=64
+
+[Install]
+WantedBy=default.target
