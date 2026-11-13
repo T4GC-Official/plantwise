@@ -134,3 +134,11 @@ updated explanation on desktop/mobile without changing any training behavior.
 The eligibility distinction is now explicit in both explanatory text and the
 comparison table, with verified30-arc-second cell dimensions and approximate
 0.9km ground dimensions alongside it.
+
+
+Refined /diff so selecting a point is independent from executing a comparison.
+Users can explore the map before submitting; previous results are explicitly
+labelled when the draft location changes. Simplified labels and punctuation,
+and verified both layouts and actual request behavior through Playwright.
+Reviewed the source layout for a discussion of clearer model/serving boundaries,
+without moving directories or changing root documentation yet.

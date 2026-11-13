@@ -86,7 +86,7 @@ The isolated frontend build uses `npm run build` in the same ARM64 container
 with staging/frontend mounted at /work. Copy build/ to a new immutable
 runtime/frontend-TIMESTAMP directory, atomically update frontend-active and
 restart only plantwise-staging.service. Never rebuild the directory being
-served. Current frontend: frontend-20261112T144233Z. Previous: frontend-20261112T144117Z;
+served. Current frontend: frontend-20261113T042955Z. Previous frontend-20261112T144233Z is retained. Previous: frontend-20261112T144117Z;
 frontend-20261112T141223Z; frontend-20261112T131604Z and original frontend-20261111T154907Z is also retained. Deployment pointers are recorded in the private JSON.
 Rolling frontend-active back restores the old UI; model rollback is independent
 and documented in runbook.md. No cloudflared/other services or Git remotes changed.
@@ -148,3 +148,25 @@ the Western Ghats.” Ground dimensions are approximate and vary with latitude.
 New immutable frontend frontend-20261112T144233Z; rollback retained. Desktop/mobile
 browser checks and mobile screenshot inspection passed; evidence under
 runtime/cell-size-20261112/. No model, data or filter changes.
+
+
+## Explicit comparison interaction (2026-11-13)
+
+Map clicks now only select the marker and populate coordinates. No comparison
+runs on page load or map selection; submit Compare both models to query. A
+changed-location notice separates draft coordinates from displayed results.
+Cutoff changes continue to reuse the fetched scores. Renamed the disclosure to
+Why?, removed decorative arrows including the native disclosure marker, and
+changed text separators to ASCII hyphens. Original home/tool routes unchanged.
+
+Built and published immutable frontend-20261113T042955Z, retaining rollback.
+Only our service restarted. Desktop/mobile Playwright verification over
+Tailscale passed: zero requests on load, multiple map clicks make no API calls,
+Compare sends the exact selected coordinates, the pending notice clears, score
+counts/cutoffs/AUC details/model routing/live outage handling still work. Visually
+inspected screenshots. Build has only existing AboutPage/ToolPage warnings.
+Private evidence: runtime/explicit-compare-20261113/. Updated harness is under
+tests/diff-browser.cjs. No training, scientific filters or backend changes.
+
+Source restructuring is discussion only: no source/data directories moved and
+no root README changes made in this revision.
